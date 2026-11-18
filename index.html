@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>UniSS Concorso 2026 | Simulatore Ufficiale</title>
+  <meta name="description" content="Simulatore per il concorso a 15 Collaboratori Amministrativi UniSS 2026. Preparazione mobile-first in stile Material Design 3.">
+  
+  <!-- Progressive Web App & Mobile Meta -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1e3a8a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="UniSS 2026">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Shell Container (Mobile-First Viewport) -->
+  <div class="app-container">
+
+    <!-- PWA Update Notification Banner -->
+    <div id="pwa-update-bar" class="pwa-update-bar" style="display:none;">
+      <span>🚀 <strong>Nuova versione disponibile!</strong></span>
+      <button class="btn btn-sm btn-primary" id="btn-pwa-reload" style="padding:4px 8px; font-size:0.75rem;">Aggiorna</button>
+      <button class="icon-btn" id="btn-pwa-dismiss" style="font-size:0.8rem; width:24px; height:24px;">✕</button>
+    </div>
+
+    <!-- M3 TOP APP BAR (56px) -->
+    <header class="app-header">
+      <div class="brand-section" id="brand-home-link" style="cursor:pointer;" title="Torna alla Home">
+        <div class="brand-logo-badge" title="Università degli Studi di Sassari">SS</div>
+        <div class="brand-titles">
+          <h1>UniSS <span>2026</span></h1>
+          <div class="brand-subtitle">15 Collaboratori Amministrativi</div>
+        </div>
+      </div>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="icon-btn" id="btn-pwa-install" style="display:none;" title="Installa come App su Android" aria-label="Installa App">
+          📲
+        </button>
+        <button class="icon-btn" id="btn-account-modal" title="Account & Sincronizzazione Cloud" aria-label="Account">
+          <span id="header-account-icon" style="position:relative; display:inline-flex; align-items:center; justify-content:center;">
+            👤
+            <span id="header-account-dot" style="display:none; position:absolute; bottom:-2px; right:-2px; width:8px; height:8px; border-radius:50%; background:#22c55e; border:1.5px solid var(--md-surface);"></span>
+          </span>
+        </button>
+        <button class="icon-btn" id="btn-updates-modal" title="Centro Aggiornamenti" aria-label="Aggiornamenti">
+          🔄
+        </button>
+        <button class="icon-btn" id="btn-sound-toggle" title="Suoni Feedback" aria-label="Suoni">
+          🔊
+        </button>
+        <button class="icon-btn" id="btn-theme-toggle" title="Tema Chiaro/Scuro" aria-label="Tema">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <!-- SCROLLABLE MAIN CONTENT (Zero Infinite Scroll!) -->
+    <main class="main-wrapper">
+
+      <!-- ====================================================================
+           SEZIONE 0: HOME & MENÙ SCELTA MATERIE/ARGOMENTI
+           ==================================================================== -->
+      <section class="section-view active" id="home-view">
+        
+        <!-- Welcome Hero Banner -->
+        <div class="home-hero-card">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+            <div style="font-size:2.2rem; line-height:1;">🏛️</div>
+            <div>
+              <h2 style="font-size:1.18rem; font-weight:900; margin:0; line-height:1.2; color:var(--md-on-surface);">Concorso UniSS 2026</h2>
+              <div style="font-size:0.75rem; color:var(--md-primary); font-weight:700;">15 Collaboratori Amministrativi</div>
+            </div>
+          </div>
+          
+          <p style="font-size:0.8rem; color:var(--md-on-surface-variant); margin-bottom:10px; line-height:1.4;">
+            Seleziona una materia o un argomento specifico per avviare subito i quiz mirati con spiegazioni immediate.
+          </p>
+
+          <!-- Overall Progress Bar -->
+          <div style="background:var(--md-surface-container-highest); border-radius:var(--radius-full); height:8px; overflow:hidden; margin-bottom:6px;">
+            <div id="home-progress-fill" style="width:0%; height:100%; background:var(--md-primary); border-radius:var(--radius-full); transition:width 0.3s ease;"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--md-on-surface-variant);">
+            <span>Progresso: <strong id="home-progress-text" style="color:var(--md-on-surface);">0 / 949 quesiti</strong></span>
+            <span>Precisione: <strong id="home-accuracy-text" style="color:var(--md-success);">0%</strong></span>
+          </div>
+        </div>
+
+        <!-- Card Riprendi Sessione Precedente (se presente) -->
+        <div id="home-resume-card" class="home-resume-card" style="display:none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <div style="flex:1;">
+              <div style="font-size:0.68rem; font-weight:800; color:var(--md-primary); text-transform:uppercase; letter-spacing:0.5px;">⭐ Continua da dove eri rimasto:</div>
+              <div id="home-resume-title" style="font-size:0.95rem; font-weight:900; color:var(--md-on-surface); margin:2px 0;">Statuto UniSS</div>
+              <div id="home-resume-sub" style="font-size:0.75rem; color:var(--md-on-surface-variant);">Quesito 4 di 110</div>
+            </div>
+            <button class="btn btn-sm btn-primary" id="btn-home-resume" style="font-weight:800; padding:8px 14px; flex-shrink:0;">
+              <span>Continua ▶</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cloud Sync Quick Status Bar -->
+        <div id="home-cloud-bar" class="home-cloud-bar" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; background:var(--md-surface-container); border:1px solid var(--md-outline-variant); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:12px; font-size:0.8rem; box-shadow:var(--shadow-sm);" title="Gestisci Account e Sincronizzazione Cloud">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span id="home-cloud-icon" style="font-size:1.2rem;">☁️</span>
+            <div>
+              <div id="home-cloud-title" style="font-weight:800; font-size:0.82rem; color:var(--md-on-surface);">Sincronizzazione Cloud</div>
+              <div id="home-cloud-sub" style="font-size:0.72rem; color:var(--md-on-surface-variant);">Tocca per salvare i tuoi progressi online</div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-home-cloud-action" style="font-size:0.75rem; padding:5px 12px; font-weight:800; pointer-events:none;">
+            Accedi
+          </button>
+        </div>
+
+        <!-- Modalità Studio Guidato (Spiegazione Immediata) Featured Banner -->
+        <div class="home-featured-mode-card" id="btn-quick-instant-mode">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div class="featured-mode-icon">⚡</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <strong style="font-size:0.92rem; color:var(--md-on-surface);">Modalità Studio con Spiegazione Immediata</strong>
+                <span class="badge" style="background:var(--md-success); color:#ffffff; font-size:0.65rem; font-weight:800;">ATTIVA</span>
+              </div>
+              <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:2px 0 0 0;">
+                Tocca un'opzione per scoprire <strong>subito se è giusta o errata</strong> con la spiegazione che si apre all'istante!
+              </p>
+            </div>
+            <span style="font-size:1.2rem; color:var(--md-primary); font-weight:900;">▶</span>
+          </div>
+        </div>
+
+        <!-- Quick Launch Cards -->
+        <div class="home-quick-grid">
+          <button class="home-quick-card" id="btn-quick-all-quiz">
+            <span class="quick-card-icon">⚡</span>
+            <div class="quick-card-texts">
+              <strong>Tutti i 949 Quiz</strong>
+              <span>Allenamento misto</span>
+            </div>
+          </button>
+          
+          <button class="home-quick-card" id="btn-quick-exam">
+            <span class="quick-card-icon">⏱️</span>
+            <div class="quick-card-texts">
+              <strong>Simula Prova (30)</strong>
+              <span>Criteri ufficiali UniSS</span>
+            </div>
+          </button>
+          
+          <button class="home-quick-card" id="btn-quick-wrong">
+            <span class="quick-card-icon">❌</span>
+            <div class="quick-card-texts">
+              <strong>Ripassa Errori (<span id="home-wrong-count">0</span>)</strong>
+              <span>Riprova i quesiti sbagliati</span>
+            </div>
+          </button>
+
+          <button class="home-quick-card" id="btn-quick-bookmarked">
+            <span class="quick-card-icon">⭐</span>
+            <div class="quick-card-texts">
+              <strong>Preferiti (<span id="home-star-count">0</span>)</strong>
+              <span>Quesiti salvati con stella</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Section Title: Choose Subject & Topic -->
+        <div style="margin:16px 0 10px 0;">
+          <h3 style="font-size:1.05rem; font-weight:900; margin:0 0 2px 0;">📚 Menù Materie & Argomenti</h3>
+          <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:0;">Tocca <strong>"Inizia Quiz"</strong> su una materia oppure espandi gli <strong>"Argomenti"</strong> per scegliere un singolo tema:</p>
+        </div>
+
+        <!-- Real-time Filter Topics Input -->
+        <div class="search-box" style="margin-bottom:10px;">
+          <span>🔍</span>
+          <input type="text" id="home-search-topics" placeholder="Filtra materie o argomenti (es. Rettore, GDPR, Bilancio...)">
+        </div>
+
+        <!-- Macro-Argomenti Filter Chips -->
+        <div class="home-macro-chips">
+          <button class="filter-chip-btn active home-macro-btn" data-macro="ALL">
+            <span>Tutti (10 Moduli)</span>
+          </button>
+          <button class="filter-chip-btn home-macro-btn" data-macro="ATENEO">
+            <span>🏛️ UniSS & Regolamento</span>
+          </button>
+          <button class="filter-chip-btn home-macro-btn" data-macro="ATTITUDINALI">
+            <span>🧠 Logica & Situazionali</span>
+          </button>
+          <button class="filter-chip-btn home-macro-btn" data-macro="DIRITTO">
+            <span>⚖️ Diritto & Normativa</span>
+          </button>
+          <button class="filter-chip-btn home-macro-btn" data-macro="DIGITALE">
+            <span>💻 Informatica & Inglese</span>
+          </button>
+        </div>
+
+        <!-- Macro Launch Action Banner (Visibile quando si seleziona un macro-ambito) -->
+        <div id="home-macro-launch-container" style="display:none; margin:10px 0 12px 0;">
+          <button class="btn btn-primary" id="btn-launch-macro-quiz" style="width:100%; font-weight:800; padding:12px; font-size:0.92rem; border-radius:var(--radius-lg); box-shadow:var(--shadow-md);">
+            <span id="label-launch-macro-quiz">🚀 Avvia Quiz su questo Ambito ▶</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Container for the 10 Subject Cards -->
+        <div id="home-subjects-container" class="home-subjects-list"></div>
+
+      </section>
+
+      <!-- ====================================================================
+           SEZIONE 1: MODALITÀ ALLENAMENTO (Mobile-First Card View)
+           ==================================================================== -->
+      <section class="section-view" id="training-view">
+        
+        <!-- Active Subject Banner with Return to Home Menu -->
+        <div class="active-subject-header" id="training-active-subject-bar">
+          <button class="btn-text-nav" id="btn-back-to-home">
+            <span>‹ 🏠 Menù Materie</span>
+          </button>
+          <span id="training-current-subject-label">Tutte le Materie (949)</span>
+          <button class="btn btn-sm btn-secondary" id="btn-end-module-early" style="font-size:0.7rem; padding:3px 8px; border-radius:var(--radius-full);">
+            🏁 Riepilogo
+          </button>
+        </div>
+
+        <!-- Barra di Progresso Modulo in Tempo Reale (Avanza domanda per domanda!) -->
+        <div class="module-progress-wrapper" id="module-progress-wrapper">
+          <div class="module-progress-header">
+            <span id="module-progress-counter" style="font-weight:800; color:var(--md-primary); font-size:0.78rem;">
+              Domanda 1 di 949 (1%)
+            </span>
+            <span id="module-progress-live-score" style="font-weight:700; font-size:0.75rem; color:var(--md-on-surface-variant);">
+              <span style="color:var(--md-success);">0 esatte</span> &bull; <span style="color:var(--md-error);">0 errate</span>
+            </span>
+          </div>
+          <div class="module-progress-track">
+            <div class="module-progress-fill" id="module-progress-fill" style="width: 1%;"></div>
+          </div>
+        </div>
+
+        <!-- Horizontal Filter Chips (Thumb scrollable) -->
+        <div class="training-toolbar">
+          <button class="filter-chip-btn" id="btn-open-filter-sheet" style="border-color:var(--md-primary); background:var(--md-primary-container); color:var(--md-on-primary-container);">
+            <span>⚙️ Filtri</span>
+          </button>
+          <button class="filter-chip-btn active" id="btn-toggle-instant-explain" style="border-color:var(--md-success); background:var(--md-success-container); color:var(--md-on-success-container);" title="Attiva/disattiva spiegazione immediata al tocco">
+            <span>⚡ Spiega al Clic: ON</span>
+          </button>
+          <button class="filter-chip-btn training-status-pill active" data-status="ALL">
+            <span>Tutti</span>
+            <span class="m3-chip-counter" id="count-all">949</span>
+          </button>
+          <button class="filter-chip-btn training-status-pill" data-status="WRONG">
+            <span>❌ Errate</span>
+            <span class="m3-chip-counter" id="count-wrong">0</span>
+          </button>
+          <button class="filter-chip-btn training-status-pill" data-status="BOOKMARKED">
+            <span>⭐ Preferiti</span>
+            <span class="m3-chip-counter" id="count-bookmarked">0</span>
+          </button>
+          <button class="filter-chip-btn training-status-pill" data-status="UNANSWERED">
+            <span>⚪ Nuove</span>
+            <span class="m3-chip-counter" id="count-unanswered">949</span>
+          </button>
+          <button class="filter-chip-btn" id="btn-shuffle-training" title="Mescola ordine">
+            <span>🔀 Mescola</span>
+          </button>
+        </div>
+
+        <div id="filter-summary-text" style="display:none;">Mostrando 949 quesiti</div>
+        <div id="btn-view-card" style="display:none;"></div>
+        <div id="btn-view-list" style="display:none;"></div>
+        <div id="list-view-container" style="display:none;">
+          <div id="full-questions-list"></div>
+        </div>
+
+        <!-- Singola Scheda Domanda (Subito visibile a schermo senza scroll!) -->
+        <div class="single-card-container" id="single-card-view">
+          <article class="question-card" id="current-question-card">
+            
+            <!-- Meta Info: ID, Materia, Argomento, Bookmark -->
+            <div class="question-header">
+              <div class="question-meta">
+                <span class="badge badge-id" id="card-q-id">#1</span>
+                <span class="badge badge-statuto" id="card-q-materia">Statuto UniSS</span>
+                <span class="badge" id="card-q-argomento" style="background:var(--md-surface-container-highest); color:var(--md-on-surface-variant); font-size:0.7rem;">Generale</span>
+                <span class="badge" id="card-counter-indicator" style="background:var(--md-primary-container); color:var(--md-on-primary-container); font-size:0.7rem; font-family:var(--font-mono);">1 di 949</span>
+              </div>
+              <button class="bookmark-btn" id="btn-bookmark-current" title="Aggiungi ai preferiti">
+                ⭐
+              </button>
+            </div>
+
+            <!-- Testo del Quesito -->
+            <h2 class="question-text" id="card-q-text">
+              Caricamento quesito...
+            </h2>
+
+            <!-- Opzioni di Risposta (M3 Radio Cards ad altezza comoda per il pollice) -->
+            <div class="options-list" id="card-options-container">
+              <!-- Popolato da JS -->
+            </div>
+
+            <!-- Box Spiegazione Immediata su Errore -->
+            <div class="explanation-card" id="card-explanation-box" style="display:none;">
+              <div class="explanation-header">
+                <div>
+                  <span id="explanation-icon">💡</span>
+                  <span id="explanation-badge-status" class="explanation-badge succ">Spiegazione</span>
+                </div>
+              </div>
+              <div class="explanation-text" id="card-explanation-text"></div>
+              <div class="explanation-norma" id="card-explanation-norma-text" style="display:none;"></div>
+            </div>
+
+          </article>
+        </div>
+
+        <!-- ====================================================================
+             SCHERMATA DI FINE MODULO: RIEPILOGO ESATTE, ERRATE E VOTO
+             ==================================================================== -->
+        <div id="module-completion-card" class="module-completion-card" style="display:none;">
+          <div style="font-size:2.6rem; line-height:1; margin-bottom:6px;">🎉</div>
+          <h2 style="font-size:1.35rem; font-weight:900; margin:0 0 4px 0; color:var(--md-on-surface);">Modulo Completato!</h2>
+          <div id="completion-module-title" style="font-size:0.85rem; font-weight:700; color:var(--md-primary); margin-bottom:12px;">
+            Statuto dell'Università degli Studi di Sassari
+          </div>
+
+          <!-- Score Hero Box -->
+          <div class="completion-score-hero" id="completion-score-hero">
+            <div id="completion-score-pct" style="font-size:2.8rem; font-weight:900; line-height:1; color:var(--md-primary);">
+              80%
+            </div>
+            <div id="completion-status-pill" class="badge" style="margin-top:6px; font-size:0.82rem; font-weight:800; padding:4px 14px; border-radius:var(--radius-full); background:var(--md-success-container); color:var(--md-on-success-container);">
+              OTTIMO LIVELLO
+            </div>
+            <p id="completion-feedback-msg" style="font-size:0.8rem; color:var(--md-on-surface-variant); margin:8px 0 0 0;">
+              Hai dimostrato una buona padronanza degli argomenti del modulo.
+            </p>
+          </div>
+
+          <!-- KPI Grid delle risposte -->
+          <div class="completion-kpi-grid">
+            <div class="completion-kpi-box" style="border-left:3px solid var(--md-success);">
+              <div id="completion-kpi-correct" style="font-size:1.4rem; font-weight:900; color:var(--md-success);">0</div>
+              <div style="font-size:0.7rem; color:var(--md-on-surface-variant);">Risposte Esatte</div>
+            </div>
+            <div class="completion-kpi-box" style="border-left:3px solid var(--md-error);">
+              <div id="completion-kpi-wrong" style="font-size:1.4rem; font-weight:900; color:var(--md-error);">0</div>
+              <div style="font-size:0.7rem; color:var(--md-on-surface-variant);">Risposte Errate</div>
+            </div>
+            <div class="completion-kpi-box" style="border-left:3px solid var(--md-primary);">
+              <div id="completion-kpi-total" style="font-size:1.4rem; font-weight:900; color:var(--md-on-surface);">0</div>
+              <div style="font-size:0.7rem; color:var(--md-on-surface-variant);">Quesiti Modulo</div>
+            </div>
+          </div>
+
+          <!-- Lista degli Errori del Modulo (se ce ne sono) -->
+          <div id="completion-errors-section" style="margin:16px 0; text-align:left; display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="font-size:0.88rem; color:var(--md-error);">❌ Quesiti da Rivedere (<span id="completion-errors-count">0</span>):</strong>
+              <button class="btn btn-sm btn-secondary" id="btn-completion-review-errors-toggle" style="font-size:0.75rem; padding:3px 8px;">
+                Mostra Errori ▾
+              </button>
+            </div>
+            <div id="completion-errors-list" style="display:none; flex-direction:column; gap:8px;"></div>
+          </div>
+
+          <!-- Pulsanti di Azione -->
+          <div class="completion-actions-column">
+            <button class="btn btn-primary" id="btn-completion-retry-wrong" style="display:none; width:100%; font-weight:800;">
+              <span>🔄 Ripassa Solo gli Errori (<span id="btn-retry-wrong-count">0</span>)</span>
+            </button>
+            <button class="btn btn-secondary" id="btn-completion-restart-module" style="width:100%;">
+              <span>🔁 Ricomincia Questo Modulo</span>
+            </button>
+            <button class="btn btn-primary" id="btn-completion-back-modules" style="width:100%; background:var(--md-primary-container); color:var(--md-on-primary-container); border-color:var(--md-primary);">
+              <span>🏠 Scegli un Altro Modulo / Torna al Menù</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sticky Bottom Action Bar per Allenamento (Sempre visibile senza scorrere!) -->
+        <div class="question-footer-nav" id="training-action-bar">
+          <button class="btn-nav-arrow" id="btn-card-prev">
+            <span>◀ Prec</span>
+          </button>
+          <button class="btn-nav-arrow" id="btn-toggle-explain" style="font-size:0.8rem;">
+            <span>💡 Spiega</span>
+          </button>
+          <button class="btn-nav-arrow" id="btn-reveal-solution" style="font-size:0.8rem;">
+            <span>👁️ Soluzione</span>
+          </button>
+          <button class="btn-nav-arrow btn-primary" id="btn-card-next">
+            <span>Succ ▶</span>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           SEZIONE 2: SIMULAZIONE D'ESAME
+           ==================================================================== -->
+      <section class="section-view" id="exam-view">
+        
+        <!-- Schermata di Avvio Simulazione -->
+        <div id="exam-intro-screen">
+          <div class="exam-intro-card">
+            <div style="font-size:2rem; margin-bottom:6px;">⏱️</div>
+            <h2 style="font-size:1.25rem; font-weight:800; margin-bottom:4px;">Simulazione d'Esame</h2>
+            <p class="exam-intro-desc">
+              Test conforme ai criteri ufficiali UniSS: <strong>30 quesiti casuali</strong> con voto su 30 (idoneità a <strong>21/30</strong>) e spiegazione immediata al primo errore.
+            </p>
+
+            <!-- Selettore Tipologia di Prova -->
+            <div style="margin-bottom:12px;">
+              <label style="font-size:0.8rem; font-weight:700; color:var(--md-primary); margin-bottom:4px; display:block;">
+                🎯 Seleziona Prova:
+              </label>
+              <select id="exam-mode-select" class="custom-select" style="font-weight:700;">
+                <option value="preselettiva" selected>🎯 Preselettiva (27 Nov 2026) — Statuto, Regolamento, Legislazione, Situazionali, Logica</option>
+                <option value="prova_tecnica_completa">📝 Prova Scritta / Tecnica — Diritto Amm.vo, Privacy, Lavoro, Statuto, Inglese, Informatica</option>
+              </select>
+            </div>
+
+            <!-- Tempo -->
+            <div style="margin-bottom:14px; display:flex; align-items:center; justify-content:space-between;">
+              <label for="exam-timer-select" style="font-size:0.85rem; font-weight:600;">Tempo a disposizione:</label>
+              <select id="exam-timer-select" class="custom-select" style="width:auto; padding:4px 8px;">
+                <option value="45" selected>45 Minuti</option>
+                <option value="30">30 Minuti</option>
+                <option value="60">60 Minuti</option>
+                <option value="0">Senza Timer</option>
+              </select>
+            </div>
+
+            <!-- Distribuzione Materie -->
+            <div class="exam-distribution-card" style="margin-bottom:16px;">
+              <h4 id="exam-distrib-title" style="font-size:0.85rem; font-weight:700; margin-bottom:6px;">Distribuzione 30 Domande:</h4>
+              <div class="distrib-list" id="exam-distrib-list"></div>
+            </div>
+
+            <button class="btn btn-lg btn-gold" id="btn-start-exam">
+              🚀 Avvia Simulazione
+            </button>
+          </div>
+        </div>
+
+        <!-- Schermata Esame Attivo (Zero Scroll per avanzare!) -->
+        <div id="exam-active-screen" style="display:none;">
+          
+          <!-- Sticky Exam Top Bar: Timer, Contatore, Griglia -->
+          <div class="exam-sticky-bar">
+            <div class="timer-display" id="exam-timer-display">
+              <span>⏳</span>
+              <span id="timer-text">45:00</span>
+            </div>
+
+            <div class="exam-progress-info">
+              <strong id="exam-current-idx-text">1 / 30</strong>
+            </div>
+
+            <button class="filter-chip-btn" id="btn-open-grid-sheet" style="padding:4px 10px; font-size:0.75rem;">
+              <span>▦ Griglia (30)</span>
+            </button>
+          </div>
+
+          <div id="exam-live-correct" style="display:none;">0</div>
+          <div id="exam-live-wrong" style="display:none;">0</div>
+
+          <!-- Domanda d'Esame -->
+          <article class="question-card" id="exam-question-card">
+            <div class="question-header">
+              <div class="question-meta">
+                <span class="badge badge-id" id="exam-q-number">1/30</span>
+                <span class="badge" id="exam-q-materia">Materia</span>
+                <span class="badge" id="exam-q-argomento" style="background:var(--md-surface-container-highest); color:var(--md-on-surface-variant); font-size:0.7rem;">Argomento</span>
+              </div>
+            </div>
+
+            <h2 class="question-text" id="exam-q-text">Caricamento...</h2>
+
+            <div class="options-list" id="exam-options-container"></div>
+
+            <!-- Box Spiegazione Immediata su Errore -->
+            <div class="explanation-card is-error-alert" id="exam-explanation-box" style="display:none;">
+              <div class="explanation-header">
+                <div id="exam-explanation-title">
+                  <span>❌</span> <span>RISPOSTA ERRATA:</span>
+                </div>
+                <span id="exam-explanation-status-badge" class="explanation-badge err">0 Punti</span>
+              </div>
+              <div class="explanation-text" id="exam-explanation-text"></div>
+            </div>
+
+            <div id="exam-bottom-counter" style="text-align:center; font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:8px;">Quesito 1 di 30</div>
+          </article>
+
+          <!-- Sticky Bottom Action Bar per Esame -->
+          <div class="question-footer-nav" id="exam-action-bar">
+            <button class="btn-nav-arrow" id="btn-exam-prev">
+              <span>◀ Prec</span>
+            </button>
+            <button class="btn btn-sm btn-danger" id="btn-finish-exam-confirm" style="font-size:0.8rem; padding:6px 12px;">
+              <span>🏁 Consegna</span>
+            </button>
+            <button class="btn-nav-arrow btn-primary" id="btn-exam-next">
+              <span>Succ ▶</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Schermata Risultati Esame -->
+        <div id="exam-results-screen" style="display:none;">
+          <div class="results-hero-card" id="results-hero">
+            <div id="final-score-val" class="score-number" style="font-size:2.8rem; font-weight:900; line-height:1; margin-bottom:4px;">0 / 30</div>
+            <div id="outcome-pill" class="outcome-badge-pill" style="display:inline-flex; align-items:center; gap:6px; margin:6px 0; padding:6px 14px; border-radius:var(--radius-full); font-weight:800; font-size:0.85rem;">ESITO</div>
+            <p id="final-feedback-msg" style="font-size:0.85rem; color:var(--md-on-surface-variant); margin-bottom:12px;"></p>
+
+            <!-- 4 KPI Principali Material 3 -->
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; margin:12px 0 16px 0; text-align:center;">
+              <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+                <div id="kpi-correct" style="font-size:1.25rem; font-weight:800; color:var(--md-success);">0</div>
+                <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Corrette</div>
+              </div>
+              <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+                <div id="kpi-wrong" style="font-size:1.25rem; font-weight:800; color:var(--md-error);">0</div>
+                <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Errate</div>
+              </div>
+              <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+                <div id="kpi-unanswered" style="font-size:1.25rem; font-weight:800; color:var(--md-outline);">0</div>
+                <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Omesse</div>
+              </div>
+              <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+                <div id="kpi-time-spent" style="font-size:1.25rem; font-weight:800; color:var(--md-primary);">00:00</div>
+                <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Tempo</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:8px; margin-bottom:14px;">
+              <button class="btn btn-sm btn-primary" id="btn-restart-exam" style="flex:1;">🔄 Riprova Esame</button>
+              <button class="btn btn-sm btn-secondary" id="btn-print-results">🖨️ Stampa / PDF</button>
+            </div>
+
+            <!-- Ripartizione per Materia -->
+            <div style="margin-bottom:16px;">
+              <h4 style="font-size:0.85rem; font-weight:700; margin-bottom:8px; text-align:left;">Ripartizione per Materia:</h4>
+              <div id="subject-breakdown-container" style="display:flex; flex-direction:column; gap:6px;"></div>
+            </div>
+
+            <!-- Filtri revisione 30 quesiti -->
+            <div class="review-filter-tabs" style="display:flex; gap:6px; margin-bottom:12px;">
+              <button class="filter-chip-btn active" id="btn-review-all">Tutte (30)</button>
+              <button class="filter-chip-btn" id="btn-review-wrong">Solo Errate</button>
+              <button class="filter-chip-btn" id="btn-review-correct">Solo Corrette</button>
+            </div>
+
+            <!-- Lista Revisione 30 quesiti -->
+            <div id="review-cards-list" style="display:flex; flex-direction:column; gap:8px; text-align:left;"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           SEZIONE 3: BANCA DATI INTEGRALE (949 QUESITI)
+           ==================================================================== -->
+      <section class="section-view" id="repo-view">
+        <div class="exam-intro-card" style="padding:12px; margin-bottom:10px;">
+          <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="repo-search-input" placeholder="Cerca parole chiave nei 949 quesiti...">
+          </div>
+
+          <div style="display:flex; gap:6px; align-items:center;">
+            <select id="repo-filter-materia" class="custom-select" style="flex:1;">
+              <option value="ALL">Tutte le 10 materie (949)</option>
+            </select>
+            <button class="filter-chip-btn" id="btn-expand-all-repo" style="font-size:0.75rem;">Espandi</button>
+            <button class="filter-chip-btn" id="btn-collapse-all-repo" style="font-size:0.75rem;">Comprimi</button>
+          </div>
+          <div id="repo-count-label" style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:6px; text-align:right;">949 quesiti</div>
+        </div>
+
+        <div id="repo-cards-container" style="display:flex; flex-direction:column; gap:8px;"></div>
+      </section>
+
+      <!-- ====================================================================
+           SEZIONE 4: STATISTICHE E STORICO PROVE
+           ==================================================================== -->
+      <section class="section-view" id="stats-view">
+        <div class="exam-intro-card" style="padding:14px; margin-bottom:10px;">
+          <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:8px;">📊 Riepilogo Simulazioni</h3>
+          
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center; margin-bottom:14px;">
+            <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+              <div id="stats-total-sims" style="font-size:1.2rem; font-weight:800; color:var(--md-primary);">0</div>
+              <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Prove Svolte</div>
+            </div>
+            <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+              <div id="stats-pass-rate" style="font-size:1.2rem; font-weight:800; color:var(--md-success);">0%</div>
+              <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Tasso Idonei</div>
+            </div>
+            <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+              <div id="stats-avg-score" style="font-size:1.2rem; font-weight:800; color:var(--md-tertiary);">0 / 30</div>
+              <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Media Voto</div>
+            </div>
+            <div style="background:var(--md-surface-container-high); padding:8px 4px; border-radius:var(--radius-sm);">
+              <div id="stats-best-score" style="font-size:1.2rem; font-weight:800; color:var(--md-gold, #f59e0b);">0 / 30</div>
+              <div style="font-size:0.65rem; color:var(--md-on-surface-variant);">Miglior Voto</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <h4 style="font-size:0.85rem; font-weight:700; margin-bottom:6px;">Padronanza per Materia:</h4>
+            <div id="stats-mastery-container" style="display:flex; flex-direction:column; gap:6px;"></div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <strong style="font-size:0.88rem;">Storico Esami:</strong>
+            <button class="btn btn-sm btn-secondary" id="btn-clear-history" style="font-size:0.75rem; padding:3px 8px;">Cancella</button>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table style="width:100%; font-size:0.75rem; border-collapse:collapse;">
+              <tbody id="history-table-body">
+                <tr><td style="text-align:center; color:var(--md-on-surface-variant); padding:1rem;">Nessun esame registrato.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         M3 BOTTOM NAVIGATION BAR (Navigazione da Pollice a 4 Tab)
+         ==================================================================== -->
+    <nav class="m3-bottom-nav">
+      <button class="nav-tab-btn active" data-view="home-view" id="tab-home">
+        <div class="m3-nav-pill">🏠</div>
+        <span class="m3-nav-label">Home</span>
+      </button>
+      <button class="nav-tab-btn" data-view="training-view" id="tab-training">
+        <div class="m3-nav-pill">🏋️</div>
+        <span class="m3-nav-label">Quiz</span>
+      </button>
+      <button class="nav-tab-btn" data-view="exam-view" id="tab-exam">
+        <div class="m3-nav-pill">⏱️</div>
+        <span class="m3-nav-label">Esame</span>
+      </button>
+      <button class="nav-tab-btn" data-view="repo-view" id="tab-repo">
+        <div class="m3-nav-pill">📚</div>
+        <span class="m3-nav-label">Banca Dati</span>
+      </button>
+      <button class="nav-tab-btn" data-view="stats-view" id="tab-stats">
+        <div class="m3-nav-pill">📊</div>
+        <span class="m3-nav-label">Progressi</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       M3 SLIDE-UP BOTTOM SHEET: FILTRI AVANZATI ALLENAMENTO
+       ==================================================================== -->
+  <div class="modal-overlay" id="filter-sheet" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="font-size:1.05rem; font-weight:800; margin:0;">🎯 Filtri Allenamento</h3>
+        <button class="icon-btn" id="btn-close-filter-sheet" style="font-size:1rem;">✕</button>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <label for="filter-materia" style="font-size:0.75rem; font-weight:700; color:var(--md-on-surface-variant);">Materia:</label>
+        <select id="filter-materia" class="custom-select">
+          <option value="ALL">Tutte le materie (949 quesiti)</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <label for="filter-argomento" style="font-size:0.75rem; font-weight:700; color:var(--md-on-surface-variant);">Argomento:</label>
+        <select id="filter-argomento" class="custom-select">
+          <option value="ALL">Tutti gli argomenti</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label for="filter-search" style="font-size:0.75rem; font-weight:700; color:var(--md-on-surface-variant);">Cerca nel testo:</label>
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="filter-search" placeholder="Es. Rettore, 1562, Titulus...">
+        </div>
+      </div>
+
+      <!-- Mini-statistiche sessione -->
+      <div style="background:var(--md-surface-container-high); padding:10px; border-radius:var(--radius-sm); margin-bottom:12px; font-size:0.8rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+          <span>Corrette: <strong id="stat-correct" style="color:var(--md-success)">0</strong></span>
+          <span>Errate: <strong id="stat-wrong" style="color:var(--md-error)">0</strong></span>
+          <span>Precisione: <strong id="stat-accuracy">0%</strong></span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--md-on-surface-variant);">
+          <span>Risposte date: <span id="stat-progress">0/949</span></span>
+          <button id="btn-reset-training-progress" style="color:var(--md-error); font-weight:700; text-decoration:underline;">Azzera</button>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-secondary" id="btn-reset-filters" style="flex:1;">Reimposta</button>
+        <button class="btn btn-primary" id="btn-apply-filter-sheet" style="flex:1;">Applica</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       M3 SLIDE-UP BOTTOM SHEET: GRIGLIA 30 DOMANDE ESAME
+       ==================================================================== -->
+  <div class="modal-overlay" id="exam-grid-sheet" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <h3 style="font-size:1.05rem; font-weight:800; margin:0;">▦ Salto Rapido (30 Domande)</h3>
+        <button class="icon-btn" id="btn-close-grid-sheet" style="font-size:1rem;">✕</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span id="exam-nav-answered-summary" style="font-size:0.8rem; font-weight:600; color:var(--md-on-surface-variant);">0 / 30 risposte</span>
+        <button class="btn btn-sm btn-secondary" id="btn-jump-unanswered" style="font-size:0.75rem; padding:4px 8px;">⏩ Salta a Non Risposta</button>
+      </div>
+      <div class="exam-nav-grid" id="exam-nav-grid"></div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       M3 SLIDE-UP BOTTOM SHEET: FEEDBACK & SPIEGAZIONE IMMEDIATA AL CLIC
+       ==================================================================== -->
+  <div class="modal-overlay" id="instant-feedback-sheet" style="display:none;">
+    <div class="modal-card feedback-sheet-card" id="feedback-sheet-card">
+      <div class="m3-drag-handle"></div>
+      
+      <!-- Header con icona ed esito grande -->
+      <div class="feedback-sheet-header" id="feedback-sheet-header">
+        <div class="feedback-icon" id="feedback-sheet-icon">✅</div>
+        <div>
+          <h3 id="feedback-sheet-title" style="margin:0; font-size:1.15rem; font-weight:900;">RISPOSTA ESATTA!</h3>
+          <div id="feedback-sheet-subtitle" style="font-size:0.8rem; font-weight:700; margin-top:2px; color:var(--md-success);">+1 Punto Guadagnato</div>
+        </div>
+      </div>
+
+      <!-- Box risposta corretta visibile se si è sbagliato -->
+      <div id="feedback-correct-answer-box" style="display:none; margin:10px 0; padding:10px; border-radius:var(--radius-md); background:var(--md-success-container); border:1px solid var(--md-success); color:var(--md-on-success-container); font-size:0.85rem;">
+        <span style="font-weight:800;">Risposta corretta: </span>
+        <span id="feedback-correct-answer-text"></span>
+      </div>
+
+      <!-- Spiegazione ufficiale -->
+      <div class="feedback-explanation-body" style="margin:12px 0 16px 0;">
+        <div style="font-size:0.75rem; font-weight:800; color:var(--md-primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">
+          📖 Spiegazione & Riferimento Normativo:
+        </div>
+        <div id="feedback-sheet-text" style="font-size:0.88rem; line-height:1.5; color:var(--md-on-surface);"></div>
+      </div>
+
+      <!-- Azioni one-thumb per pollice -->
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-secondary" id="btn-feedback-review-card" style="flex:1; font-size:0.82rem;">
+          Rivedi Domanda
+        </button>
+        <button class="btn btn-primary" id="btn-feedback-next-card" style="flex:2; font-size:0.88rem; font-weight:800;">
+          Prossima Domanda ▶
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL CONFERMA CONSEGNA ESAME
+       ==================================================================== -->
+  <div class="modal-overlay" id="confirm-finish-modal" style="display:none;">
+    <div class="modal-card" style="text-align:center;">
+      <div style="font-size:2rem; margin-bottom:6px;">📋</div>
+      <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:6px;">Confermi la consegna?</h3>
+      <p id="confirm-modal-desc" style="font-size:0.85rem; color:var(--md-on-surface-variant); margin-bottom:14px;">
+        Hai risposto a <strong>0 su 30 domande</strong>. I quesiti non risposti verranno conteggiati come 0 punti.
+      </p>
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-secondary" id="btn-modal-cancel" style="flex:1;">Continua</button>
+        <button class="btn btn-danger" id="btn-modal-confirm" style="flex:1;">Consegna Prova</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL AGGIORNAMENTI & GESTIONE BANCA DATI
+       ==================================================================== -->
+  <div class="modal-overlay" id="updates-modal" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <h3 style="margin:0; font-size:1.15rem; font-weight:800;">🔄 Aggiornamenti</h3>
+        <button class="icon-btn" id="btn-close-updates-modal">✕</button>
+      </div>
+
+      <div style="background:var(--md-surface-container-high); border-radius:var(--radius-sm); padding:10px; margin-bottom:12px; font-size:0.82rem;">
+        <div>Versione: <strong>v6.0.0 (Completa)</strong></div>
+        <div>Attivi: <strong id="modal-loaded-questions-count">949 quesiti (10 materie)</strong></div>
+        <div>Origine: <span class="badge badge-statuto" id="modal-data-source">Integrata</span></div>
+      </div>
+
+      <!-- Verifica Online -->
+      <div style="border:1px solid var(--md-outline-variant); border-radius:var(--radius-sm); padding:10px; margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <strong style="font-size:0.85rem;">🌐 Aggiornamento Online</strong>
+          <button class="btn btn-sm btn-primary" id="btn-check-online-update" style="font-size:0.75rem; padding:4px 8px;">Verifica</button>
+        </div>
+        <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:0;">Controlla se ci sono nuovi quesiti o nuove versioni.</p>
+        <div id="update-check-status"></div>
+      </div>
+
+      <!-- Carica File Locale -->
+      <div style="border:1px solid var(--md-outline-variant); border-radius:var(--radius-sm); padding:10px; margin-bottom:12px;">
+        <strong style="font-size:0.85rem; display:block; margin-bottom:4px;">📂 Aggiorna con File JSON Locale</strong>
+        <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-bottom:8px;">Carica direttamente dal telefono un file .json con nuovi quesiti o rettifiche.</p>
+        <input type="file" id="input-update-json" accept=".json" style="display:none;">
+        <button class="btn btn-sm btn-secondary" id="btn-trigger-json-upload" style="width:100%; font-size:0.8rem;">
+          📁 Scegli File JSON dal Telefono
+        </button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--md-outline-variant); padding-top:10px;">
+        <button class="btn btn-sm btn-danger" id="btn-reset-default-data" style="font-size:0.75rem;">⏪ Ripristina 949 Quesiti</button>
+        <button class="btn btn-sm btn-secondary" id="btn-close-modal-bottom">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL ACCOUNT & SINCRONIZZAZIONE CLOUD (FIREBASE)
+       ==================================================================== -->
+  <div class="modal-overlay" id="account-modal" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0; font-size:1.15rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+          <span>☁️</span> <span>Account & Cloud Sync</span>
+        </h3>
+        <button class="icon-btn" id="btn-close-account-modal">✕</button>
+      </div>
+
+      <!-- SEZIONE 1: UTENTE CONNESSO -->
+      <div id="account-logged-view" style="display:none;">
+        <div style="background:var(--md-surface-container-high); border-radius:var(--radius-sm); padding:12px; margin-bottom:14px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+            <div style="width:38px; height:38px; border-radius:50%; background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem;" id="account-avatar-initial">
+              U
+            </div>
+            <div>
+              <div style="font-weight:800; font-size:0.92rem; color:var(--md-on-surface);" id="account-user-email">email@esempio.com</div>
+              <div style="font-size:0.72rem; color:var(--md-success); font-weight:700; display:flex; align-items:center; gap:4px;">
+                <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--md-success);"></span>
+                Account Cloud Attivo
+              </div>
+            </div>
+          </div>
+          <div style="font-size:0.78rem; color:var(--md-on-surface-variant); padding-top:6px; border-top:1px solid var(--md-outline-variant);">
+            Ultima sincronizzazione: <strong id="account-last-sync-label">Mai</strong>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:14px;">
+          <button class="btn btn-primary" id="btn-account-sync-now" style="font-weight:800; padding:12px;">
+            <span>🔄 Sincronizza Ora con il Cloud</span>
+          </button>
+          <button class="btn btn-secondary" id="btn-account-logout" style="font-weight:700; color:var(--md-error);">
+            <span>🚪 Disconnetti Account</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SEZIONE 2: LOGIN / REGISTRAZIONE -->
+      <div id="account-auth-view" style="display:block;">
+        
+        <!-- Tab Switcher -->
+        <div style="display:flex; background:var(--md-surface-container-high); border-radius:var(--radius-sm); padding:3px; margin-bottom:14px;">
+          <button type="button" class="btn btn-sm active" id="tab-auth-login" style="flex:1; border-radius:calc(var(--radius-sm) - 2px); font-weight:800; padding:8px;">
+            Accedi
+          </button>
+          <button type="button" class="btn btn-sm btn-ghost" id="tab-auth-register" style="flex:1; border-radius:calc(var(--radius-sm) - 2px); font-weight:800; padding:8px;">
+            Crea Account
+          </button>
+        </div>
+
+        <!-- Feedback Alert Box -->
+        <div id="account-auth-alert" style="display:none; padding:10px 12px; border-radius:var(--radius-sm); font-size:0.8rem; margin-bottom:12px;"></div>
+
+        <!-- Form Campi -->
+        <form id="form-account-auth" onsubmit="return false;" style="display:flex; flex-direction:column; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px; color:var(--md-on-surface-variant);">Indirizzo Email</label>
+            <input type="email" id="auth-email-input" class="search-input" placeholder="esempio@email.com" required style="width:100%; box-sizing:border-box;">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px; color:var(--md-on-surface-variant);">Password</label>
+            <input type="password" id="auth-password-input" class="search-input" placeholder="Almeno 6 caratteri" required style="width:100%; box-sizing:border-box;">
+          </div>
+          <div id="auth-confirm-pw-container" style="display:none;">
+            <label style="display:block; font-size:0.75rem; font-weight:700; margin-bottom:4px; color:var(--md-on-surface-variant);">Conferma Password</label>
+            <input type="password" id="auth-confirm-password-input" class="search-input" placeholder="Ripeti la password" style="width:100%; box-sizing:border-box;">
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="btn-submit-auth" style="font-weight:800; padding:12px; margin-top:4px;">
+            <span id="btn-submit-auth-label">Accedi al Cloud</span>
+          </button>
+        </form>
+
+        <p style="font-size:0.72rem; color:var(--md-on-surface-variant); text-align:center; margin-top:12px; margin-bottom:12px;">
+          🔒 I tuoi progressi attuali sul dispositivo non andranno persi: verranno uniti al tuo account.
+        </p>
+      </div>
+
+      <!-- SEZIONE 3: CONFIGURAZIONE PROGETTO FIREBASE (Collapsible) -->
+      <div style="border-top:1px solid var(--md-outline-variant); padding-top:12px; margin-top:10px;">
+        <button type="button" class="btn btn-sm btn-ghost" id="btn-toggle-firebase-setup" style="width:100%; justify-content:space-between; font-size:0.78rem; padding:8px 6px;">
+          <span style="font-weight:700;">⚙️ Configurazione Firebase</span>
+          <span id="icon-toggle-firebase">▾</span>
+        </button>
+
+        <div id="firebase-setup-panel" style="display:none; margin-top:10px; background:var(--md-surface-container-high); border-radius:var(--radius-sm); padding:10px; font-size:0.78rem;">
+          <p style="margin:0 0 8px 0; color:var(--md-on-surface-variant);">
+            Inserisci l'<strong>API Key</strong> e il <strong>Project ID</strong> del tuo progetto Google Firebase (oppure modificali nel file <code>firebase-config.js</code>):
+          </p>
+          <div style="margin-bottom:8px;">
+            <label style="display:block; font-weight:700; margin-bottom:2px; font-size:0.72rem;">Firebase Web API Key:</label>
+            <input type="text" id="setup-firebase-apikey" class="search-input" placeholder="AIzaSy..." style="width:100%; box-sizing:border-box; font-size:0.75rem;">
+          </div>
+          <div style="margin-bottom:10px;">
+            <label style="display:block; font-weight:700; margin-bottom:2px; font-size:0.72rem;">Firebase Project ID:</label>
+            <input type="text" id="setup-firebase-projectid" class="search-input" placeholder="uniss-concorso-2026" style="width:100%; box-sizing:border-box; font-size:0.75rem;">
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-save-firebase-config" style="flex:1; font-size:0.75rem;">Salva Configurazione</button>
+            <button type="button" class="btn btn-sm btn-secondary" id="btn-reset-firebase-config" style="font-size:0.75rem;">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; border-top:1px solid var(--md-outline-variant); padding-top:10px; margin-top:12px;">
+        <button class="btn btn-sm btn-secondary" id="btn-close-account-modal-bottom">Chiudi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="banca_dati.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

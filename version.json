@@ -1,0 +1,9 @@
+{
+  "versionCode": 600,
+  "versionName": "6.0.0",
+  "totalQuestions": 949,
+  "updatedAt": "2026-11-18",
+  "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
+  "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/app-release.apk",
+  "changelog": "Versione 6.0.0: Banca dati ampliata a 949 quesiti ufficiali con spiegazioni dettagliate, logica, diritto e sincronizzazione Cloud Firebase."
+}
