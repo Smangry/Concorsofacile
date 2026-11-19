@@ -86,7 +86,7 @@
   // STATO GLOBALE DELL'APPLICAZIONE
   // =========================================================================
   const AppState = {
-    appVersion: '7.0.4',
+    appVersion: '7.0.5',
     allQuestions: [],
     categories: [],
     topicsByCategory: {},
@@ -366,6 +366,16 @@
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function getDisplayOptions(q) {
@@ -901,11 +911,21 @@
         wrongQuestions.forEach(({ q, ans }) => {
           const item = document.createElement('div');
           item.className = 'review-card review-incorrect';
+
+          const displayOpts = getDisplayOptions(q);
+          const corrOpt = displayOpts.find(o => o.isCorrect);
+          const corrLetter = corrOpt ? corrOpt.displayLetter : q.risposta_corretta;
+          const corrText = corrOpt ? corrOpt.text : (q.opzioni[q.risposta_corretta] || '');
+
+          const userLetter = ans.selectedDisplayLetter || ans.selectedOption;
+          const userOpt = displayOpts.find(o => o.displayLetter === userLetter) || displayOpts.find(o => o.origLetter === ans.selectedOption);
+          const userText = userOpt ? userOpt.text : (q.opzioni[ans.selectedOption] || '');
+
           item.innerHTML = `
-            <div style="font-weight:700; margin-bottom:4px;">#${q.id} - ${q.materia}</div>
-            <p style="font-size:0.85rem; margin-bottom:6px;">${q.domanda}</p>
-            <div style="font-size:0.78rem; color:var(--md-error); margin-bottom:2px;">❌ Tua risposta: (${ans.selectedOption}) ${q.opzioni[ans.selectedOption] || ''}</div>
-            <div style="font-size:0.78rem; color:var(--md-success); font-weight:700; margin-bottom:6px;">✔️ Risposta esatta: (${q.risposta_corretta}) ${q.opzioni[q.risposta_corretta]}</div>
+            <div style="font-weight:700; margin-bottom:4px;">#${q.id} - ${escapeHtml(q.materia)}</div>
+            <p style="font-size:0.85rem; margin-bottom:6px;">${escapeHtml(q.domanda)}</p>
+            <div style="font-size:0.78rem; color:var(--md-error); margin-bottom:2px;">❌ Tua risposta: (${userLetter}) ${escapeHtml(userText)}</div>
+            <div style="font-size:0.78rem; color:var(--md-success); font-weight:700; margin-bottom:6px;">✔️ Risposta esatta: (${corrLetter}) ${escapeHtml(corrText)}</div>
             <div class="feedback-explanation-body" style="font-size:0.78rem; padding:8px; margin-top:4px;">${q.spiegazione}</div>
           `;
           errList.appendChild(item);
@@ -1380,7 +1400,7 @@
   // Stato contestuale per il foglio feedback istantaneo
   let currentFeedbackContext = { isExam: false, question: null };
 
-  function showInstantFeedback(question, selectedLetter, isCorrect, isExam = false) {
+  function showInstantFeedback(question, selectedOptOrLetter, isCorrect, isExam = false) {
     currentFeedbackContext = { isExam, question };
 
     const sheet = document.getElementById('instant-feedback-sheet');
@@ -1394,6 +1414,31 @@
 
     if (!sheet) return;
 
+    // Recupera la corretta mappatura visuale delle opzioni a video
+    const displayOpts = getDisplayOptions(question);
+    const corrOpt = displayOpts.find(o => o.isCorrect);
+    const correctDisplayLetter = corrOpt ? corrOpt.displayLetter : question.risposta_corretta;
+    const correctTextStr = corrOpt ? corrOpt.text : (question.opzioni[question.risposta_corretta] || '');
+
+    // Determina la lettera e il testo selezionati a video dall'utente
+    let selDisplayLetter = '';
+    let selTextStr = '';
+
+    if (typeof selectedOptOrLetter === 'object' && selectedOptOrLetter !== null) {
+      selDisplayLetter = selectedOptOrLetter.displayLetter || selectedOptOrLetter.origLetter;
+      selTextStr = selectedOptOrLetter.text || '';
+    } else if (typeof selectedOptOrLetter === 'string') {
+      const matchOpt = displayOpts.find(o => o.displayLetter === selectedOptOrLetter) ||
+                       displayOpts.find(o => o.origLetter === selectedOptOrLetter);
+      if (matchOpt) {
+        selDisplayLetter = matchOpt.displayLetter;
+        selTextStr = matchOpt.text;
+      } else {
+        selDisplayLetter = selectedOptOrLetter;
+        selTextStr = question.opzioni[selectedOptOrLetter] || '';
+      }
+    }
+
     const isReviewingWrong = (AppState.training && AppState.training.filterStatus === 'WRONG');
 
     if (isCorrect) {
@@ -1406,8 +1451,8 @@
       }
       if (subtitle) {
         subtitle.innerHTML = isReviewingWrong
-          ? '✨ Hai risolto l\'errore rispondendo esattamente (+1 punto recuperato)!'
-          : '✨ Ottimo lavoro! Hai risposto correttamente (+1 punto).';
+          ? `✨ Hai risolto l'errore selezionando l'opzione <strong>(${selDisplayLetter})</strong> (+1 punto recuperato)!`
+          : `✨ Ottimo lavoro! Hai selezionato l'opzione <strong>(${selDisplayLetter})</strong> (+1 punto).`;
         subtitle.style.color = 'var(--md-success)';
       }
       if (icon) icon.textContent = '✅';
@@ -1421,15 +1466,15 @@
         title.style.color = 'var(--md-error)';
       }
       if (subtitle) {
-        subtitle.innerHTML = `Hai selezionato l'opzione (${selectedLetter}) — analizza l'errore per memorizzare:`;
+        const textSnippet = selTextStr ? ` — <em>"${escapeHtml(selTextStr)}"</em>` : '';
+        subtitle.innerHTML = `Hai selezionato l'opzione <strong>(${selDisplayLetter})</strong>${textSnippet}: analizza l'errore per memorizzare:`;
         subtitle.style.color = 'var(--md-error)';
       }
       if (icon) icon.textContent = '❌';
       if (correctBox) {
         correctBox.style.display = 'block';
         if (correctText) {
-          const rightOptText = question.opzioni[question.risposta_corretta] || '';
-          correctText.textContent = `(${question.risposta_corretta}) ${rightOptText}`;
+          correctText.textContent = `(${correctDisplayLetter}) ${correctTextStr}`;
         }
       }
     }
@@ -1709,7 +1754,7 @@
 
       // Se attiva la modalità feedback immediato, mostra subito il foglio con la spiegazione
       if (AppState.settings.autoExplain) {
-        showInstantFeedback(question, selectedLetter, isCorrect, false);
+        showInstantFeedback(question, selectedOpt, isCorrect, false);
       }
     } catch (err) {
       console.error('Errore in handleTrainingAnswer:', err);
@@ -2156,7 +2201,7 @@
 
     // Mostra spiegazione istantanea nel foglio a scorrimento
     if (AppState.settings.autoExplain) {
-      showInstantFeedback(question, selectedLetter, isCorrect, true);
+      showInstantFeedback(question, selectedOpt, isCorrect, true);
     }
   }
 
@@ -2308,6 +2353,19 @@
         statusBadge = '<span class="badge" style="background:var(--bg-surface-subtle); color:var(--text-muted);">⚪ Non Risposta (0 pt)</span>';
       }
 
+      const displayOpts = getDisplayOptions(q);
+      const corrOpt = displayOpts.find(o => o.isCorrect);
+      const corrLetter = corrOpt ? corrOpt.displayLetter : q.risposta_corretta;
+      const corrText = corrOpt ? corrOpt.text : (q.opzioni[q.risposta_corretta] || '');
+
+      let userAnsHtml = 'Nessuna risposta data';
+      if (ans) {
+        const userLetter = ans.selectedDisplayLetter || ans.selectedOption;
+        const userOpt = displayOpts.find(o => o.displayLetter === userLetter) || displayOpts.find(o => o.origLetter === ans.selectedOption);
+        const userText = userOpt ? userOpt.text : (q.opzioni[ans.selectedOption] || '');
+        userAnsHtml = `(${userLetter}) ${escapeHtml(userText)}`;
+      }
+
       card.innerHTML = `
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.5rem;">
           <div style="display:flex; gap:0.5rem; align-items:center;">
@@ -2318,14 +2376,14 @@
           <div>${statusBadge}</div>
         </div>
 
-        <p style="font-weight:600; font-size:1rem; margin-bottom:0.75rem;">${q.domanda}</p>
+        <p style="font-weight:600; font-size:1rem; margin-bottom:0.75rem;">${escapeHtml(q.domanda)}</p>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.75rem; font-size:0.875rem;">
           <div style="padding:0.5rem 0.75rem; border-radius:var(--radius-sm); background:${isCorrect ? 'var(--success-bg)' : (ans ? 'var(--danger-bg)' : 'var(--bg-surface-subtle)')};">
-            <strong>Tua risposta:</strong> ${ans ? `${ans.selectedOption}) ${q.opzioni[ans.selectedOption]}` : 'Nessuna risposta data'}
+            <strong>Tua risposta:</strong> ${userAnsHtml}
           </div>
           <div style="padding:0.5rem 0.75rem; border-radius:var(--radius-sm); background:var(--success-bg);">
-            <strong style="color:var(--success-badge);">Risposta corretta:</strong> ${q.risposta_corretta}) ${q.opzioni[q.risposta_corretta]}
+            <strong style="color:var(--success-badge);">Risposta corretta:</strong> (${corrLetter}) ${escapeHtml(corrText)}
           </div>
         </div>
 
@@ -3120,9 +3178,14 @@
       if (!q) return;
 
       if (!AppState.training.userAnswers[q.id]) {
+        const displayOpts = getDisplayOptions(q);
+        const corrOpt = displayOpts.find(o => o.isCorrect);
+        const corrDisplayLetter = corrOpt ? corrOpt.displayLetter : q.risposta_corretta;
+
         // Segna come risposta consultata
         AppState.training.userAnswers[q.id] = {
           selectedOption: q.risposta_corretta,
+          selectedDisplayLetter: corrDisplayLetter,
           isCorrect: true,
           revealed: true,
           timestamp: Date.now()
@@ -3400,7 +3463,7 @@
 
         const currentCount = AppState.allQuestions.length;
         const totalInManifest = manifest.totalQuestions || manifest.questionsCount || 0;
-        const currentCode = 704; // v7.0.4
+        const currentCode = 705; // v7.0.5
         const hasNewVersionCode = manifest.versionCode && manifest.versionCode > currentCode;
 
         // Riconoscimento avanzato aggiornamento Banca Dati online
