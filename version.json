@@ -5,6 +5,6 @@
   "totalQuestions": 949,
   "updatedAt": "2026-11-19",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
-  "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/app-release.apk",
+  "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/Concorso_2026.apk",
   "changelog": "Versione 7.0.5: Risolto disallineamento lettere opzioni (A, B, C, D) nei messaggi di spiegazione immediata e revisione d'esame con opzioni casuali attive."
 }
