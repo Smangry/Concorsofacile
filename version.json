@@ -1,9 +1,10 @@
 {
-  "versionCode": 610,
-  "versionName": "6.1.0",
+  "versionCode": 702,
+  "versionName": "7.0.2",
+  "databaseVersion": "7.0.2",
   "totalQuestions": 949,
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-19",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/app-release.apk",
-  "changelog": "Versione 6.1.0: Banca dati ufficiale ribilanciata equamente (25% per opzione), randomizzazione dinamica di domande e risposte (A, B, C, D) e fix sincronizzazione Cloud Firebase."
+  "changelog": "Versione 7.0.2: Sbloccato lo scroll naturale con rotellina del mouse/touchpad e corretta dicitura in banca dati di esercitazione e preparazione."
 }

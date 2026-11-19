@@ -1,8 +1,8 @@
 /**
- * BANCA DATI UFFICIALE CONCORSO UNISS 2026
- * Versione 6.0.0 - 949 Quesiti completi con spiegazioni
+ * BANCA DATI DI ESERCITAZIONE CONCORSO UniSS 2026 - VERSIONE 6.1 BILANCIATA
+ * Totale quesiti: 949 con spiegazioni e distribuzione equa delle risposte
  */
-var BANCA_DATI = {
+window.BANCA_DATI = {
   "titolo": "Banca Dati Completa Concorso UniSS - 15 Collaboratori Amministrativi (Preselettiva + Scritto/Orale)",
   "versione": "6.0",
   "totale_quesiti": 949,
@@ -85,10 +85,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Quattro anni, rinnovabile una sola volta",
         "B": "Cinque anni, non rieleggibile",
-        "C": "Sei anni, non rieleggibile",
-        "D": "Tre anni, rinnovabile due volte"
+        "C": "Tre anni, rinnovabile due volte",
+        "D": "Sei anni, non rieleggibile"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 20, comma 3 dello Statuto UniSS, il Rettore resta in carica sei anni e non è rieleggibile; alla scadenza del primo triennio presenta al Senato Accademico un rapporto di metà mandato."
     },
     {
@@ -97,12 +97,12 @@ var BANCA_DATI = {
       "argomento": "Rettore",
       "domanda": "Ai sensi dell'art. 21 dello Statuto UniSS, chi indice le votazioni per l'elezione del Rettore?",
       "opzioni": {
-        "A": "Il Direttore Generale",
+        "A": "Il Decano",
         "B": "Il Prorettore vicario",
-        "C": "Il Decano",
+        "C": "Il Direttore Generale",
         "D": "Il Presidente del Consiglio di Amministrazione"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 21, comma 4 dello Statuto stabilisce che le votazioni per l'elezione del Rettore sono indette dal Decano e sono valide se vi partecipa la maggioranza degli elettori."
     },
     {
@@ -140,11 +140,11 @@ var BANCA_DATI = {
       "domanda": "Quanti rappresentanti del personale tecnico-amministrativo fanno parte del Senato Accademico dell'Università di Sassari?",
       "opzioni": {
         "A": "Uno",
-        "B": "Due",
+        "B": "Quattro",
         "C": "Tre",
-        "D": "Quattro"
+        "D": "Due"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 24, comma 1, lett. d) dello Statuto stabilisce che del Senato Accademico fanno parte due rappresentanti del personale tecnico-amministrativo, eletti dall'insieme del personale stesso."
     },
     {
@@ -153,12 +153,12 @@ var BANCA_DATI = {
       "argomento": "Senato Accademico",
       "domanda": "Ai sensi dell'art. 24 dello Statuto UniSS, quanto restano in carica i rappresentanti del personale tecnico-amministrativo e i docenti elettivi nel Senato Accademico?",
       "opzioni": {
-        "A": "Due anni, rieleggibili una sola volta",
+        "A": "Tre anni, immediatamente rieleggibili per una sola volta",
         "B": "Quattro anni, non rieleggibili",
-        "C": "Tre anni, immediatamente rieleggibili per una sola volta",
+        "C": "Due anni, rieleggibili una sola volta",
         "D": "Sei anni, come il Rettore"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 24, comma 3 stabilisce che i membri del Senato Accademico restano in carica tre anni e sono immediatamente rieleggibili per una sola volta (fanno eccezione il Rettore e i Direttori di Dipartimento, che durano quanto il loro mandato, e gli studenti, che restano in carica due anni)."
     },
     {
@@ -168,11 +168,11 @@ var BANCA_DATI = {
       "domanda": "Con quale frequenza minima il Senato Accademico deve essere convocato dal Rettore ai sensi dell'art. 24 dello Statuto?",
       "opzioni": {
         "A": "Almeno una volta al mese",
-        "B": "Almeno una volta ogni due mesi",
-        "C": "Non meno di una volta ogni tre mesi",
+        "B": "Non meno di una volta ogni tre mesi",
+        "C": "Almeno una volta ogni due mesi",
         "D": "Almeno due volte l'anno"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 24, comma 5 dello Statuto, il Senato Accademico è convocato e presieduto dal Rettore non meno di una volta ogni tre mesi o qualora ne facciano richiesta almeno un terzo dei suoi membri."
     },
     {
@@ -182,11 +182,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 23, comma 3 dello Statuto UniSS, dopo quanto tempo dall'inizio del mandato del Rettore il Senato Accademico può proporre al corpo elettorale una mozione di sfiducia?",
       "opzioni": {
         "A": "Non prima che sia trascorso un anno",
-        "B": "Non prima che siano trascorsi due anni",
-        "C": "Non prima che siano trascorsi tre anni (dopo il rapporto di metà mandato)",
+        "B": "Non prima che siano trascorsi tre anni (dopo il rapporto di metà mandato)",
+        "C": "Non prima che siano trascorsi due anni",
         "D": "In qualsiasi momento del mandato"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 23, comma 3 prevede che il Senato Accademico possa proporre al corpo elettorale, con la maggioranza di almeno due terzi dei suoi componenti, una mozione di sfiducia al Rettore non prima che siano trascorsi due anni dall'inizio del suo mandato."
     },
     {
@@ -196,11 +196,11 @@ var BANCA_DATI = {
       "domanda": "Da quanti membri è costituito complessivamente il Consiglio di Amministrazione dell'Università degli Studi di Sassari?",
       "opzioni": {
         "A": "Nove membri",
-        "B": "Undici membri",
+        "B": "Quindici membri",
         "C": "Tredici membri",
-        "D": "Quindici membri"
+        "D": "Undici membri"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 26, comma 1 dello Statuto UniSS, il Consiglio di Amministrazione è costituito da undici membri: il Rettore, 3 membri esterni, 4 docenti di ruolo dell'Ateneo, 1 rappresentante del personale tecnico-amministrativo e 2 rappresentanti degli studenti."
     },
     {
@@ -209,12 +209,12 @@ var BANCA_DATI = {
       "argomento": "Consiglio di Amministrazione",
       "domanda": "Quanto durano in carica i membri non studenteschi del Consiglio di Amministrazione dell'Università di Sassari?",
       "opzioni": {
-        "A": "Tre anni, rieleggibili una sola volta",
-        "B": "Quattro anni, immediatamente rieleggibili per una sola volta",
+        "A": "Quattro anni, immediatamente rieleggibili per una sola volta",
+        "B": "Tre anni, rieleggibili una sola volta",
         "C": "Cinque anni, non rieleggibili",
         "D": "Sei anni, come il Rettore"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 26, comma 6 dello Statuto, i membri del Consiglio di Amministrazione durano in carica quattro anni (ad eccezione degli studenti che restano in carica due anni) e sono immediatamente rieleggibili per una sola volta."
     },
     {
@@ -224,11 +224,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 26, comma 4 dello Statuto UniSS, per quanto tempo antecedente alla designazione i membri esterni del CdA non devono aver appartenuto ai ruoli dell'Ateneo?",
       "opzioni": {
         "A": "Almeno un anno precedente",
-        "B": "Almeno due anni precedenti",
-        "C": "Almeno tre anni precedenti",
+        "B": "Almeno tre anni precedenti",
+        "C": "Almeno due anni precedenti",
         "D": "Almeno cinque anni precedenti"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 26, comma 4 dispone che i membri esterni del CdA non possono appartenere ai ruoli dell'Ateneo a decorrere dai tre anni precedenti la designazione e per tutta la durata dell'incarico, né possono essere studenti dell'Ateneo."
     },
     {
@@ -238,11 +238,11 @@ var BANCA_DATI = {
       "domanda": "Con quale titolo il Direttore Generale partecipa alle sedute del Consiglio di Amministrazione e del Senato Accademico?",
       "opzioni": {
         "A": "Con voto deliberativo",
-        "B": "Con voto consultivo",
-        "C": "Senza diritto di parola né di voto, solo con funzioni di segretario verbalizzante",
+        "B": "Senza diritto di parola né di voto, solo con funzioni di segretario verbalizzante",
+        "C": "Con voto consultivo",
         "D": "Con voto deliberativo solo sulle questioni di bilancio"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi degli artt. 24, comma 2, 26, comma 2 e 27, comma 2 lett. g) dello Statuto, il Direttore Generale partecipa alle sedute sia del Senato Accademico sia del Consiglio di Amministrazione con voto consultivo."
     },
     {
@@ -253,10 +253,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Il Rettore, con durata di sei anni non rinnovabile",
         "B": "Il Senato Accademico, con durata di tre anni rinnovabile",
-        "C": "Il Consiglio di Amministrazione su proposta del Rettore (sentito il Senato Accademico), con durata non superiore a quattro anni e rinnovabile",
-        "D": "Il Ministero dell'Università e della Ricerca, a tempo indeterminato"
+        "C": "Il Ministero dell'Università e della Ricerca, a tempo indeterminato",
+        "D": "Il Consiglio di Amministrazione su proposta del Rettore (sentito il Senato Accademico), con durata non superiore a quattro anni e rinnovabile"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 27, commi 4 e 5 dello Statuto, l'incarico di Direttore Generale è attribuito dal CdA, su proposta del Rettore e sentito il parere del Senato Accademico, ha durata non superiore ai quattro anni ed è rinnovabile."
     },
     {
@@ -265,12 +265,12 @@ var BANCA_DATI = {
       "argomento": "Organi consultivi e di controllo",
       "domanda": "Ai sensi dell'art. 28 dello Statuto UniSS, da quanti membri è composto il Consiglio del personale tecnico-amministrativo?",
       "opzioni": {
-        "A": "Sette membri",
+        "A": "Undici membri",
         "B": "Nove membri",
-        "C": "Undici membri",
+        "C": "Sette membri",
         "D": "Quindici membri"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 28, comma 4 stabilisce che il Consiglio del personale tecnico-amministrativo è composto da undici membri, tra i quali elegge un Presidente; i suoi membri restano in carica tre anni e sono immediatamente rieleggibili per una sola volta."
     },
     {
@@ -308,11 +308,11 @@ var BANCA_DATI = {
       "domanda": "Con quale maggioranza viene approvata la revisione dello Statuto dell'Università degli Studi di Sassari ai sensi dell'art. 67?",
       "opzioni": {
         "A": "Maggioranza assoluta del Senato Accademico e maggioranza semplice del CdA",
-        "B": "Maggioranza dei due terzi degli aventi diritto al voto sia nel Senato Accademico sia nel Consiglio di Amministrazione",
+        "B": "Maggioranza assoluta del Consiglio di Amministrazione, sentito il Senato Accademico",
         "C": "Maggioranza dei tre quinti dei presenti nel Senato Accademico",
-        "D": "Maggioranza assoluta del Consiglio di Amministrazione, sentito il Senato Accademico"
+        "D": "Maggioranza dei due terzi degli aventi diritto al voto sia nel Senato Accademico sia nel Consiglio di Amministrazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 67, comma 2 dello Statuto stabilisce che la revisione è approvata se deliberata dal Senato Accademico, previo parere favorevole del Consiglio di Amministrazione, i quali deliberano entrambi con la maggioranza dei due terzi degli aventi diritto al voto."
     },
     {
@@ -321,12 +321,12 @@ var BANCA_DATI = {
       "argomento": "Organi consultivi e di controllo",
       "domanda": "Ai sensi dell'art. 29 dello Statuto UniSS, quanto dura in carica il Consiglio degli Studenti e da chi è eletto il suo Presidente?",
       "opzioni": {
-        "A": "Dura in carica tre anni e il Presidente è nominato dal Rettore",
-        "B": "Dura in carica due anni ed elegge un Presidente tra gli studenti eletti a collegio unico",
+        "A": "Dura in carica due anni ed elegge un Presidente tra gli studenti eletti a collegio unico",
+        "B": "Dura in carica tre anni e il Presidente è nominato dal Rettore",
         "C": "Dura in carica due anni e il Presidente è di diritto lo studente più anziano nel CdA",
         "D": "Dura in carica quattro anni ed elegge un Presidente tra i rappresentanti dei dottorandi"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 29, comma 6 dello Statuto stabilisce che il Consiglio degli Studenti resta in carica due anni ed elegge un Presidente tra gli studenti eletti a collegio unico, il quale designa a sua volta un Vicepresidente."
     },
     {
@@ -335,12 +335,12 @@ var BANCA_DATI = {
       "argomento": "Organi consultivi e di controllo",
       "domanda": "Da quanti membri effettivi e supplenti è composto il Collegio dei revisori dei conti dell'Università degli Studi di Sassari?",
       "opzioni": {
-        "A": "Tre membri effettivi e due supplenti",
-        "B": "Cinque membri effettivi e due supplenti",
+        "A": "Cinque membri effettivi e due supplenti",
+        "B": "Tre membri effettivi e due supplenti",
         "C": "Tre membri effettivi e tre supplenti",
         "D": "Quattro membri effettivi e un supplente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 30, comma 3 dello Statuto, il Collegio dei revisori dei conti è composto da tre membri effettivi (di cui uno con funzioni di Presidente designato dal Senato Accademico su proposta del Rettore) e due supplenti (designati uno dal MEF e uno dal Ministero dell'Università)."
     },
     {
@@ -350,11 +350,11 @@ var BANCA_DATI = {
       "domanda": "Quale requisito professionale devono possedere almeno due dei membri del Collegio dei revisori dei conti di UniSS ai sensi dell'art. 30, comma 4?",
       "opzioni": {
         "A": "Essere professori ordinari di economia aziendale dell'Ateneo",
-        "B": "Essere iscritti al Registro dei Revisori contabili",
-        "C": "Aver ricoperto l'incarico di Direttore Generale in un ente pubblico",
+        "B": "Aver ricoperto l'incarico di Direttore Generale in un ente pubblico",
+        "C": "Essere iscritti al Registro dei Revisori contabili",
         "D": "Essere avvocati iscritti all'albo speciale dei cassazionisti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 30, comma 4 dello Statuto prevede che i membri del Collegio non possano appartenere ai ruoli del personale dipendente dell'Ateneo e che almeno due di essi debbano essere iscritti al Registro dei Revisori contabili."
     },
     {
@@ -364,11 +364,11 @@ var BANCA_DATI = {
       "domanda": "Da quanti membri è composto il Nucleo di Valutazione dell'Università degli Studi di Sassari secondo l'art. 31 dello Statuto?",
       "opzioni": {
         "A": "Cinque membri, di cui tre interni e due esterni",
-        "B": "Sei membri: due docenti di ruolo dell'Ateneo (uno Presidente), un rappresentante degli studenti e tre componenti esterni",
+        "B": "Nove membri nominati interamente dal Senato Accademico",
         "C": "Sette membri: quattro esterni e tre interni",
-        "D": "Nove membri nominati interamente dal Senato Accademico"
+        "D": "Sei membri: due docenti di ruolo dell'Ateneo (uno Presidente), un rappresentante degli studenti e tre componenti esterni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 31, comma 3 dello Statuto, il Nucleo di Valutazione è composto da sei membri nominati dal Rettore: due docenti di ruolo dell'Ateneo (di cui uno con funzioni di Presidente), un rappresentante degli studenti eletto dal Consiglio degli Studenti e tre componenti esterni ai ruoli dell'Ateneo."
     },
     {
@@ -377,12 +377,12 @@ var BANCA_DATI = {
       "argomento": "Organi consultivi e di controllo",
       "domanda": "Quale organo infligge l'eventuale sanzione disciplinare nei confronti dei docenti per fatti che diano luogo a una sanzione più grave della censura?",
       "opzioni": {
-        "A": "Il Rettore, con proprio decreto insindacabile",
+        "A": "Il Consiglio di Amministrazione, conformemente al parere vincolante espresso dal Collegio di Disciplina",
         "B": "Il Collegio di Disciplina direttamente",
-        "C": "Il Consiglio di Amministrazione, conformemente al parere vincolante espresso dal Collegio di Disciplina",
+        "C": "Il Rettore, con proprio decreto insindacabile",
         "D": "Il Senato Accademico a maggioranza assoluta"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 32, commi 4 e 5 dello Statuto, per sanzioni più gravi della censura il Rettore avvia il procedimento trasmettendo gli atti al Collegio di Disciplina; il Consiglio di Amministrazione infligge poi l'eventuale sanzione conformemente al parere vincolante del Collegio."
     },
     {
@@ -391,12 +391,12 @@ var BANCA_DATI = {
       "argomento": "Organi consultivi e di controllo",
       "domanda": "A chi spetta irrogare le sanzioni disciplinari nei confronti dei docenti che non siano superiori alla censura?",
       "opzioni": {
-        "A": "Al Rettore, previo parere del Collegio di Disciplina",
-        "B": "Al Direttore di Dipartimento di afferenza",
+        "A": "Al Direttore di Dipartimento di afferenza",
+        "B": "Al Rettore, previo parere del Collegio di Disciplina",
         "C": "Al Direttore Generale",
         "D": "Al Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 20, comma 2, lett. f) e l'art. 32, comma 6 dello Statuto stabiliscono che il Rettore irroga i provvedimenti disciplinari nei confronti dei docenti consistenti in sanzioni non superiori alla censura, previo parere del Collegio di Disciplina."
     },
     {
@@ -406,11 +406,11 @@ var BANCA_DATI = {
       "domanda": "Da chi è scelto e nominato il Garante degli studenti ai sensi dell'art. 34 dello Statuto UniSS?",
       "opzioni": {
         "A": "È eletto direttamente dagli studenti tra i professori ordinari e dura in carica tre anni",
-        "B": "È scelto fra soggetti esterni all'Ateneo, nominato con decreto del Rettore su proposta del Consiglio degli Studenti, e dura in carica due anni",
-        "C": "È nominato dal Direttore Generale tra i funzionari amministrativi e dura in carica quattro anni",
+        "B": "È nominato dal Direttore Generale tra i funzionari amministrativi e dura in carica quattro anni",
+        "C": "È scelto fra soggetti esterni all'Ateneo, nominato con decreto del Rettore su proposta del Consiglio degli Studenti, e dura in carica due anni",
         "D": "È designato dal Senato Accademico tra i ricercatori a tempo indeterminato"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 34, comma 3 dello Statuto, il Garante degli studenti è scelto fra soggetti esterni all'Ateneo con competenza giuridico-amministrativa, è nominato con decreto del Rettore su proposta del Consiglio degli Studenti, dura in carica due anni ed è immediatamente riconfermabile per una sola volta."
     },
     {
@@ -420,11 +420,11 @@ var BANCA_DATI = {
       "domanda": "Quali sono gli organi del Dipartimento secondo l'art. 37, comma 3 dello Statuto dell'Università degli Studi di Sassari?",
       "opzioni": {
         "A": "Il Direttore, il Vicedirettore e il Responsabile amministrativo",
-        "B": "Il Consiglio del Dipartimento, il Direttore e la Giunta",
+        "B": "Il Direttore, il Senato di Dipartimento e il Comitato per la ricerca",
         "C": "Il Consiglio del Dipartimento, il Presidente e la Commissione paritetica",
-        "D": "Il Direttore, il Senato di Dipartimento e il Comitato per la ricerca"
+        "D": "Il Consiglio del Dipartimento, il Direttore e la Giunta"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 37, comma 3 dello Statuto stabilisce che sono organi del Dipartimento il Consiglio del Dipartimento, il Direttore e la Giunta (nell'ambito del Dipartimento è inoltre istituita la Commissione paritetica docenti-studenti)."
     },
     {
@@ -433,12 +433,12 @@ var BANCA_DATI = {
       "argomento": "Dipartimenti",
       "domanda": "Qual è il numero minimo ordinario di docenti necessario per presentare la proposta di istituzione di un Dipartimento ai sensi dell'art. 38 dello Statuto?",
       "opzioni": {
-        "A": "Non inferiore a venticinque docenti",
-        "B": "Non inferiore a trentacinque docenti (ovvero venti, purché costituiscano almeno l'80% dei docenti dell'Ateneo di una medesima area disciplinare)",
+        "A": "Non inferiore a trentacinque docenti (ovvero venti, purché costituiscano almeno l'80% dei docenti dell'Ateneo di una medesima area disciplinare)",
+        "B": "Non inferiore a venticinque docenti",
         "C": "Non inferiore a cinquanta docenti",
         "D": "Non inferiore a quindici professori ordinari"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 38, comma 1 dello Statuto, la proposta di istituzione del Dipartimento è presentata da un gruppo di docenti non inferiore a 35, ovvero 20 purché costituiscano almeno l'80% di tutti i professori e ricercatori dell'Università appartenenti a una medesima area disciplinare."
     },
     {
@@ -448,11 +448,11 @@ var BANCA_DATI = {
       "domanda": "Per quanto tempo minimo deve essere mantenuta l'afferenza di un docente a un Dipartimento ai sensi dell'art. 38, comma 4 dello Statuto?",
       "opzioni": {
         "A": "Almeno un anno accademico",
-        "B": "Almeno un biennio",
-        "C": "Almeno un triennio",
+        "B": "Almeno un triennio",
+        "C": "Almeno un biennio",
         "D": "Almeno un quinquennio"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 38, comma 4 stabilisce che, al fine di garantire la stabilità dell'organizzazione della ricerca e dell'offerta formativa dei Dipartimenti, l'afferenza dei docenti deve essere mantenuta per almeno un triennio."
     },
     {
@@ -461,12 +461,12 @@ var BANCA_DATI = {
       "argomento": "Dipartimenti",
       "domanda": "Quando si scioglie un Dipartimento ai sensi dell'art. 38, comma 5 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Quando il numero dei docenti afferenti scenda al di sotto dei 35 e non sia ricostituito entro un anno",
+        "A": "Quando non attiva almeno tre corsi di laurea triennale",
         "B": "Quando il numero dei docenti afferenti scenda al di sotto dei 25 per due anni consecutivi",
-        "C": "Quando non attiva almeno tre corsi di laurea triennale",
+        "C": "Quando il numero dei docenti afferenti scenda al di sotto dei 35 e non sia ricostituito entro un anno",
         "D": "Quando il Consiglio di Amministrazione non approva il budget per due esercizi"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 38, comma 5 prevede espressamente che il Dipartimento si scioglie quando il numero dei docenti afferenti scenda al di sotto dei trentacinque e non sia ricostituito entro un anno."
     },
     {
@@ -476,11 +476,11 @@ var BANCA_DATI = {
       "domanda": "In che proporzione i rappresentanti del personale tecnico-amministrativo fanno parte del Consiglio del Dipartimento ai sensi dell'art. 39, comma 3?",
       "opzioni": {
         "A": "Uno ogni dieci docenti",
-        "B": "Uno ogni venti docenti",
+        "B": "Pari al 15% dei membri del Consiglio",
         "C": "Sempre in numero fisso di due rappresentanti",
-        "D": "Pari al 15% dei membri del Consiglio"
+        "D": "Uno ogni venti docenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 39, comma 3, lett. c) stabilisce che fanno parte del Consiglio del Dipartimento i rappresentanti del personale tecnico-amministrativo assegnati al Dipartimento in proporzione di uno ogni venti docenti (mentre gli studenti sono pari al 15% dei membri)."
     },
     {
@@ -489,12 +489,12 @@ var BANCA_DATI = {
       "argomento": "Dipartimenti",
       "domanda": "A che titolo il Responsabile amministrativo del Dipartimento partecipa al Consiglio del Dipartimento e alla Giunta del Dipartimento?",
       "opzioni": {
-        "A": "Con voto deliberativo in entrambi gli organi",
-        "B": "Al Consiglio con voto consultivo e alla Giunta senza diritto di voto",
+        "A": "Al Consiglio con voto consultivo e alla Giunta senza diritto di voto",
+        "B": "Con voto deliberativo in entrambi gli organi",
         "C": "Con voto consultivo in entrambi gli organi",
         "D": "Non partecipa né al Consiglio né alla Giunta"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 39, comma 3, lett. g), il Responsabile amministrativo del Dipartimento fa parte del Consiglio di Dipartimento con voto consultivo; ai sensi dell'art. 41, comma 2, partecipa alle riunioni della Giunta senza diritto di voto."
     },
     {
@@ -518,11 +518,11 @@ var BANCA_DATI = {
       "domanda": "Quanto dura in carica la Commissione paritetica docenti-studenti e quante volte l'anno deve riunirsi almeno?",
       "opzioni": {
         "A": "Resta in carica tre anni e si riunisce almeno una volta l'anno",
-        "B": "Resta in carica due anni e si riunisce almeno due volte l'anno",
-        "C": "Resta in carica quattro anni e si riunisce almeno ogni tre mesi",
+        "B": "Resta in carica quattro anni e si riunisce almeno ogni tre mesi",
+        "C": "Resta in carica due anni e si riunisce almeno due volte l'anno",
         "D": "Resta in carica due anni e si riunisce almeno una volta al mese"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 42, commi 2 e 4 dello Statuto, la Commissione paritetica docenti-studenti si riunisce almeno due volte l'anno, resta in carica due anni e i suoi componenti possono essere immediatamente riconfermati per una sola volta."
     },
     {
@@ -532,11 +532,11 @@ var BANCA_DATI = {
       "domanda": "Qual è il numero massimo di strutture di raccordo che possono essere costituite nell'Università degli Studi di Sassari ai sensi dell'art. 49 dello Statuto?",
       "opzioni": {
         "A": "Non superiore a tre",
-        "B": "Non superiore a sei",
+        "B": "Non c'è un limite numerico fissato dallo Statuto",
         "C": "Non superiore a otto",
-        "D": "Non c'è un limite numerico fissato dallo Statuto"
+        "D": "Non superiore a sei"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 49, comma 1 dello Statuto stabilisce che tra più Dipartimenti possono essere costituite strutture di raccordo, anche a carattere internazionale, in numero non superiore a sei nell'Ateneo."
     },
     {
@@ -545,12 +545,12 @@ var BANCA_DATI = {
       "argomento": "Strutture di raccordo e didattica",
       "domanda": "Quale denominazione assume la struttura di raccordo qualora alle funzioni didattiche e di ricerca si affianchino anche funzioni assistenziali?",
       "opzioni": {
-        "A": "Scuola Superiore di Sanità",
-        "B": "Facoltà di Medicina e Chirurgia",
+        "A": "Facoltà di Medicina e Chirurgia",
+        "B": "Scuola Superiore di Sanità",
         "C": "Dipartimento Assistenziale Integrato",
         "D": "Polo Clinico Universitario"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 56, comma 1 dello Statuto, qualora alle funzioni didattiche e di ricerca si affianchino anche funzioni assistenziali, la struttura di raccordo assume la denominazione di Facoltà di Medicina e Chirurgia."
     },
     {
@@ -574,11 +574,11 @@ var BANCA_DATI = {
       "domanda": "Con quale maggioranza viene deliberato il recesso di un Dipartimento da una struttura di raccordo ai sensi dell'art. 51, comma 4?",
       "opzioni": {
         "A": "A maggioranza semplice dei presenti nel Consiglio del Dipartimento",
-        "B": "A maggioranza assoluta dei membri del Consiglio del Dipartimento",
-        "C": "A maggioranza dei due terzi dei membri del Consiglio del Dipartimento",
+        "B": "A maggioranza dei due terzi dei membri del Consiglio del Dipartimento",
+        "C": "A maggioranza assoluta dei membri del Consiglio del Dipartimento",
         "D": "All'unanimità dei docenti afferenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 51, comma 4 stabilisce che il recesso dalla struttura di raccordo è adottato con deliberazione del Consiglio del Dipartimento, a maggioranza assoluta dei suoi membri."
     },
     {
@@ -588,11 +588,11 @@ var BANCA_DATI = {
       "domanda": "Che natura ha la Scuola superiore di Sardegna disciplinata dall'art. 47 dello Statuto UniSS?",
       "opzioni": {
         "A": "È una struttura di raccordo tra i Dipartimenti umanistici",
-        "B": "È una struttura didattica speciale dotata di autonomia gestionale",
+        "B": "È l'ufficio amministrativo che gestisce i master di I e II livello",
         "C": "È un consorzio esterno partecipato dalla Regione Sardegna",
-        "D": "È l'ufficio amministrativo che gestisce i master di I e II livello"
+        "D": "È una struttura didattica speciale dotata di autonomia gestionale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 47, comma 1 dello Statuto, la Scuola superiore di Sardegna è istituita come struttura didattica speciale dotata di autonomia gestionale, volta a sviluppare la formazione universitaria e post-universitaria d'eccellenza in raccordo con la ricerca."
     },
     {
@@ -601,12 +601,12 @@ var BANCA_DATI = {
       "argomento": "Rapporti con altri enti",
       "domanda": "Che durata ha l'intesa che l'Università degli Studi di Sassari stipula con la Regione Sardegna ai sensi dell'art. 60 dello Statuto?",
       "opzioni": {
-        "A": "Annuale",
+        "A": "Triennale",
         "B": "Biennale",
-        "C": "Triennale",
+        "C": "Annuale",
         "D": "Quinquennale"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 60, comma 1 dello Statuto prevede che l'Ateneo stipuli con la Regione Sardegna un'intesa triennale per interagire con le politiche regionali e indirizzare gli investimenti sugli obiettivi strategici di medio e lungo termine."
     },
     {
@@ -643,12 +643,12 @@ var BANCA_DATI = {
       "argomento": "Cariche elettive e incompatibilità",
       "domanda": "Quale requisito temporale relativo al pensionamento è richiesto per l'elettorato passivo alle cariche accademiche ai sensi dell'art. 63, comma 1 dello Statuto?",
       "opzioni": {
-        "A": "Assicurare un numero di anni di servizio almeno pari alla durata del mandato prima della data di collocamento a riposo",
+        "A": "Assicurare almeno metà della durata del mandato prima del collocamento a riposo",
         "B": "Assicurare almeno due anni di servizio prima del collocamento a riposo",
         "C": "Non aver superato i 60 anni di età al momento della candidatura",
-        "D": "Assicurare almeno metà della durata del mandato prima del collocamento a riposo"
+        "D": "Assicurare un numero di anni di servizio almeno pari alla durata del mandato prima della data di collocamento a riposo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 63, comma 1 dello Statuto riserva l'elettorato passivo o la possibilità di designazione per le cariche accademiche al personale che assicuri un numero di anni di servizio almeno pari alla durata del mandato prima della data di collocamento a riposo."
     },
     {
@@ -657,12 +657,12 @@ var BANCA_DATI = {
       "argomento": "Cariche elettive e incompatibilità",
       "domanda": "Dopo quante assenze non giustificate consecutive i membri degli organi accademici decadono dalla carica ai sensi dell'art. 63, comma 8 dello Statuto?",
       "opzioni": {
-        "A": "Dopo due sedute consecutive",
-        "B": "Dopo più di tre sedute consecutive",
+        "A": "Dopo più di tre sedute consecutive",
+        "B": "Dopo due sedute consecutive",
         "C": "Dopo cinque sedute nell'arco di un anno solare",
         "D": "Dopo sei sedute consecutive"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 63, comma 8 dello Statuto, i membri degli organi accademici decadono qualora non partecipino con continuità alle sedute o risultino assenti non giustificati a più di tre sedute consecutive."
     },
     {
@@ -686,11 +686,11 @@ var BANCA_DATI = {
       "domanda": "Quale organo adotta il Regolamento generale di Ateneo ai sensi dell'art. 66, comma 1, lett. a) dello Statuto?",
       "opzioni": {
         "A": "Il Consiglio di Amministrazione, previo parere del Senato Accademico",
-        "B": "Il Senato Accademico, previo parere del Consiglio di Amministrazione",
-        "C": "Il Rettore con decreto proprio, sentito il Direttore Generale",
+        "B": "Il Rettore con decreto proprio, sentito il Direttore Generale",
+        "C": "Il Senato Accademico, previo parere del Consiglio di Amministrazione",
         "D": "Il Senato Accademico e il Consiglio di Amministrazione in seduta congiunta"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 66, comma 1 distingue chiaramente: il Regolamento generale di Ateneo (lett. a) e il Regolamento didattico di Ateneo (lett. c) sono adottati dal Senato Accademico (previo parere del CdA); il Regolamento di amministrazione, finanza e contabilità (lett. b) è invece adottato dal CdA (previo parere del Senato Accademico)."
     },
     {
@@ -700,11 +700,11 @@ var BANCA_DATI = {
       "domanda": "Con quale maggioranza vengono approvati il Regolamento generale di Ateneo, il Regolamento di amministrazione, finanza e contabilità e il Regolamento didattico di Ateneo?",
       "opzioni": {
         "A": "A maggioranza semplice dei presenti",
-        "B": "A maggioranza assoluta dei componenti degli organi competenti",
+        "B": "A maggioranza dei tre quinti dei votanti",
         "C": "A maggioranza dei due terzi dei componenti",
-        "D": "A maggioranza dei tre quinti dei votanti"
+        "D": "A maggioranza assoluta dei componenti degli organi competenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 66, comma 2 dello Statuto, i regolamenti indicati dalle lettere a), b) e c) (Generale, Amministrazione/Finanza/Contabilità, Didattico) sono approvati dagli organi competenti a maggioranza assoluta dei componenti."
     },
     {
@@ -713,12 +713,12 @@ var BANCA_DATI = {
       "argomento": "Regolamenti di Ateneo",
       "domanda": "A chi compete l'iniziativa per l'elaborazione e la modifica dei regolamenti di Ateneo ai sensi dell'art. 66, comma 4?",
       "opzioni": {
-        "A": "Esclusivamente al Rettore",
-        "B": "Al Rettore o ad almeno un terzo dei componenti dell'organo cui spetta l'approvazione o il parere sugli stessi",
+        "A": "Al Rettore o ad almeno un terzo dei componenti dell'organo cui spetta l'approvazione o il parere sugli stessi",
+        "B": "Esclusivamente al Rettore",
         "C": "Al Direttore Generale o ad almeno metà dei Direttori di Dipartimento",
         "D": "Al Rettore o ad almeno un quinto dei componenti del Senato Accademico"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 66, comma 4 stabilisce che l'iniziativa per l'elaborazione e la modifica dei regolamenti compete al Rettore o ad almeno un terzo dei componenti dell'organo cui spetta l'approvazione o il parere sugli stessi."
     },
     {
@@ -728,11 +728,11 @@ var BANCA_DATI = {
       "domanda": "Quando entrano in vigore i regolamenti di Ateneo emanati con decreto del Rettore (fatta eccezione per casi di necessità e urgenza)?",
       "opzioni": {
         "A": "Il giorno stesso della pubblicazione sul sito dell'Ateneo",
-        "B": "Il settimo giorno successivo alla loro pubblicazione",
-        "C": "Il quindicesimo giorno successivo alla loro pubblicazione",
+        "B": "Il quindicesimo giorno successivo alla loro pubblicazione",
+        "C": "Il settimo giorno successivo alla loro pubblicazione",
         "D": "Il trentesimo giorno successivo alla loro pubblicazione"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 66, comma 5 dello Statuto, i regolamenti sono emanati con decreto del Rettore ed entrano in vigore il quindicesimo giorno successivo dalla loro pubblicazione, fatta eccezione per casi di necessità e urgenza."
     },
     {
@@ -741,12 +741,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Principi e Manuali",
       "domanda": "Ai sensi dell'art. 2, comma 5 del Regolamento di Amministrazione, Finanza e Contabilità di UniSS, da chi sono emanati il Manuale di contabilità e il Manuale di controllo di gestione?",
       "opzioni": {
-        "A": "Dal Consiglio di Amministrazione, previo parere del Collegio dei Revisori",
-        "B": "Dal Rettore con proprio provvedimento, su proposta del Direttore Generale",
+        "A": "Dal Rettore con proprio provvedimento, su proposta del Direttore Generale",
+        "B": "Dal Consiglio di Amministrazione, previo parere del Collegio dei Revisori",
         "C": "Dal Direttore Generale, sentito il Dirigente dell'Area bilancio e politiche finanziarie",
         "D": "Dal Senato Accademico a maggioranza assoluta"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 2, comma 5 del Regolamento di Amministrazione, Finanza e Contabilità stabilisce che il Manuale di contabilità e il Manuale di controllo di gestione sono emanati dal Rettore con proprio provvedimento, su proposta del Direttore Generale."
     },
     {
@@ -770,11 +770,11 @@ var BANCA_DATI = {
       "domanda": "Quali sono i Centri di gestione dell'Università degli Studi di Sassari ai sensi dell'art. 8, comma 2 del Regolamento di Amministrazione, Finanza e Contabilità?",
       "opzioni": {
         "A": "Esclusivamente i Dipartimenti",
-        "B": "Centri dotati di autonomia gestionale e amministrativa e Strutture dirigenziali",
-        "C": "Amministrazione Centrale, Biblioteche e Azienda Ospedaliero-Universitaria",
+        "B": "Amministrazione Centrale, Biblioteche e Azienda Ospedaliero-Universitaria",
+        "C": "Centri dotati di autonomia gestionale e amministrativa e Strutture dirigenziali",
         "D": "Rettorato, Senato Accademico e Consiglio di Amministrazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 8, comma 2 stabilisce che i Centri di gestione sono i Centri dotati di autonomia gestionale e amministrativa e le Strutture dirigenziali, a loro volta strutturati in Centri di costo."
     },
     {
@@ -784,11 +784,11 @@ var BANCA_DATI = {
       "domanda": "Quale sistema contabile adotta l'Università degli Studi di Sassari ai sensi dell'art. 12 del Regolamento di Amministrazione, Finanza e Contabilità?",
       "opzioni": {
         "A": "Esclusivamente la contabilità finanziaria pubblica",
-        "B": "Il sistema di contabilità economico-patrimoniale ed il bilancio unico d'ateneo, nonché la contabilità analitica",
+        "B": "La sola contabilità analitica per centri di ricavo",
         "C": "La contabilità di cassa semplificata per ciascun Dipartimento",
-        "D": "La sola contabilità analitica per centri di ricavo"
+        "D": "Il sistema di contabilità economico-patrimoniale ed il bilancio unico d'ateneo, nonché la contabilità analitica"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 12, comma 1 del Regolamento dispone che l'Università degli Studi di Sassari adotta il sistema di contabilità economico-patrimoniale ed il bilancio unico d'ateneo, nonché la contabilità analitica."
     },
     {
@@ -797,12 +797,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Sistema contabile",
       "domanda": "Quale organo adotta un piano di rientro in presenza di risultato economico negativo per due esercizi consecutivi ai sensi dell'art. 16, comma 6 del Regolamento AFC?",
       "opzioni": {
-        "A": "Il Direttore Generale, previo parere del Collegio dei Revisori",
-        "B": "Il Consiglio di Amministrazione, previo parere del Senato Accademico",
+        "A": "Il Consiglio di Amministrazione, previo parere del Senato Accademico",
+        "B": "Il Direttore Generale, previo parere del Collegio dei Revisori",
         "C": "Il Rettore, con decreto d'urgenza",
         "D": "Il Nucleo di Valutazione, sentito il Ministero dell'Economia"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 16, comma 6 del Regolamento, in presenza di risultato economico negativo per due esercizi consecutivi il Consiglio di Amministrazione, previo parere del Senato Accademico, adotta un piano di rientro."
     },
     {
@@ -826,11 +826,11 @@ var BANCA_DATI = {
       "domanda": "Entro quale data il Programma di sviluppo pluriennale è approvato dal Consiglio di Amministrazione ai sensi dell'art. 22, comma 4 del Regolamento AFC?",
       "opzioni": {
         "A": "Entro il 30 aprile dell'anno precedente al triennio di riferimento",
-        "B": "Entro il 30 giugno dell'anno precedente al triennio di riferimento",
-        "C": "Entro il 30 settembre dell'anno precedente al triennio di riferimento",
+        "B": "Entro il 30 settembre dell'anno precedente al triennio di riferimento",
+        "C": "Entro il 30 giugno dell'anno precedente al triennio di riferimento",
         "D": "Entro il 31 dicembre dell'anno precedente al triennio di riferimento"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 22, comma 4 del Regolamento, il programma di sviluppo pluriennale è approvato dal Consiglio di Amministrazione entro il 30 giugno dell'anno precedente al triennio di riferimento (mentre le linee di indirizzo sono approvate entro il 30 luglio)."
     },
     {
@@ -841,10 +841,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Entro il 31 ottobre dell'anno precedente",
         "B": "Entro il 30 novembre dell'anno precedente",
-        "C": "Entro il 31 dicembre dell'anno precedente al triennio di riferimento",
-        "D": "Entro il 31 gennaio dell'anno di riferimento"
+        "C": "Entro il 31 gennaio dell'anno di riferimento",
+        "D": "Entro il 31 dicembre dell'anno precedente al triennio di riferimento"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 28, comma 1 del Regolamento stabilisce che i bilanci preventivi sono approvati, previo parere del Collegio dei Revisori, dal Consiglio di Amministrazione, su proposta del Rettore e sentito il Senato Accademico, entro il 31 dicembre dell'anno precedente al triennio di riferimento."
     },
     {
@@ -853,12 +853,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Programmazione e scadenze",
       "domanda": "Per quale periodo massimo può essere autorizzato l'esercizio provvisorio dal Consiglio di Amministrazione ai sensi dell'art. 29, comma 2 del Regolamento AFC?",
       "opzioni": {
-        "A": "Non superiore a due mesi, nei limiti di un sesto della spesa dell'anno precedente",
-        "B": "Non superiore a tre mesi, nei limiti per ciascun mese di un dodicesimo della spesa dell'anno precedente (oltre a spese obbligatorie e progetti pluriennali già in corso)",
+        "A": "Non superiore a tre mesi, nei limiti per ciascun mese di un dodicesimo della spesa dell'anno precedente (oltre a spese obbligatorie e progetti pluriennali già in corso)",
+        "B": "Non superiore a due mesi, nei limiti di un sesto della spesa dell'anno precedente",
         "C": "Non superiore a quattro mesi, nei limiti di un dodicesimo",
         "D": "Non superiore a sei mesi"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 29, comma 2 del Regolamento, l'esercizio provvisorio può essere autorizzato per un periodo non superiore a tre mesi, durante i quali possono essere sostenute esclusivamente le spese ordinarie nei limiti, per ciascun mese, di un dodicesimo della spesa dell'anno precedente, quelle obbligatorie e quelle relative a progetti pluriennali già in corso."
     },
     {
@@ -882,11 +882,11 @@ var BANCA_DATI = {
       "domanda": "Entro quale data deve essere approvato dal Consiglio di Amministrazione il Bilancio unico d'Ateneo d'esercizio ai sensi dell'art. 45, comma 1 del Regolamento AFC?",
       "opzioni": {
         "A": "Entro il 31 marzo successivo alla chiusura d'esercizio",
-        "B": "Entro il 30 aprile successivo alla chiusura d'esercizio",
-        "C": "Entro il 31 maggio successivo alla chiusura d'esercizio",
+        "B": "Entro il 31 maggio successivo alla chiusura d'esercizio",
+        "C": "Entro il 30 aprile successivo alla chiusura d'esercizio",
         "D": "Entro il 30 giugno successivo alla chiusura d'esercizio"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 45, comma 1 del Regolamento, il bilancio unico d'Ateneo d'esercizio è approvato, previo parere del Collegio dei Revisori, dal Consiglio di Amministrazione, su proposta del Rettore e sentito il Senato Accademico, entro il 30 aprile successivo alla chiusura d'esercizio."
     },
     {
@@ -897,10 +897,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Il Direttore Generale",
         "B": "Il Rettore",
-        "C": "Il Dirigente dell'Area edilizia e patrimonio",
-        "D": "L'Economo dell'Ateneo"
+        "C": "L'Economo dell'Ateneo",
+        "D": "Il Dirigente dell'Area edilizia e patrimonio"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 50, comma 1 del Regolamento dispone che i beni immobili, di proprietà e non, sono dati in consegna al Dirigente dell'Area edilizia e patrimonio, il quale è personalmente responsabile dei beni a lui affidati."
     },
     {
@@ -909,12 +909,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e cespiti",
       "domanda": "Entro quanti giorni dalla nomina del nuovo Direttore Generale o del nuovo Direttore di un Centro dotato di autonomia gestionale occorre procedere al passaggio di consegne dei beni mobili (art. 52, comma 3)?",
       "opzioni": {
-        "A": "Entro 30 giorni",
+        "A": "Entro 90 giorni",
         "B": "Entro 60 giorni",
-        "C": "Entro 90 giorni",
+        "C": "Entro 30 giorni",
         "D": "Entro 120 giorni"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 52, comma 3 del Regolamento, occorre procedere entro 90 giorni al passaggio di consegne sottoscritto in contraddittorio tra consegnatario cessante e subentrante; decorso tale termine, anche in assenza di verbale, il soggetto subentrante è considerato consegnatario."
     },
     {
@@ -924,11 +924,11 @@ var BANCA_DATI = {
       "domanda": "Qual è la soglia di valore unitario oltre la quale le operazioni di scarico dagli inventari dei beni mobili dell'Amministrazione Centrale sono di competenza del Consiglio di Amministrazione anziché del Direttore Generale (art. 53, comma 2)?",
       "opzioni": {
         "A": "Superiore a euro 1.000",
-        "B": "Superiore a euro 3.000",
-        "C": "Superiore a euro 5.000",
+        "B": "Superiore a euro 5.000",
+        "C": "Superiore a euro 3.000",
         "D": "Superiore a euro 10.000"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 53, comma 2 stabilisce che per i beni inventariati dall'Amministrazione Centrale, le operazioni di scarico sono di competenza del Direttore Generale se il valore unitario è inferiore o uguale a euro 5.000, e del Consiglio di Amministrazione per valori superiori."
     },
     {
@@ -951,12 +951,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Controlli",
       "domanda": "Come si articolano i controlli esterni e i controlli interni nel sistema dei controlli previsto dall'art. 58 del Regolamento AFC?",
       "opzioni": {
-        "A": "Controlli esterni: Collegio dei Revisori dei conti e Nucleo di Valutazione; Controlli interni: Internal audit e valutazione e controllo strategico",
+        "A": "Controlli esterni: Ministero dell'Economia; Controlli interni: Collegio dei Revisori dei conti",
         "B": "Controlli esterni: Corte dei Conti e ANVUR; Controlli interni: Rettore e Senato Accademico",
         "C": "Controlli esterni: Collegio dei Revisori dei conti; Controlli interni: Nucleo di Valutazione e CUG",
-        "D": "Controlli esterni: Ministero dell'Economia; Controlli interni: Collegio dei Revisori dei conti"
+        "D": "Controlli esterni: Collegio dei Revisori dei conti e Nucleo di Valutazione; Controlli interni: Internal audit e valutazione e controllo strategico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 58 del Regolamento distingue chiaramente: i controlli esterni sono eseguiti dal Collegio dei Revisori dei conti e dal Nucleo di Valutazione (comma 1), mentre i controlli interni si esplicitano nell'Internal audit e nella valutazione e controllo strategico (comma 2)."
     },
     {
@@ -965,12 +965,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Controlli",
       "domanda": "A chi sono riferiti direttamente i risultati dell'attività di internal audit ai sensi dell'art. 61, comma 3 del Regolamento AFC?",
       "opzioni": {
-        "A": "Esclusivamente al Collegio dei Revisori dei conti",
-        "B": "Al Rettore, al Direttore Generale ed ai Direttori (ovvero ai Dirigenti) dei Centri di gestione",
+        "A": "Al Rettore, al Direttore Generale ed ai Direttori (ovvero ai Dirigenti) dei Centri di gestione",
+        "B": "Esclusivamente al Collegio dei Revisori dei conti",
         "C": "Al Senato Accademico e al Consiglio degli Studenti",
         "D": "Al Ministero dell'Università e della Ricerca"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 61, comma 3 del Regolamento, i risultati dell'attività di internal audit sono riferiti direttamente al Rettore, al Direttore Generale, ed ai Direttori, ovvero ai Dirigenti, dei Centri di gestione."
     },
     {
@@ -994,11 +994,11 @@ var BANCA_DATI = {
       "domanda": "Qual è il limite massimo di valore complessivo nell'arco dell'anno affinché un regalo o un'altra utilità possa essere considerato di 'modico valore' ai sensi dell'art. 13, comma 6 del Codice Etico e di Comportamento UniSS?",
       "opzioni": {
         "A": "Non superiore a 50 euro",
-        "B": "Non superiore a 100 euro, anche sotto forma di sconto",
-        "C": "Non superiore a 150 euro",
+        "B": "Non superiore a 150 euro",
+        "C": "Non superiore a 100 euro, anche sotto forma di sconto",
         "D": "Non superiore a 250 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 13, comma 6 del Codice Etico e di Comportamento di UniSS fissa la soglia del modico valore in 100 euro complessivi nell'arco dell'anno, anche sotto forma di sconto (più restrittiva rispetto al tetto generale nazionale di 150 euro)."
     },
     {
@@ -1008,11 +1008,11 @@ var BANCA_DATI = {
       "domanda": "Che destinazione hanno i regali e le altre utilità ricevuti dai dipendenti fuori dai casi consentiti dall'art. 13 del Codice?",
       "opzioni": {
         "A": "Possono essere trattenuti se di valore inferiore a 200 euro",
-        "B": "Sono immediatamente messi a disposizione dell'Università per la restituzione o per essere devoluti a fini istituzionali",
+        "B": "Devono essere consegnati all'ANAC entro 15 giorni",
         "C": "Vengono devoluti al fondo di solidarietà del personale tecnico-amministrativo",
-        "D": "Devono essere consegnati all'ANAC entro 15 giorni"
+        "D": "Sono immediatamente messi a disposizione dell'Università per la restituzione o per essere devoluti a fini istituzionali"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 13, comma 5 del Codice, i regali e le altre utilità ricevuti fuori dai casi consentiti sono immediatamente messi a disposizione dell'Università per la restituzione o per essere devoluti a fini istituzionali."
     },
     {
@@ -1021,12 +1021,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Conflitto di interessi e associazioni",
       "domanda": "L'obbligo di comunicare al Responsabile della Struttura la propria adesione ad associazioni o organizzazioni i cui ambiti possano interferire con l'attività d'ufficio (art. 14) si applica anche all'adesione a partiti politici o sindacati?",
       "opzioni": {
-        "A": "Sì, sempre e senza eccezioni",
-        "B": "No, l'obbligo non si applica in caso di adesione a partiti politici, sindacati, associazioni religiose o legate a informazioni sensibili",
+        "A": "No, l'obbligo non si applica in caso di adesione a partiti politici, sindacati, associazioni religiose o legate a informazioni sensibili",
+        "B": "Sì, sempre e senza eccezioni",
         "C": "Sì, ma solo per i dirigenti e i professori ordinari",
         "D": "Solo se si ricoprono cariche direttive nel partito o nel sindacato"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 14, comma 1 del Codice esclude espressamente dall'obbligo di comunicazione l'adesione a partiti politici, sindacati, associazioni religiose o legate ad altri ambiti riferiti a informazioni 'sensibili'."
     },
     {
@@ -1036,11 +1036,11 @@ var BANCA_DATI = {
       "domanda": "All'atto dell'assunzione, di quali rapporti retribuiti di collaborazione con soggetti privati il dipendente deve informare per iscritto l'Università ai sensi dell'art. 15, comma 1 del Codice?",
       "opzioni": {
         "A": "Dei rapporti avuti nell'ultimo anno",
-        "B": "Dei rapporti avuti negli ultimi due anni",
-        "C": "Dei rapporti avuti negli ultimi tre anni",
+        "B": "Dei rapporti avuti negli ultimi tre anni",
+        "C": "Dei rapporti avuti negli ultimi due anni",
         "D": "Dei rapporti avuti negli ultimi cinque anni"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 15, comma 1 del Codice, all'atto dell'assunzione i dipendenti informano per iscritto l'Università di tutti i rapporti, diretti o indiretti, di collaborazione con soggetti privati in qualunque modo retribuiti che abbiano o abbiano avuto negli ultimi tre anni."
     },
     {
@@ -1050,11 +1050,11 @@ var BANCA_DATI = {
       "domanda": "Attraverso quale sistema informatico devono essere protocollati elettronicamente gli atti e le disposizioni a valenza esterna emanati dai dipendenti UniSS ai sensi dell'art. 20, comma 11 del Codice?",
       "opzioni": {
         "A": "Sistema U-GOV",
-        "B": "Sistema Titulus",
-        "C": "Sistema Esse3",
+        "B": "Sistema Esse3",
+        "C": "Sistema Titulus",
         "D": "Sistema Cineca-PICA"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 20, comma 11 del Codice Etico e di Comportamento dispone che i dipendenti sono tenuti a non emanare atti e disposizioni a valenza esterna (escluse le comunicazioni informali) che non siano stati protocollati elettronicamente mediante il sistema Titulus."
     },
     {
@@ -1064,11 +1064,11 @@ var BANCA_DATI = {
       "domanda": "Entro quanti giorni dalla diffida a cessare da una situazione di incompatibilità per incarichi extraistituzionali non autorizzati il dipendente decade dal rapporto di lavoro se non vi ottempera (art. 23, comma 2)?",
       "opzioni": {
         "A": "Decorsi sette giorni dalla diffida",
-        "B": "Decorsi quindici giorni dalla diffida",
+        "B": "Decorsi sessanta giorni dalla diffida",
         "C": "Decorsi trenta giorni dalla diffida",
-        "D": "Decorsi sessanta giorni dalla diffida"
+        "D": "Decorsi quindici giorni dalla diffida"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 23, comma 2 del Codice, i dipendenti che contravvengono ai divieti sulle incompatibilità vengono diffidati a cessare dalla situazione; decorsi quindici giorni dalla diffida senza che l'incompatibilità sia cessata, decadono dal rapporto di lavoro."
     },
     {
@@ -1077,12 +1077,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Vigilanza e monitoraggio",
       "domanda": "Chi cura la diffusione della conoscenza del Codice Etico e di Comportamento, il monitoraggio annuale sulla sua attuazione e la comunicazione dei risultati all'ANAC e all'OIV (art. 34, comma 2)?",
       "opzioni": {
-        "A": "Il Rettore",
-        "B": "Il Responsabile della prevenzione della corruzione e della trasparenza",
+        "A": "Il Responsabile della prevenzione della corruzione e della trasparenza",
+        "B": "Il Rettore",
         "C": "Il Presidente del Collegio dei Revisori dei conti",
         "D": "Il Presidente del Consiglio del personale tecnico-amministrativo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 34, comma 2 del Codice attribuisce al Responsabile della prevenzione della corruzione e della trasparenza il compito di curare la diffusione del Codice, il monitoraggio annuale sulla sua attuazione, la pubblicazione sul sito istituzionale e la comunicazione dei risultati all'ANAC e all'OIV."
     },
     {
@@ -1091,12 +1091,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Principi e governance",
       "domanda": "Quale legge ha introdotto la riforma organica dell'organizzazione delle Università, del personale accademico e del reclutamento (nota come Riforma Gelmini)?",
       "opzioni": {
-        "A": "Legge 9 maggio 1989, n. 168",
-        "B": "Legge 30 dicembre 2010, n. 240",
+        "A": "Legge 30 dicembre 2010, n. 240",
+        "B": "Legge 9 maggio 1989, n. 168",
         "C": "Decreto Legislativo 30 marzo 2001, n. 165",
         "D": "Legge 7 agosto 1990, n. 241"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La Legge 30 dicembre 2010, n. 240 ('Norme in materia di organizzazione delle università, di personale accademico e reclutamento, nonché delega al Governo per incentivare la qualità e l'efficienza del sistema universitario') ha ridefinito la governance degli atenei."
     },
     {
@@ -1105,12 +1105,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Principi e governance",
       "domanda": "Ai sensi dell'art. 2, comma 1 della Legge 240/2010, quali sono gli organi necessari delle Università statali?",
       "opzioni": {
-        "A": "Rettore, Senato Accademico, Consiglio di Amministrazione, Collegio dei Revisori dei conti, Nucleo di Valutazione e Direttore Generale",
-        "B": "Rettore, Presidi di Facoltà, Consiglio Studentesco e Direttore Amministrativo",
+        "A": "Rettore, Presidi di Facoltà, Consiglio Studentesco e Direttore Amministrativo",
+        "B": "Rettore, Senato Accademico, Consiglio di Amministrazione, Collegio dei Revisori dei conti, Nucleo di Valutazione e Direttore Generale",
         "C": "Rettore, Senato Accademico, Giunta Esecutiva e Corte dei Conti",
         "D": "Direttore Generale, Consiglio di Amministrazione, Collegio dei Sindaci e Consulta dei Dipartimenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 2, comma 1 della Legge 240/2010 individua quali organi necessari delle università statali: il Rettore, il Senato Accademico, il Consiglio di Amministrazione, il Collegio dei Revisori dei conti, il Nucleo di Valutazione e il Direttore Generale."
     },
     {
@@ -1120,11 +1120,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. d) della Legge 240/2010, qual è il numero massimo di componenti del Senato Accademico fissato dalla legge statale?",
       "opzioni": {
         "A": "Non superiore a 20 membri",
-        "B": "Non superiore a 35 membri, compresi il Rettore e una rappresentanza elettiva degli studenti",
-        "C": "Non superiore a 50 membri",
+        "B": "Non superiore a 50 membri",
+        "C": "Non superiore a 35 membri, compresi il Rettore e una rappresentanza elettiva degli studenti",
         "D": "Esattamente 11 membri"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 2, comma 1, lett. d) della Legge 240/2010 stabilisce che il Senato Accademico sia costituito su base elettiva in numero non superiore a 35 membri, compresi il Rettore e una rappresentanza elettiva degli studenti, e composto per almeno due terzi da docenti di ruolo (di cui almeno un terzo direttori di dipartimento)."
     },
     {
@@ -1134,11 +1134,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. i) della Legge 240/2010, quale numero massimo di componenti può avere il Consiglio di Amministrazione di un'Università statale?",
       "opzioni": {
         "A": "Numero massimo di 7 componenti",
-        "B": "Numero massimo di 11 componenti, compreso il Rettore e una rappresentanza elettiva degli studenti",
+        "B": "Numero massimo di 21 componenti",
         "C": "Numero massimo di 15 componenti",
-        "D": "Numero massimo di 21 componenti"
+        "D": "Numero massimo di 11 componenti, compreso il Rettore e una rappresentanza elettiva degli studenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 2, comma 1, lett. i) della Legge 240/2010 prevede che il Consiglio di Amministrazione sia composto da un numero massimo di 11 componenti (incluso il Rettore e una rappresentanza elettiva degli studenti), di cui almeno 3 (o almeno 2 se il CdA ha meno di 11 membri) non appartenenti ai ruoli dell'Ateneo."
     },
     {
@@ -1147,12 +1147,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Direttore Generale",
       "domanda": "Quale figura prevista dalla Legge 240/2010 (art. 2, comma 1, lett. n) ha sostituito il precedente 'Direttore Amministrativo' nelle Università statali?",
       "opzioni": {
-        "A": "Il Segretario Generale di Ateneo",
-        "B": "Il Direttore Generale",
+        "A": "Il Direttore Generale",
+        "B": "Il Segretario Generale di Ateneo",
         "C": "Il Dirigente Capo dell'Amministrazione",
         "D": "Il Prorettore all'Amministrazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La Legge 240/2010, all'art. 2, comma 1, lett. n), ha sostituito la figura del Direttore Amministrativo con quella del Direttore Generale, dotato di compiti di complessiva gestione e organizzazione dei servizi, delle risorse strumentali e del personale tecnico-amministrativo."
     },
     {
@@ -1175,12 +1175,12 @@ var BANCA_DATI = {
       "argomento": "Autonomia universitaria",
       "domanda": "Quale legge ha istituito il Ministero dell'Università e della Ricerca Scientifica e Tecnologica (MURST) e dato attuazione all'autonomia statutaria, regolamentare, didattica e finanziaria delle Università?",
       "opzioni": {
-        "A": "Legge 9 maggio 1989, n. 168",
+        "A": "Legge 24 dicembre 1993, n. 537",
         "B": "Legge 15 marzo 1997, n. 59",
-        "C": "Legge 24 dicembre 1993, n. 537",
+        "C": "Legge 9 maggio 1989, n. 168",
         "D": "Legge 19 novembre 1990, n. 341"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La Legge 9 maggio 1989, n. 168 (nota come Legge Ruberti) ha istituito il Ministero dedicato all'Università e alla Ricerca e ha riconosciuto alle Università autonomia didattica, scientifica, organizzativa, finanziaria e contabile, nonché il potere di dotarsi di propri Statuti e Regolamenti."
     },
     {
@@ -1190,11 +1190,11 @@ var BANCA_DATI = {
       "domanda": "Nel vigente sistema di classificazione del personale tecnico-amministrativo delle Università (CCNL Comparto Istruzione e Ricerca 2019-2021, sottoscritto il 18/01/2024), in quali quattro Aree è articolato il personale?",
       "opzioni": {
         "A": "Categorie B, C, D, EP",
-        "B": "Area degli Operatori, Area dei Collaboratori, Area dei Funzionari, Area delle Elevate Professionalità",
+        "B": "Prima, Seconda, Terza e Quarta Qualifica Funzionale",
         "C": "Area Ausiliaria, Area Esecutiva, Area Direttiva, Area Dirigenziale",
-        "D": "Prima, Seconda, Terza e Quarta Qualifica Funzionale"
+        "D": "Area degli Operatori, Area dei Collaboratori, Area dei Funzionari, Area delle Elevate Professionalità"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il CCNL Istruzione e Ricerca 2019-2021 (firmato il 18 gennaio 2024) ha superato le vecchie categorie B, C, D ed EP istituendo quattro nuove Aree: Operatori, Collaboratori (in cui confluisce l'ex categoria C), Funzionari ed Elevate Professionalità."
     },
     {
@@ -1203,12 +1203,12 @@ var BANCA_DATI = {
       "argomento": "CCNL Istruzione e Ricerca - Area Collaboratori",
       "domanda": "Qual è il titolo di studio richiesto per l'accesso dall'esterno all'Area dei Collaboratori nel Comparto Istruzione e Ricerca (settore Università)?",
       "opzioni": {
-        "A": "Diploma di istruzione secondaria di primo grado",
-        "B": "Diploma di istruzione secondaria di secondo grado",
+        "A": "Diploma di istruzione secondaria di secondo grado",
+        "B": "Diploma di istruzione secondaria di primo grado",
         "C": "Laurea triennale",
         "D": "Laurea magistrale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Secondo il CCNL Comparto Istruzione e Ricerca (e come riportato nell'Allegato A del bando UniSS), per l'accesso all'Area dei Collaboratori è richiesto il possesso del diploma di istruzione secondaria di secondo grado."
     },
     {
@@ -1232,11 +1232,11 @@ var BANCA_DATI = {
       "domanda": "Secondo la Legge 240/2010, quali sono le strutture fondamentali in cui si articola l'organizzazione interna delle Università per lo svolgimento della ricerca scientifica e delle attività didattiche?",
       "opzioni": {
         "A": "Le Facoltà",
-        "B": "I Dipartimenti",
-        "C": "Gli Istituti policattedra",
+        "B": "Gli Istituti policattedra",
+        "C": "I Dipartimenti",
         "D": "I Consorzi interuniversitari"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Con la Legge 240/2010 le Facoltà come strutture autonome sono state soppresse e sostituite dai Dipartimenti quali strutture fondamentali deputate allo svolgimento sia della ricerca scientifica sia delle attività didattiche e formative (salva la possibilità di istituire strutture di raccordo)."
     },
     {
@@ -1246,11 +1246,11 @@ var BANCA_DATI = {
       "domanda": "Qual è l'agenzia nazionale competente per la valutazione esterna della qualità delle attività delle università e degli enti di ricerca in Italia?",
       "opzioni": {
         "A": "ANAC",
-        "B": "ANVUR (Agenzia Nazionale di Valutazione del Sistema Universitario e della Ricerca)",
+        "B": "CUN (Consiglio Universitario Nazionale)",
         "C": "ARAN",
-        "D": "CUN (Consiglio Universitario Nazionale)"
+        "D": "ANVUR (Agenzia Nazionale di Valutazione del Sistema Universitario e della Ricerca)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'ANVUR (Agenzia Nazionale di Valutazione del Sistema Universitario e della Ricerca) è l'ente pubblico vigilato dal MUR che cura la valutazione esterna della qualità della didattica e della ricerca delle università e degli enti di ricerca, raccordandosi con i Nuclei di Valutazione interni."
     },
     {
@@ -1273,12 +1273,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Diritto allo studio e organi",
       "domanda": "Quale organo universitario nazionale, istituito presso il MUR, svolge funzioni consultive e propositive nei confronti del Ministro su materie quali l'ordinamento degli studi universitari e le classi di laurea?",
       "opzioni": {
-        "A": "Il CUN (Consiglio Universitario Nazionale)",
-        "B": "La CRUI (Conferenza dei Rettori delle Università Italiane)",
+        "A": "La CRUI (Conferenza dei Rettori delle Università Italiane)",
+        "B": "Il CUN (Consiglio Universitario Nazionale)",
         "C": "Il CNSU (Consiglio Nazionale degli Studenti Universitari)",
         "D": "Il CODAU"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il CUN (Consiglio Universitario Nazionale) è l'organo elettivo di rappresentanza del sistema universitario che formula pareri e proposte al Ministro dell'Università e della Ricerca sugli ordinamenti didattici, le classi di laurea e i settori scientifico-disciplinari."
     },
     {
@@ -1287,12 +1287,12 @@ var BANCA_DATI = {
       "argomento": "D.Lgs. 18/2012 - Contabilità universitaria",
       "domanda": "Quale decreto legislativo, emanato in attuazione della Legge 240/2010, ha introdotto nelle Università statali il passaggio dalla contabilità finanziaria alla contabilità economico-patrimoniale e analitica e al bilancio unico d'ateneo?",
       "opzioni": {
-        "A": "D.Lgs. 27 gennaio 2012, n. 18",
+        "A": "D.Lgs. 18 aprile 2016, n. 50",
         "B": "D.Lgs. 14 marzo 2013, n. 33",
-        "C": "D.Lgs. 18 aprile 2016, n. 50",
+        "C": "D.Lgs. 27 gennaio 2012, n. 18",
         "D": "D.Lgs. 30 giugno 2003, n. 196"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il Decreto Legislativo 27 gennaio 2012, n. 18 (richiamato espressamente all'art. 1, comma 3 del Regolamento AFC di UniSS) ha disciplinato l'introduzione della contabilità economico-patrimoniale e analitica, del bilancio unico e del bilancio consolidato nelle università."
     },
     {
@@ -1301,12 +1301,12 @@ var BANCA_DATI = {
       "argomento": "Collaborazione e lavoro di squadra",
       "domanda": "Sei un Collaboratore amministrativo presso una segreteria didattica di UniSS. Un collega di un altro ufficio ti contatta con urgenza chiedendoti dati relativi a una pratica che hai gestito, ma sei impegnato su una scadenza interna. Come ti comporti?",
       "opzioni": {
-        "A": "Gli rispondi che non puoi aiutarlo fino alla settimana successiva perché hai altre priorità",
-        "B": "Gli inoltri rapidamente i dati richiesti o concordi con lui una finestra temporale brevissima in giornata per fornirglieli, garantendo la continuità del processo",
+        "A": "Gli inoltri rapidamente i dati richiesti o concordi con lui una finestra temporale brevissima in giornata per fornirglieli, garantendo la continuità del processo",
+        "B": "Gli rispondi che non puoi aiutarlo fino alla settimana successiva perché hai altre priorità",
         "C": "Gli dici di rivolgersi direttamente al tuo Dirigente per farsi autorizzare la richiesta",
         "D": "Ignori l'email finché non hai completato tutte le tue pratiche personali"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La competenza trasversale della 'Collaborazione' (richiamata nell'Allegato A del bando) richiede di cooperare attivamente con i colleghi interni ed esterni alla propria unità organizzativa attraverso la condivisione tempestiva delle informazioni per raggiungere il risultato comune."
     },
     {
@@ -1316,11 +1316,11 @@ var BANCA_DATI = {
       "domanda": "Ti accorgi che una procedura amministrativa standard per l'emissione di un attestato presenta un passaggio ridondante che rallenta le risposte agli studenti senza aggiungere alcun controllo di legittimità. Qual è l'approccio più efficace?",
       "opzioni": {
         "A": "Continui a seguirla esattamente com'è senza dire nulla, perché non spetta a te proporre cambiamenti",
-        "B": "Elimini autonomamente il passaggio senza avvisare il tuo responsabile per velocizzare il lavoro",
-        "C": "Segnali l'inefficienza al tuo responsabile proponendo una soluzione operativa concreta per snellire il flusso nel rispetto delle norme",
+        "B": "Segnali l'inefficienza al tuo responsabile proponendo una soluzione operativa concreta per snellire il flusso nel rispetto delle norme",
+        "C": "Elimini autonomamente il passaggio senza avvisare il tuo responsabile per velocizzare il lavoro",
         "D": "Ti lamenti del problema con gli studenti allo sportello giustificando così i ritardi"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "L''Orientamento al risultato' e la 'Proattività' nella PA implicano focalizzarsi sulla creazione di valore pubblico, individuando criticità nei processi e proponendo miglioramenti al proprio responsabile senza violare autonomamente le regole."
     },
     {
@@ -1330,11 +1330,11 @@ var BANCA_DATI = {
       "domanda": "A metà mattina il software gestionale dell'ufficio subisce un blocco imprevisto mentre hai diversi utenti in attesa allo sportello per informazioni sulle scadenze dei bandi. Come reagisci?",
       "opzioni": {
         "A": "Chiudi immediatamente lo sportello invitando tutti a tornare il giorno seguente",
-        "B": "Mantieni la calma, informi con cortesia gli utenti del disservizio tecnico, fornisci subito le informazioni generali consultando i bandi pubblicati sul sito e raccogli i contatti per evadere le pratiche appena il sistema riparte",
-        "C": "Resti alla scrivania in attesa che l'assistenza informatica risolva il problema senza dare spiegazioni agli utenti",
+        "B": "Resti alla scrivania in attesa che l'assistenza informatica risolva il problema senza dare spiegazioni agli utenti",
+        "C": "Mantieni la calma, informi con cortesia gli utenti del disservizio tecnico, fornisci subito le informazioni generali consultando i bandi pubblicati sul sito e raccogli i contatti per evadere le pratiche appena il sistema riparte",
         "D": "Dai la colpa all'ufficio informatico davanti agli utenti sottolineando la scarsa efficienza dell'Ateneo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La 'Flessibilità' (allegato A) unita ai doveri nei rapporti con il pubblico (art. 21 Codice Etico UniSS) impone di rispondere in modo costruttivo e proattivo agli imprevisti, assicurando la continuità del servizio e evitando giudizi negativi su altri uffici."
     },
     {
@@ -1344,11 +1344,11 @@ var BANCA_DATI = {
       "domanda": "Uno studente si presenta allo sportello visibilmente alterato perché ritiene che la sua domanda di borsa di studio sia stata respinta ingiustamente, alzando la voce. Qual è la reazione più adeguata?",
       "opzioni": {
         "A": "Alzi il tono della voce a tua volta per farti rispettare e ristabilire l'ordine",
-        "B": "Mantieni un atteggiamento calmo, empatico e professionale, lo inviti a spiegare il problema, verifichi lo stato della pratica e gli illustri con chiarezza le motivazioni tecniche e le eventuali modalità di riesame",
+        "B": "Gli dai ragione pur di farlo andare via velocemente, promettendogli che la pratica sarà accolta",
         "C": "Gli dici che non è competenza tua e lo mandi via senza verificare",
-        "D": "Gli dai ragione pur di farlo andare via velocemente, promettendogli che la pratica sarà accolta"
+        "D": "Mantieni un atteggiamento calmo, empatico e professionale, lo inviti a spiegare il problema, verifichi lo stato della pratica e gli illustri con chiarezza le motivazioni tecniche e le eventuali modalità di riesame"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Nei rapporti con il pubblico (art. 21 Codice Etico UniSS) occorre operare con cortesia, chiarezza e chiara esposizione dei motivi, senza mai assumere impegni non consentiti né alimentare conflitti."
     },
     {
@@ -1357,12 +1357,12 @@ var BANCA_DATI = {
       "argomento": "Orientamento all'apprendimento",
       "domanda": "L'Ateneo introduce una nuova piattaforma digitale per la gestione protocollo e flussi documentali. Alcuni colleghi del tuo ufficio mostrano diffidenza e faticano ad adattarsi. Cosa fai?",
       "opzioni": {
-        "A": "Continui a usare le vecchie procedure cartacee finché non vieni espressamente richiamato",
-        "B": "Approfondisci le funzionalità del nuovo strumento, segui i moduli formativi e condividi con i colleghi una breve guida pratica per facilitare la transizione di tutto l'ufficio",
+        "A": "Approfondisci le funzionalità del nuovo strumento, segui i moduli formativi e condividi con i colleghi una breve guida pratica per facilitare la transizione di tutto l'ufficio",
+        "B": "Continui a usare le vecchie procedure cartacee finché non vieni espressamente richiamato",
         "C": "Impari a usarlo solo per le tue pratiche evitando di aiutare gli altri così da risultare più veloce",
         "D": "Chiedi il trasferimento a un altro ufficio che non abbia ancora adottato il nuovo software"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La competenza 'Orientamento all'apprendimento' e la 'Collaborazione' richiedono curiosità verso gli strumenti innovativi e disponibilità a condividere le competenze acquisite con il gruppo di lavoro."
     },
     {
@@ -1386,11 +1386,11 @@ var BANCA_DATI = {
       "domanda": "Ti vengono assegnate contemporaneamente tre attività: 1) un adempimento normativo in scadenza oggi alle 14:00; 2) una richiesta di informazioni di un docente per una riunione prevista tra tre giorni; 3) l'archiviazione di pratiche concluse il mese scorso. Come organizzi il lavoro?",
       "opzioni": {
         "A": "Inizi dall'archiviazione perché è l'attività più rapida da smaltire",
-        "B": "Esegui immediatamente l'adempimento in scadenza oggi alle 14:00, poi prepari le informazioni per il docente e infine dedichi il tempo residuo all'archiviazione",
-        "C": "Rispondi prima al docente per fare buona impressione, rimandando l'adempimento normativo a domani",
+        "B": "Rispondi prima al docente per fare buona impressione, rimandando l'adempimento normativo a domani",
+        "C": "Esegui immediatamente l'adempimento in scadenza oggi alle 14:00, poi prepari le informazioni per il docente e infine dedichi il tempo residuo all'archiviazione",
         "D": "Chiedi al tuo responsabile di svolgere lui l'adempimento in scadenza oggi"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La corretta gestione del tempo e l'orientamento al risultato impongono di prioritizzare le attività combinando urgenza (scadenza perentoria odierna) e impatto istituzionale."
     },
     {
@@ -1400,11 +1400,11 @@ var BANCA_DATI = {
       "domanda": "Ti rendi conto di aver commesso un errore materiale nella compilazione di un decreto dirigenziale che è già stato inviato alla firma, ma non ancora pubblicato. Qual è la condotta più corretta?",
       "opzioni": {
         "A": "Non dici nulla sperando che nessuno se ne accorga",
-        "B": "Avvisi tempestivamente il tuo responsabile segnalando l'errore individuato e presentando già la bozza corretta per sostituire l'atto prima della firma/pubblicazione",
+        "B": "Attribuisci la colpa al collega che ti ha fornito i dati iniziali",
         "C": "Modifichi il file sul server senza avvisare chi deve firmarlo",
-        "D": "Attribuisci la colpa al collega che ti ha fornito i dati iniziali"
+        "D": "Avvisi tempestivamente il tuo responsabile segnalando l'errore individuato e presentando già la bozza corretta per sostituire l'atto prima della firma/pubblicazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'assunzione di responsabilità e la trasparenza (art. 12 Codice Etico) richiedono di segnalare immediatamente gli errori e attivarsi proattivamente per risolverli prima che producano effetti esterni."
     },
     {
@@ -1413,12 +1413,12 @@ var BANCA_DATI = {
       "argomento": "Conflitto di interessi",
       "domanda": "Ti viene affidata l'istruttoria amministrativa per l'affidamento diretto di una fornitura di cancelleria e scopri che uno dei preventivi pervenuti proviene dall'azienda di tuo cognato. Cosa devi fare?",
       "opzioni": {
-        "A": "Prosegui l'istruttoria assicurandoti di valutare l'offerta in modo imparziale",
+        "A": "Ti astieni immediatamente dal procedimento e ne dai comunicazione scritta al tuo diretto responsabile affinché valuti l'astensione",
         "B": "Escludi automaticamente l'azienda di tuo cognato senza informare nessuno",
-        "C": "Ti astieni immediatamente dal procedimento e ne dai comunicazione scritta al tuo diretto responsabile affinché valuti l'astensione",
+        "C": "Prosegui l'istruttoria assicurandoti di valutare l'offerta in modo imparziale",
         "D": "Chiedi a un collega di firmare l'atto al posto tuo mentre tu continui a gestire la pratica"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 16, commi 2-4 del Codice Etico UniSS, il dipendente deve astenersi dal partecipare a decisioni o attività che coinvolgano interessi di parenti o affini entro il secondo grado (come il cognato) e darne immediata notizia al proprio responsabile."
     },
     {
@@ -1441,12 +1441,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Se è vero che 'Tutti i regolamenti di Ateneo sono approvati a maggioranza assoluta' e che 'Il Regolamento Didattico è un regolamento di Ateneo', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Solo il Regolamento Didattico è approvato a maggioranza assoluta",
-        "B": "Il Regolamento Didattico è approvato a maggioranza assoluta",
+        "A": "Il Regolamento Didattico è approvato a maggioranza assoluta",
+        "B": "Solo il Regolamento Didattico è approvato a maggioranza assoluta",
         "C": "Tutti gli atti approvati a maggioranza assoluta sono regolamenti di Ateneo",
         "D": "Nessun regolamento è approvato a maggioranza semplice"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Si tratta di un sillogismo categorico classico (Barbara): se ogni A è B, e C è A, allora necessariamente C è B."
     },
     {
@@ -1470,11 +1470,11 @@ var BANCA_DATI = {
       "domanda": "Qual è la negazione logica della frase: 'Tutti i candidati presenti in aula hanno consegnato il documento di identità'?",
       "opzioni": {
         "A": "Nessun candidato presente in aula ha consegnato il documento di identità",
-        "B": "Almeno un candidato presente in aula non ha consegnato il documento di identità",
-        "C": "Tutti i candidati assenti non hanno consegnato il documento di identità",
+        "B": "Tutti i candidati assenti non hanno consegnato il documento di identità",
+        "C": "Almeno un candidato presente in aula non ha consegnato il documento di identità",
         "D": "La maggioranza dei candidati non ha consegnato il documento di identità"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La negazione del quantificatore universale 'Tutti hanno X' è il quantificatore esistenziale negato 'Almeno uno non ha X'."
     },
     {
@@ -1485,10 +1485,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "95",
         "B": "125",
-        "C": "127",
-        "D": "126"
+        "C": "126",
+        "D": "127"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ogni numero si ottiene moltiplicando il precedente per 2 e aggiungendo 1 (oppure sommando potenze crescenti di 2: +4, +8, +16, +32, +64). Quindi: 63 * 2 + 1 = 127 (oppure 63 + 64 = 127)."
     },
     {
@@ -1512,11 +1512,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (alfabeto italiano di 21 lettere): A, D, G, L, ?",
       "opzioni": {
         "A": "M",
-        "B": "N",
-        "C": "O",
+        "B": "O",
+        "C": "N",
         "D": "P"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano (A B C D E F G H I L M N O P Q R S T U V Z), si saltano due lettere ogni volta: A (b, c) D (e, f) G (h, i) L (m, n) O."
     },
     {
@@ -1526,11 +1526,11 @@ var BANCA_DATI = {
       "domanda": "Completa la seguente proporzione verbale: Rettore : Ateneo = Sindaco : X",
       "opzioni": {
         "A": "Regione",
-        "B": "Comune",
-        "C": "Provincia",
+        "B": "Provincia",
+        "C": "Comune",
         "D": "Prefettura"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il Rettore è l'organo monocratico di vertice e rappresentanza legale dell'Ateneo, così come il Sindaco lo è del Comune."
     },
     {
@@ -1553,12 +1553,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un concorso pubblico partecipano 800 candidati. Alla prova scritta vengono ammessi solo i primi 200. Qual è la percentuale dei candidati ammessi rispetto al totale dei partecipanti?",
       "opzioni": {
-        "A": "20%",
-        "B": "25%",
+        "A": "25%",
+        "B": "20%",
         "C": "30%",
         "D": "40%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "200 su 800 corrisponde alla frazione 200/800 = 1/4 = 0,25, cioè esattamente il 25%."
     },
     {
@@ -1568,11 +1568,11 @@ var BANCA_DATI = {
       "domanda": "Un ufficio protocolla 45 pratiche in 3 ore lavorando con 3 impiegati allo stesso ritmo. Quante pratiche protocollano 5 impiegati allo stesso ritmo in 4 ore?",
       "opzioni": {
         "A": "75",
-        "B": "90",
-        "C": "100",
+        "B": "100",
+        "C": "90",
         "D": "120"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "3 impiegati in 3 ore fanno 45 pratiche -> 3 impiegati in 1 ora fanno 15 pratiche -> 1 impiegato in 1 ora fa 5 pratiche. Quindi 5 impiegati in 4 ore fanno: 5 * 5 * 4 = 100 pratiche."
     },
     {
@@ -1583,10 +1583,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Luca",
         "B": "Sara",
-        "C": "Paolo",
-        "D": "Giulia"
+        "C": "Giulia",
+        "D": "Paolo"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Sara è alla Didattica. Luca non è al Bilancio e Paolo non è al Bilancio. Per esclusione, l'unica persona che può lavorare al Bilancio è Giulia."
     },
     {
@@ -1596,11 +1596,11 @@ var BANCA_DATI = {
       "domanda": "'L'assenza di una comunicazione preventiva non implica necessariamente la volontà di omettere un'informazione, ma può derivare da un difetto di coordinamento interno'. Quale affermazione è coerente con il brano?",
       "opzioni": {
         "A": "Ogni volta che manca una comunicazione preventiva c'è dolo",
-        "B": "Un difetto di coordinamento interno può essere la causa della mancanza di una comunicazione preventiva",
+        "B": "Chi non comunica preventivamente agisce sempre in buona fede",
         "C": "Il coordinamento interno elimina sempre ogni omissione",
-        "D": "Chi non comunica preventivamente agisce sempre in buona fede"
+        "D": "Un difetto di coordinamento interno può essere la causa della mancanza di una comunicazione preventiva"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il brano afferma esplicitamente che la mancata comunicazione preventiva 'può derivare da un difetto di coordinamento interno'."
     },
     {
@@ -1638,11 +1638,11 @@ var BANCA_DATI = {
       "domanda": "'Tutti i membri del Collegio dei Revisori sono iscritti all'albo o magistrati. Giulia non è iscritta all'albo né è magistrato'. Cosa si deduce?",
       "opzioni": {
         "A": "Giulia è un membro supplente del Collegio",
-        "B": "Giulia non è un membro del Collegio dei Revisori",
-        "C": "Giulia fa parte del Nucleo di Valutazione",
+        "B": "Giulia fa parte del Nucleo di Valutazione",
+        "C": "Giulia non è un membro del Collegio dei Revisori",
         "D": "Alcuni membri del Collegio non hanno requisiti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Modus tollens: se M implica (A o B), e non si verifica né A né B, allora necessariamente non M."
     },
     {
@@ -1652,11 +1652,11 @@ var BANCA_DATI = {
       "domanda": "Se è falso che 'Tutti i bandi prevedono una prova preselettiva', quale proposizione è certamente vera?",
       "opzioni": {
         "A": "Nessun bando prevede una prova preselettiva",
-        "B": "Almeno un bando non prevede una prova preselettiva",
+        "B": "La maggioranza dei bandi non prevede la preselettiva",
         "C": "Solo i bandi universitari prevedono la preselettiva",
-        "D": "La maggioranza dei bandi non prevede la preselettiva"
+        "D": "Almeno un bando non prevede una prova preselettiva"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "La negazione logica di un enunciato universale affermativo ('Tutti gli X sono Y') è il particolare negativo ('Almeno un X non è Y')."
     },
     {
@@ -1679,12 +1679,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Se il Consiglio di Amministrazione non approva il bilancio entro il 31 dicembre, allora viene autorizzato l'esercizio provvisorio'. Sapendo che non è stato autorizzato l'esercizio provvisorio, cosa si deduce?",
       "opzioni": {
-        "A": "Il bilancio è stato approvato entro il 31 dicembre",
-        "B": "Il bilancio non è stato ancora predisposto",
+        "A": "Il bilancio non è stato ancora predisposto",
+        "B": "Il bilancio è stato approvato entro il 31 dicembre",
         "C": "L'esercizio provvisorio durerà tre mesi",
         "D": "Il Rettore ha emanato un decreto d'urgenza"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Da 'Se non-A, allora B', negando il conseguente (non-B) si ottiene la negazione dell'antecedente, ossia A (il bilancio è stato approvato entro il 31 dicembre)."
     },
     {
@@ -1694,11 +1694,11 @@ var BANCA_DATI = {
       "domanda": "'Affinché la seduta sia valida è necessario che sia presente la maggioranza degli aventi diritto'. Se la seduta non è valida, quale affermazione è corretta?",
       "opzioni": {
         "A": "Certamente non era presente la maggioranza degli aventi diritto",
-        "B": "Potrebbe essere stata presente la maggioranza degli aventi diritto (la seduta potrebbe essere invalida per un altro vizio)",
-        "C": "Era presente esattamente metà degli aventi diritto",
+        "B": "Era presente esattamente metà degli aventi diritto",
+        "C": "Potrebbe essere stata presente la maggioranza degli aventi diritto (la seduta potrebbe essere invalida per un altro vizio)",
         "D": "Il Rettore era assente"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "'P è necessario per Q' equivale a 'Se Q, allora P'. Sapere che non-Q non permette di concludere non-P (fallacia della negazione dell'antecedente): la condizione necessaria potrebbe essere soddisfatta ma mancare altri requisiti."
     },
     {
@@ -1708,11 +1708,11 @@ var BANCA_DATI = {
       "domanda": "'Basta aver presentato la domanda su PICA entro le 13:00 del 25 maggio ed aver pagato 10 euro per essere ammessi con riserva'. Luca non è stato ammesso con riserva. Cosa si deduce?",
       "opzioni": {
         "A": "Luca non ha né presentato la domanda in tempo né pagato i 10 euro",
-        "B": "Luca non ha presentato la domanda entro i termini oppure non ha pagato i 10 euro (o entrambe le cose)",
+        "B": "Luca non ha il diploma di scuola superiore",
         "C": "Luca ha pagato 10 euro ma in ritardo",
-        "D": "Luca non ha il diploma di scuola superiore"
+        "D": "Luca non ha presentato la domanda entro i termini oppure non ha pagato i 10 euro (o entrambe le cose)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Legge di De Morgan applicata al Modus Tollens: la negazione della congiunzione (P e Q) è la disgiunzione inclusiva delle negazioni (non-P oppure non-Q)."
     },
     {
@@ -1721,12 +1721,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quale tra le seguenti frasi ha lo stesso significato logico di: 'Se piove, allora prendo l'ombrello'?",
       "opzioni": {
-        "A": "Se prendo l'ombrello, allora piove",
-        "B": "Se non prendo l'ombrello, allora non piove",
+        "A": "Se non prendo l'ombrello, allora non piove",
+        "B": "Se prendo l'ombrello, allora piove",
         "C": "Se non piove, allora non prendo l'ombrello",
         "D": "Prendo l'ombrello solo se piove"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La contronominale di 'Se P, allora Q' è sempre logicamente equivalente ed è 'Se non-Q, allora non-P'."
     },
     {
@@ -1764,11 +1764,11 @@ var BANCA_DATI = {
       "domanda": "Quale numero completa la serie: 81, 27, 9, 3, 1, ?",
       "opzioni": {
         "A": "0",
-        "B": "1/3",
+        "B": "-1",
         "C": "1/9",
-        "D": "-1"
+        "D": "1/3"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ogni termine è ottenuto dividendo il precedente per 3: 81/3=27, 27/3=9, 9/3=3, 3/3=1, 1/3=1/3."
     },
     {
@@ -1792,11 +1792,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero mancante: 1, 1, 2, 3, 5, 8, 13, ?",
       "opzioni": {
         "A": "18",
-        "B": "20",
-        "C": "21",
+        "B": "21",
+        "C": "20",
         "D": "24"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "È la successione di Fibonacci, in cui ogni numero è la somma dei due precedenti: 8 + 13 = 21."
     },
     {
@@ -1820,11 +1820,11 @@ var BANCA_DATI = {
       "domanda": "Completa la serie alfanumerica (alfabeto italiano di 21 lettere): B2, E5, H8, M11, ?",
       "opzioni": {
         "A": "O14",
-        "B": "P14",
+        "B": "P15",
         "C": "Q13",
-        "D": "P15"
+        "D": "P14"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Le lettere avanzano di 3 posizioni nell'alfabeto italiano (B -> E -> H -> M -> P) e i numeri aumentano di +3 (2 -> 5 -> 8 -> 11 -> 14)."
     },
     {
@@ -1833,12 +1833,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Quale lettera completa la sequenza (alfabeto italiano di 21 lettere): Z, T, P, L, ?",
       "opzioni": {
-        "A": "I",
+        "A": "G",
         "B": "H",
-        "C": "G",
+        "C": "I",
         "D": "F"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Procedendo a ritroso nell'alfabeto italiano (A B C D E F G H I L M N O P Q R S T U V Z) si saltano 3 lettere per volta: Z (v,u) -> no, Z(21), T(18), P(14), L(11)... Attenzione: Z(21) -3 = T(18), T(18) -4 = P(14), P(14) -3 = L(11), L(11) -4 = G(7)."
     },
     {
@@ -1862,11 +1862,11 @@ var BANCA_DATI = {
       "domanda": "Completa la proporzione: Bilancio preventivo : Previsione = Rendiconto : X",
       "opzioni": {
         "A": "Programma",
-        "B": "Consuntivo",
-        "C": "Investimento",
+        "B": "Investimento",
+        "C": "Consuntivo",
         "D": "Variazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il bilancio preventivo attiene alla fase di previsione, mentre il rendiconto attiene alla fase finale di consuntivo."
     },
     {
@@ -1876,11 +1876,11 @@ var BANCA_DATI = {
       "domanda": "Individua il sinonimo più appropriato del termine 'perentorio' riferito a un termine procedimentale:",
       "opzioni": {
         "A": "Prorogabile",
-        "B": "Improrogabile",
+        "B": "Facoltativo",
         "C": "Ordinatorio",
-        "D": "Facoltativo"
+        "D": "Improrogabile"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Un termine perentorio è un termine tassativo e improrogabile, la cui scadenza comporta la decadenza dalla facoltà di compiere l'atto."
     },
     {
@@ -1889,12 +1889,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua il termine intruso tra i seguenti:",
       "opzioni": {
-        "A": "Ratifica",
+        "A": "Abrogazione",
         "B": "Convalida",
-        "C": "Abrogazione",
+        "C": "Ratifica",
         "D": "Approvazione"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Ratifica, convalida e approvazione consolidano o confermano l'efficacia di un atto, mentre l'abrogazione ne fa cessare l'efficacia."
     },
     {
@@ -1931,12 +1931,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a risposta multipla da 30 domande, ogni risposta esatta vale +1 punto, ogni errata -0,25 e ogni non data 0. Un candidato risponde a 28 domande commettendo 4 errori. Qual è il suo punteggio?",
       "opzioni": {
-        "A": "23,00",
+        "A": "22,75",
         "B": "23,50",
         "C": "24,00",
-        "D": "22,75"
+        "D": "23,00"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Su 28 domande risposte con 4 errori, le esatte sono 24. Punteggio: (24 * 1) - (4 * 0,25) = 24 - 1 = 23,00 punti."
     },
     {
@@ -1945,12 +1945,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Il fondo di cassa di un Dipartimento ammonta a 3.000 euro. Nel primo mese viene speso il 40% e nel secondo mese il 50% della somma residua. Quanto rimane nel fondo?",
       "opzioni": {
-        "A": "300 euro",
+        "A": "900 euro",
         "B": "600 euro",
-        "C": "900 euro",
+        "C": "300 euro",
         "D": "1.200 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Dopo il primo mese resta il 60% di 3.000 = 1.800 euro. Nel secondo mese si spende il 50% di 1.800 = 900 euro. Restano quindi 900 euro."
     },
     {
@@ -1988,11 +1988,11 @@ var BANCA_DATI = {
       "domanda": "Un archivio contiene 1.200 faldoni divisi tra Armadio A, Armadio B e Armadio C. L'Armadio A contiene il doppio dei faldoni dell'Armadio B, e l'Armadio C ne contiene il triplo dell'Armadio B. Quanti faldoni ci sono nell'Armadio A?",
       "opzioni": {
         "A": "200",
-        "B": "400",
+        "B": "800",
         "C": "600",
-        "D": "800"
+        "D": "400"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Posto B = x, abbiamo A = 2x e C = 3x. Totale: x + 2x + 3x = 6x = 1.200 -> x = 200. Quindi A = 2 * 200 = 400 faldoni."
     },
     {
@@ -2001,12 +2001,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Cinque candidati (A, B, C, D, E) si classificano in graduatoria senza parimerito: A precede B; C precede D; B precede C; E è l'ultimo. Chi si è classificato al secondo posto?",
       "opzioni": {
-        "A": "A",
-        "B": "B",
+        "A": "B",
+        "B": "A",
         "C": "C",
         "D": "D"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'ordine completo dal primo al quinto è: A > B > C > D > E. Pertanto B è al secondo posto."
     },
     {
@@ -2044,11 +2044,11 @@ var BANCA_DATI = {
       "domanda": "Marco afferma: 'Luca mente'. Luca afferma: 'Paolo mente'. Paolo afferma: 'Marco e Luca mentono entrambi'. Sapendo che solo uno dei tre dice la verità, chi è il sincero?",
       "opzioni": {
         "A": "Marco",
-        "B": "Luca",
+        "B": "Nessuno dei tre",
         "C": "Paolo",
-        "D": "Nessuno dei tre"
+        "D": "Luca"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Se Luca dice il vero, allora Paolo mente (coerente, perché non mentono entrambi Marco e Luca) e Marco mente (coerente, perché Luca non mente). Si ha esattamente 1 sincero (Luca) e 2 bugiardi."
     },
     {
@@ -2057,12 +2057,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "'Il principio di buon andamento impone che l'azione amministrativa consegua gli obiettivi prefissati con il minor dispendio possibile di risorse, evitando tuttavia che il contenimento dei costi comprometta la qualità dei servizi resi all'utenza'. Quale affermazione è deducibile?",
       "opzioni": {
-        "A": "La riduzione dei costi prevale sempre sulla qualità del servizio",
-        "B": "L'efficienza economica deve essere bilanciata con il mantenimento degli standard qualitativi del servizio",
+        "A": "L'efficienza economica deve essere bilanciata con il mantenimento degli standard qualitativi del servizio",
+        "B": "La riduzione dei costi prevale sempre sulla qualità del servizio",
         "C": "Un servizio di alta qualità giustifica qualsiasi spesa senza limiti di budget",
         "D": "Il buon andamento riguarda esclusivamente gli uffici contabili"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il brano esprime chiaramente il contemperamento tra contenimento dei costi (economicità/efficienza) e salvaguardia della qualità dei servizi (efficacia)."
     },
     {
@@ -2101,10 +2101,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Il dipendente può scegliere se astenersi quando il conflitto è solo potenziale",
         "B": "L'obbligo di astensione scatta solo se il conflitto ha già prodotto un danno economico",
-        "C": "Il dipendente è tenuto ad astenersi anche quando il conflitto di interessi non si sia ancora concretizzato ma sia potenziale",
-        "D": "Solo i dirigenti hanno l'obbligo di astensione"
+        "C": "Solo i dirigenti hanno l'obbligo di astensione",
+        "D": "Il dipendente è tenuto ad astenersi anche quando il conflitto di interessi non si sia ancora concretizzato ma sia potenziale"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Il testo qualifica l'astensione anche in caso di conflitto 'potenziale' come un vero e proprio obbligo giuridico e non come una scelta discrezionale."
     },
     {
@@ -2113,12 +2113,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua il diagramma di Venn (relazione insiemistica) corretto tra: 'Dipendenti pubblici', 'Personale tecnico-amministrativo UniSS', 'Docenti universitari'.",
       "opzioni": {
-        "A": "Tre insiemi completamente disgiunti tra loro",
-        "B": "Due insiemi disgiunti ('Personale TA UniSS' e 'Docenti universitari') entrambi interamente contenuti nell'insieme più grande 'Dipendenti pubblici' (considerando le università statali)",
+        "A": "Due insiemi disgiunti ('Personale TA UniSS' e 'Docenti universitari') entrambi interamente contenuti nell'insieme più grande 'Dipendenti pubblici' (considerando le università statali)",
+        "B": "Tre insiemi completamente disgiunti tra loro",
         "C": "L'insieme 'Docenti universitari' contiene interamente 'Dipendenti pubblici'",
         "D": "I tre insiemi coincidono perfettamente"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Sia il personale tecnico-amministrativo UniSS sia i docenti delle università statali appartengono alla categoria più ampia dei dipendenti pubblici, pur costituendo due categorie distinte tra loro."
     },
     {
@@ -2156,11 +2156,11 @@ var BANCA_DATI = {
       "domanda": "In un'urna ci sono 6 fascicoli amministrativi e 4 fascicoli contabili. Estraendo a caso un fascicolo, qual è la probabilità che sia un fascicolo contabile?",
       "opzioni": {
         "A": "25%",
-        "B": "40%",
+        "B": "60%",
         "C": "50%",
-        "D": "60%"
+        "D": "40%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Casi favorevoli = 4; casi totali = 6 + 4 = 10. Probabilità = 4/10 = 0,4 = 40%."
     },
     {
@@ -2185,10 +2185,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Ti schieri con il collega con cui hai più confidenza personale",
         "B": "Resti in silenzio sperando che la discussione finisca presto",
-        "C": "Proponi un criterio oggettivo e rotativo che garantisca la copertura del servizio e tenga conto delle esigenze di tutti, favorendo una mediazione",
-        "D": "Chiedi di essere esonerato dai turni estivi per non entrare nella disputa"
+        "C": "Chiedi di essere esonerato dai turni estivi per non entrare nella disputa",
+        "D": "Proponi un criterio oggettivo e rotativo che garantisca la copertura del servizio e tenga conto delle esigenze di tutti, favorendo una mediazione"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "La capacità di ridurre le conflittualità attraverso criteri equi e orientati al risultato comune è uno degli indicatori chiave della competenza 'Collaborazione'."
     },
     {
@@ -2197,12 +2197,12 @@ var BANCA_DATI = {
       "argomento": "Collaborazione e lavoro di squadra",
       "domanda": "Devi predisporre un prospetto riepilogativo che richiede dati provenienti da tre diversi Dipartimenti. Due Dipartimenti inviano i dati puntualmente, mentre il terzo è in ritardo di due giorni rispetto alla scadenza interna. Come agisci?",
       "opzioni": {
-        "A": "Consegni il prospetto incompleto senza avvisare nessuno",
-        "B": "Contatti telefonicamente il referente del terzo Dipartimento per capire l'ostacolo, offri eventuale supporto nella compilazione e informi tempestivamente il tuo responsabile dello stato di avanzamento",
+        "A": "Contatti telefonicamente il referente del terzo Dipartimento per capire l'ostacolo, offri eventuale supporto nella compilazione e informi tempestivamente il tuo responsabile dello stato di avanzamento",
+        "B": "Consegni il prospetto incompleto senza avvisare nessuno",
         "C": "Aspetti passivamente che il terzo Dipartimento invii i dati anche oltre la scadenza finale dell'Ateneo",
         "D": "Inserisci dati stimati dell'anno precedente per chiudere subito il file"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'approccio proattivo e collaborativo tra strutture interne prevede il contatto diretto per sbloccare le criticità e il costante aggiornamento del proprio responsabile."
     },
     {
@@ -2226,11 +2226,11 @@ var BANCA_DATI = {
       "domanda": "Sei chiamato a collaborare temporaneamente con un gruppo di lavoro inter-area per l'organizzazione di un evento istituzionale di Ateneo. Qual è l'atteggiamento più adeguato?",
       "opzioni": {
         "A": "Ti limiti strettamente a ciò che rientra nel tuo mansionario ordinario rifiutando ogni compito trasversale",
-        "B": "Partecipi attivamente alle riunioni, rispetti le scadenze concordate e ti coordini costantemente con i referenti delle altre aree",
-        "C": "Cerchi di assumere il comando del gruppo anche se è stato nominato un altro coordinatore",
+        "B": "Cerchi di assumere il comando del gruppo anche se è stato nominato un altro coordinatore",
+        "C": "Partecipi attivamente alle riunioni, rispetti le scadenze concordate e ti coordini costantemente con i referenti delle altre aree",
         "D": "Dai priorità esclusiva al tuo ufficio di appartenenza trascurando il progetto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La cooperazione anche a distanza e tra unità organizzative diverse richiede affidabilità, rispetto dei ruoli e condivisione costante delle informazioni."
     },
     {
@@ -2240,11 +2240,11 @@ var BANCA_DATI = {
       "domanda": "A due ore dalla chiusura dell'ufficio ti accorgi che mancano ancora 15 istanze da verificare per rispettare il termine procedimentale di legge previsto per la giornata odierna. Come procedi?",
       "opzioni": {
         "A": "Lasci le 15 istanze per il giorno successivo perché ormai manca poco alla fine del turno",
-        "B": "Riorganizzi subito le priorità sospendendo le attività non urgenti, concentri l'attenzione sulle 15 istanze e, se necessario, informi il responsabile per valutare un breve prolungamento o supporto",
+        "B": "Protocolli un rinvio d'ufficio senza fondamento normativo",
         "C": "Approvi tutte e 15 le istanze senza controllarle per rispettare l'orario",
-        "D": "Protocolli un rinvio d'ufficio senza fondamento normativo"
+        "D": "Riorganizzi subito le priorità sospendendo le attività non urgenti, concentri l'attenzione sulle 15 istanze e, se necessario, informi il responsabile per valutare un breve prolungamento o supporto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'orientamento al risultato implica agire con determinazione per assicurare il risultato nei tempi previsti senza mai sacrificare la conformità e la correttezza amministrativa."
     },
     {
@@ -2253,12 +2253,12 @@ var BANCA_DATI = {
       "argomento": "Orientamento al risultato",
       "domanda": "Il tuo responsabile ti affida un incarico nuovo senza fornirti istruzioni dettagliate passo-passo, indicandoti solo l'obiettivo finale e la scadenza. Come ti muovi?",
       "opzioni": {
-        "A": "Resti fermo in attesa che ti venga consegnato un manuale operativo completo",
-        "B": "Analizzi la normativa e i precedenti atti dell'ufficio, strutturi una bozza operativa e la condividi con il responsabile per un rapido allineamento prima di procedere",
+        "A": "Analizzi la normativa e i precedenti atti dell'ufficio, strutturi una bozza operativa e la condividi con il responsabile per un rapido allineamento prima di procedere",
+        "B": "Resti fermo in attesa che ti venga consegnato un manuale operativo completo",
         "C": "Chiedi che l'incarico venga assegnato a un funzionario di area superiore",
         "D": "Procedi completamente alla cieca fino alla consegna finale senza alcun confronto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il profilo dell'Area dei Collaboratori richiede specifica capacità di interpretare le istruzioni operative e valutare il caso concreto con autonomia e responsabilità di risultato."
     },
     {
@@ -2282,11 +2282,11 @@ var BANCA_DATI = {
       "domanda": "Durante l'istruttoria di una pratica amministrativa emerge un dubbio interpretativo su una clausola regolamentare. Qual è la scelta più corretta?",
       "opzioni": {
         "A": "Decidi a intuito pur di chiudere velocemente la pratica",
-        "B": "Consulti il testo ufficiale del regolamento, verifichi eventuali prassi consolidate dell'Ateneo e sottoponi il quesito puntuale al responsabile con una proposta motivata",
-        "C": "Metti la pratica in fondo al cassetto sperando che qualcun altro la prenda in carico",
+        "B": "Metti la pratica in fondo al cassetto sperando che qualcun altro la prenda in carico",
+        "C": "Consulti il testo ufficiale del regolamento, verifichi eventuali prassi consolidate dell'Ateneo e sottoponi il quesito puntuale al responsabile con una proposta motivata",
         "D": "Chiedi all'utente interessato come preferisce che venga interpretata la norma"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La diligenza professionale e l'orientamento al risultato richiedono rigore istruttorio e capacità di formulare proposte motivate al proprio responsabile."
     },
     {
@@ -2296,11 +2296,11 @@ var BANCA_DATI = {
       "domanda": "Al termine di un progetto di riorganizzazione dell'archivio digitale dell'ufficio, quali azioni assicurano che il risultato resti efficace nel tempo?",
       "opzioni": {
         "A": "Chiudere il progetto e non parlarne più",
-        "B": "Condividere con tutti i colleghi dell'ufficio le regole di nomenclatura adottate e verificare periodicamente che vengano applicate correttamente",
+        "B": "Vietare agli altri colleghi l'accesso alle cartelle condivise",
         "C": "Mantenere le regole di archiviazione solo sul tuo PC personale",
-        "D": "Vietare agli altri colleghi l'accesso alle cartelle condivise"
+        "D": "Condividere con tutti i colleghi dell'ufficio le regole di nomenclatura adottate e verificare periodicamente che vengano applicate correttamente"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Consolidare i risultati attraverso la condivisione di standard comuni garantisce continuità operativa ed efficienza nel lungo periodo."
     },
     {
@@ -2309,12 +2309,12 @@ var BANCA_DATI = {
       "argomento": "Flessibilità e adattabilità",
       "domanda": "A causa dell'assenza improvvisa per malattia di un collega di stanza, il responsabile ti chiede di coprire temporaneamente il suo sportello telefonico per la mattinata, oltre alle tue attività urgenti. Come reagisci?",
       "opzioni": {
-        "A": "Rifiuti perché non era previsto nel tuo piano settimanale",
-        "B": "Accetti con spirito collaborativo, concordando con il responsabile quali delle tue attività ordinarie possono essere riprogrammate al pomeriggio o al giorno seguente",
+        "A": "Accetti con spirito collaborativo, concordando con il responsabile quali delle tue attività ordinarie possono essere riprogrammate al pomeriggio o al giorno seguente",
+        "B": "Rifiuti perché non era previsto nel tuo piano settimanale",
         "C": "Accetti ma lasci squillare il telefono a vuoto per finire le tue pratiche",
         "D": "Rispondi al telefono dicendo agli utenti di richiamare quando rientrerà il collega"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La flessibilità consiste nel rispondere in modo efficace e costruttivo ai cambiamenti imprevisti, rinegoziando le priorità con il responsabile per assicurare la continuità del servizio."
     },
     {
@@ -2338,11 +2338,11 @@ var BANCA_DATI = {
       "domanda": "Ti viene proposto di passare dal lavoro esclusivamente in presenza a una modalità mista che include giornate di lavoro agile (smart working). Quale accorgimento è fondamentale per mantenere la stessa efficacia?",
       "opzioni": {
         "A": "Svolgere solo compiti marginali nelle giornate da remoto",
-        "B": "Pianificare in anticipo gli obiettivi della giornata agile, garantire la reperibilità nelle fasce concordate e assicurare la sicurezza e riservatezza dei dati trattati",
-        "C": "Evitare di rispondere alle email dei colleghi durante il lavoro agile",
+        "B": "Evitare di rispondere alle email dei colleghi durante il lavoro agile",
+        "C": "Pianificare in anticipo gli obiettivi della giornata agile, garantire la reperibilità nelle fasce concordate e assicurare la sicurezza e riservatezza dei dati trattati",
         "D": "Utilizzare dispositivi non protetti e reti pubbliche aperte per comodità"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "In linea con l'art. 24 del Codice Etico UniSS e la competenza di flessibilità, il lavoro agile richiede organizzazione per obiettivi, coordinamento e rigoroso rispetto del GDPR."
     },
     {
@@ -2352,11 +2352,11 @@ var BANCA_DATI = {
       "domanda": "Un docente straniero in visita presso il Dipartimento ti chiede informazioni amministrative in lingua inglese riguardo alle procedure di rimborso missione, ma non parla italiano. Come ti comporti?",
       "opzioni": {
         "A": "Gli dici in italiano che non puoi aiutarlo e chiudi lo sportello",
-        "B": "Utilizzi le tue conoscenze di base della lingua inglese (eventualmente supportato dalla modulistica bilingue d'Ateneo) per fornirgli indicazioni chiare e accompagnarlo nella compilazione",
+        "B": "Lo mandi in un altro ufficio a caso",
         "C": "Gli chiedi di tornare accompagnato da un traduttore giurato",
-        "D": "Lo mandi in un altro ufficio a caso"
+        "D": "Utilizzi le tue conoscenze di base della lingua inglese (eventualmente supportato dalla modulistica bilingue d'Ateneo) per fornirgli indicazioni chiare e accompagnarlo nella compilazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'Allegato A del bando prevede esplicitamente la conoscenza di base della lingua inglese per la comprensione di modulistica e comunicazioni istituzionali in un contesto universitario internazionale."
     },
     {
@@ -2365,12 +2365,12 @@ var BANCA_DATI = {
       "argomento": "Orientamento all'apprendimento",
       "domanda": "L'Ateneo organizza un corso di formazione obbligatorio sulla sicurezza informatica e prevenzione del phishing, ma in quel periodo hai molte scadenze in ufficio. Come gestisci la situazione?",
       "opzioni": {
-        "A": "Ignori il corso perché la sicurezza informatica riguarda solo i tecnici IT",
-        "B": "Pianifichi la partecipazione al corso organizzando in anticipo le scadenze d'ufficio, consapevole che la tutela dei dati è parte integrante dei doveri di ogni dipendente",
+        "A": "Pianifichi la partecipazione al corso organizzando in anticipo le scadenze d'ufficio, consapevole che la tutela dei dati è parte integrante dei doveri di ogni dipendente",
+        "B": "Ignori il corso perché la sicurezza informatica riguarda solo i tecnici IT",
         "C": "Lasci scorrere il video formativo in background senza prestarvi attenzione",
         "D": "Chiedi a un collega di fare il test finale al posto tuo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 20, comma 6 del Codice Etico UniSS impone a tutti i dipendenti particolare cura nella sicurezza informatica e nella protezione dei dati; la formazione continua è uno strumento essenziale di prevenzione."
     },
     {
@@ -2394,11 +2394,11 @@ var BANCA_DATI = {
       "domanda": "Ricevi dal tuo responsabile un feedback costruttivo su alcune imprecisioni formali riscontrate nelle tue ultime determine. Come reagisci?",
       "opzioni": {
         "A": "Ti offendi e sostieni che si tratta di dettagli irrilevanti",
-        "B": "Accogli le osservazioni con atteggiamento aperto, prendi nota dei criteri corretti e li applichi subito come standard di riferimento per gli atti successivi",
-        "C": "Smetti di redigere bozze di determine per paura di sbagliare ancora",
+        "B": "Smetti di redigere bozze di determine per paura di sbagliare ancora",
+        "C": "Accogli le osservazioni con atteggiamento aperto, prendi nota dei criteri corretti e li applichi subito come standard di riferimento per gli atti successivi",
         "D": "Dai la colpa ai modelli preesistenti nell'ufficio"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'orientamento all'apprendimento comporta acquisire consapevolezza delle proprie aree di miglioramento e trasformare i feedback in crescita professionale."
     },
     {
@@ -2409,10 +2409,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Lo accetti ringraziando perché il pagamento era comunque dovuto per legge",
         "B": "Lo dividi con tutti i colleghi dell'ufficio in modo che la quota individuale sia sotto i 100 euro",
-        "C": "Non lo accetti (o lo metti immediatamente a disposizione dell'Università per la restituzione o devoluzione a fini istituzionali), poiché supera il limite di modico valore di 100 euro",
-        "D": "Lo porti a casa ma non lo usi fino all'anno successivo"
+        "C": "Lo porti a casa ma non lo usi fino all'anno successivo",
+        "D": "Non lo accetti (o lo metti immediatamente a disposizione dell'Università per la restituzione o devoluzione a fini istituzionali), poiché supera il limite di modico valore di 100 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 13, commi 2, 5 e 6 del Codice Etico UniSS, il modico valore è fissato in max 100 euro annui; i regali ricevuti fuori dai casi consentiti vanno immediatamente messi a disposizione dell'Università per la restituzione o devoluzione istituzionale."
     },
     {
@@ -2421,12 +2421,12 @@ var BANCA_DATI = {
       "argomento": "Etica, integrità e rapporti con terzi",
       "domanda": "Mentre stai lavorando a una pratica, devi allontanarti per 10 minuti dall'ufficio accessibile al pubblico, dove sei momentaneamente l'unico dipendente presente. Cosa devi fare?",
       "opzioni": {
-        "A": "Esci lasciando la porta aperta e il PC sbloccato per fare prima",
-        "B": "Blocchi la sessione del PC, chiudi l'ufficio o informi il responsabile/collega adiacente affinché l'area e i documenti non restino incustoditi",
+        "A": "Blocchi la sessione del PC, chiudi l'ufficio o informi il responsabile/collega adiacente affinché l'area e i documenti non restino incustoditi",
+        "B": "Esci lasciando la porta aperta e il PC sbloccato per fare prima",
         "C": "Chiedi a uno studente in corridoio di dare un'occhiata alla stanza",
         "D": "Lasci un biglietto sulla scrivania con la tua password in caso serva qualcosa"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 20, commi 4 e 6 del Codice Etico UniSS vieta di lasciare incustodite aree accessibili agli utenti senza informare i responsabili e impone la massima cura nella protezione dei dati e delle credenziali informatiche."
     },
     {
@@ -2450,11 +2450,11 @@ var BANCA_DATI = {
       "domanda": "Sui tuoi profili social personali stai commentando una notizia riguardante l'Università di Sassari ed esprimi una tua opinione critica strettamente personale su una scelta organizzativa. Quale regola devi rispettare?",
       "opzioni": {
         "A": "Puoi usare il logo ufficiale UniSS come immagine del profilo per dare più autorevolezza al tuo post",
-        "B": "Puoi esprimere la tua opinione nel rispetto della libertà di espressione, ma non puoi spendere il nome o il logo dell'Università né usare espressioni offensive verso l'Ateneo, colleghi o responsabili",
-        "C": "Non puoi mai scrivere nulla che riguardi l'università in generale",
+        "B": "Non puoi mai scrivere nulla che riguardi l'università in generale",
+        "C": "Puoi esprimere la tua opinione nel rispetto della libertà di espressione, ma non puoi spendere il nome o il logo dell'Università né usare espressioni offensive verso l'Ateneo, colleghi o responsabili",
         "D": "Devi firmarti con la qualifica ufficiale dell'ufficio in cui lavori"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Gli artt. 11 e 21, comma 8 del Codice Etico UniSS tutelano la libertà di espressione ma vietano di spendere il nome o il logo dell'Università per opinioni strettamente personali nonché di rilasciare dichiarazioni offensive."
     },
     {
@@ -2464,11 +2464,11 @@ var BANCA_DATI = {
       "domanda": "Un utente si presenta allo sportello chiedendo informazioni su una materia che non rientra nella competenza del tuo ufficio, bensì dell'Ufficio Relazioni con il Pubblico (URP) o della Segreteria Studenti. Come ti comporti?",
       "opzioni": {
         "A": "Gli dici semplicemente 'Non è compito mio' e chiudi la conversazione",
-        "B": "Lo indirizzi con cortesia all'ufficio competente dell'Ateneo, fornendogli indicazioni chiare su come raggiungerlo fisicamente o telematicamente",
+        "B": "Gli dici di cercare da solo sul sito internet",
         "C": "Gli dai una risposta approssimativa pur di non mandarlo altrove",
-        "D": "Gli dici di cercare da solo sul sito internet"
+        "D": "Lo indirizzi con cortesia all'ufficio competente dell'Ateneo, fornendogli indicazioni chiare su come raggiungerlo fisicamente o telematicamente"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 21, comma 4 del Codice Etico UniSS prescrive che i dipendenti non competenti per posizione o materia indirizzino gli interessati ai funzionari o uffici competenti dell'Ateneo per consentire loro di raggiungerli agevolmente."
     },
     {
@@ -2477,12 +2477,12 @@ var BANCA_DATI = {
       "argomento": "Problem solving amministrativo",
       "domanda": "Mentre prepari la documentazione per una seduta del Consiglio di Dipartimento, ti accorgi che manca il parere preventivo obbligatorio di un altro organo su uno dei punti all'ordine del giorno, richiesto 35 giorni fa senza risposta. Come ti regoli?",
       "opzioni": {
-        "A": "Togli il punto dall'ordine del giorno rinviandolo a data da destinarsi",
-        "B": "Verifichi che la richiesta sia stata regolarmente protocollata oltre 30 giorni fa e segnali al Direttore che, ai sensi dell'art. 65 dello Statuto, decorso il termine perentorio di 30 giorni il parere si intende reso e l'organo può procedere",
+        "A": "Verifichi che la richiesta sia stata regolarmente protocollata oltre 30 giorni fa e segnali al Direttore che, ai sensi dell'art. 65 dello Statuto, decorso il termine perentorio di 30 giorni il parere si intende reso e l'organo può procedere",
+        "B": "Togli il punto dall'ordine del giorno rinviandolo a data da destinarsi",
         "C": "Redigi tu stesso il parere mancante a nome dell'altro organo",
         "D": "Invii un sollecito attendendo altri 30 giorni prima di procedere"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 65 dello Statuto UniSS stabilisce che i pareri obbligatori vanno resi entro il termine perentorio di 30 giorni, decorsi i quali il parere si intende reso e gli organi interessati possono comunque procedere."
     },
     {
@@ -2520,11 +2520,11 @@ var BANCA_DATI = {
       "domanda": "Al termine della giornata lavorativa sei l'ultimo a lasciare l'ufficio e noti che i computer di due colleghi sono rimasti accesi e le luci della sala riunioni sono ancora illuminate. Come ti comporti?",
       "opzioni": {
         "A": "Esci senza toccare nulla perché non è tua responsabilità",
-        "B": "Spegni le luci e gli impianti non necessari e metti in sicurezza le postazioni secondo le disposizioni interne sul risparmio energetico e la sicurezza",
+        "B": "Scolleghi la corrente generale di tutto il piano",
         "C": "Lasci tutto acceso così la mattina dopo i colleghi trovano i PC già pronti",
-        "D": "Scolleghi la corrente generale di tutto il piano"
+        "D": "Spegni le luci e gli impianti non necessari e metti in sicurezza le postazioni secondo le disposizioni interne sul risparmio energetico e la sicurezza"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 20, comma 5 del Codice Etico UniSS richiama espressamente il dovere di contribuire alla riduzione delle spese anche energetiche evitando sprechi (spegnimento luci, climatizzazione e PC)."
     },
     {
@@ -2533,12 +2533,12 @@ var BANCA_DATI = {
       "argomento": "Problem solving amministrativo",
       "domanda": "Durante il controllo di una fattura passiva prima della liquidazione, rilevi una discordanza tra la quantità di materiale indicata in fattura e quella effettivamente riportata sul documento di trasporto firmato alla consegna. Come agisci?",
       "opzioni": {
-        "A": "Liquidi comunque l'intero importo per evitare interessi di mora",
-        "B": "Sospendi la liquidazione, segnali formalmente la difformità al fornitore chiedendo l'emissione di una nota di credito o la consegna del materiale mancante prima di certificare la regolare esecuzione",
+        "A": "Sospendi la liquidazione, segnali formalmente la difformità al fornitore chiedendo l'emissione di una nota di credito o la consegna del materiale mancante prima di certificare la regolare esecuzione",
+        "B": "Liquidi comunque l'intero importo per evitare interessi di mora",
         "C": "Correggi a penna l'importo sulla fattura elettronica",
         "D": "Cestini la fattura senza registrarla"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 33 e art. 34 del Regolamento AFC di UniSS, la liquidazione delle somme dovute nel ciclo passivo presuppone la certificazione della regolare consegna e congruità dei beni acquisiti."
     },
     {
@@ -2562,11 +2562,11 @@ var BANCA_DATI = {
       "domanda": "Ricevi un'email dai toni polemici da parte di un ufficio centrale che lamenta un presunto ritardo del tuo Dipartimento nell'invio di un rendiconto. Verifichi e scopri che il rendiconto era stato inviato puntualmente tre giorni prima. Come rispondi?",
       "opzioni": {
         "A": "Rispondi con un'email altrettanto polemica accusandoli di non saper leggere le email",
-        "B": "Rispondi in modo pacato, professionale e collaborativo, allegando nuovamente il documento e indicando gli estremi di protocollo dell'invio già effettuato",
-        "C": "Inoltri l'email polemica al Rettore per lamentarti",
+        "B": "Inoltri l'email polemica al Rettore per lamentarti",
+        "C": "Rispondi in modo pacato, professionale e collaborativo, allegando nuovamente il documento e indicando gli estremi di protocollo dell'invio già effettuato",
         "D": "Ignori l'email visto che tu avevi già adempiuto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Una comunicazione istituzionale chiara, pacata e documentata risolve immediatamente il malinteso senza alimentare tensioni inutili tra uffici."
     },
     {
@@ -2576,11 +2576,11 @@ var BANCA_DATI = {
       "domanda": "Due responsabili di unità diverse ti danno indicazioni operative contrastanti sulla medesima pratica amministrativa. Qual è il modo più corretto di procedere?",
       "opzioni": {
         "A": "Esegui quella che ti sembra più semplice ignorando l'altra",
-        "B": "Segnali tempestivamente la difformità al tuo diretto responsabile gerarchico chiedendo un allineamento univoco prima di adottare l'atto",
+        "B": "Esegui entrambe le indicazioni producendo due atti contraddittori",
         "C": "Non fai nulla finché i due responsabili non si mettono d'accordo da soli",
-        "D": "Esegui entrambe le indicazioni producendo due atti contraddittori"
+        "D": "Segnali tempestivamente la difformità al tuo diretto responsabile gerarchico chiedendo un allineamento univoco prima di adottare l'atto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Chiedere tempestivamente chiarezza al proprio diretto responsabile previene errori procedurali e garantisce l'unitarietà dell'azione amministrativa."
     },
     {
@@ -2589,12 +2589,12 @@ var BANCA_DATI = {
       "argomento": "Gestione dei conflitti e comunicazione",
       "domanda": "Un utente non vedente si presenta allo sportello per compilare un modulo cartaceo di iscrizione a un corso. Come ti comporti?",
       "opzioni": {
-        "A": "Gli dici che deve tornare accompagnato da un familiare",
-        "B": "Ti rendi pienamente disponibile a leggergli le voci del modulo, assisterlo nella compilazione o fornirgli il supporto digitale accessibile previsto dall'Ateneo, garantendo pari opportunità e riservatezza",
+        "A": "Ti rendi pienamente disponibile a leggergli le voci del modulo, assisterlo nella compilazione o fornirgli il supporto digitale accessibile previsto dall'Ateneo, garantendo pari opportunità e riservatezza",
+        "B": "Gli dici che deve tornare accompagnato da un familiare",
         "C": "Gli consegni il modulo cartaceo lasciandolo fare da solo",
         "D": "Compili il modulo al posto suo senza leggergli cosa stai scrivendo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 3 dello Statuto e gli artt. 5 e 21 del Codice Etico UniSS garantiscono l'assenza di ogni barriera o discriminazione e la massima disponibilità verso gli utenti con disabilità."
     },
     {
@@ -2618,11 +2618,11 @@ var BANCA_DATI = {
       "domanda": "Durante lo svolgimento delle tue mansioni vieni a conoscenza di una possibile irregolarità contabile compiuta all'interno dell'ufficio. Qual è il canale corretto per segnalarla godendo delle tutele di legge (whistleblowing)?",
       "opzioni": {
         "A": "Pubblicare un post anonimo sui social network",
-        "B": "Segnalare la condotta illecita al Responsabile della prevenzione della corruzione e della trasparenza (RPCT) dell'Ateneo tramite gli appositi canali riservati, ovvero all'ANAC o all'Autorità giudiziaria",
-        "C": "Inviare una email a tutti i dipendenti dell'Università",
+        "B": "Inviare una email a tutti i dipendenti dell'Università",
+        "C": "Segnalare la condotta illecita al Responsabile della prevenzione della corruzione e della trasparenza (RPCT) dell'Ateneo tramite gli appositi canali riservati, ovvero all'ANAC o all'Autorità giudiziaria",
         "D": "Non dire nulla per evitare ritorsioni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 18 del Codice Etico UniSS e la normativa sul whistleblowing (D.Lgs. 24/2023) tutelano l'identità e la posizione lavorativa del dipendente che segnala illeciti al RPCT, all'ANAC o all'Autorità giudiziaria."
     },
     {
@@ -2632,11 +2632,11 @@ var BANCA_DATI = {
       "domanda": "Sei membro della segreteria di supporto di una commissione di concorso e noti che uno dei candidati ammessi è tuo cugino di primo grado (parente di quarto grado). Come ti comporti?",
       "opzioni": {
         "A": "Resti nella segreteria perché il quarto grado non rientra mai in alcuna valutazione",
-        "B": "Comunichi tempestivamente la circostanza al Presidente della Commissione e al tuo responsabile per valutare l'opportunità di astensione per gravi ragioni di convenienza",
+        "B": "Lo penalizzi nella gestione amministrativa per dimostrare imparzialità",
         "C": "Aiuti tuo cugino fornendogli consigli sulle domande più probabili",
-        "D": "Lo penalizzi nella gestione amministrativa per dimostrare imparzialità"
+        "D": "Comunichi tempestivamente la circostanza al Presidente della Commissione e al tuo responsabile per valutare l'opportunità di astensione per gravi ragioni di convenienza"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 16, comma 3 del Codice Etico UniSS prevede l'astensione non solo per parenti/affini entro il secondo grado ma anche in ogni altro caso in cui esistano gravi ragioni di convenienza, rimettendo la decisione al responsabile."
     },
     {
@@ -2645,12 +2645,12 @@ var BANCA_DATI = {
       "argomento": "Etica, integrità e prevenzione illeciti",
       "domanda": "Un ente privato di formazione ti propone un incarico retribuito di docenza pomeridiana al di fuori del tuo orario di servizio a tempo pieno presso UniSS. Cosa devi fare prima di accettare?",
       "opzioni": {
-        "A": "Accetti subito perché si svolge fuori dall'orario di lavoro",
-        "B": "Verifichi che non sussista conflitto d'interessi con l'Ateneo e richiedi preventivamente l'espressa autorizzazione all'Università secondo il Regolamento sugli incarichi extraistituzionali",
+        "A": "Verifichi che non sussista conflitto d'interessi con l'Ateneo e richiedi preventivamente l'espressa autorizzazione all'Università secondo il Regolamento sugli incarichi extraistituzionali",
+        "B": "Accetti subito perché si svolge fuori dall'orario di lavoro",
         "C": "Svolgi l'incarico e lo comunichi all'Università solo a fine anno",
         "D": "Fai fatturare l'incarico a un tuo familiare"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Ai sensi dell'art. 53 del D.Lgs. 165/2001 e degli artt. 16 e 23 del Codice Etico UniSS, il personale a tempo pieno può svolgere incarichi extraistituzionali solo previa autorizzazione espressa dell'Ateneo e in assenza di conflitto d'interessi."
     },
     {
@@ -2674,11 +2674,11 @@ var BANCA_DATI = {
       "domanda": "Un collega di un altro ufficio ti chiede di inviargli via email l'elenco completo dei codici fiscali e degli indirizzi privati di tutti gli studenti di un corso di laurea per un'indagine statistica informale. Come ti comporti?",
       "opzioni": {
         "A": "Gli invii subito il file Excel completo",
-        "B": "Verifichi la base giuridica e la finalità istituzionale della richiesta; per finalità statistiche fornisci esclusivamente dati aggregati o anonimizzati nel rispetto del principio di minimizzazione del GDPR",
-        "C": "Pubblichi l'elenco su una cartella condivisa aperta a tutti",
+        "B": "Pubblichi l'elenco su una cartella condivisa aperta a tutti",
+        "C": "Verifichi la base giuridica e la finalità istituzionale della richiesta; per finalità statistiche fornisci esclusivamente dati aggregati o anonimizzati nel rispetto del principio di minimizzazione del GDPR",
         "D": "Gli dai la tua password per farli scaricare direttamente dal gestionale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il principio di minimizzazione dei dati (art. 5 GDPR) e l'art. 20, comma 6 del Codice Etico UniSS impongono di trattare e trasmettere solo i dati strettamente necessari e legittimati, evitando la diffusione ingiustificata di dati personali."
     },
     {
@@ -2688,11 +2688,11 @@ var BANCA_DATI = {
       "domanda": "Nel tuo ufficio si accumulano diverse richieste ripetitive sugli orari di ricevimento e sulle scadenze dei bandi. Quale iniziativa semplice può migliorare contemporaneamente l'efficienza interna e il servizio all'utenza?",
       "opzioni": {
         "A": "Staccare il telefono nelle ore di punta",
-        "B": "Proporre al responsabile di aggiornare la sezione FAQ del sito dell'ufficio e predisporre risposte standard chiare e complete",
+        "B": "Limitare l'apertura dello sportello a 15 minuti al giorno",
         "C": "Rispondere solo alle email che contengono la parola 'Urgente'",
-        "D": "Limitare l'apertura dello sportello a 15 minuti al giorno"
+        "D": "Proporre al responsabile di aggiornare la sezione FAQ del sito dell'ufficio e predisporre risposte standard chiare e complete"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Rendere facilmente accessibili le informazioni sul sito istituzionale (in linea con l'art. 21, comma 11 del Codice Etico) riduce il carico di richieste ripetitive e migliora la trasparenza verso gli utenti."
     },
     {
@@ -2701,12 +2701,12 @@ var BANCA_DATI = {
       "argomento": "Collaborazione e lavoro di squadra",
       "domanda": "A fine anno ti accorgi che nel tuo carico di lavoro hai terminato tutte le pratiche assegnate con un giorno di anticipo, mentre un collega dello stesso ufficio è ancora sommerso da pratiche identiche in scadenza. Cosa fai?",
       "opzioni": {
-        "A": "Passi la giornata a navigare su internet in attesa che finisca il turno",
-        "B": "Ti offri spontaneamente di prendere in carico una parte delle sue pratiche per aiutare l'ufficio a rispettare tutte le scadenze",
+        "A": "Ti offri spontaneamente di prendere in carico una parte delle sue pratiche per aiutare l'ufficio a rispettare tutte le scadenze",
+        "B": "Passi la giornata a navigare su internet in attesa che finisca il turno",
         "C": "Fai notare al responsabile che il collega è lento",
         "D": "Chiedi di uscire in anticipo senza recuperare"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La condivisione dei carichi nei momenti di picco incarna pienamente la collaborazione e l'orientamento al risultato dell'unità organizzativa."
     },
     {
@@ -2729,12 +2729,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 2, comma 2 della Legge n. 241/1990, qual è il termine generale entro cui devono concludersi i procedimenti amministrativi di competenza delle amministrazioni statali e degli enti pubblici nazionali, qualora non sia diversamente disposto?",
       "opzioni": {
-        "A": "Quindici giorni",
-        "B": "Trenta giorni",
+        "A": "Trenta giorni",
+        "B": "Quindici giorni",
         "C": "Sessanta giorni",
         "D": "Novanta giorni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 2, comma 2 della L. 241/1990 stabilisce che, nei casi in cui disposizioni di legge ovvero i provvedimenti di cui ai commi 3, 4 e 5 non prevedono un termine diverso, i procedimenti amministrativi di competenza delle amministrazioni statali e degli enti pubblici nazionali devono concludersi entro il termine di trenta giorni."
     },
     {
@@ -2758,11 +2758,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 10-bis della Legge n. 241/1990 (comunicazione dei motivi ostativi all'accoglimento dell'istanza o 'preavviso di rigetto'), entro quale termine gli istanti hanno diritto di presentare per iscritto le loro osservazioni?",
       "opzioni": {
         "A": "Entro cinque giorni dal ricevimento della comunicazione",
-        "B": "Entro dieci giorni dal ricevimento della comunicazione",
-        "C": "Entro quindici giorni dal ricevimento della comunicazione",
+        "B": "Entro quindici giorni dal ricevimento della comunicazione",
+        "C": "Entro dieci giorni dal ricevimento della comunicazione",
         "D": "Entro trenta giorni dal ricevimento della comunicazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 10-bis della L. 241/1990 stabilisce che nei procedimenti ad istanza di parte il responsabile del procedimento, prima della formale adozione di un provvedimento negativo, comunica tempestivamente agli istanti i motivi che ostano all'accoglimento della domanda; entro il termine di dieci giorni dal ricevimento della comunicazione gli istanti hanno diritto di presentare per iscritto le loro osservazioni."
     },
     {
@@ -2772,11 +2772,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 10-bis della L. 241/1990, l'istituto del preavviso di rigetto si applica alle procedure concorsuali e ai procedimenti in materia previdenziale e assistenziale?",
       "opzioni": {
         "A": "Sì, si applica sempre anche alle procedure concorsuali",
-        "B": "No, l'art. 10-bis esclude espressamente le procedure concorsuali e i procedimenti in materia previdenziale e assistenziale",
+        "B": "Si applica solo ai concorsi per dirigenti",
         "C": "Si applica alle procedure concorsuali solo se il bando lo prevede",
-        "D": "Si applica solo ai concorsi per dirigenti"
+        "D": "No, l'art. 10-bis esclude espressamente le procedure concorsuali e i procedimenti in materia previdenziale e assistenziale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'ultimo periodo dell'art. 10-bis della L. 241/1990 esclude espressamente l'applicazione delle disposizioni sul preavviso di rigetto alle procedure concorsuali e ai procedimenti in materia previdenziale e assistenziale sorti a seguito di istanza di parte e gestiti dagli enti previdenziali."
     },
     {
@@ -2800,11 +2800,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 8 della Legge n. 241/1990, quale elemento NON è obbligatorio nella comunicazione di avvio del procedimento?",
       "opzioni": {
         "A": "L'amministrazione competente e l'oggetto del procedimento promosso",
-        "B": "L'ufficio, il domicilio digitale dell'amministrazione e la persona responsabile del procedimento",
+        "B": "Il testo integrale del provvedimento finale già redatto",
         "C": "La data entro la quale deve concludersi il procedimento e i rimedi esperibili in caso di inerzia",
-        "D": "Il testo integrale del provvedimento finale già redatto"
+        "D": "L'ufficio, il domicilio digitale dell'amministrazione e la persona responsabile del procedimento"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "All'avvio del procedimento l'istruttoria deve ancora svolgersi, pertanto il provvedimento finale non esiste ancora. Gli elementi elencati alle lettere A, B e C sono invece espressamente richiesti dall'art. 8, comma 2 della L. 241/1990."
     },
     {
@@ -2814,11 +2814,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 14 della Legge n. 241/1990, qual è la modalità ordinaria di svolgimento della Conferenza di servizi decisoria?",
       "opzioni": {
         "A": "In forma simultanea e in modalità sincrona",
-        "B": "In forma semplificata e in modalità asincrona",
-        "C": "Mediante assemblea pubblica aperta a tutti i cittadini",
+        "B": "Mediante assemblea pubblica aperta a tutti i cittadini",
+        "C": "In forma semplificata e in modalità asincrona",
         "D": "Esclusivamente tramite posta raccomandata cartacea"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 14-bis, comma 1 della L. 241/1990 stabilisce che la conferenza decisoria si svolge di regola in forma semplificata e in modalità asincrona (salvi i casi di particolare complessità previsti dall'art. 14-bis, comma 6 e dall'art. 14-ter)."
     },
     {
@@ -2829,10 +2829,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Dieci giorni",
         "B": "Quindici giorni",
-        "C": "Venti giorni",
-        "D": "Trenta giorni"
+        "C": "Trenta giorni",
+        "D": "Venti giorni"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 16, comma 1 della L. 241/1990 prevede che gli organi consultivi delle pubbliche amministrazioni sono tenuti a rendere i pareri ad essi obbligatoriamente richiesti entro venti giorni dal ricevimento della richiesta."
     },
     {
@@ -2841,12 +2841,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 19 della Legge n. 241/1990, in caso di Segnalazione Certificata di Inizio Attività (SCIA), entro quale termine l'amministrazione competente, in caso di accertata carenza dei requisiti, adotta motivati provvedimenti di divieto di prosecuzione dell'attività?",
       "opzioni": {
-        "A": "Entro trenta giorni dal ricevimento della segnalazione",
-        "B": "Entro sessanta giorni dal ricevimento della segnalazione (ridotti a trenta in materia edilizia)",
+        "A": "Entro sessanta giorni dal ricevimento della segnalazione (ridotti a trenta in materia edilizia)",
+        "B": "Entro trenta giorni dal ricevimento della segnalazione",
         "C": "Entro novanta giorni",
         "D": "Entro centottanta giorni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 19, comma 3 della L. 241/1990 dispone che l'amministrazione competente, in caso di accertata carenza dei requisiti e dei presupposti, nel termine di sessanta giorni dal ricevimento della segnalazione (30 giorni per la SCIA edilizia ex comma 6-bis) adotta motivati provvedimenti di divieto di prosecuzione dell'attività."
     },
     {
@@ -2870,11 +2870,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 21-octies, comma 1 della Legge n. 241/1990, quali sono i tre vizi di legittimità che determinano l'annullabilità del provvedimento amministrativo?",
       "opzioni": {
         "A": "Nullità, inesistenza e irregolarità",
-        "B": "Violazione di legge, eccesso di potere e incompetenza",
-        "C": "Difetto assoluto di attribuzione, dolo e colpa grave",
+        "B": "Difetto assoluto di attribuzione, dolo e colpa grave",
+        "C": "Violazione di legge, eccesso di potere e incompetenza",
         "D": "Revoca, decadenza e abrogazione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 21-octies, comma 1 della L. 241/1990 stabilisce che è annullabile il provvedimento amministrativo adottato in violazione di legge o viziato da eccesso di potere o da incompetenza."
     },
     {
@@ -2884,11 +2884,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 21-nonies della Legge n. 241/1990, entro quale termine ragionevole massimo può essere disposto l'annullamento d'ufficio di un provvedimento amministrativo di autorizzazione o di attribuzione di vantaggi economici?",
       "opzioni": {
         "A": "Non superiore a sei mesi",
-        "B": "Non superiore a dodici mesi dal momento dell'adozione",
+        "B": "Senza alcun limite temporale in ogni caso",
         "C": "Non superiore a ventiquattro mesi",
-        "D": "Senza alcun limite temporale in ogni caso"
+        "D": "Non superiore a dodici mesi dal momento dell'adozione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "A seguito delle modifiche introdotte dal D.L. 77/2021 (conv. in L. 108/2021), l'art. 21-nonies, comma 1 della L. 241/1990 fissa il termine ragionevole per l'annullamento d'ufficio dei provvedimenti di autorizzazione o attribuzione di vantaggi economici in un periodo comunque non superiore a dodici mesi dal momento dell'adozione (salvo false rappresentazioni accertate con sentenza penale passata in giudicato)."
     },
     {
@@ -2926,11 +2926,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 25, comma 4 della Legge n. 241/1990, decorsi inutilmente trenta giorni dalla richiesta di accesso ai documenti amministrativi, questa si intende:",
       "opzioni": {
         "A": "Accolta (silenzio-assenso)",
-        "B": "Respinta (silenzio-diniego)",
-        "C": "Sospesa per ulteriori sessanta giorni",
+        "B": "Sospesa per ulteriori sessanta giorni",
+        "C": "Respinta (silenzio-diniego)",
         "D": "Trasmessa automaticamente al Prefetto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 25, comma 4 della L. 241/1990 stabilisce che, decorsi inutilmente trenta giorni dalla richiesta di accesso documentale, questa si intende respinta (silenzio-diniego), consentendo al richiedente di ricorrere al TAR o al Difensore civico / Commissione per l'accesso."
     },
     {
@@ -2940,11 +2940,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 24, comma 7 della Legge n. 241/1990, deve comunque essere garantito ai richiedenti l'accesso ai documenti amministrativi la cui conoscenza sia necessaria per:",
       "opzioni": {
         "A": "Soddisfare una curiosità giornalistica",
-        "B": "Curare o per difendere i propri interessi giuridici (accesso difensivo)",
+        "B": "Conoscere i redditi di tutti i colleghi d'ufficio",
         "C": "Effettuare ricerche di mercato a scopo commerciale",
-        "D": "Conoscere i redditi di tutti i colleghi d'ufficio"
+        "D": "Curare o per difendere i propri interessi giuridici (accesso difensivo)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 24, comma 7 della L. 241/1990 tutela il cosiddetto 'accesso difensivo', stabilendo che deve comunque essere garantito l'accesso ai documenti la cui conoscenza sia necessaria per curare o difendere i propri interessi giuridici (con il criterio della stretta indispensabilità per dati sensibili/giudiziari)."
     },
     {
@@ -2953,12 +2953,12 @@ var BANCA_DATI = {
       "argomento": "Contratti pubblici (D.Lgs. 36/2023)",
       "domanda": "Qual è il decreto legislativo che reca il vigente Codice dei contratti pubblici in attuazione dell'art. 1 della Legge 21 giugno 2022, n. 78?",
       "opzioni": {
-        "A": "D.Lgs. 18 aprile 2016, n. 50",
-        "B": "D.Lgs. 31 marzo 2023, n. 36",
+        "A": "D.Lgs. 31 marzo 2023, n. 36",
+        "B": "D.Lgs. 18 aprile 2016, n. 50",
         "C": "D.Lgs. 12 aprile 2006, n. 163",
         "D": "D.Lgs. 27 ottobre 2009, n. 150"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il Decreto Legislativo 31 marzo 2023, n. 36 è il vigente Codice dei contratti pubblici (efficace dal 1° luglio 2023), che ha abrogato e sostituito il precedente D.Lgs. 50/2016."
     },
     {
@@ -2967,12 +2967,12 @@ var BANCA_DATI = {
       "argomento": "Contratti pubblici (D.Lgs. 36/2023)",
       "domanda": "Quali sono i primi tre principi generali enunciati agli articoli 1, 2 e 3 del Codice dei contratti pubblici (D.Lgs. 36/2023)?",
       "opzioni": {
-        "A": "Principio del risultato, principio della fiducia e principio dell'accesso al mercato",
-        "B": "Principio di segretezza, principio di unicità dell'offerta e principio di gratuità",
+        "A": "Principio di segretezza, principio di unicità dell'offerta e principio di gratuità",
+        "B": "Principio del risultato, principio della fiducia e principio dell'accesso al mercato",
         "C": "Principio di rotazione, principio di cauzione e principio di subappalto",
         "D": "Principio di gerarchia, principio di silenzio-assenso e principio di autotutela"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il Libro I, Parte I, Titolo I del D.Lgs. 36/2023 si apre con tre principi cardine: art. 1 Principio del risultato; art. 2 Principio della fiducia; art. 3 Principio dell'accesso al mercato."
     },
     {
@@ -2981,12 +2981,12 @@ var BANCA_DATI = {
       "argomento": "Contratti pubblici (D.Lgs. 36/2023)",
       "domanda": "Ai sensi dell'art. 50, comma 1, lett. a) e b) del D.Lgs. 36/2023, entro quali soglie di importo le stazioni appaltanti procedono mediante affidamento diretto (anche senza consultazione di più operatori economici)?",
       "opzioni": {
-        "A": "Lavori di importo inferiore a 150.000 euro; servizi e forniture (ivi compresi i servizi di ingegneria e architettura) di importo inferiore a 140.000 euro",
+        "A": "Lavori inferiori a 500.000 euro e servizi inferiori a 215.000 euro",
         "B": "Lavori e forniture entrambi inferiori a 40.000 euro",
-        "C": "Lavori inferiori a 500.000 euro e servizi inferiori a 215.000 euro",
+        "C": "Lavori di importo inferiore a 150.000 euro; servizi e forniture (ivi compresi i servizi di ingegneria e architettura) di importo inferiore a 140.000 euro",
         "D": "Qualsiasi importo inferiore alla soglia comunitaria di 5.538.000 euro"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 50, comma 1 del D.Lgs. 36/2023 consente l'affidamento diretto per lavori di importo inferiore a 150.000 euro (lett. a) e per servizi e forniture di importo inferiore a 140.000 euro (lett. b), assicurando che siano scelti soggetti in possesso di documentate esperienze pregresse."
     },
     {
@@ -2996,11 +2996,11 @@ var BANCA_DATI = {
       "domanda": "Nel D.Lgs. 36/2023 (art. 15), l'acronimo 'RUP' indica il:",
       "opzioni": {
         "A": "Responsabile Unico del Procedimento",
-        "B": "Responsabile Unico del Progetto",
+        "B": "Rappresentante Ufficiale della Pubblica Amministrazione",
         "C": "Revisore Unico dei Pagamenti",
-        "D": "Rappresentante Ufficiale della Pubblica Amministrazione"
+        "D": "Responsabile Unico del Progetto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il D.Lgs. 36/2023, all'art. 15, ha rinominato la figura del RUP in 'Responsabile Unico del Progetto' (anziché del Procedimento), responsabile delle fasi di programmazione, progettazione, affidamento ed esecuzione di ciascuna procedura soggetta al codice."
     },
     {
@@ -3038,11 +3038,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 17, comma 2 del D.Lgs. 36/2023, in caso di affidamento diretto, la decisione a contrarre individua:",
       "opzioni": {
         "A": "Solo il nominativo della commissione giudicatrice",
-        "B": "L'oggetto, l'importo e il contraente, unitamente alle ragioni della sua scelta, ai requisiti di carattere generale e, se necessari, a quelli inerenti alla capacità economico-finanziaria e tecnico-professionale",
-        "C": "Esclusivamente il codice IBAN del fornitore",
+        "B": "Esclusivamente il codice IBAN del fornitore",
+        "C": "L'oggetto, l'importo e il contraente, unitamente alle ragioni della sua scelta, ai requisiti di carattere generale e, se necessari, a quelli inerenti alla capacità economico-finanziaria e tecnico-professionale",
         "D": "I criteri di valutazione dell'offerta economicamente più vantaggiosa con punteggio 70/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 17, comma 2 del D.Lgs. 36/2023 semplifica l'avvio dell'affidamento diretto stabilendo che l'atto (decisione a contrarre) individua direttamente oggetto, importo, contraente, ragioni della scelta e possesso dei requisiti."
     },
     {
@@ -3051,12 +3051,12 @@ var BANCA_DATI = {
       "argomento": "Documentazione amministrativa (D.P.R. 445/2000)",
       "domanda": "Ai sensi degli artt. 46 e 47 del D.P.R. 445/2000, qual è la differenza tra dichiarazione sostitutiva di certificazione e dichiarazione sostitutiva dell'atto di notorietà?",
       "opzioni": {
-        "A": "La prima sostituisce certificati relativi a stati, qualità personali e fatti risultanti da albi o pubblici registri (art. 46); la seconda riguarda stati, qualità personali o fatti a diretta conoscenza dell'interessato non compresi nell'elenco dell'art. 46 (art. 47)",
+        "A": "Non esiste alcuna differenza normativa tra i due istituti",
         "B": "La prima richiede l'autentica del notaio, la seconda no",
         "C": "La prima vale solo per i cittadini stranieri, la seconda solo per i cittadini italiani",
-        "D": "Non esiste alcuna differenza normativa tra i due istituti"
+        "D": "La prima sostituisce certificati relativi a stati, qualità personali e fatti risultanti da albi o pubblici registri (art. 46); la seconda riguarda stati, qualità personali o fatti a diretta conoscenza dell'interessato non compresi nell'elenco dell'art. 46 (art. 47)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il D.P.R. 445/2000 distingue le dichiarazioni sostitutive di certificazione (art. 46, elenco tassativo di dati già in possesso di PA) dalle dichiarazioni sostitutive dell'atto di notorietà (art. 47, tutti gli altri fatti, stati e qualità personali a diretta conoscenza del dichiarante)."
     },
     {
@@ -3065,12 +3065,12 @@ var BANCA_DATI = {
       "argomento": "Documentazione amministrativa (D.P.R. 445/2000)",
       "domanda": "Ai sensi dell'art. 40 del D.P.R. 445/2000, le certificazioni rilasciate dalla pubblica amministrazione in ordine a stati, qualità personali e fatti sono valide e utilizzabili:",
       "opzioni": {
-        "A": "Sia nei rapporti con i privati sia nei rapporti con gli organi della pubblica amministrazione",
-        "B": "Solo nei rapporti tra privati; nei rapporti con gli organi della pubblica amministrazione e i gestori di pubblici servizi i certificati e gli atti di notorietà sono sempre sostituiti dalle dichiarazioni sostitutive",
+        "A": "Solo nei rapporti tra privati; nei rapporti con gli organi della pubblica amministrazione e i gestori di pubblici servizi i certificati e gli atti di notorietà sono sempre sostituiti dalle dichiarazioni sostitutive",
+        "B": "Sia nei rapporti con i privati sia nei rapporti con gli organi della pubblica amministrazione",
         "C": "Esclusivamente nei concorsi universitari",
         "D": "Solo se bollati con marca da 16 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 40, comma 1 del D.P.R. 445/2000 (norma sulla 'decertificazione') stabilisce che i certificati della PA sono validi solo nei rapporti tra privati, mentre nei rapporti con la PA e i gestori di pubblici servizi sono sempre sostituiti dalle autocertificazioni."
     },
     {
@@ -3108,11 +3108,11 @@ var BANCA_DATI = {
       "domanda": "Qual è la base giuridica ordinaria che legittima il trattamento dei dati personali da parte di un'Università pubblica (come UniSS) nell'esercizio delle proprie attività istituzionali (art. 6, par. 1, lett. e GDPR)?",
       "opzioni": {
         "A": "Esclusivamente il consenso scritto e revocabile dello studente o del cittadino",
-        "B": "L'esecuzione di un compito di interesse pubblico o connesso all'esercizio di pubblici poteri di cui è investito il titolare del trattamento (oltre all'adempimento di obblighi legali)",
-        "C": "Il legittimo interesse commerciale dell'Ateneo",
+        "B": "Il legittimo interesse commerciale dell'Ateneo",
+        "C": "L'esecuzione di un compito di interesse pubblico o connesso all'esercizio di pubblici poteri di cui è investito il titolare del trattamento (oltre all'adempimento di obblighi legali)",
         "D": "La salvaguardia degli interessi vitali del Rettore"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Le pubbliche amministrazioni non fondano di regola i trattamenti istituzionali sul consenso (che non sarebbe libero), bensì sull'art. 6, par. 1, lett. c) (obbligo legale) ed e) (esecuzione di un compito di interesse pubblico o connesso all'esercizio di pubblici poteri)."
     },
     {
@@ -3122,11 +3122,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 33 del GDPR, in caso di violazione dei dati personali (data breach), entro quanto tempo il Titolare del trattamento deve notificare la violazione all'Autorità Garante (salvo che sia improbabile che presenti un rischio per i diritti e le libertà delle persone)?",
       "opzioni": {
         "A": "Entro 24 ore",
-        "B": "Senza ingiustificato ritardo e, ove possibile, entro 72 ore dal momento in cui ne è venuto a conoscenza",
+        "B": "Entro 30 giorni",
         "C": "Entro 7 giorni lavorativi",
-        "D": "Entro 30 giorni"
+        "D": "Senza ingiustificato ritardo e, ove possibile, entro 72 ore dal momento in cui ne è venuto a conoscenza"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 33, par. 1 del GDPR obbliga il titolare a notificare il data breach all'autorità di controllo competente senza ingiustificato ritardo e, ove possibile, entro 72 ore dal momento in cui ne è venuto a conoscenza."
     },
     {
@@ -3164,11 +3164,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 12 del GDPR, entro quale termine il Titolare del trattamento deve fornire riscontro all'interessato che esercita i propri diritti (es. accesso, rettifica, cancellazione)?",
       "opzioni": {
         "A": "Entro 10 giorni",
-        "B": "Senza ingiustificato ritardo e, comunque, al più tardi entro un mese dal ricevimento della richiesta (prorogabile di due mesi in casi complessi)",
-        "C": "Entro 60 giorni",
+        "B": "Entro 60 giorni",
+        "C": "Senza ingiustificato ritardo e, comunque, al più tardi entro un mese dal ricevimento della richiesta (prorogabile di due mesi in casi complessi)",
         "D": "Entro 90 giorni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 12, par. 3 del GDPR fissa in un mese dal ricevimento della richiesta il termine ordinario di risposta all'interessato, prorogabile di due mesi tenuto conto della complessità e del numero delle richieste."
     },
     {
@@ -3177,12 +3177,12 @@ var BANCA_DATI = {
       "argomento": "Trasparenza amministrativa (D.Lgs. 33/2013)",
       "domanda": "Come viene definita la trasparenza amministrativa dall'art. 1, comma 1 del D.Lgs. 14 marzo 2013, n. 33?",
       "opzioni": {
-        "A": "Accessibilità totale dei dati e documenti detenuti dalle pubbliche amministrazioni, allo scopo di tutelare i diritti dei cittadini, promuovere la partecipazione degli interessati all'attività amministrativa e favorire forme diffuse di controllo sul perseguimento delle funzioni istituzionali e sull'utilizzo delle risorse pubbliche",
+        "A": "Diritto riservato ai soli giornalisti iscritti all'ordine",
         "B": "Possibilità di consultare gli atti solo previa dimostrazione di un interesse giudiziario diretto",
         "C": "Pubblicazione esclusiva dei bilanci consuntivi sull'albo pretorio cartaceo",
-        "D": "Diritto riservato ai soli giornalisti iscritti all'ordine"
+        "D": "Accessibilità totale dei dati e documenti detenuti dalle pubbliche amministrazioni, allo scopo di tutelare i diritti dei cittadini, promuovere la partecipazione degli interessati all'attività amministrativa e favorire forme diffuse di controllo sul perseguimento delle funzioni istituzionali e sull'utilizzo delle risorse pubbliche"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 1, comma 1 del D.Lgs. 33/2013 (Testo Unico Trasparenza) definisce la trasparenza come accessibilità totale dei dati e documenti detenuti dalle PA."
     },
     {
@@ -3233,12 +3233,12 @@ var BANCA_DATI = {
       "argomento": "Prevenzione della corruzione (L. 190/2012)",
       "domanda": "Qual è la legge che reca 'Disposizioni per la prevenzione e la repressione della corruzione e dell'illegalità nella pubblica amministrazione' (nota come Legge Severino)?",
       "opzioni": {
-        "A": "Legge 6 novembre 2012, n. 190",
+        "A": "Legge 5 febbraio 1992, n. 104",
         "B": "Legge 7 agosto 1990, n. 241",
         "C": "Legge 30 dicembre 2010, n. 240",
-        "D": "Legge 5 febbraio 1992, n. 104"
+        "D": "Legge 6 novembre 2012, n. 190"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La Legge 6 novembre 2012, n. 190 ha introdotto il sistema organico di prevenzione della corruzione nella PA, istituendo il Piano Nazionale Anticorruzione (PNA), i Piani Triennali e la figura del RPCT."
     },
     {
@@ -3247,12 +3247,12 @@ var BANCA_DATI = {
       "argomento": "Prevenzione della corruzione (L. 190/2012)",
       "domanda": "In quale documento di programmazione unitaria delle pubbliche amministrazioni (introdotto dal D.L. 80/2021 e richiamato anche nel bando UniSS) è oggi assorbita la sezione relativa ai rischi corruttivi e alla trasparenza?",
       "opzioni": {
-        "A": "Nel Bilancio di esercizio",
-        "B": "Nel PIAO (Piano Integrato di Attività e Organizzazione)",
+        "A": "Nel PIAO (Piano Integrato di Attività e Organizzazione)",
+        "B": "Nel Bilancio di esercizio",
         "C": "Nello Statuto di Ateneo",
         "D": "Nel Regolamento didattico"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il D.L. 80/2021 (art. 6) ha istituito il PIAO (Piano Integrato di Attività e Organizzazione) di durata triennale con aggiornamento annuale, in cui confluiscono la programmazione dei fabbisogni, la performance, il lavoro agile e la prevenzione della corruzione e trasparenza (ex PTPCT)."
     },
     {
@@ -3276,11 +3276,11 @@ var BANCA_DATI = {
       "domanda": "Chi predispone la sezione anticorruzione e trasparenza del PIAO e segnala all'organo di indirizzo e all'OIV le disfunzioni inerenti all'attuazione delle misure di prevenzione?",
       "opzioni": {
         "A": "Il Collegio dei Revisori dei conti",
-        "B": "Il Responsabile della prevenzione della corruzione e della trasparenza (RPCT)",
-        "C": "Il Consiglio degli Studenti",
+        "B": "Il Consiglio degli Studenti",
+        "C": "Il Responsabile della prevenzione della corruzione e della trasparenza (RPCT)",
         "D": "Il Presidente del Collegio di Disciplina"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 1, comma 7 ss. della L. 190/2012, il RPCT (Responsabile della prevenzione della corruzione e della trasparenza) propone lo strumento di pianificazione anticorruzione, ne verifica l'efficace attuazione e cura la rotazione degli incarichi."
     },
     {
@@ -3289,12 +3289,12 @@ var BANCA_DATI = {
       "argomento": "Prevenzione della corruzione (L. 190/2012)",
       "domanda": "Quale tra i seguenti settori di attività amministrativa è espressamente individuato dall'art. 1, comma 16 della L. 190/2012 come area a più elevato rischio corruttivo?",
       "opzioni": {
-        "A": "Scelta del contraente per l'affidamento di lavori, forniture e servizi; concorsi e prove selettive per l'assunzione del personale; concessione ed erogazione di sovvenzioni e contributi",
+        "A": "Stampa dei libretti universitari",
         "B": "Manutenzione ordinaria degli impianti di illuminazione delle aule",
         "C": "Catalogazione alfabetica dei volumi della biblioteca",
-        "D": "Stampa dei libretti universitari"
+        "D": "Scelta del contraente per l'affidamento di lavori, forniture e servizi; concorsi e prove selettive per l'assunzione del personale; concessione ed erogazione di sovvenzioni e contributi"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 1, comma 16 della L. 190/2012 individua quattro macro-aree a rischio obbligatorie: autorizzazioni/concessioni, scelta del contraente negli appalti, concessione di sovvenzioni/contributi/vantaggi economici, concorsi e prove selettive del personale."
     },
     {
@@ -3317,12 +3317,12 @@ var BANCA_DATI = {
       "argomento": "Whistleblowing (D.Lgs. 24/2023)",
       "domanda": "In base alla disciplina sul whistleblowing (D.Lgs. 24/2023 e art. 18 Codice Etico UniSS), la segnalazione di condotte illecite effettuata dal dipendente è:",
       "opzioni": {
-        "A": "Sottratta all'accesso previsto dagli artt. 22 ss. della L. 241/1990 e dall'accesso civico generalizzato",
-        "B": "Pubblicata integralmente sull'albo online dell'Università",
+        "A": "Pubblicata integralmente sull'albo online dell'Università",
+        "B": "Sottratta all'accesso previsto dagli artt. 22 ss. della L. 241/1990 e dall'accesso civico generalizzato",
         "C": "Accessibile a chiunque ne faccia richiesta entro 10 giorni",
         "D": "Trasmessa obbligatoriamente ai sindacati di categoria con il nome del segnalante"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 12 del D.Lgs. 24/2023 e l'art. 18, comma 2 del Codice Etico UniSS tutelano rigorosamente la riservatezza dell'identità del segnalante e sottraggono la segnalazione sia all'accesso documentale ex L. 241/1990 sia all'accesso civico ex D.Lgs. 33/2013."
     },
     {
@@ -3332,11 +3332,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 19 del D.Lgs. 33/2013, quali atti relativi ai concorsi pubblici devono essere pubblicati dalle amministrazioni nella sezione 'Amministrazione trasparente - Bandi di concorso'?",
       "opzioni": {
         "A": "Esclusivamente il bando di concorso",
-        "B": "I bandi di concorso per il reclutamento a qualsiasi titolo di personale presso l'amministrazione, nonché i criteri di valutazione della Commissione, le tracce delle prove e le graduatorie finali, aggiornate con l'eventuale scorrimento degli idonei",
-        "C": "Solo i nomi dei vincitori senza punteggi",
+        "B": "Solo i nomi dei vincitori senza punteggi",
+        "C": "I bandi di concorso per il reclutamento a qualsiasi titolo di personale presso l'amministrazione, nonché i criteri di valutazione della Commissione, le tracce delle prove e le graduatorie finali, aggiornate con l'eventuale scorrimento degli idonei",
         "D": "Le domande di partecipazione complete di documenti di identità di tutti i candidati"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 19 del D.Lgs. 33/2013 impone la pubblicazione dei bandi, dei criteri di valutazione della commissione, delle tracce delle prove e delle graduatorie finali aggiornate con gli scorrimenti."
     },
     {
@@ -3346,11 +3346,11 @@ var BANCA_DATI = {
       "domanda": "Nella pubblicazione online di graduatorie concorsuali o elenchi di ammessi sul sito istituzionale dell'Ateneo, quale accorgimento impone il Garante Privacy in applicazione del principio di minimizzazione?",
       "opzioni": {
         "A": "Pubblicare indirizzo di casa, numero di cellulare e codice fiscale di tutti i candidati",
-        "B": "Pubblicare solo i dati strettamente necessari all'identificazione (o l'ID anonimo PICA ove previsto dal bando), evitando di diffondere dati eccedenti come recapiti privati, stato di salute o condizioni di disabilità",
+        "B": "Pubblicare le scansioni dei documenti d'identità dei candidati",
         "C": "Non pubblicare mai alcun risultato sul sito",
-        "D": "Pubblicare le scansioni dei documenti d'identità dei candidati"
+        "D": "Pubblicare solo i dati strettamente necessari all'identificazione (o l'ID anonimo PICA ove previsto dal bando), evitando di diffondere dati eccedenti come recapiti privati, stato di salute o condizioni di disabilità"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il Garante per la protezione dei dati personali (e l'art. 8 del bando UniSS mediante l'uso dell'ID PICA) vieta la diffusione online di dati personali eccedenti o idonei a rivelare lo stato di salute (es. riserve ex L. 68/1999 o ausili ex L. 104/1992)."
     },
     {
@@ -3359,12 +3359,12 @@ var BANCA_DATI = {
       "argomento": "Pubblico impiego (D.Lgs. 165/2001)",
       "domanda": "Ai sensi dell'art. 35, comma 5-bis del D.Lgs. 165/2001, i vincitori dei concorsi devono permanere nella sede di prima destinazione per un periodo non inferiore a:",
       "opzioni": {
-        "A": "Due anni",
+        "A": "Cinque anni",
         "B": "Tre anni",
-        "C": "Cinque anni",
+        "C": "Due anni",
         "D": "Sette anni"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 35, comma 5-bis del D.Lgs. 165/2001 stabilisce che i vincitori dei concorsi devono permanere nella sede di prima destinazione per un periodo non inferiore a cinque anni (disposizione non derogabile dai contratti collettivi)."
     },
     {
@@ -3388,11 +3388,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 36 del D.Lgs. 165/2001, la violazione di disposizioni imperative riguardanti l'assunzione o l'impiego di lavoratori da parte delle pubbliche amministrazioni può comportare la costituzione di rapporti di lavoro a tempo indeterminato con le medesime PA?",
       "opzioni": {
         "A": "Sì, sempre dopo 12 mesi di contratto a termine",
-        "B": "No, in nessun caso la violazione di disposizioni imperative può comportare la costituzione di rapporti di lavoro a tempo indeterminato con le PA (fermo restando il diritto al risarcimento del danno), poiché l'accesso avviene esclusivamente mediante concorso pubblico ex art. 97 Cost.",
-        "C": "Sì, su richiesta dei sindacati",
+        "B": "Sì, su richiesta dei sindacati",
+        "C": "No, in nessun caso la violazione di disposizioni imperative può comportare la costituzione di rapporti di lavoro a tempo indeterminato con le PA (fermo restando il diritto al risarcimento del danno), poiché l'accesso avviene esclusivamente mediante concorso pubblico ex art. 97 Cost.",
         "D": "Sì, previo parere del Rettore"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 36, comma 5 del D.Lgs. 165/2001 sancisce il divieto assoluto di conversione del contratto a termine in tempo indeterminato nella PA, in attuazione dell'art. 97, comma 4 della Costituzione."
     },
     {
@@ -3402,11 +3402,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 52 del D.Lgs. 165/2001, l'esercizio di fatto di mansioni non corrispondenti alla qualifica di appartenenza nel pubblico impiego:",
       "opzioni": {
         "A": "Dà diritto all'inquadramento automatico nella qualifica superiore dopo 6 mesi",
-        "B": "Non ha effetto ai fini dell'inquadramento del lavoratore o dell'assegnazione di incarichi di direzione (salvo il diritto alle differenze retributive nei casi tassativi di adibizione a mansioni immediatamente superiori previsti dalla legge)",
+        "B": "Comporta il licenziamento del dipendente",
         "C": "È sempre vietato a pena di nullità del contratto",
-        "D": "Comporta il licenziamento del dipendente"
+        "D": "Non ha effetto ai fini dell'inquadramento del lavoratore o dell'assegnazione di incarichi di direzione (salvo il diritto alle differenze retributive nei casi tassativi di adibizione a mansioni immediatamente superiori previsti dalla legge)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 52, comma 1 del D.Lgs. 165/2001 esclude qualsiasi automatismo di carriera per svolgimento di mansioni superiori di fatto, poiché le progressioni tra aree richiedono apposite procedure selettive."
     },
     {
@@ -3415,12 +3415,12 @@ var BANCA_DATI = {
       "argomento": "Responsabilità disciplinare (D.Lgs. 165/2001)",
       "domanda": "Ai sensi dell'art. 55-bis del D.Lgs. 165/2001, per le infrazioni di minore gravità per le quali è prevista l'irrogazione della sanzione del rimprovero verbale, il procedimento disciplinare è di competenza:",
       "opzioni": {
-        "A": "Dell'Ufficio per i Procedimenti Disciplinari (UPD)",
-        "B": "Del responsabile della struttura presso cui presta servizio il dipendente",
+        "A": "Del responsabile della struttura presso cui presta servizio il dipendente",
+        "B": "Dell'Ufficio per i Procedimenti Disciplinari (UPD)",
         "C": "Del Collegio dei Revisori dei conti",
         "D": "Del Giudice del Lavoro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 55-bis, comma 1 del D.Lgs. 165/2001 attribuisce al responsabile della struttura presso cui presta servizio il dipendente la competenza esclusiva per il rimprovero verbale, mentre per tutte le sanzioni superiori al rimprovero verbale è competente l'Ufficio per i Procedimenti Disciplinari (UPD)."
     },
     {
@@ -3443,12 +3443,12 @@ var BANCA_DATI = {
       "argomento": "Incompatibilità e incarichi (D.Lgs. 165/2001)",
       "domanda": "Ai sensi dell'art. 53, comma 6 del D.Lgs. 165/2001, quali tra i seguenti compensi possono essere percepiti dai dipendenti pubblici a tempo pieno senza necessità di preventiva autorizzazione (ferma restando la comunicazione/assenza di conflitto)?",
       "opzioni": {
-        "A": "Compensi derivanti da collaborazioni a giornali, riviste, enciclopedie e simili; utilizzazione economica da parte dell'autore di opere dell'ingegno e di invenzioni industriali; partecipazione a convegni e seminari",
+        "A": "Compensi per cariche di amministratore delegato in società a scopo di lucro",
         "B": "Compensi per l'esercizio abituale della libera professione di avvocato o commercialista",
-        "C": "Compensi per cariche di amministratore delegato in società a scopo di lucro",
+        "C": "Compensi derivanti da collaborazioni a giornali, riviste, enciclopedie e simili; utilizzazione economica da parte dell'autore di opere dell'ingegno e di invenzioni industriali; partecipazione a convegni e seminari",
         "D": "Compensi per un secondo rapporto di lavoro subordinato presso un'azienda privata"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 53, comma 6 del D.Lgs. 165/2001 liberalizza (escludendoli dal regime autorizzatorio) i compensi derivanti da attività espressamente elencate, tra cui collaborazioni a giornali/riviste, diritti d'autore, partecipazione a convegni e seminari e incarichi per i quali è corrisposto solo il rimborso delle spese documentate."
     },
     {
@@ -3458,11 +3458,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi del D.P.R. 9 maggio 1994, n. 487 (come modificato dal D.P.R. 16 giugno 2023, n. 82) e dell'art. 11 del bando UniSS, qual è l'ultimo criterio di preferenza applicabile a parità di merito e in assenza di altri titoli di preferenza?",
       "opzioni": {
         "A": "La maggiore età anagrafica",
-        "B": "La minore età anagrafica",
+        "B": "Il sorteggio pubblico",
         "C": "L'ordine alfabetico del cognome",
-        "D": "Il sorteggio pubblico"
+        "D": "La minore età anagrafica"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 5, comma 5 del D.P.R. 487/1994 e dell'art. 11, lett. p) del bando UniSS, a parità di titoli e di merito, l'ultimo criterio residuale di preferenza è la minore età anagrafica."
     },
     {
@@ -3486,11 +3486,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 18, comma 1, lett. b) e c) della Legge 240/2010 (richiamato all'art. 3 del bando UniSS), non possono partecipare ai procedimenti di chiamata e reclutamento presso un'Università coloro che abbiano un grado di parentela o di affinità, fino a quale grado compreso, con un professore appartenente al dipartimento che effettua la chiamata ovvero con il Rettore, il Direttore Generale o un componente del CdA?",
       "opzioni": {
         "A": "Fino al secondo grado compreso",
-        "B": "Fino al terzo grado compreso",
-        "C": "Fino al quarto grado compreso",
+        "B": "Fino al quarto grado compreso",
+        "C": "Fino al terzo grado compreso",
         "D": "Fino al sesto grado compreso"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 18, comma 1, lett. b) e c) della Legge 240/2010 pone il divieto di partecipazione per parenti e affini fino al quarto grado compreso con il Rettore, il Direttore Generale, i componenti del CdA o i docenti del dipartimento interessato."
     },
     {
@@ -3513,12 +3513,12 @@ var BANCA_DATI = {
       "argomento": "Mobilità nel pubblico impiego (D.Lgs. 165/2001)",
       "domanda": "Quale articolo del D.Lgs. 165/2001 disciplina il passaggio diretto di personale tra amministrazioni diverse (mobilità volontaria compartimentale e intercompartimentale)?",
       "opzioni": {
-        "A": "Articolo 30",
+        "A": "Articolo 63",
         "B": "Articolo 15",
         "C": "Articolo 54",
-        "D": "Articolo 63"
+        "D": "Articolo 30"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 30 del D.Lgs. 165/2001 disciplina la mobilità volontaria tra pubbliche amministrazioni, che precede di regola l'indizione di nuovi concorsi pubblici."
     },
     {
@@ -3555,12 +3555,12 @@ var BANCA_DATI = {
       "argomento": "Reclutamento e carriere nelle Università",
       "domanda": "Quale piattaforma telematica gestita dal CINECA è utilizzata dall'Università degli Studi di Sassari per la presentazione delle domande di partecipazione ai concorsi pubblici?",
       "opzioni": {
-        "A": "PICA (Piattaforma Integrata Concorsi Atenei)",
+        "A": "NOIPA",
         "B": "MEPA (Mercato Elettronico della Pubblica Amministrazione)",
-        "C": "NOIPA",
+        "C": "PICA (Piattaforma Integrata Concorsi Atenei)",
         "D": "SUAP"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Come indicato nell'art. 3 del bando UniSS, le domande di partecipazione ai concorsi d'Ateneo sono presentate esclusivamente tramite l'applicazione informatica PICA (Piattaforma Integrata Concorsi Atenei) all'indirizzo pica.cineca.it/uniss."
     },
     {
@@ -3598,11 +3598,11 @@ var BANCA_DATI = {
       "domanda": "Leggi la seguente frase tratta da un avviso istituzionale: 'Applications must be submitted no later than 1:00 PM (Italian time) on May 25, 2026. Late submissions will be automatically rejected.' Che cosa significa?",
       "opzioni": {
         "A": "Le domande possono essere inviate anche dopo il 25 maggio 2026",
-        "B": "Le domande devono essere presentate entro e non oltre le ore 13:00 (ora italiana) del 25 maggio 2026; gli invii tardivi saranno automaticamente respinti",
-        "C": "Le domande devono essere consegnate solo di persona dopo le 13:00",
+        "B": "Le domande devono essere consegnate solo di persona dopo le 13:00",
+        "C": "Le domande devono essere presentate entro e non oltre le ore 13:00 (ora italiana) del 25 maggio 2026; gli invii tardivi saranno automaticamente respinti",
         "D": "La scadenza è prorogata fino al 25 giugno 2026"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "'No later than 1:00 PM' equivale a 'entro e non oltre le ore 13:00' e 'Late submissions will be automatically rejected' significa che le domande inviate in ritardo verranno automaticamente escluse."
     },
     {
@@ -3612,11 +3612,11 @@ var BANCA_DATI = {
       "domanda": "In un modulo amministrativo inglese, che cosa indica il campo 'Supporting documents / Attachments'?",
       "opzioni": {
         "A": "Dati bancari del richiedente",
-        "B": "Documentazione giustificativa / Allegati",
+        "B": "Esito finale del colloquio",
         "C": "Firma del Direttore Generale",
-        "D": "Esito finale del colloquio"
+        "D": "Documentazione giustificativa / Allegati"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "'Supporting documents' e 'Attachments' indicano i documenti giustificativi e gli allegati da unire all'istanza."
     },
     {
@@ -3625,12 +3625,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione comunicazioni istituzionali",
       "domanda": "Che cosa significa l'espressione 'Admission with reservation / conditional admission' in una graduatoria universitaria?",
       "opzioni": {
-        "A": "Esclusione definitiva dalla prova",
-        "B": "Ammissione con riserva (subordinata alla verifica dei requisiti)",
+        "A": "Ammissione con riserva (subordinata alla verifica dei requisiti)",
+        "B": "Esclusione definitiva dalla prova",
         "C": "Prenotazione alberghiera",
         "D": "Esonero totale dalle tasse"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "'Conditional admission' (o 'admission with reservation') indica l'ammissione con riserva di accertamento dei requisiti prescritti dal bando."
     },
     {
@@ -3639,12 +3639,12 @@ var BANCA_DATI = {
       "argomento": "Grammatica e uso istituzionale",
       "domanda": "Completa correttamente la frase formale: 'Candidates _____ bring a valid ID document to be admitted to the examination room.'",
       "opzioni": {
-        "A": "must",
-        "B": "mustn't",
+        "A": "mustn't",
+        "B": "must",
         "C": "might not",
         "D": "had"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il verbo modale 'must' esprime un obbligo inderogabile ('I candidati devono portare un documento di identità valido')."
     },
     {
@@ -3653,12 +3653,12 @@ var BANCA_DATI = {
       "argomento": "Grammatica e uso istituzionale",
       "domanda": "Completa la frase: 'If a candidate _____ to attend the written test, he or she will be excluded from the selection procedure.'",
       "opzioni": {
-        "A": "fails",
+        "A": "will fail",
         "B": "failed",
-        "C": "will fail",
+        "C": "fails",
         "D": "failing"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Periodo ipotetico della realtà (First Conditional): nella proposizione subordinata introdotta da 'If' si usa il Present Simple ('fails'), mentre nella principale si usa 'will + infinito'."
     },
     {
@@ -3668,11 +3668,11 @@ var BANCA_DATI = {
       "domanda": "Qual è il significato dell'espressione 'Tuition fees' nel contesto universitario?",
       "opzioni": {
         "A": "Stipendi dei docenti",
-        "B": "Tasse e contributi universitari a carico degli studenti",
+        "B": "Borse di ricerca post-dottorato",
         "C": "Spese di manutenzione edilizia",
-        "D": "Borse di ricerca post-dottorato"
+        "D": "Tasse e contributi universitari a carico degli studenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "'Tuition fees' indica le tasse universitarie di iscrizione ai corsi di studio."
     },
     {
@@ -3681,12 +3681,12 @@ var BANCA_DATI = {
       "argomento": "Terminologia accademica e amministrativa",
       "domanda": "Come si traduce 'A tempo indeterminato e a tempo pieno' in un contratto di lavoro?",
       "opzioni": {
-        "A": "Fixed-term and part-time",
-        "B": "Permanent and full-time",
+        "A": "Permanent and full-time",
+        "B": "Fixed-term and part-time",
         "C": "Temporary and freelance",
         "D": "Seasonal and remote"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "'Permanent' (o 'open-ended') indica il contratto a tempo indeterminato, mentre 'full-time' indica il regime a tempo pieno."
     },
     {
@@ -3723,12 +3723,12 @@ var BANCA_DATI = {
       "argomento": "Codice dell'Amministrazione Digitale (D.Lgs. 82/2005)",
       "domanda": "Ai sensi dell'art. 48 del CAD (D.Lgs. 82/2005) e del D.P.R. 68/2005, quale valore giuridico ha la trasmissione telematica di comunicazioni tramite Posta Elettronica Certificata (PEC) nei casi consentiti dalla legge?",
       "opzioni": {
-        "A": "Equivale alla notificazione per mezzo della posta (raccomandata con avviso di ricevimento)",
-        "B": "Ha il valore di una semplice lettera ordinaria priva di prova di consegna",
+        "A": "Ha il valore di una semplice lettera ordinaria priva di prova di consegna",
+        "B": "Equivale alla notificazione per mezzo della posta (raccomandata con avviso di ricevimento)",
         "C": "Ha valore legale solo se seguita da un fax di conferma",
         "D": "È valida solo tra privati ma non verso le pubbliche amministrazioni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 48, comma 2 del CAD stabilisce che la trasmissione del documento informatico per via telematica mediante PEC equivale, nei casi consentiti dalla legge, alla notificazione per mezzo della posta."
     },
     {
@@ -3737,12 +3737,12 @@ var BANCA_DATI = {
       "argomento": "Codice dell'Amministrazione Digitale (D.Lgs. 82/2005)",
       "domanda": "Quali sono i tre sistemi di identità digitale previsti dall'art. 64 del CAD per l'accesso ai servizi in rete delle pubbliche amministrazioni?",
       "opzioni": {
-        "A": "SPID, CIE (Carta d'Identità Elettronica) e CNS (Carta Nazionale dei Servizi)",
+        "A": "PEC, Firma autografa e Tessera sanitaria cartacea",
         "B": "Username, password semplice e codice fiscale",
-        "C": "PEC, Firma autografa e Tessera sanitaria cartacea",
+        "C": "SPID, CIE (Carta d'Identità Elettronica) e CNS (Carta Nazionale dei Servizi)",
         "D": "Account Google, Apple ID e Microsoft Account"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 64 del CAD individua SPID (Sistema Pubblico di Identità Digitale), CIE (Carta d'Identità Elettronica) e CNS (Carta Nazionale dei Servizi) quali strumenti ufficiali di autenticazione ai servizi online della PA."
     },
     {
@@ -3752,11 +3752,11 @@ var BANCA_DATI = {
       "domanda": "Quale formato di firma digitale genera un file con estensione '.p7m' (busta crittografica che ingloba il documento originale e il certificato di firma)?",
       "opzioni": {
         "A": "PAdES",
-        "B": "CAdES",
+        "B": "PDF/A",
         "C": "XAdES",
-        "D": "PDF/A"
+        "D": "CAdES"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "La firma digitale in formato CAdES (CMS Advanced Electronic Signatures) produce un file con estensione '.p7m' (richiamato anche nell'art. 3 del bando UniSS), mentre il formato PAdES si applica direttamente ai file PDF mantenendo l'estensione '.pdf'."
     },
     {
@@ -3765,12 +3765,12 @@ var BANCA_DATI = {
       "argomento": "Syllabus Competenze digitali PA - Sicurezza",
       "domanda": "Che cos'è il 'phishing' nell'ambito della sicurezza informatica?",
       "opzioni": {
-        "A": "Un sistema di backup automatico su cloud",
-        "B": "Una tecnica di ingegneria sociale attuata tramite email, SMS o siti contraffatti che imitano enti affidabili per indurre l'utente a rivelare credenziali, password o dati sensibili",
+        "A": "Una tecnica di ingegneria sociale attuata tramite email, SMS o siti contraffatti che imitano enti affidabili per indurre l'utente a rivelare credenziali, password o dati sensibili",
+        "B": "Un sistema di backup automatico su cloud",
         "C": "Un protocollo crittografico per la firma digitale",
         "D": "Un software antivirus integrato nel sistema operativo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il phishing è una frode informatica basata sull'inganno psicologico (ingegneria sociale) per sottrarre credenziali o installare malware."
     },
     {
@@ -3794,11 +3794,11 @@ var BANCA_DATI = {
       "domanda": "In un foglio di calcolo (Microsoft Excel o LibreOffice Calc), quale simbolo deve essere anteposto a una coordinata di cella per renderla un 'riferimento assoluto' che non cambia quando la formula viene copiata in altre celle (es. $A$1)?",
       "opzioni": {
         "A": "Il simbolo dell'euro (€)",
-        "B": "Il simbolo del dollaro ($)",
-        "C": "Il simbolo cancelletto (#)",
+        "B": "Il simbolo cancelletto (#)",
+        "C": "Il simbolo del dollaro ($)",
         "D": "Il simbolo chiocciola (@)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il simbolo del dollaro ($) blocca il riferimento di colonna e/o di riga ($A$1 = riferimento assoluto; $A1 o A$1 = riferimento misto)."
     },
     {
@@ -3808,11 +3808,11 @@ var BANCA_DATI = {
       "domanda": "Quale funzione di Excel / Calc consente di sommare solo i valori di un intervallo che soddisfano un determinato criterio (es. sommare le spese relative a un solo Centro di costo)?",
       "opzioni": {
         "A": "CONTA.VALORI",
-        "B": "SOMMA.SE (SUMIF)",
+        "B": "CONCATENA",
         "C": "CERCA.VERT (VLOOKUP)",
-        "D": "CONCATENA"
+        "D": "SOMMA.SE (SUMIF)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "La funzione SOMMA.SE (o SOMMA.PIÙ.SE per criteri multipli) somma esclusivamente le celle che soddisfano la condizione specificata."
     },
     {
@@ -3835,12 +3835,12 @@ var BANCA_DATI = {
       "argomento": "Collaborazione online e conservazione digitale",
       "domanda": "Qual è la differenza tra il campo 'CCN' (Copia Carbone Nascosta / BCC) e il campo 'CC' (Copia Carbone) nell'invio di un messaggio di posta elettronica a più destinatari esterni?",
       "opzioni": {
-        "A": "Il campo CCN nasconde gli indirizzi email dei destinatari inseriti in quel campo agli altri destinatari (tutelando la privacy ed evitando la diffusione indebita di indirizzi email), mentre nel campo CC tutti vedono gli indirizzi di tutti",
-        "B": "Il campo CCN invia il messaggio senza allegati",
+        "A": "Il campo CCN invia il messaggio senza allegati",
+        "B": "Il campo CCN nasconde gli indirizzi email dei destinatari inseriti in quel campo agli altri destinatari (tutelando la privacy ed evitando la diffusione indebita di indirizzi email), mentre nel campo CC tutti vedono gli indirizzi di tutti",
         "C": "Il campo CC ha valore di PEC, il campo CCN no",
         "D": "Non c'è alcuna differenza visiva per i destinatari"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'uso del campo CCN (Copia Carbone Nascosta / BCC) nelle comunicazioni massive verso utenti esterni è una regola fondamentale di privacy (GDPR) per impedire che ciascun destinatario visualizzi gli indirizzi email degli altri."
     },
     {
@@ -3849,12 +3849,12 @@ var BANCA_DATI = {
       "argomento": "Preambolo e Definizioni",
       "domanda": "In esecuzione del testamento di quale personaggio storico venne creato nel 1562 il Collegio Gesuitico da cui l'Università degli Studi di Sassari fa risalire la propria fondazione (Preambolo dello Statuto)?",
       "opzioni": {
-        "A": "Alessio Fontana, funzionario della cancelleria dell'imperatore Carlo V",
+        "A": "Domenico Alberto Azuni",
         "B": "Giovanni Maria Angioy",
-        "C": "Domenico Alberto Azuni",
+        "C": "Alessio Fontana, funzionario della cancelleria dell'imperatore Carlo V",
         "D": "Filippo II di Spagna"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il Preambolo dello Statuto UniSS richiama la fondazione al 1562, quando durante il regno di Filippo II il Collegio Gesuitico venne creato in esecuzione del testamento di Alessio Fontana, funzionario della cancelleria dell'imperatore Carlo V."
     },
     {
@@ -3863,12 +3863,12 @@ var BANCA_DATI = {
       "argomento": "Preambolo e Definizioni",
       "domanda": "Da quale opera classica è tratto l'esametro da cui deriva il motto latino dell'Università degli Studi di Sassari ('SVSCEPTVM PERFICE MVNVS')?",
       "opzioni": {
-        "A": "L'Eneide di Virgilio (Libro VI, v. 629)",
+        "A": "L'Odissea di Omero",
         "B": "Le Metamorfosi di Ovidio",
         "C": "Il De Officiis di Cicerone",
-        "D": "L'Odissea di Omero"
+        "D": "L'Eneide di Virgilio (Libro VI, v. 629)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il Preambolo dello Statuto specifica che il motto 'SVSCEPTVM PERFICE MVNVS' è tratto dall'esametro virgiliano (Aen. VI 629), che ricorda la prescrizione della Sibilla ad Enea."
     },
     {
@@ -3877,12 +3877,12 @@ var BANCA_DATI = {
       "argomento": "Preambolo e Definizioni",
       "domanda": "Secondo le 'Definizioni' preliminari dello Statuto UniSS, cosa si intende per 'personale tecnico-amministrativo'?",
       "opzioni": {
-        "A": "Il solo personale inquadrato nell'Area dei Collaboratori e dei Funzionari",
-        "B": "Il personale amministrativo, tecnico, bibliotecario e i collaboratori ed esperti linguistici di ruolo nell'Ateneo",
+        "A": "Il personale amministrativo, tecnico, bibliotecario e i collaboratori ed esperti linguistici di ruolo nell'Ateneo",
+        "B": "Il solo personale inquadrato nell'Area dei Collaboratori e dei Funzionari",
         "C": "Tutti i dipendenti dell'Ateneo inclusi i ricercatori a tempo determinato",
         "D": "Esclusivamente i dirigenti e il Direttore Generale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La lettera d) delle Definizioni dello Statuto UniSS definisce 'personale tecnico-amministrativo' il personale amministrativo, tecnico, bibliotecario e i collaboratori ed esperti linguistici di ruolo nell'Ateneo."
     },
     {
@@ -3891,12 +3891,12 @@ var BANCA_DATI = {
       "argomento": "Preambolo e Definizioni",
       "domanda": "Secondo le 'Definizioni' dello Statuto UniSS (lett. g), quale tra i seguenti rientra nella nozione di 'corso di studio'?",
       "opzioni": {
-        "A": "I corsi di laurea e di laurea magistrale, i corsi delle scuole di specializzazione, i corsi di dottorato di ricerca, nonché i master universitari di I e II livello (laddove espressamente indicato)",
-        "B": "Esclusivamente i corsi di laurea triennale e magistrale a ciclo unico",
+        "A": "Esclusivamente i corsi di laurea triennale e magistrale a ciclo unico",
+        "B": "I corsi di laurea e di laurea magistrale, i corsi delle scuole di specializzazione, i corsi di dottorato di ricerca, nonché i master universitari di I e II livello (laddove espressamente indicato)",
         "C": "Solo i corsi di dottorato di ricerca",
         "D": "Esclusivamente i corsi erogati in lingua inglese"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La lettera g) delle Definizioni dello Statuto ricomprende nella definizione di 'corso di studio' i corsi di laurea e laurea magistrale, le scuole di specializzazione, i dottorati di ricerca e, laddove espressamente indicato, i master universitari di I e II livello."
     },
     {
@@ -3906,11 +3906,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 1 dello Statuto UniSS, che personalità giuridica e che autonomia possiede l'Università degli Studi di Sassari?",
       "opzioni": {
         "A": "È un ente privato senza scopo di lucro con autonomia esclusivamente didattica",
-        "B": "È un'istituzione pubblica, dotata di personalità giuridica e di autonomia di diritto pubblico e privato, ai sensi dell'art. 33 della Costituzione",
-        "C": "È un organo periferico del Ministero dell'Università privo di personalità giuridica autonoma",
+        "B": "È un organo periferico del Ministero dell'Università privo di personalità giuridica autonoma",
+        "C": "È un'istituzione pubblica, dotata di personalità giuridica e di autonomia di diritto pubblico e privato, ai sensi dell'art. 33 della Costituzione",
         "D": "È un ente strumentale della Regione Sardegna"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 1, comma 1 dello Statuto definisce l'Ateneo un'istituzione pubblica, dotata di personalità giuridica e di autonomia di diritto pubblico e privato, ai sensi dell'art. 33 della Costituzione."
     },
     {
@@ -3919,12 +3919,12 @@ var BANCA_DATI = {
       "argomento": "Titolo I - Principi generali",
       "domanda": "Ai sensi dell'art. 6 dello Statuto UniSS ('Dignità del lavoro e precariato'), quale strumento periodico realizza l'Ateneo per monitorare e ridurre il ricorso al lavoro precario?",
       "opzioni": {
-        "A": "Un rapporto periodico sui diritti del lavoro e sul lavoro precario da presentare in un incontro pubblico",
+        "A": "Una relazione riservata destinata al solo Collegio dei Revisori",
         "B": "Un decreto rettorale mensile inviato al Ministero del Lavoro",
         "C": "Un referendum annuale tra gli studenti",
-        "D": "Una relazione riservata destinata al solo Collegio dei Revisori"
+        "D": "Un rapporto periodico sui diritti del lavoro e sul lavoro precario da presentare in un incontro pubblico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 6, comma 1 dello Statuto prevede che l'Ateneo realizzi periodicamente un rapporto sui diritti del lavoro e sul lavoro precario da presentare in un incontro pubblico."
     },
     {
@@ -3961,12 +3961,12 @@ var BANCA_DATI = {
       "argomento": "Titolo I - Principi generali",
       "domanda": "Attraverso quale ente l'Università degli Studi di Sassari svolge nel territorio l'attività sanitaria integrata con ricerca e didattica ai sensi dell'art. 13 dello Statuto?",
       "opzioni": {
-        "A": "Attraverso l'Azienda Ospedaliero-Universitaria",
+        "A": "Attraverso la Croce Rossa Italiana",
         "B": "Attraverso l'Istituto Superiore di Sanità",
-        "C": "Attraverso la Croce Rossa Italiana",
+        "C": "Attraverso l'Azienda Ospedaliero-Universitaria",
         "D": "Attraverso una fondazione privata partecipata"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 13, comma 1 dello Statuto stabilisce che l'Ateneo, attraverso l'Azienda Ospedaliero-Universitaria, svolge nel territorio l'attività sanitaria, funzionale e integrata con le attività di ricerca e di didattica."
     },
     {
@@ -3976,11 +3976,11 @@ var BANCA_DATI = {
       "domanda": "Quale principio organizzativo fondamentale è richiamato dall'art. 16, comma 1 dello Statuto UniSS nel riparto di competenze tra gli organi?",
       "opzioni": {
         "A": "La concentrazione di tutti i poteri gestionali in capo al Senato Accademico",
-        "B": "La distinzione tra l'attività di indirizzo e controllo e quella di gestione, tenendo conto delle specificità dell'attività universitaria",
+        "B": "L'assenza di responsabilità amministrativa per gli atti collegiali",
         "C": "La subordinazione gerarchica dei docenti al Direttore Generale",
-        "D": "L'assenza di responsabilità amministrativa per gli atti collegiali"
+        "D": "La distinzione tra l'attività di indirizzo e controllo e quella di gestione, tenendo conto delle specificità dell'attività universitaria"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 16, comma 1 dello Statuto dispone che l'Ateneo attua il criterio della distinzione tra l'attività di indirizzo e controllo e quella di gestione, tenendo conto delle specificità dell'attività universitaria."
     },
     {
@@ -4003,12 +4003,12 @@ var BANCA_DATI = {
       "argomento": "Titolo I - Caratteri dell'amministrazione",
       "domanda": "Ai sensi dell'art. 19 dello Statuto UniSS, quale comunità sostiene l'Ateneo per favorire la propria crescita e le relazioni con la società civile?",
       "opzioni": {
-        "A": "La comunità degli alumni (ex studenti laureati)",
-        "B": "La camera di commercio estera",
+        "A": "La camera di commercio estera",
+        "B": "La comunità degli alumni (ex studenti laureati)",
         "C": "I fornitori accreditati sul MEPA",
         "D": "Gli ordini religiosi locali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 19, comma 1 dello Statuto stabilisce che l'Ateneo favorisce le attività culturali, ricreative, musicali e sportive e sostiene la comunità degli alumni per favorire la propria crescita e le proprie relazioni con la società civile."
     },
     {
@@ -4018,11 +4018,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 20, comma 2, lett. e) dello Statuto UniSS, chi raccoglie e presenta al Senato Accademico le candidature dei componenti del Consiglio di Amministrazione, del Presidente del Collegio dei revisori dei conti e dei componenti il Nucleo di Valutazione?",
       "opzioni": {
         "A": "Il Direttore Generale",
-        "B": "Il Rettore",
-        "C": "Il Decano",
+        "B": "Il Decano",
+        "C": "Il Rettore",
         "D": "Il Presidente del Consiglio degli Studenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 20, comma 2, lett. e) attribuisce al Rettore la competenza a raccogliere e presentare al Senato Accademico le candidature dei componenti del CdA, del Presidente del Collegio dei revisori dei conti e dei componenti il Nucleo di Valutazione."
     },
     {
@@ -4031,12 +4031,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Rettore",
       "domanda": "Quale organo determina l'indennità di carica del Rettore ai sensi dell'art. 20, comma 4 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Il Consiglio di Amministrazione, su proposta del Senato Accademico",
+        "A": "Il Rettore stesso con proprio decreto",
         "B": "Il Senato Accademico, previo parere del Direttore Generale",
         "C": "Il Collegio dei Revisori dei conti",
-        "D": "Il Rettore stesso con proprio decreto"
+        "D": "Il Consiglio di Amministrazione, su proposta del Senato Accademico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 20, comma 4 dello Statuto dispone che al Rettore compete un'indennità di carica determinata dal Consiglio di Amministrazione, su proposta del Senato Accademico."
     },
     {
@@ -4045,12 +4045,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Rettore",
       "domanda": "Ai sensi dell'art. 21, comma 1 dello Statuto UniSS, tra quali soggetti viene eletto il Rettore?",
       "opzioni": {
-        "A": "Tra i professori ordinari e associati dell'Ateneo di Sassari",
-        "B": "Tra i professori ordinari in servizio presso gli Atenei italiani che abbiano optato per il tempo pieno",
+        "A": "Tra i professori ordinari in servizio presso gli Atenei italiani che abbiano optato per il tempo pieno",
+        "B": "Tra i professori ordinari e associati dell'Ateneo di Sassari",
         "C": "Tra personalità esterne di chiara fama scientifica anche non docenti",
         "D": "Esclusivamente tra i Direttori di Dipartimento dell'Ateneo di Sassari"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 21, comma 1 dello Statuto (in conformità all'art. 2, c. 1, lett. b L. 240/2010) stabilisce che il Rettore è eletto tra i professori ordinari in servizio presso gli Atenei italiani che abbiano optato per il tempo pieno."
     },
     {
@@ -4087,12 +4087,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Rettore",
       "domanda": "Tra quali soggetti il Rettore può scegliere i componenti della Giunta di Ateneo (Prorettori) e i Delegati rettorali ai sensi dell'art. 22, commi 2 e 3 dello Statuto UniSS?",
       "opzioni": {
-        "A": "I Prorettori della Giunta tra i docenti dell'Ateneo; i Delegati rettorali tra il personale dell'Ateneo (docente e tecnico-amministrativo)",
+        "A": "I Prorettori tra gli studenti e i Delegati tra i dirigenti",
         "B": "Entrambi esclusivamente tra i professori ordinari",
         "C": "Entrambi esclusivamente tra soggetti esterni all'Ateneo",
-        "D": "I Prorettori tra gli studenti e i Delegati tra i dirigenti"
+        "D": "I Prorettori della Giunta tra i docenti dell'Ateneo; i Delegati rettorali tra il personale dell'Ateneo (docente e tecnico-amministrativo)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 22 distingue: il Rettore nomina i Prorettori della Giunta di Ateneo fra i docenti dell'Ateneo (comma 2), mentre sceglie i Delegati tra il personale dell'Ateneo (comma 3). Entrambi decadono in caso di revoca o cessazione del Rettore."
     },
     {
@@ -4115,12 +4115,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Senato Accademico",
       "domanda": "Come sono ripartiti i sei docenti di ruolo elettivi (non Direttori di Dipartimento) che fanno parte del Senato Accademico ai sensi dell'art. 24, comma 1, lett. c) dello Statuto?",
       "opzioni": {
-        "A": "Due professori ordinari, due professori associati e due ricercatori, eletti per categoria",
-        "B": "Tre professori ordinari e tre professori associati",
+        "A": "Tre professori ordinari e tre professori associati",
+        "B": "Due professori ordinari, due professori associati e due ricercatori, eletti per categoria",
         "C": "Quattro professori ordinari e due ricercatori",
         "D": "Sei professori ordinari eletti a collegio unico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 24, comma 1, lett. c) prevede che del Senato Accademico facciano parte sei docenti di ruolo, in ragione di due professori ordinari, due associati e due ricercatori, eletti per categoria."
     },
     {
@@ -4130,11 +4130,11 @@ var BANCA_DATI = {
       "domanda": "Come sono individuati i quattro rappresentanti degli studenti nel Senato Accademico ai sensi dell'art. 24, comma 1, lett. e) dello Statuto UniSS?",
       "opzioni": {
         "A": "Tutti e quattro eletti dagli iscritti ai corsi di laurea triennale",
-        "B": "Il Presidente del Consiglio degli Studenti, due rappresentanti eletti dagli iscritti ai corsi di laurea e di laurea magistrale e uno dagli iscritti alle scuole dottorali e di specializzazione",
-        "C": "Quattro studenti nominati dal Rettore su proposta dei Direttori di Dipartimento",
+        "B": "Quattro studenti nominati dal Rettore su proposta dei Direttori di Dipartimento",
+        "C": "Il Presidente del Consiglio degli Studenti, due rappresentanti eletti dagli iscritti ai corsi di laurea e di laurea magistrale e uno dagli iscritti alle scuole dottorali e di specializzazione",
         "D": "Due rappresentanti dei master e due dei corsi di laurea"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 24, comma 1, lett. e) stabilisce che i quattro rappresentanti degli studenti nel Senato Accademico sono: il Presidente del Consiglio degli Studenti, due rappresentanti eletti dagli iscritti ai corsi di laurea e laurea magistrale e uno dagli iscritti alle scuole dottorali e di specializzazione."
     },
     {
@@ -4144,11 +4144,11 @@ var BANCA_DATI = {
       "domanda": "Con quale maggioranza il Senato Accademico può proporre al corpo elettorale una mozione di sfiducia al Rettore e con quale maggioranza il corpo elettorale la approva (art. 23, comma 3)?",
       "opzioni": {
         "A": "Proposta dal SA a maggioranza assoluta; approvata dal corpo elettorale a maggioranza relativa",
-        "B": "Proposta dal SA con la maggioranza di almeno due terzi dei suoi componenti; approvata dal corpo elettorale con il voto favorevole della maggioranza assoluta degli aventi diritto al voto",
+        "B": "Proposta da un terzo del SA; approvata dal corpo elettorale a maggioranza semplice",
         "C": "Proposta dal SA all'unanimità; approvata dal CdA a maggioranza dei due terzi",
-        "D": "Proposta da un terzo del SA; approvata dal corpo elettorale a maggioranza semplice"
+        "D": "Proposta dal SA con la maggioranza di almeno due terzi dei suoi componenti; approvata dal corpo elettorale con il voto favorevole della maggioranza assoluta degli aventi diritto al voto"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 23, comma 3 dello Statuto, il Senato Accademico propone la mozione di sfiducia con la maggioranza di almeno due terzi dei suoi componenti (trascorsi almeno due anni dall'inizio del mandato) e il corpo elettorale la approva con la maggioranza assoluta degli aventi diritto al voto, entro 90 giorni su indizione del Decano."
     },
     {
@@ -4157,12 +4157,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Consiglio di Amministrazione",
       "domanda": "Con quale maggioranza il Consiglio di Amministrazione delibera sulle proposte di attivazione delle procedure di reclutamento e di chiamata dei docenti presentate dai Dipartimenti (art. 25, comma 2, lett. f)?",
       "opzioni": {
-        "A": "A maggioranza semplice dei presenti",
-        "B": "A maggioranza assoluta dei suoi componenti",
+        "A": "A maggioranza assoluta dei suoi componenti",
+        "B": "A maggioranza semplice dei presenti",
         "C": "A maggioranza dei due terzi dei componenti",
         "D": "All'unanimità"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 25, comma 2, lett. f) dello Statuto dispone che il Consiglio di Amministrazione delibera, previo parere del Senato Accademico e a maggioranza assoluta dei suoi componenti, sulle proposte di attivazione delle procedure di reclutamento e chiamata dei docenti."
     },
     {
@@ -4186,11 +4186,11 @@ var BANCA_DATI = {
       "domanda": "Come viene individuato il componente appartenente al personale tecnico-amministrativo di ruolo nel Consiglio di Amministrazione (art. 26, comma 5)?",
       "opzioni": {
         "A": "È nominato direttamente dal Direttore Generale",
-        "B": "È designato dal Senato Accademico tra una rosa tripla di nominativi risultati i più votati a seguito di una competizione elettorale aperta a coloro che hanno superato la valutazione di un apposito comitato",
-        "C": "È il dipendente con maggiore anzianità di servizio dell'Area Elevate Professionalità",
+        "B": "È il dipendente con maggiore anzianità di servizio dell'Area Elevate Professionalità",
+        "C": "È designato dal Senato Accademico tra una rosa tripla di nominativi risultati i più votati a seguito di una competizione elettorale aperta a coloro che hanno superato la valutazione di un apposito comitato",
         "D": "È designato dalle organizzazioni sindacali maggiormente rappresentative"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 26, comma 5 dello Statuto prevede che il rappresentante del personale TA nel CdA sia designato dal Senato Accademico all'interno di una rosa tripla dei più votati in una competizione elettorale riservata a chi ha superato la valutazione di idoneità gestionale di un apposito comitato nominato dal Senato."
     },
     {
@@ -4199,12 +4199,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Consiglio di Amministrazione",
       "domanda": "In quale regime opera il Consiglio di Amministrazione in caso di anticipata cessazione del Rettore e durante il periodo di reggenza del Prorettore vicario o del Decano (art. 26, comma 8)?",
       "opzioni": {
-        "A": "In regime di ordinaria amministrazione",
+        "A": "Le sue funzioni passano integralmente al Direttore Generale",
         "B": "Viene sciolto e commissariato dal Ministero",
         "C": "Con pieni poteri straordinari di revisione statutaria",
-        "D": "Le sue funzioni passano integralmente al Direttore Generale"
+        "D": "In regime di ordinaria amministrazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 26, comma 8 dello Statuto dispone che in caso di anticipata cessazione del Rettore, durante la reggenza del Prorettore vicario (o del Decano in caso di sfiducia), il Consiglio di Amministrazione opera in regime di ordinaria amministrazione."
     },
     {
@@ -4213,12 +4213,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Direttore Generale",
       "domanda": "Chi nomina il Vice Direttore generale dell'Università degli Studi di Sassari e quando decade dall'incarico (art. 27, comma 7)?",
       "opzioni": {
-        "A": "È nominato dal Rettore e dura in carica sei anni",
-        "B": "È nominato con provvedimento del Direttore generale nell'ambito dell'organico in servizio presso l'Università e decade contemporaneamente alla scadenza o cessazione del mandato del Direttore generale",
+        "A": "È nominato con provvedimento del Direttore generale nell'ambito dell'organico in servizio presso l'Università e decade contemporaneamente alla scadenza o cessazione del mandato del Direttore generale",
+        "B": "È nominato dal Rettore e dura in carica sei anni",
         "C": "È eletto dal personale tecnico-amministrativo e dura in carica tre anni",
         "D": "È nominato dal Consiglio di Amministrazione tra soggetti esterni all'Ateneo"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 27, comma 7 dello Statuto prevede che il Vice Direttore generale sia individuato nell'ambito dell'organico in servizio presso l'Università, nominato con provvedimento del Direttore generale e decada contemporaneamente alla scadenza o cessazione del mandato di quest'ultimo."
     },
     {
@@ -4227,12 +4227,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Quali sono i quorum per la convocazione straordinaria su richiesta dei membri rispettivamente del Senato Accademico, del Consiglio degli Studenti e del Consiglio di Dipartimento?",
       "opzioni": {
-        "A": "Un terzo dei membri per Senato Accademico e Consiglio di Dipartimento; un quinto dei componenti per il Consiglio degli Studenti",
-        "B": "La metà più uno per tutti e tre gli organi",
+        "A": "La metà più uno per tutti e tre gli organi",
+        "B": "Un terzo dei membri per Senato Accademico e Consiglio di Dipartimento; un quinto dei componenti per il Consiglio degli Studenti",
         "C": "Un quinto per il Senato Accademico e un terzo per il Consiglio degli Studenti",
         "D": "Due terzi dei componenti per ciascun organo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Confrontando gli artt. 24 c. 5, 29 c. 6 e 39 c. 4 dello Statuto UniSS: il Senato Accademico e il Consiglio di Dipartimento possono essere convocati su richiesta di almeno un terzo dei loro membri, mentre il Consiglio degli Studenti su richiesta di almeno un quinto dei suoi componenti."
     },
     {
@@ -4241,12 +4241,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Come è composto il Collegio di Disciplina dell'Università degli Studi di Sassari ai sensi dell'art. 32, comma 2 dello Statuto?",
       "opzioni": {
-        "A": "Tre professori ordinari (tra cui un presidente), due professori associati confermati e due ricercatori confermati a tempo indeterminato (oltre ad altrettanti supplenti)",
+        "A": "Due magistrati, due avvocati dello Stato e tre professori ordinari",
         "B": "Cinque professori ordinari e due rappresentanti del personale tecnico-amministrativo",
-        "C": "Due magistrati, due avvocati dello Stato e tre professori ordinari",
+        "C": "Tre professori ordinari (tra cui un presidente), due professori associati confermati e due ricercatori confermati a tempo indeterminato (oltre ad altrettanti supplenti)",
         "D": "Il Rettore, il Direttore Generale e tre Direttori di Dipartimento"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 32, comma 2 dello Statuto stabilisce che il Collegio di disciplina è composto da membri effettivi e altrettanti supplenti: 3 professori ordinari (tra cui un presidente), 2 professori associati confermati e 2 ricercatori confermati a tempo indeterminato, in carica per tre anni e riconfermabili una sola volta."
     },
     {
@@ -4256,11 +4256,11 @@ var BANCA_DATI = {
       "domanda": "In che composizione si riunisce e delibera il Collegio di Disciplina ai sensi dell'art. 32, comma 3 dello Statuto?",
       "opzioni": {
         "A": "Sempre in composizione plenaria a sette membri",
-        "B": "Nella composizione limitata ai soli docenti appartenenti alla fascia corrispondente a quella del docente sottoposto a procedimento disciplinare e a quella superiore (principio del giudizio tra pari)",
+        "B": "Con la partecipazione di due rappresentanti degli studenti",
         "C": "Con la sola presenza dei tre professori ordinari in ogni caso",
-        "D": "Con la partecipazione di due rappresentanti degli studenti"
+        "D": "Nella composizione limitata ai soli docenti appartenenti alla fascia corrispondente a quella del docente sottoposto a procedimento disciplinare e a quella superiore (principio del giudizio tra pari)"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 32, comma 3 dello Statuto attua il principio del giudizio tra pari stabilendo che il Collegio di Disciplina delibera nella composizione limitata ai soli docenti appartenenti alla fascia corrispondente a quella del docente incolpato e a quella superiore."
     },
     {
@@ -4269,12 +4269,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Entro quanti giorni dal momento della conoscenza dei fatti il Rettore deve trasmettere gli atti al Collegio di Disciplina per ogni fatto che possa dar luogo a una sanzione più grave della censura (art. 32, comma 4)?",
       "opzioni": {
-        "A": "Entro dieci giorni",
+        "A": "Entro trenta giorni",
         "B": "Entro quindici giorni",
-        "C": "Entro trenta giorni",
+        "C": "Entro dieci giorni",
         "D": "Entro sessanta giorni"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 32, comma 4 dello Statuto dispone che l'avvio del procedimento spetta al Rettore che, entro trenta giorni dal momento della conoscenza dei fatti, trasmette gli atti al Collegio formulando motivata proposta."
     },
     {
@@ -4297,12 +4297,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Quale organo d'Ateneo sovrintende allo svolgimento delle procedure di assicurazione della qualità di tutto l'Ateneo, supporta i corsi di studio e assicura un periodico flusso di informazioni sulla qualità a SA, CdA, Nucleo di Valutazione e Commissioni Paritetiche (art. 35)?",
       "opzioni": {
-        "A": "Il Presidio di Qualità",
+        "A": "Il Collegio dei Revisori dei conti",
         "B": "Il Garante degli studenti",
-        "C": "Il Collegio dei Revisori dei conti",
+        "C": "Il Presidio di Qualità",
         "D": "Il Consiglio del personale tecnico-amministrativo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 35 dello Statuto istituisce il Presidio di Qualità, deputato a coordinare, gestire, promuovere e monitorare le attività di assicurazione della qualità della formazione e della ricerca dell'Ateneo."
     },
     {
@@ -4312,11 +4312,11 @@ var BANCA_DATI = {
       "domanda": "Quale quota di rappresentanza degli studenti è prevista sia nei Consigli di Dipartimento (art. 39, c. 3, lett. d) sia nei Consigli di corso di studio (art. 44, c. 2, lett. b) sia nei Consigli delle strutture di raccordo (art. 50, c. 5, lett. b)?",
       "opzioni": {
         "A": "Pari al 10 per cento dei membri",
-        "B": "Pari al 15 per cento dei membri",
+        "B": "Pari a un numero fisso di 3 studenti",
         "C": "Pari al 20 per cento dei membri",
-        "D": "Pari a un numero fisso di 3 studenti"
+        "D": "Pari al 15 per cento dei membri"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "In tutti e tre gli organi collegiali delle strutture didattiche e di ricerca (Consiglio di Dipartimento, Consiglio di corso di studio e Consiglio della struttura di raccordo), lo Statuto UniSS fissa la rappresentanza studentesca nella misura del 15 per cento dei membri."
     },
     {
@@ -4325,12 +4325,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "In quali casi l'elettorato passivo per la carica di Direttore del Dipartimento viene esteso ai professori di seconda fascia a tempo pieno (art. 40, comma 2)?",
       "opzioni": {
-        "A": "Sempre, fin dalla prima votazione, alla pari con i professori ordinari",
-        "B": "Nel caso di indisponibilità di professori di ruolo di prima fascia, ovvero in caso di mancato raggiungimento per due votazioni del quorum previsto",
+        "A": "Nel caso di indisponibilità di professori di ruolo di prima fascia, ovvero in caso di mancato raggiungimento per due votazioni del quorum previsto",
+        "B": "Sempre, fin dalla prima votazione, alla pari con i professori ordinari",
         "C": "Mai, il Direttore del Dipartimento deve essere sempre un professore ordinario",
         "D": "Solo nei Dipartimenti di area umanistica"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 40, comma 2 dello Statuto stabilisce che il Direttore del Dipartimento è eletto tra i professori di I fascia a tempo pieno, ma l'elettorato passivo è esteso ai professori di II fascia a tempo pieno in caso di indisponibilità di ordinari o di mancato raggiungimento del quorum per due votazioni."
     },
     {
@@ -4339,12 +4339,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "Quale organo approva i regolamenti dei corsi di dottorato di ricerca e delle scuole di specializzazione ai sensi degli artt. 45 e 46 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Il Senato Accademico, previo parere del Consiglio di Amministrazione (mentre l'istituzione dei corsi è deliberata dal CdA previo parere del SA)",
-        "B": "Il Consiglio di Amministrazione, senza alcun parere del Senato Accademico",
+        "A": "Il Consiglio di Amministrazione, senza alcun parere del Senato Accademico",
+        "B": "Il Senato Accademico, previo parere del Consiglio di Amministrazione (mentre l'istituzione dei corsi è deliberata dal CdA previo parere del SA)",
         "C": "Il Rettore con proprio decreto",
         "D": "Il Nucleo di Valutazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Gli artt. 45 e 46 distinguono chiaramente: l'istituzione dei corsi di dottorato e specializzazione è deliberata dal CdA previo parere del SA, mentre i relativi regolamenti di organizzazione e funzionamento sono approvati dal Senato Accademico previo parere del CdA."
     },
     {
@@ -4353,12 +4353,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Sedi, Poli decentrati e AOU",
       "domanda": "Quale organo delibera la costituzione o la partecipazione dell'Ateneo a centri, organismi e strutture di ricerca, alta formazione e servizio anche interdipartimentali, interuniversitari e internazionali (art. 53, comma 1)?",
       "opzioni": {
-        "A": "Il Consiglio di Amministrazione, previo parere del Senato Accademico",
+        "A": "Il Rettore, sentito il Collegio dei Revisori",
         "B": "Il Senato Accademico, su proposta del Direttore Generale",
-        "C": "Il Rettore, sentito il Collegio dei Revisori",
+        "C": "Il Consiglio di Amministrazione, previo parere del Senato Accademico",
         "D": "I Consigli di Dipartimento interessati in seduta congiunta"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 53, comma 1 dello Statuto attribuisce al Consiglio di Amministrazione, previo parere del Senato Accademico, la competenza a deliberare la costituzione o partecipazione a centri, organismi e strutture di ricerca, alta formazione e servizio."
     },
     {
@@ -4367,12 +4367,12 @@ var BANCA_DATI = {
       "argomento": "Titolo V - Disposizioni generali",
       "domanda": "A chi spetta decidere sulle violazioni del Codice etico qualora la violazione sia attribuibile al Rettore (art. 32, comma 1 Codice Etico e art. 62 Statuto)?",
       "opzioni": {
-        "A": "Al Senato Accademico su proposta del Decano dei professori ordinari",
+        "A": "Al Prorettore vicario",
         "B": "Al Direttore Generale",
         "C": "Al Presidente del Consiglio degli Studenti",
-        "D": "Al Prorettore vicario"
+        "D": "Al Senato Accademico su proposta del Decano dei professori ordinari"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 32, comma 1 del Codice Etico e di Comportamento (in coordinamento con l'art. 62 dello Statuto), sulle violazioni dei principi etici decide il Senato Accademico su proposta del Rettore ovvero del Decano dei professori ordinari qualora la violazione sia attribuibile al Rettore."
     },
     {
@@ -4381,12 +4381,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Principi e Manuali",
       "domanda": "Ai sensi dell'art. 1, comma 3 del Regolamento di Amministrazione, Finanza e Contabilità di UniSS, quali disposizioni si applicano per quanto non espressamente previsto dai principi contabili adottati ai sensi del D.Lgs. 18/2012?",
       "opzioni": {
-        "A": "Le disposizioni previste dal Codice Civile ed i Principi Contabili Nazionali emanati dall'Organismo Italiano di Contabilità (OIC)",
-        "B": "Le sole circolari della Banca d'Italia",
+        "A": "Le sole circolari della Banca d'Italia",
+        "B": "Le disposizioni previste dal Codice Civile ed i Principi Contabili Nazionali emanati dall'Organismo Italiano di Contabilità (OIC)",
         "C": "Il regolamento di contabilità della Regione Sardegna",
         "D": "I principi contabili internazionali IFRS obbligatori per le società quotate"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 1, comma 3 del Regolamento AFC stabilisce che i principi contabili di riferimento sono quelli adottati ai sensi dell'art. 2 del D.Lgs. 27 gennaio 2012, n. 18 e, per quanto non espressamente previsto, si applicano le disposizioni del Codice Civile ed i Principi Contabili Nazionali emanati dall'OIC."
     },
     {
@@ -4395,12 +4395,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Principi e Manuali",
       "domanda": "Quale dei seguenti elementi è definito dal Manuale di controllo di gestione (e non dal Manuale di contabilità) ai sensi dell'art. 2, comma 4 del Regolamento AFC di UniSS?",
       "opzioni": {
-        "A": "Il piano dei conti di contabilità analitica, le procedure di costruzione del budget dei Centri di costo e i criteri di allocazione dei costi non direttamente imputabili",
+        "A": "Gli schemi del bilancio unico d'esercizio pubblico",
         "B": "La struttura del piano dei conti di contabilità generale",
-        "C": "Gli schemi del bilancio unico d'esercizio pubblico",
+        "C": "Il piano dei conti di contabilità analitica, le procedure di costruzione del budget dei Centri di costo e i criteri di allocazione dei costi non direttamente imputabili",
         "D": "Le modalità di inventario dei beni immobili"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 2, commi 3 e 4 del Regolamento AFC, il Manuale di contabilità definisce la contabilità generale e i flussi finanziari, mentre il Manuale di controllo di gestione definisce il piano dei conti di contabilità analitica, la costruzione del budget dei Centri di costo, il controllo concomitante/consuntivo e i criteri di ribaltamento/allocazione dei costi."
     },
     {
@@ -4409,12 +4409,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Organi e processi contabili",
       "domanda": "Quale struttura dell'Amministrazione Centrale si occupa della realizzazione e del supporto per il corretto svolgimento dei processi contabili ai sensi dell'art. 3, comma 5 e dell'art. 11 del Regolamento AFC?",
       "opzioni": {
-        "A": "L'Area bilancio e politiche finanziarie",
+        "A": "Il Presidio di Qualità",
         "B": "L'Area edilizia e patrimonio",
         "C": "L'Ufficio Reclutamento e gestione del PTAB",
-        "D": "Il Presidio di Qualità"
+        "D": "L'Area bilancio e politiche finanziarie"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 3, comma 5 e l'art. 11 del Regolamento AFC individuano nell'Area bilancio e politiche finanziarie la struttura che svolge funzioni di supporto, coordinamento e gestione dei processi contabili, fiscali e della liquidità."
     },
     {
@@ -4423,12 +4423,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Organi e processi contabili",
       "domanda": "Ai sensi dell'art. 4, comma 1 del Regolamento AFC di UniSS, chi adotta, in caso di necessità e obiettiva urgenza, i provvedimenti amministrativo-contabili di competenza del Consiglio di Amministrazione e del Senato Accademico, sottoponendoli a ratifica nella seduta successiva?",
       "opzioni": {
-        "A": "Il Direttore Generale",
-        "B": "Il Rettore",
+        "A": "Il Rettore",
+        "B": "Il Direttore Generale",
         "C": "Il Dirigente dell'Area bilancio e politiche finanziarie",
         "D": "Il Presidente del Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 4, comma 1, ultimo alinea del Regolamento AFC attribuisce al Rettore il potere di adottare, in caso di necessità e obiettiva urgenza, i provvedimenti amministrativo-contabili di competenza del CdA e del Senato Accademico, sottoponendoli a ratifica nella seduta successiva."
     },
     {
@@ -4437,12 +4437,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Organi e processi contabili",
       "domanda": "Quale parere esprime il Senato Accademico in merito ai budget dei Centri dotati di autonomia gestionale e amministrativa ai sensi dell'art. 5, comma 1 del Regolamento AFC?",
       "opzioni": {
-        "A": "Esprime parere sui criteri di attribuzione dei budget ai Centri dotati di autonomia gestionale e amministrativa, tenendo conto delle risorse disponibili",
-        "B": "Approva in via definitiva i singoli mandati di pagamento dei Dipartimenti",
+        "A": "Approva in via definitiva i singoli mandati di pagamento dei Dipartimenti",
+        "B": "Esprime parere sui criteri di attribuzione dei budget ai Centri dotati di autonomia gestionale e amministrativa, tenendo conto delle risorse disponibili",
         "C": "Esprime parere vincolante sul conto consuntivo di ciascun Centro di costo",
         "D": "Non ha alcuna competenza consultiva in materia contabile"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 5, comma 1 del Regolamento AFC elenca tra le funzioni contabili del Senato Accademico l'espressione di parere sui criteri di attribuzione dei budget ai Centri dotati di autonomia gestionale e amministrativa, oltre ai pareri sui bilanci preventivi e d'esercizio."
     },
     {
@@ -4451,12 +4451,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Centri di gestione",
       "domanda": "Da chi è nominato il Responsabile amministrativo di ciascun Centro dotato di autonomia gestionale e amministrativa ai sensi dell'art. 8, comma 5 del Regolamento AFC?",
       "opzioni": {
-        "A": "Dal Direttore Generale, sentito il Direttore della struttura interessata",
+        "A": "Dal Rettore, previo parere del Collegio dei Revisori",
         "B": "Dal Consiglio del Dipartimento a maggioranza assoluta",
-        "C": "Dal Rettore, previo parere del Collegio dei Revisori",
+        "C": "Dal Direttore Generale, sentito il Direttore della struttura interessata",
         "D": "Dal Senato Accademico su proposta degli studenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 8, comma 5 del Regolamento AFC stabilisce che ad ogni Centro dotato di autonomia gestionale e amministrativa è assegnato un Responsabile amministrativo, nominato dal Direttore Generale, sentito il Direttore della struttura interessata."
     },
     {
@@ -4465,12 +4465,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Centri di gestione",
       "domanda": "Qual è la differenza nei poteri di spesa tra i Centri dotati di autonomia gestionale e amministrativa (art. 9) e le Strutture dirigenziali (art. 10) nel Regolamento AFC di UniSS?",
       "opzioni": {
-        "A": "I Centri dotati di autonomia esercitano direttamente i poteri di spesa nei limiti delle disponibilità di budget; le Strutture dirigenziali esercitano i poteri di spesa e acquisizione delle entrate ove delegati dal Direttore Generale",
+        "A": "Solo il Rettore può autorizzare le spese sia dei Dipartimenti sia delle Strutture dirigenziali",
         "B": "Le Strutture dirigenziali hanno piena autonomia di bilancio mentre i Dipartimenti non possono effettuare alcuna spesa",
         "C": "Entrambi possono spendere senza alcun limite di budget",
-        "D": "Solo il Rettore può autorizzare le spese sia dei Dipartimenti sia delle Strutture dirigenziali"
+        "D": "I Centri dotati di autonomia esercitano direttamente i poteri di spesa nei limiti delle disponibilità di budget; le Strutture dirigenziali esercitano i poteri di spesa e acquisizione delle entrate ove delegati dal Direttore Generale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Confrontando gli artt. 9 e 10 del Regolamento AFC, i Centri dotati di autonomia gestionale (es. Dipartimenti) esercitano direttamente i poteri di spesa nei limiti del budget assegnato, mentre le Strutture dirigenziali li esercitano ove delegati dal Direttore Generale."
     },
     {
@@ -4493,12 +4493,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Sistema contabile",
       "domanda": "Ai sensi dell'art. 15, comma 1 del Regolamento AFC di UniSS, qual è la durata e la decorrenza dell'esercizio contabile?",
       "opzioni": {
-        "A": "Coincide con l'anno solare: 1 gennaio - 31 dicembre",
-        "B": "Coincide con l'anno accademico: 1 novembre - 31 ottobre",
+        "A": "Coincide con l'anno accademico: 1 novembre - 31 ottobre",
+        "B": "Coincide con l'anno solare: 1 gennaio - 31 dicembre",
         "C": "Decorre dal 1 luglio al 30 giugno dell'anno successivo",
         "D": "Ha durata biennale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 15, comma 1 del Regolamento AFC stabilisce che l'esercizio contabile ha la durata di un anno e coincide con l'anno solare, 1 gennaio - 31 dicembre."
     },
     {
@@ -4507,12 +4507,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio netto",
       "domanda": "Da quali tre voci è costituito il Patrimonio netto dell'Università degli Studi di Sassari ai sensi dell'art. 16, comma 1 del Regolamento AFC?",
       "opzioni": {
-        "A": "Fondo di dotazione, Patrimonio vincolato e Patrimonio non vincolato",
+        "A": "Capitale sociale, Riserve legali e Utili portati a nuovo",
         "B": "Attivo circolante, Immobilizzazioni e Ratei attivi",
-        "C": "Capitale sociale, Riserve legali e Utili portati a nuovo",
+        "C": "Fondo di dotazione, Patrimonio vincolato e Patrimonio non vincolato",
         "D": "Fondo di riserva, Fondo svalutazione crediti e Fondo TFR"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 16, comma 1 del Regolamento AFC, il Patrimonio netto è costituito da: a) Fondo di dotazione; b) Patrimonio vincolato; c) Patrimonio non vincolato."
     },
     {
@@ -4521,12 +4521,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio netto",
       "domanda": "In caso di risultato economico negativo al termine dell'esercizio, previo parere favorevole di quale organo il Consiglio di Amministrazione può decidere di utilizzare riserve vincolate, patrimonio non vincolato o fonti di copertura straordinaria (art. 16, comma 6)?",
       "opzioni": {
-        "A": "Previo parere favorevole del Collegio dei Revisori",
+        "A": "Senza alcun parere preventivo",
         "B": "Previo parere favorevole del Consiglio degli Studenti",
         "C": "Previo parere favorevole del CUG",
-        "D": "Senza alcun parere preventivo"
+        "D": "Previo parere favorevole del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 16, comma 6 del Regolamento AFC dispone che, al termine dell'esercizio, in caso di risultato economico negativo, il CdA delibera le modalità di copertura previo parere favorevole del Collegio dei Revisori."
     },
     {
@@ -4549,12 +4549,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Documenti contabili",
       "domanda": "In quali due macro-categorie si dividono i documenti contabili dell'Università degli Studi di Sassari ai sensi dell'art. 18, comma 1 del Regolamento AFC?",
       "opzioni": {
-        "A": "Pubblici e gestionali",
-        "B": "Ordinari e straordinari",
+        "A": "Ordinari e straordinari",
+        "B": "Pubblici e gestionali",
         "C": "Obbligatori e facoltativi",
         "D": "Dipartimentali e ministeriali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 18, comma 1 del Regolamento AFC divide i documenti contabili in due categorie: pubblici (con valenza informativa interna ed esterna) e gestionali (con valenza primariamente interna)."
     },
     {
@@ -4563,12 +4563,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Documenti contabili",
       "domanda": "Quali sono i tre documenti contabili pubblici preventivi elencati all'art. 19, comma 2 del Regolamento AFC di UniSS?",
       "opzioni": {
-        "A": "Bilancio unico d'Ateneo di previsione annuale autorizzatorio e triennale; Bilancio unico d'Ateneo non autorizzatorio in contabilità finanziaria; Classificazione della spesa per missioni e programmi",
+        "A": "Rendiconto finanziario, Bilancio consolidato e Relazione sulla gestione",
         "B": "Stato patrimoniale, Conto economico e Nota integrativa",
-        "C": "Rendiconto finanziario, Bilancio consolidato e Relazione sulla gestione",
+        "C": "Bilancio unico d'Ateneo di previsione annuale autorizzatorio e triennale; Bilancio unico d'Ateneo non autorizzatorio in contabilità finanziaria; Classificazione della spesa per missioni e programmi",
         "D": "Piano dei conti, Inventario dei beni mobili e Registro IVA"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 19, comma 2 del Regolamento AFC individua quali documenti contabili pubblici preventivi: a) Bilancio unico d'Ateneo di previsione annuale autorizzatorio e triennale (budget economico e degli investimenti); b) Bilancio unico d'Ateneo non autorizzatorio in contabilità finanziaria; c) Classificazione della spesa per missioni e programmi."
     },
     {
@@ -4577,12 +4577,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Documenti contabili",
       "domanda": "Da quali documenti è composto il Bilancio consolidato dell'Università degli Studi di Sassari (con le aziende, società o altri enti controllati) ai sensi dell'art. 19, comma 3, lett. c) del Regolamento AFC?",
       "opzioni": {
-        "A": "Stato patrimoniale, Conto economico e Nota integrativa",
+        "A": "Conto del bilancio e Relazione programmatica",
         "B": "Budget economico e budget degli investimenti",
         "C": "Solo dal Rendiconto finanziario",
-        "D": "Conto del bilancio e Relazione programmatica"
+        "D": "Stato patrimoniale, Conto economico e Nota integrativa"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 19, comma 3, lett. c) stabilisce che il Bilancio consolidato, redatto con riferimento all'anno solare, è composto da Stato patrimoniale, Conto economico e Nota integrativa."
     },
     {
@@ -4605,12 +4605,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Programmazione",
       "domanda": "Entro quanti giorni dall'approvazione delle linee di indirizzo per la programmazione l'Area bilancio e politiche finanziarie predispone il calendario delle attività per la redazione dei bilanci preventivi (art. 24, comma 1)?",
       "opzioni": {
-        "A": "Entro 10 giorni",
-        "B": "Entro 20 giorni",
+        "A": "Entro 20 giorni",
+        "B": "Entro 10 giorni",
         "C": "Entro 30 giorni",
         "D": "Entro 45 giorni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 24, comma 1 del Regolamento AFC prevede che entro 10 giorni dall'approvazione delle linee di indirizzo, l'Area bilancio e politiche finanziarie predisponga il calendario delle attività per la predisposizione del bilancio unico d'Ateneo di previsione annuale autorizzatorio e triennale."
     },
     {
@@ -4619,12 +4619,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Ciclo attivo e passivo",
       "domanda": "Quali sono gli accadimenti che determinano in contabilità la registrazione dei ricavi per l'attività istituzionale e per l'attività commerciale ai sensi dell'art. 32, comma 3 del Regolamento AFC?",
       "opzioni": {
-        "A": "Per l'attività istituzionale: formale comunicazione dell'assegnazione di contributi/finanziamenti, iscrizione perfezionata degli studenti o sottoscrizione contratto/convenzione; per l'attività commerciale: emissione fattura",
+        "A": "La sola delibera del Senato Accademico",
         "B": "Esclusivamente l'incasso effettivo sul conto corrente bancario per entrambe le attività",
-        "C": "La sola delibera del Senato Accademico",
+        "C": "Per l'attività istituzionale: formale comunicazione dell'assegnazione di contributi/finanziamenti, iscrizione perfezionata degli studenti o sottoscrizione contratto/convenzione; per l'attività commerciale: emissione fattura",
         "D": "L'invio del preventivo al cliente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 32, comma 3 del Regolamento AFC distingue tra attività istituzionale (assegnazione formale contributi, iscrizione perfezionata studenti, sottoscrizione accordi) e attività commerciale (emissione fattura), in coerenza con il principio di competenza economica."
     },
     {
@@ -4633,12 +4633,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Gestione liquidità",
       "domanda": "Come viene affidato il servizio di cassa dell'Università degli Studi di Sassari ai sensi dell'art. 35, comma 3 del Regolamento AFC?",
       "opzioni": {
-        "A": "Con convenzione deliberata dal Consiglio di Amministrazione ad un unico Istituto di credito, il quale amministra altresì i titoli di proprietà dell'Ateneo",
+        "A": "Con determina dell'Economo di Ateneo",
         "B": "Con decreto del Rettore a tre banche diverse senza convenzione",
         "C": "Direttamente a Poste Italiane S.p.A. in via esclusiva",
-        "D": "Con determina dell'Economo di Ateneo"
+        "D": "Con convenzione deliberata dal Consiglio di Amministrazione ad un unico Istituto di credito, il quale amministra altresì i titoli di proprietà dell'Ateneo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 35, comma 3 del Regolamento AFC stabilisce che il servizio di cassa dell'Ateneo è affidato, con convenzione deliberata dal Consiglio di Amministrazione, ad un unico Istituto di credito il quale amministra altresì i titoli di proprietà dell'Ateneo."
     },
     {
@@ -4661,12 +4661,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Revisione budget",
       "domanda": "Chi autorizza la rimodulazione dei costi all'interno dei budget assegnati a ciascun Centro di gestione e le variazioni per maggiori ricavi vincolati nella destinazione ai sensi dell'art. 40, comma 1 del Regolamento AFC?",
       "opzioni": {
-        "A": "Il Direttore Generale per le Strutture dirigenziali e il Direttore dei Centri dotati di autonomia amministrativa e gestionale per i rispettivi Centri",
-        "B": "Esclusivamente il Ministero dell'Università e della Ricerca",
+        "A": "Esclusivamente il Ministero dell'Università e della Ricerca",
+        "B": "Il Direttore Generale per le Strutture dirigenziali e il Direttore dei Centri dotati di autonomia amministrativa e gestionale per i rispettivi Centri",
         "C": "Il Collegio dei Revisori dei conti",
         "D": "Il Senato Accademico a maggioranza dei due terzi"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 40, comma 1 del Regolamento AFC attribuisce l'autorizzazione delle rimodulazioni interne di budget e delle variazioni per maggiori ricavi vincolati al Direttore Generale (per le Strutture dirigenziali) e al Direttore del Centro (per i Centri dotati di autonomia gestionale)."
     },
     {
@@ -4675,12 +4675,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Rendicontazione",
       "domanda": "Quale funzione svolgono le scritture contabili di assestamento effettuate al termine dell'esercizio ai sensi dell'art. 42, comma 2 del Regolamento AFC?",
       "opzioni": {
-        "A": "Rettificano e integrano i valori rilevati in corso d'esercizio ai fini della corretta determinazione della competenza economica (stornando risconti, imputando ratei e determinando ammortamenti e accantonamenti)",
+        "A": "Trasferiscono automaticamente i fondi non spesi al Ministero",
         "B": "Annullano tutte le fatture non ancora pagate al 31 dicembre",
-        "C": "Trasferiscono automaticamente i fondi non spesi al Ministero",
+        "C": "Rettificano e integrano i valori rilevati in corso d'esercizio ai fini della corretta determinazione della competenza economica (stornando risconti, imputando ratei e determinando ammortamenti e accantonamenti)",
         "D": "Riaprono i saldi dello Stato patrimoniale all'1 gennaio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 42, comma 2 del Regolamento AFC descrive le scritture di assestamento (ratei, risconti, ammortamenti, accantonamenti) finalizzate a determinare correttamente la competenza economica dell'esercizio."
     },
     {
@@ -4689,12 +4689,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e inventari",
       "domanda": "Ai sensi dell'art. 47, commi 2 e 4 del Regolamento AFC di UniSS, quali categorie di immobilizzazioni NON sono soggette ad inventariazione?",
       "opzioni": {
-        "A": "Le immobilizzazioni immateriali e le immobilizzazioni finanziarie",
+        "A": "Gli automezzi e i fabbricati",
         "B": "I mobili e gli arredi d'ufficio",
         "C": "Le attrezzature scientifiche e informatiche",
-        "D": "Gli automezzi e i fabbricati"
+        "D": "Le immobilizzazioni immateriali e le immobilizzazioni finanziarie"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 47 stabilisce espressamente ai commi 2 e 4 che né le immobilizzazioni immateriali né le immobilizzazioni finanziarie (partecipazioni e altri titoli) sono soggette ad inventariazione."
     },
     {
@@ -4717,12 +4717,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e inventari",
       "domanda": "Con quale periodicità gli agenti responsabili degli automezzi dell'Ateneo verificano la compilazione del prospetto riepilogativo delle spese per carburanti, lubrificanti e manutenzione ordinaria (art. 51, comma 5)?",
       "opzioni": {
-        "A": "Quadrimestralmente",
-        "B": "Mensilmente",
+        "A": "Mensilmente",
+        "B": "Quadrimestralmente",
         "C": "Semestralmente",
         "D": "Annualmente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 51, comma 5 del Regolamento AFC stabilisce che gli agenti responsabili degli automezzi controllano l'uso dei veicoli e verificano la compilazione del prospetto che riepiloga quadrimestralmente le spese per carburanti, lubrificanti, manutenzione ordinaria e piccole riparazioni."
     },
     {
@@ -4731,12 +4731,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e inventari",
       "domanda": "Chi è il consegnatario dei beni mobili in uso rispettivamente alle Strutture dirigenziali e ai Centri dotati di autonomia amministrativa e gestionale (art. 52, comma 2)?",
       "opzioni": {
-        "A": "Il Direttore Generale (o un funzionario da questi delegato) per le Strutture dirigenziali; il Direttore della struttura per i Centri dotati di autonomia gestionale",
+        "A": "Il Dirigente dell'Area edilizia per tutti i beni mobili",
         "B": "Il Rettore per entrambe le tipologie di strutture",
-        "C": "Il Dirigente dell'Area edilizia per tutti i beni mobili",
+        "C": "Il Direttore Generale (o un funzionario da questi delegato) per le Strutture dirigenziali; il Direttore della struttura per i Centri dotati di autonomia gestionale",
         "D": "Il Presidente del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 52, comma 2 del Regolamento AFC attribuisce la qualità di consegnatario dei beni mobili al Direttore Generale (o funzionario delegato) per le Strutture dirigenziali e al Direttore della struttura per i Centri dotati di autonomia amministrativa e gestionale."
     },
     {
@@ -4745,12 +4745,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e inventari",
       "domanda": "Quale organo è competente per le operazioni di scarico dagli inventari dei beni mobili inventariati dai Centri dotati di autonomia amministrativa e gestionale (art. 53, comma 3)?",
       "opzioni": {
-        "A": "Il Consiglio del Centro, sulla base di motivata proposta dell'agente responsabile",
+        "A": "Il Senato Accademico",
         "B": "Il Direttore Generale",
         "C": "L'Economo dell'Ateneo",
-        "D": "Il Senato Accademico"
+        "D": "Il Consiglio del Centro, sulla base di motivata proposta dell'agente responsabile"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 53, comma 3 del Regolamento AFC dispone che per i beni inventariati dai Centri dotati di autonomia amministrativa e gestionale, le operazioni di scarico sono di competenza del Consiglio del Centro, sulla base di motivata proposta dell'agente responsabile."
     },
     {
@@ -4773,12 +4773,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Attività negoziale",
       "domanda": "Ai sensi dell'art. 57 del Regolamento AFC, a quale titolo l'Università degli Studi di Sassari può concedere in uso propri spazi a soggetti pubblici o privati?",
       "opzioni": {
-        "A": "Sia a titolo oneroso che a titolo gratuito, sulla base delle modalità definite da specifico Regolamento interno",
-        "B": "Esclusivamente a titolo oneroso",
+        "A": "Esclusivamente a titolo oneroso",
+        "B": "Sia a titolo oneroso che a titolo gratuito, sulla base delle modalità definite da specifico Regolamento interno",
         "C": "Esclusivamente a titolo gratuito e solo ad enti statali",
         "D": "Non è mai consentita la concessione in uso di spazi universitari a soggetti esterni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 57, comma 1 del Regolamento AFC consente all'Ateneo di concedere in uso spazi a soggetti pubblici o privati sia a titolo oneroso che a titolo gratuito, secondo le modalità definite da apposito Regolamento interno."
     },
     {
@@ -4787,12 +4787,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Controlli",
       "domanda": "I singoli componenti del Collegio dei Revisori dei conti possono procedere individualmente ad atti di ispezione, verifica e controllo (art. 59, comma 5 Regolamento AFC)?",
       "opzioni": {
-        "A": "Sì, in qualsiasi momento, anche individualmente, previa comunicazione al Presidente, portando poi gli esiti all'attenzione del Collegio",
+        "A": "Sì, ma solo previa autorizzazione del Direttore Generale",
         "B": "No, possono agire esclusivamente in composizione plenaria di tre membri",
-        "C": "Sì, ma solo previa autorizzazione del Direttore Generale",
+        "C": "Sì, in qualsiasi momento, anche individualmente, previa comunicazione al Presidente, portando poi gli esiti all'attenzione del Collegio",
         "D": "No, le ispezioni sono riservate esclusivamente alla Guardia di Finanza"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 59, comma 5 del Regolamento AFC stabilisce che le funzioni del Collegio sono svolte collegialmente, ma i singoli componenti possono procedere in qualsiasi momento, anche individualmente, previa comunicazione al Presidente, ad atti di ispezione, verifica e controllo da riferire poi al Collegio."
     },
     {
@@ -4801,12 +4801,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Controlli",
       "domanda": "A chi il Direttore Generale trasmette le relazioni redatte nell'ambito dell'attività di valutazione e controllo strategico ai sensi dell'art. 62, comma 3 del Regolamento AFC?",
       "opzioni": {
-        "A": "Al Rettore ed al Nucleo di Valutazione",
+        "A": "Al Collegio di Disciplina",
         "B": "Al Consiglio degli Studenti ed al CUG",
         "C": "All'Agenzia delle Entrate",
-        "D": "Al Collegio di Disciplina"
+        "D": "Al Rettore ed al Nucleo di Valutazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 62, comma 3 del Regolamento AFC dispone che per le attività di valutazione e controllo strategico il Direttore Generale, avvalendosi degli uffici preposti, redige e trasmette apposite relazioni al Rettore ed al Nucleo di Valutazione."
     },
     {
@@ -4829,12 +4829,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Principi etici",
       "domanda": "Quale distinzione opera l'art. 5 del Codice Etico UniSS tra 'discriminazione diretta' e 'discriminazione indiretta'?",
       "opzioni": {
-        "A": "La diretta si ha quando una persona è trattata meno favorevolmente di un'altra in situazione analoga; l'indiretta quando una disposizione, un criterio o una prassi apparentemente neutri possono mettere in posizione di svantaggio determinate categorie di persone",
-        "B": "La diretta avviene in presenza, l'indiretta avviene online",
+        "A": "La diretta avviene in presenza, l'indiretta avviene online",
+        "B": "La diretta si ha quando una persona è trattata meno favorevolmente di un'altra in situazione analoga; l'indiretta quando una disposizione, un criterio o una prassi apparentemente neutri possono mettere in posizione di svantaggio determinate categorie di persone",
         "C": "La diretta riguarda solo il genere, l'indiretta solo l'età",
         "D": "Non esiste alcuna distinzione nel testo del Codice"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 5, commi 2 e 3 del Codice definisce puntualmente la discriminazione diretta (trattamento meno favorevole in situazione analoga) e la discriminazione indiretta (criterio o prassi apparentemente neutri che generano uno svantaggio particolare, salvo oggettiva giustificazione legittima)."
     },
     {
@@ -4844,11 +4844,11 @@ var BANCA_DATI = {
       "domanda": "Secondo l'art. 9, comma 3 del Codice Etico UniSS, quando si configura il 'plagio'?",
       "opzioni": {
         "A": "Solo quando un intero libro viene copiato e pubblicato a fini di lucro",
-        "B": "Con l'attribuzione, anche parziale, di parole, idee, ricerche o scoperte altrui a sé stessi o ad altri autori, o l'omissione della citazione delle fonti, sia intenzionalmente sia per condotta non diligente",
-        "C": "Esclusivamente nelle tesi di dottorato in lingua italiana",
+        "B": "Esclusivamente nelle tesi di dottorato in lingua italiana",
+        "C": "Con l'attribuzione, anche parziale, di parole, idee, ricerche o scoperte altrui a sé stessi o ad altri autori, o l'omissione della citazione delle fonti, sia intenzionalmente sia per condotta non diligente",
         "D": "Solo se l'autore originale sporge querela penale"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 9, comma 3 del Codice sanziona sul piano etico l'attribuzione anche parziale di parole, idee, ricerche o scoperte altrui o l'omissione delle fonti a prescindere dalla lingua e sia in caso di dolo sia in caso di mera negligenza (condotta non diligente)."
     },
     {
@@ -4857,12 +4857,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Principi etici",
       "domanda": "In quali casi è consentito utilizzare la reputazione o il nome dell'Università in associazione ad attività professionali o incarichi esterni ai sensi dell'art. 11 del Codice Etico UniSS?",
       "opzioni": {
-        "A": "Solo a seguito di espressa autorizzazione",
+        "A": "Libera scelta del dipendente se inserisce un disclaimer",
         "B": "Sempre, purché l'attività esterna non sia retribuita",
         "C": "Mai, in nessuna circostanza",
-        "D": "Libera scelta del dipendente se inserisce un disclaimer"
+        "D": "Solo a seguito di espressa autorizzazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 11 del Codice vieta di utilizzare la reputazione dell'Università in associazione ad attività professionali, impieghi, incarichi o altre attività esterne, anche non remunerate, se non a seguito di espressa autorizzazione."
     },
     {
@@ -4885,12 +4885,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Interessi finanziari",
       "domanda": "Chi conserva in apposito archivio, con modalità riservate previste dal manuale archivistico, le dichiarazioni sugli interessi finanziari rese dai dipendenti ai sensi dell'art. 15, comma 4 del Codice?",
       "opzioni": {
-        "A": "Il Direttore Generale",
-        "B": "Il Presidente del Consiglio degli Studenti",
+        "A": "Il Presidente del Consiglio degli Studenti",
+        "B": "Il Direttore Generale",
         "C": "L'Ufficio Relazioni con il Pubblico",
         "D": "Il Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 15, comma 4 del Codice Etico e di Comportamento stabilisce che le dichiarazioni sugli interessi finanziari devono essere rese obbligatoriamente e conservate in apposito archivio dal Direttore Generale, con modalità riservate."
     },
     {
@@ -4899,12 +4899,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Conflitto di interessi",
       "domanda": "Ai sensi dell'art. 16, comma 3 del Codice Etico UniSS, chi decide sull'astensione del dipendente che abbia comunicato una situazione di conflitto di interessi?",
       "opzioni": {
-        "A": "Il diretto responsabile del dipendente (dandone comunicazione tempestiva al Direttore Generale, o al Rettore se trattasi di organo)",
+        "A": "Il Ministero dell'Università",
         "B": "Il dipendente stesso a propria discrezione",
-        "C": "Il Ministero dell'Università",
+        "C": "Il diretto responsabile del dipendente (dandone comunicazione tempestiva al Direttore Generale, o al Rettore se trattasi di organo)",
         "D": "Il Giudice amministrativo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 16, commi 3 e 4 del Codice prevede che sull'astensione decida il diretto responsabile del dipendente (o l'organo di cui è componente), riportando le motivazioni agli atti e dandone tempestiva comunicazione al Direttore Generale (o al Rettore)."
     },
     {
@@ -4913,12 +4913,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Comportamento in servizio",
       "domanda": "Ai sensi dell'art. 20, comma 8 del Codice Etico UniSS, i dipendenti possono trasportare soggetti terzi sui mezzi di trasporto dell'Università a loro disposizione?",
       "opzioni": {
-        "A": "No, devono astenersi dal trasportare terzi, se non per motivi d'ufficio",
+        "A": "Sì, dietro rimborso del carburante",
         "B": "Sì, liberamente lungo il tragitto casa-lavoro",
         "C": "Sì, purché siano familiari entro il secondo grado",
-        "D": "Sì, dietro rimborso del carburante"
+        "D": "No, devono astenersi dal trasportare terzi, se non per motivi d'ufficio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 20, comma 8 del Codice dispone che i dipendenti utilizzano i mezzi di trasporto dell'Università soltanto per lo svolgimento dei compiti d'ufficio astenendosi dal trasportare terzi, se non per motivi d'ufficio."
     },
     {
@@ -4941,12 +4941,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Rapporti con il pubblico",
       "domanda": "Ai sensi dell'art. 21, comma 14 del Codice Etico UniSS, quando i dipendenti possono rilasciare dichiarazioni pubbliche o altre forme di esternazione in qualità di rappresentanti dell'Università?",
       "opzioni": {
-        "A": "Solo se espressamente autorizzati",
-        "B": "Ogni volta che vengono intervistati da una testata giornalistica locale",
+        "A": "Ogni volta che vengono intervistati da una testata giornalistica locale",
+        "B": "Solo se espressamente autorizzati",
         "C": "Sempre, purché fuori dall'orario di servizio",
         "D": "Mai, nemmeno se autorizzati dal Rettore"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 21, comma 14 del Codice stabilisce che i dipendenti rilasciano dichiarazioni pubbliche o altre forme di esternazione in qualità di rappresentanti dell'Università solo se espressamente autorizzati."
     },
     {
@@ -4955,12 +4955,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Contratti e atti negoziali",
       "domanda": "Ai sensi dell'art. 22, comma 2 del Codice Etico UniSS, quale obbligo grava sul dipendente qualora l'Università concluda contratti con imprese con le quali il dipendente stesso abbia stipulato contratti a titolo privato o ricevuto utilità nel biennio precedente (salvi i contratti conclusi ex art. 1342 c.c.)?",
       "opzioni": {
-        "A": "Si astiene dal partecipare all'adozione delle decisioni e alle attività relative all'esecuzione dei contratti, redigendo verbale scritto di tale astensione da conservare agli atti e informando i superiori",
+        "A": "Chiede lo scioglimento immediato del contratto privato",
         "B": "Partecipa normalmente alle decisioni ma non firma il contratto finale",
-        "C": "Chiede lo scioglimento immediato del contratto privato",
+        "C": "Si astiene dal partecipare all'adozione delle decisioni e alle attività relative all'esecuzione dei contratti, redigendo verbale scritto di tale astensione da conservare agli atti e informando i superiori",
         "D": "Non ha alcun obbligo se l'importo è inferiore a 40.000 euro"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 22, comma 2 del Codice impone l'astensione dalle decisioni e dall'esecuzione del contratto con redazione di apposito verbale scritto da conservare agli atti dell'ufficio e comunicazione ai superiori gerarchici o funzionali."
     },
     {
@@ -4969,12 +4969,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Disposizioni per i dirigenti",
       "domanda": "Entro quanti giorni dal conferimento dell'incarico i dirigenti devono comunicare all'Università le partecipazioni azionarie e gli altri interessi finanziari che possano porli in conflitto di interessi (art. 25, comma 3 Codice Etico UniSS)?",
       "opzioni": {
-        "A": "Prima di assumere le funzioni e comunque non oltre trenta giorni dal conferimento dell'incarico",
+        "A": "Solo al termine del primo anno di incarico",
         "B": "Entro novanta giorni dal conferimento dell'incarico",
         "C": "Entro sei mesi",
-        "D": "Solo al termine del primo anno di incarico"
+        "D": "Prima di assumere le funzioni e comunque non oltre trenta giorni dal conferimento dell'incarico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 25, comma 3 del Codice dispone che i dirigenti effettuino tale comunicazione prima di assumere le funzioni e comunque non oltre trenta giorni dal conferimento dell'incarico stesso."
     },
     {
@@ -4997,12 +4997,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Studenti e vigilanza",
       "domanda": "Quali soggetti vigilano sull'applicazione del Codice Etico e di Comportamento presso ciascun Dipartimento e presso la Struttura di Raccordo della Facoltà di Medicina e Chirurgia (art. 34, comma 1)?",
       "opzioni": {
-        "A": "Rispettivamente il Direttore di Dipartimento e il Presidente della Struttura di Raccordo (oltre ai dirigenti, all'OIV e all'UPD)",
-        "B": "Esclusivamente il Rettore",
+        "A": "Esclusivamente il Rettore",
+        "B": "Rispettivamente il Direttore di Dipartimento e il Presidente della Struttura di Raccordo (oltre ai dirigenti, all'OIV e all'UPD)",
         "C": "Il Consiglio degli Studenti",
         "D": "Il Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 34, comma 1 del Codice attribuisce la vigilanza generale ai dirigenti, all'OIV e all'UPD, precisando che nei Dipartimenti e nella Struttura di Raccordo di Medicina e Chirurgia vigilano rispettivamente il Direttore di Dipartimento e il Presidente della Struttura di Raccordo."
     },
     {
@@ -5011,12 +5011,12 @@ var BANCA_DATI = {
       "argomento": "Legge 168/1989 - Autonomia universitaria",
       "domanda": "Ai sensi dell'art. 6 della Legge 9 maggio 1989, n. 168, le Università sono dotate di:",
       "opzioni": {
-        "A": "Personalità giuridica e, in attuazione dell'art. 33 della Costituzione, hanno autonomia didattica, scientifica, organizzativa, finanziaria e contabile; si danno ordinamenti autonomi con propri statuti e regolamenti",
+        "A": "Personalità giuridica di diritto privato priva di potestà regolamentare",
         "B": "Esclusiva autonomia didattica sotto il controllo gerarchico preventivo del Prefetto",
         "C": "Sola autonomia contabile, restando gli statuti approvati con legge ordinaria del Parlamento",
-        "D": "Personalità giuridica di diritto privato priva di potestà regolamentare"
+        "D": "Personalità giuridica e, in attuazione dell'art. 33 della Costituzione, hanno autonomia didattica, scientifica, organizzativa, finanziaria e contabile; si danno ordinamenti autonomi con propri statuti e regolamenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 6, comma 1 della Legge 9 maggio 1989, n. 168 riconosce alle Università personalità giuridica e autonomia didattica, scientifica, organizzativa, finanziaria e contabile, attuando l'art. 33 della Costituzione."
     },
     {
@@ -5025,12 +5025,12 @@ var BANCA_DATI = {
       "argomento": "Legge 168/1989 - Autonomia universitaria",
       "domanda": "Ai sensi dell'art. 6, comma 9 della Legge 9 maggio 1989, n. 168, quale controllo esercita il Ministero dell'Università e della Ricerca sugli Statuti e sui Regolamenti delle Università?",
       "opzioni": {
-        "A": "Un controllo preventivo di merito sull'opportunità politica delle scelte accademiche",
-        "B": "Un controllo di legittimità e di merito (sotto forma di richiesta motivata di riesame per una sola volta), decorsi i termini per il quale gli statuti e i regolamenti sono emanati con decreto del Rettore e pubblicati nella Gazzetta Ufficiale",
+        "A": "Un controllo di legittimità e di merito (sotto forma di richiesta motivata di riesame per una sola volta), decorsi i termini per il quale gli statuti e i regolamenti sono emanati con decreto del Rettore e pubblicati nella Gazzetta Ufficiale",
+        "B": "Un controllo preventivo di merito sull'opportunità politica delle scelte accademiche",
         "C": "Nessun controllo, poiché gli statuti entrano in vigore prima ancora dell'invio al Ministero",
         "D": "Un controllo esercitato dalla Corte dei Conti prima della delibera del Senato Accademico"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 6, commi 9-11 della Legge 168/1989 disciplina il controllo ministeriale sugli statuti e regolamenti universitari (richiesta motivata di riesame per una sola volta per legittimità o merito; l'organo universitario può riapprovare a maggioranza qualificata salvo vizi di legittimità impugnabili dinanzi al giudice amministrativo)."
     },
     {
@@ -5054,11 +5054,11 @@ var BANCA_DATI = {
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. d) della Legge 240/2010, quale proporzione minima dei componenti del Senato Accademico deve essere costituita da docenti di ruolo (e di questi almeno un terzo deve essere rappresentato da direttori di dipartimento)?",
       "opzioni": {
         "A": "Almeno la metà dei componenti",
-        "B": "Almeno due terzi dei componenti",
-        "C": "Almeno tre quarti dei componenti",
+        "B": "Almeno tre quarti dei componenti",
+        "C": "Almeno due terzi dei componenti",
         "D": "Esattamente il 51% dei componenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 2, comma 1, lett. d) della Legge 240/2010 stabilisce che il Senato Accademico (max 35 membri) è composto per almeno due terzi da docenti di ruolo, almeno un terzo dei quali direttori di dipartimento."
     },
     {
@@ -5067,12 +5067,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Governance e Senato Accademico",
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. f) della Legge 240/2010, quale è la durata massima del mandato dei componenti del Senato Accademico e per quante volte sono rieleggibili?",
       "opzioni": {
-        "A": "Durata massima di quattro anni, rinnovabile una sola volta",
+        "A": "Durata massima di cinque anni, rinnovabile senza limiti",
         "B": "Durata massima di sei anni, non rinnovabile",
         "C": "Durata fissa di due anni, rinnovabile due volte",
-        "D": "Durata massima di cinque anni, rinnovabile senza limiti"
+        "D": "Durata massima di quattro anni, rinnovabile una sola volta"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 2, comma 1, lett. f) della Legge 240/2010 fissa la durata massima del mandato del Senato Accademico in quattro anni, con possibilità di rinnovo per una sola volta (nel rispetto di tale tetto, lo Statuto UniSS ha fissato la durata in tre anni)."
     },
     {
@@ -5081,12 +5081,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Governance e Consiglio di Amministrazione",
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. i) della Legge 240/2010, quale percentuale minima della rappresentanza elettiva degli studenti deve essere garantita nella composizione del Consiglio di Amministrazione?",
       "opzioni": {
-        "A": "Almeno il 10% dei componenti",
-        "B": "Almeno il 15% dei componenti",
+        "A": "Almeno il 15% dei componenti",
+        "B": "Almeno il 10% dei componenti",
         "C": "Almeno il 20% dei componenti",
         "D": "Almeno il 25% dei componenti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "L'art. 2, comma 1, lett. i) della Legge 240/2010 stabilisce che nel Consiglio di Amministrazione deve essere garantita una rappresentanza elettiva degli studenti pari ad almeno il 15 per cento (infatti su 11 membri di UniSS, 2 sono studenti, pari al 18,18%)."
     },
     {
@@ -5095,12 +5095,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Governance e Consiglio di Amministrazione",
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. l) della Legge 240/2010, chi presiede il Consiglio di Amministrazione nelle Università statali?",
       "opzioni": {
-        "A": "Il Rettore o uno dei consiglieri esterni (a scelta dello Statuto)",
-        "B": "Esclusivamente il Direttore Generale",
+        "A": "Esclusivamente il Direttore Generale",
+        "B": "Il Rettore o uno dei consiglieri esterni (a scelta dello Statuto)",
         "C": "Il Decano dei professori ordinari",
         "D": "Il Presidente del Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 2, comma 1, lett. l) della Legge 240/2010 attribuisce la presidenza del Consiglio di Amministrazione al Rettore o ad uno dei consiglieri esterni (lo Statuto UniSS all'art. 20, comma 2, lett. a ha scelto la presidenza in capo al Rettore)."
     },
     {
@@ -5109,12 +5109,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Collegio dei Revisori dei conti",
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. p) della Legge 240/2010, da chi vengono designati i componenti effettivi e supplenti del Collegio dei Revisori dei conti di un'Università statale?",
       "opzioni": {
-        "A": "Uno effettivo con funzioni di Presidente designato dall'Ateneo tra magistrati amministrativi/contabili e avvocati dello Stato; uno effettivo e uno supplente designati dal MEF; uno effettivo e uno supplente designati dal Ministero dell'Università",
+        "A": "Designati interamente dalla Regione di appartenenza",
         "B": "Tutti e cinque nominati dal Rettore tra i professori di ragioneria dell'Ateneo",
-        "C": "Designati interamente dalla Regione di appartenenza",
+        "C": "Uno effettivo con funzioni di Presidente designato dall'Ateneo tra magistrati amministrativi/contabili e avvocati dello Stato; uno effettivo e uno supplente designati dal MEF; uno effettivo e uno supplente designati dal Ministero dell'Università",
         "D": "Eletti dal personale tecnico-amministrativo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 2, comma 1, lett. p) della Legge 240/2010 fissa la composizione tripartita del Collegio dei Revisori dei conti (3 effettivi + 2 supplenti): Presidente scelto dall'Ateneo tra magistrati amministrativi/contabili o avvocati dello Stato, più un effettivo e un supplente dal MEF e dal MUR."
     },
     {
@@ -5123,12 +5123,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Nucleo di Valutazione",
       "domanda": "Ai sensi dell'art. 2, comma 1, lett. r) della Legge 240/2010, come devono essere individuati in maggioranza i componenti del Nucleo di Valutazione?",
       "opzioni": {
-        "A": "Devono essere in maggioranza esterni ai ruoli dell'Ateneo (su un numero complessivo compreso tra 5 e 9 membri)",
+        "A": "Devono essere dirigenti amministrativi interni",
         "B": "Devono essere tutti docenti ordinari interni all'Ateneo",
         "C": "Devono essere tutti rappresentanti degli studenti",
-        "D": "Devono essere dirigenti amministrativi interni"
+        "D": "Devono essere in maggioranza esterni ai ruoli dell'Ateneo (su un numero complessivo compreso tra 5 e 9 membri)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 2, comma 1, lett. r) della Legge 240/2010 stabilisce che il Nucleo di Valutazione sia composto da 5 a 9 membri, di cui almeno due nominati in rappresentanza degli studenti, e in maggioranza esterni ai ruoli dell'Ateneo (nello Statuto UniSS: 6 membri, di cui 3 esterni + 1 studente + 2 docenti interni)."
     },
     {
@@ -5151,12 +5151,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Strutture didattiche e di ricerca",
       "domanda": "Ai sensi dell'art. 2, comma 2, lett. c) della Legge 240/2010, quante strutture di raccordo (comunque denominate, es. Scuole o Facoltà) possono essere istituite al massimo in ciascun Ateneo?",
       "opzioni": {
-        "A": "Non più di sei (elevabili a dodici solo per gli atenei con oltre 40.000 studenti)",
-        "B": "Non più di due",
+        "A": "Non più di due",
+        "B": "Non più di sei (elevabili a dodici solo per gli atenei con oltre 40.000 studenti)",
         "C": "Non più di venti",
         "D": "Nessun limite di legge"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 2, comma 2, lett. c) della Legge 240/2010 prevede la possibilità di istituire strutture di raccordo tra più dipartimenti raggruppati in relazione a criteri di affinità disciplinare, in numero non superiore a sei (elevabile fino a dodici per gli atenei con un numero di studenti superiore a 40.000)."
     },
     {
@@ -5165,12 +5165,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Commissioni paritetiche docenti-studenti",
       "domanda": "Ai sensi dell'art. 2, comma 2, lett. g) della Legge 240/2010, presso quali strutture sono istituite le Commissioni paritetiche docenti-studenti?",
       "opzioni": {
-        "A": "Presso ciascun Dipartimento o presso ciascuna struttura di raccordo",
+        "A": "Esclusivamente presso l'Ufficio Relazioni con il Pubblico",
         "B": "Presso il Ministero dell'Università a Roma",
-        "C": "Esclusivamente presso l'Ufficio Relazioni con il Pubblico",
+        "C": "Presso ciascun Dipartimento o presso ciascuna struttura di raccordo",
         "D": "Presso il Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 2, comma 2, lett. g) della Legge 240/2010 prevede l'istituzione in ciascun dipartimento (o in ciascuna struttura di raccordo, ove istituita) di una commissione paritetica docenti-studenti competente a svolgere attività di monitoraggio dell'offerta formativa e della qualità della didattica."
     },
     {
@@ -5179,12 +5179,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Federazioni e fusioni tra Atenei",
       "domanda": "Ai sensi dell'art. 3 della Legge 240/2010, due o più Università possono federarsi o fondersi tra loro?",
       "opzioni": {
-        "A": "Sì, sulla base di un progetto contenente le motivazioni, gli obiettivi, le strutture interessate e la sostenibilità economico-finanziaria, deliberato dai rispettivi organi di governo",
+        "A": "Sì, ma solo se appartengono alla stessa provincia",
         "B": "No, la federazione tra atenei statali è vietata dalla Costituzione",
         "C": "Sì, ma solo tra un'università statale e un'azienda privata",
-        "D": "Sì, ma solo se appartengono alla stessa provincia"
+        "D": "Sì, sulla base di un progetto contenente le motivazioni, gli obiettivi, le strutture interessate e la sostenibilità economico-finanziaria, deliberato dai rispettivi organi di governo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 3 della Legge 240/2010 disciplina la federazione e la fusione di atenei (anche limitatamente ad alcuni settori di attività o strutture) al fine di migliorare la qualità, l'efficienza e l'efficacia dell'attività didattica, di ricerca e gestionale."
     },
     {
@@ -5207,12 +5207,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Stato giuridico dei docenti",
       "domanda": "Ai sensi dell'art. 6 della Legge 240/2010, in quali due regimi di impegno possono optare i professori e i ricercatori universitari?",
       "opzioni": {
-        "A": "Tempo pieno e tempo definito",
-        "B": "Tempo indeterminato e lavoro intermittente",
+        "A": "Tempo indeterminato e lavoro intermittente",
+        "B": "Tempo pieno e tempo definito",
         "C": "Tempo parziale al 30% e tempo parziale al 70%",
         "D": "Regime libero-professionale esclusivo e regime statale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 6, comma 6 della Legge 240/2010 prevede che la posizione di professore e ricercatore sia incompatibile con l'esercizio del commercio e dell'industria, mentre l'esercizio di attività libero-professionale è incompatibile con il regime di tempo pieno ed è consentito solo in regime di tempo definito."
     },
     {
@@ -5221,12 +5221,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Chiamata dei professori",
       "domanda": "Ai sensi dell'art. 18 della Legge 240/2010, quale quota minima delle risorse disponibili per la chiamata di professori deve essere destinata dalle Università al reclutamento di 'esterni' (soggetti che nell'ultimo triennio non hanno prestato servizio, o non sono stati titolari di assegni di ricerca o iscritti a corsi universitari nell'Ateneo stesso)?",
       "opzioni": {
-        "A": "Almeno un quinto (20%) delle risorse disponibili",
+        "A": "Almeno la metà (50%) delle risorse",
         "B": "Almeno il 5% delle risorse",
-        "C": "Almeno la metà (50%) delle risorse",
+        "C": "Almeno un quinto (20%) delle risorse disponibili",
         "D": "Non esiste alcuna quota riservata agli esterni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 18, comma 4 della Legge 240/2010 impone a ciascuna università di destinare almeno un quinto (20%) delle risorse disponibili per la chiamata di professori di I e II fascia a soggetti esterni che nell'ultimo triennio non abbiano prestato servizio nell'ateneo stesso."
     },
     {
@@ -5235,12 +5235,12 @@ var BANCA_DATI = {
       "argomento": "Legge 240/2010 - Contratti di insegnamento",
       "domanda": "Ai sensi dell'art. 23 della Legge 240/2010, le Università possono stipulare contratti per attività di insegnamento al fine di avvalersi della collaborazione di esperti di alta qualificazione in possesso di un significativo curriculum scientifico o professionale?",
       "opzioni": {
-        "A": "Sì, sia a titolo gratuito sia a titolo oneroso (previa valutazione della congruità del curriculum da parte del Nucleo di Valutazione per gli affidamenti diretti)",
+        "A": "Sì, con durata decennale rinnovabile",
         "B": "No, gli insegnamenti universitari possono essere tenuti esclusivamente da professori ordinari di ruolo",
         "C": "Sì, ma solo per insegnamenti in lingua straniera",
-        "D": "Sì, con durata decennale rinnovabile"
+        "D": "Sì, sia a titolo gratuito sia a titolo oneroso (previa valutazione della congruità del curriculum da parte del Nucleo di Valutazione per gli affidamenti diretti)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 23 della Legge 240/2010 disciplina i contratti per attività di insegnamento (a titolo gratuito o oneroso), richiamato anche all'art. 31, comma 2, lett. d) dello Statuto UniSS in merito al parere del Nucleo di Valutazione sulla congruità del curriculum."
     },
     {
@@ -5263,12 +5263,12 @@ var BANCA_DATI = {
       "argomento": "Ordinamenti didattici (D.M. 270/2004)",
       "domanda": "Qual è il Decreto Ministeriale che definisce l'attuale assetto degli ordinamenti didattici universitari (Laurea triennale, Laurea magistrale, Master universitari di I e II livello, Dottorato di ricerca e Scuole di specializzazione)?",
       "opzioni": {
-        "A": "D.M. 22 ottobre 2004, n. 270 (che ha modificato il precedente D.M. 509/1999)",
-        "B": "D.M. 10 settembre 2010, n. 249",
+        "A": "D.M. 10 settembre 2010, n. 249",
+        "B": "D.M. 22 ottobre 2004, n. 270 (che ha modificato il precedente D.M. 509/1999)",
         "C": "D.P.R. 11 luglio 1980, n. 382",
         "D": "D.Lgs. 30 marzo 2001, n. 165"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il D.M. 22 ottobre 2004, n. 270 (richiamato anche nel preambolo del bando UniSS per l'equiparazione delle lauree) ha riformato l'autonomia didattica degli atenei, definendo i titoli accademici e i Crediti Formativi Universitari (CFU)."
     },
     {
@@ -5277,12 +5277,12 @@ var BANCA_DATI = {
       "argomento": "Ordinamenti didattici (D.M. 270/2004)",
       "domanda": "Ai sensi dell'art. 5 del D.M. 270/2004, a quante ore di impegno complessivo di apprendimento per lo studente corrisponde di norma un Credito Formativo Universitario (CFU) e quanti CFU sono necessari per conseguire rispettivamente la Laurea triennale e la Laurea magistrale biennale?",
       "opzioni": {
-        "A": "1 CFU = 25 ore; Laurea triennale = 180 CFU; Laurea magistrale = 120 CFU",
+        "A": "1 CFU = 50 ore; Laurea triennale = 240 CFU; Laurea magistrale = 180 CFU",
         "B": "1 CFU = 10 ore; Laurea triennale = 120 CFU; Laurea magistrale = 60 CFU",
-        "C": "1 CFU = 50 ore; Laurea triennale = 240 CFU; Laurea magistrale = 180 CFU",
+        "C": "1 CFU = 25 ore; Laurea triennale = 180 CFU; Laurea magistrale = 120 CFU",
         "D": "1 CFU = 30 ore; Laurea triennale = 150 CFU; Laurea magistrale = 90 CFU"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi degli artt. 5 e 7 del D.M. 270/2004, ad ogni CFU corrispondono 25 ore di impegno complessivo per lo studente; per conseguire la Laurea occorrono 180 CFU, mentre per la Laurea magistrale occorrono ulteriori 120 CFU (300 CFU complessivi per i corsi a ciclo unico quinquennali)."
     },
     {
@@ -5291,12 +5291,12 @@ var BANCA_DATI = {
       "argomento": "Sistema di valutazione e accreditamento (ANVUR / AVA)",
       "domanda": "Che cosa indica l'acronimo 'AVA' nel sistema universitario italiano gestito dall'ANVUR?",
       "opzioni": {
-        "A": "Autovalutazione, Valutazione periodica e Accreditamento (delle sedi e dei corsi di studio universitari)",
+        "A": "Autorizzazione Vigilanza Atenei",
         "B": "Anagrafe Nazionale dei Vincitori di Assegni",
         "C": "Associazione Verificatori Amministrativi",
-        "D": "Autorizzazione Vigilanza Atenei"
+        "D": "Autovalutazione, Valutazione periodica e Accreditamento (delle sedi e dei corsi di studio universitari)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il sistema AVA (Autovalutazione, Valutazione periodica e Accreditamento), introdotto dal D.Lgs. 19/2012 in attuazione della Legge 240/2010 e gestito dall'ANVUR, verifica la qualità e i requisiti per l'accreditamento iniziale e periodico delle sedi e dei corsi di studio."
     },
     {
@@ -5319,12 +5319,12 @@ var BANCA_DATI = {
       "argomento": "Finanziamento e sostenibilità (D.Lgs. 49/2012)",
       "domanda": "Quale decreto legislativo, emanato in attuazione della Legge 240/2010, disciplina la programmazione, il monitoraggio e la valutazione delle politiche di bilancio e di reclutamento degli Atenei (fissando i limiti massimi delle spese di personale e dell'indebitamento)?",
       "opzioni": {
-        "A": "D.Lgs. 29 marzo 2012, n. 49",
-        "B": "D.Lgs. 14 marzo 2013, n. 33",
+        "A": "D.Lgs. 14 marzo 2013, n. 33",
+        "B": "D.Lgs. 29 marzo 2012, n. 49",
         "C": "D.Lgs. 31 marzo 2023, n. 36",
         "D": "D.Lgs. 7 marzo 2005, n. 82"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il Decreto Legislativo 29 marzo 2012, n. 49 disciplina la sostenibilità economico-finanziaria degli atenei, stabilendo gli indicatori (spese di personale non superiori all'80% delle entrate FFO + tasse, oneri di ammortamento non superiori al 15%) e il sistema dei punti organico."
     },
     {
@@ -5333,12 +5333,12 @@ var BANCA_DATI = {
       "argomento": "Diritto allo studio universitario (D.Lgs. 68/2012)",
       "domanda": "Quale decreto legislativo ha ridefinito la normativa di principio in materia di diritto allo studio universitario, disciplinando i Livelli Essenziali delle Prestazioni (LEP), le borse di studio e i servizi abitativi?",
       "opzioni": {
-        "A": "D.Lgs. 29 marzo 2012, n. 68",
+        "A": "D.Lgs. 9 aprile 2008, n. 81",
         "B": "D.Lgs. 18 agosto 2000, n. 267",
-        "C": "D.Lgs. 9 aprile 2008, n. 81",
+        "C": "D.Lgs. 29 marzo 2012, n. 68",
         "D": "D.Lgs. 6 settembre 2011, n. 159"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il Decreto Legislativo 29 marzo 2012, n. 68 disciplina gli strumenti e i servizi per il diritto allo studio universitario (borse di studio, alloggi, ristorazione, esoneri dalle tasse) in attuazione dell'art. 34 della Costituzione."
     },
     {
@@ -5347,12 +5347,12 @@ var BANCA_DATI = {
       "argomento": "Organi nazionali del sistema universitario",
       "domanda": "Che cos'è la CRUI?",
       "opzioni": {
-        "A": "La Conferenza dei Rettori delle Università Italiane, associazione delle Università statali e non statali riconosciute, con ruolo di rappresentanza, indirizzo e coordinamento del sistema universitario",
+        "A": "Il Centro di Ricerca Universitario Informatico",
         "B": "La Commissione di Revisione Unica degli Inventari",
         "C": "Il Comitato Regionale Universitario Internazionale",
-        "D": "Il Centro di Ricerca Universitario Informatico"
+        "D": "La Conferenza dei Rettori delle Università Italiane, associazione delle Università statali e non statali riconosciute, con ruolo di rappresentanza, indirizzo e coordinamento del sistema universitario"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La CRUI (Conferenza dei Rettori delle Università Italiane) è l'organismo associativo che riunisce i Rettori delle università italiane statali e non statali, svolgendo funzioni di rappresentanza istituzionale e coordinamento."
     },
     {
@@ -5375,12 +5375,12 @@ var BANCA_DATI = {
       "argomento": "CCNL Comparto Istruzione e Ricerca",
       "domanda": "Quale agenzia rappresenta legalmente le pubbliche amministrazioni (compreso il Comparto Istruzione e Ricerca / Università) nella contrattazione collettiva nazionale di lavoro ai sensi dell'art. 46 del D.Lgs. 165/2001?",
       "opzioni": {
-        "A": "L'ARAN (Agenzia per la Rappresentanza Negoziale delle Pubbliche Amministrazioni)",
-        "B": "L'ANAC",
+        "A": "L'ANAC",
+        "B": "L'ARAN (Agenzia per la Rappresentanza Negoziale delle Pubbliche Amministrazioni)",
         "C": "L'ANVUR",
         "D": "L'INPS"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 46 del D.Lgs. 165/2001, l'ARAN ha la rappresentanza legale delle pubbliche amministrazioni ed esercita a livello nazionale ogni attività relativa alle relazioni sindacali e alla negoziazione dei contratti collettivi."
     },
     {
@@ -5389,12 +5389,12 @@ var BANCA_DATI = {
       "argomento": "CCNL Comparto Istruzione e Ricerca",
       "domanda": "Ai sensi del CCNL Comparto Istruzione e Ricerca, qual è l'orario di lavoro ordinario settimanale del personale tecnico-amministrativo delle Università?",
       "opzioni": {
-        "A": "36 ore settimanali",
+        "A": "30 ore settimanali",
         "B": "40 ore settimanali",
-        "C": "30 ore settimanali",
+        "C": "36 ore settimanali",
         "D": "42 ore settimanali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Nel Comparto Istruzione e Ricerca (settore Università), l'orario ordinario di lavoro del personale tecnico-amministrativo è di 36 ore settimanali, articolato di norma su cinque o sei giorni lavorativi secondo le esigenze di servizio."
     },
     {
@@ -5403,12 +5403,12 @@ var BANCA_DATI = {
       "argomento": "Doppia iscrizione universitaria (Legge 33/2022)",
       "domanda": "Cosa ha introdotto la Legge 12 aprile 2022, n. 33 nell'ordinamento universitario italiano?",
       "opzioni": {
-        "A": "La facoltà per ciascuno studente di iscriversi contemporaneamente a due diversi corsi di laurea, di laurea magistrale o di master, anche presso più università, scuole o istituti superiori ad ordinamento speciale (superando il precedente divieto del R.D. 1592/1933)",
+        "A": "La soppressione del dottorato di ricerca",
         "B": "L'abolizione dei corsi di laurea magistrale",
         "C": "L'obbligo di frequenza per tutti i corsi di laurea telematici",
-        "D": "La soppressione del dottorato di ricerca"
+        "D": "La facoltà per ciascuno studente di iscriversi contemporaneamente a due diversi corsi di laurea, di laurea magistrale o di master, anche presso più università, scuole o istituti superiori ad ordinamento speciale (superando il precedente divieto del R.D. 1592/1933)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La Legge 12 aprile 2022, n. 33 ha abrogato il divieto storico di contemporanea iscrizione, consentendo agli studenti di iscriversi contemporaneamente a due corsi di istruzione superiore nel rispetto delle condizioni stabilite dai decreti attuativi."
     },
     {
@@ -5431,12 +5431,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'autonomia universitaria, sancita dall'articolo 33 della Costituzione, non equivale ad autoreferenzialità: essa si accompagna infatti al principio di responsabilità, in forza del quale gli atenei rispondono della qualità della didattica, della ricerca e dell'impiego efficiente delle risorse pubbliche loro assegnate.' Quale affermazione è strettamente deducibile dal testo?",
       "opzioni": {
-        "A": "L'autonomia universitaria esonera gli atenei dal rendere conto sull'uso dei fondi pubblici",
-        "B": "L'autonomia degli atenei è bilanciata dall'obbligo di rispondere dei risultati raggiunti e dell'uso efficiente delle risorse",
+        "A": "L'autonomia degli atenei è bilanciata dall'obbligo di rispondere dei risultati raggiunti e dell'uso efficiente delle risorse",
+        "B": "L'autonomia universitaria esonera gli atenei dal rendere conto sull'uso dei fondi pubblici",
         "C": "L'art. 33 della Costituzione vieta qualsiasi forma di valutazione esterna delle università",
         "D": "La qualità della ricerca è l'unico parametro di responsabilità degli atenei"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il testo afferma espressamente che l'autonomia non è autoreferenzialità ma si accompagna al principio di responsabilità sulla qualità di didattica, ricerca e uso delle risorse."
     },
     {
@@ -5460,11 +5460,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'Sebbene il ricorso al lavoro agile abbia favorito una migliore conciliazione tra tempi di vita e di lavoro, la sua efficacia organizzativa dipende dalla capacità delle amministrazioni di definire obiettivi misurabili e di garantire adeguati standard di sicurezza informatica.' Secondo il brano:",
       "opzioni": {
         "A": "Il lavoro agile è sempre inefficace nella pubblica amministrazione",
-        "B": "Per risultare organizzativamente efficace, il lavoro agile richiede obiettivi misurabili e sicurezza informatica",
-        "C": "La sicurezza informatica è necessaria solo per chi lavora in presenza",
+        "B": "La sicurezza informatica è necessaria solo per chi lavora in presenza",
+        "C": "Per risultare organizzativamente efficace, il lavoro agile richiede obiettivi misurabili e sicurezza informatica",
         "D": "Il lavoro agile elimina la necessità di fissare obiettivi lavorativi"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il testo subordina l'efficacia organizzativa del lavoro agile a due condizioni: definizione di obiettivi misurabili e garanzia di adeguati standard di sicurezza informatica."
     },
     {
@@ -5474,11 +5474,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'La trasparenza amministrativa, intesa come accessibilità totale ai dati e ai documenti detenuti dalle pubbliche amministrazioni, trova un limite fisiologico nella necessità di tutelare la riservatezza dei dati personali e i segreti commerciali o industriali di soggetti terzi.' Cosa si deduce?",
       "opzioni": {
         "A": "La trasparenza prevale sempre e in modo assoluto sulla privacy",
-        "B": "Il diritto di accesso ai dati pubblici deve essere contemperato con la tutela dei dati personali e dei segreti commerciali di terzi",
+        "B": "La trasparenza riguarda esclusivamente gli atti segreti",
         "C": "I documenti contenenti dati di terzi sono sempre pubblicati integralmente online",
-        "D": "La trasparenza riguarda esclusivamente gli atti segreti"
+        "D": "Il diritto di accesso ai dati pubblici deve essere contemperato con la tutela dei dati personali e dei segreti commerciali di terzi"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il brano evidenzia che l'accessibilità totale incontra il limite della tutela della riservatezza e dei segreti commerciali/industriali di terzi."
     },
     {
@@ -5487,12 +5487,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Nelle procedure concorsuali pubbliche, la commissione esaminatrice è tenuta a predeterminare i criteri di valutazione delle prove prima di prendere visione degli elaborati dei candidati, al fine di assicurare l'imparzialità e la par condicio.' Quale affermazione è coerente?",
       "opzioni": {
-        "A": "I criteri di valutazione possono essere decisi dopo aver corretto tutti gli elaborati",
-        "B": "Fissare i criteri prima della correzione serve a garantire imparzialità e parità di trattamento tra i concorrenti",
+        "A": "Fissare i criteri prima della correzione serve a garantire imparzialità e parità di trattamento tra i concorrenti",
+        "B": "I criteri di valutazione possono essere decisi dopo aver corretto tutti gli elaborati",
         "C": "La par condicio impedisce di stabilire criteri oggettivi di valutazione",
         "D": "Solo i candidati possono stabilire i criteri di correzione"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il testo collega direttamente la predeterminazione dei criteri prima della visione degli elaborati alla tutela dell'imparzialità e della par condicio."
     },
     {
@@ -5516,11 +5516,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'La contabilità economico-patrimoniale, a differenza della tradizionale contabilità finanziaria basata sui flussi di cassa e competenza finanziaria, rileva i costi e i proventi secondo il principio della competenza economica, consentendo di misurare l'effettivo consumo di risorse e la variazione del patrimonio.' Secondo il brano:",
       "opzioni": {
         "A": "Contabilità finanziaria ed economico-patrimoniale utilizzano gli stessi identici criteri di rilevazione",
-        "B": "La contabilità economico-patrimoniale misura costi e proventi per competenza economica e consente di valutare le variazioni patrimoniali",
-        "C": "La contabilità economico-patrimoniale ignora completamente i costi d'esercizio",
+        "B": "La contabilità economico-patrimoniale ignora completamente i costi d'esercizio",
+        "C": "La contabilità economico-patrimoniale misura costi e proventi per competenza economica e consente di valutare le variazioni patrimoniali",
         "D": "Il principio di competenza economica si basa esclusivamente sulla data di pagamento delle fatture"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il testo contrappone i due sistemi evidenziando che la contabilità economico-patrimoniale rileva costi e proventi per competenza economica e misura la variazione del patrimonio."
     },
     {
@@ -5530,11 +5530,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'Ogni provvedimento amministrativo deve essere motivato indicando i presupposti di fatto e le ragioni giuridiche che hanno determinato la decisione dell'amministrazione in relazione alle risultanze dell'istruttoria.' Da ciò discende che:",
       "opzioni": {
         "A": "È sufficiente citare un articolo di legge senza spiegare i fatti accertati",
-        "B": "La motivazione deve collegare sia gli elementi fattuali emersi nell'istruttoria sia le norme giuridiche applicate",
+        "B": "La motivazione è facoltativa nei provvedimenti di rigetto",
         "C": "L'istruttoria è irrilevante ai fini della motivazione finale",
-        "D": "La motivazione è facoltativa nei provvedimenti di rigetto"
+        "D": "La motivazione deve collegare sia gli elementi fattuali emersi nell'istruttoria sia le norme giuridiche applicate"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "La motivazione richiede la doppia componente (presupposti di fatto + ragioni giuridiche) in coerenza con le risultanze dell'istruttoria."
     },
     {
@@ -5543,12 +5543,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'adozione del Piano Integrato di Attività e Organizzazione (PIAO) nasce dall'esigenza di superare la frammentazione della programmazione amministrativa, accorpando in un unico strumento triennale gli obiettivi di performance, gestione del capitale umano, formazione e prevenzione della corruzione.' Qual è lo scopo principale del PIAO secondo il brano?",
       "opzioni": {
-        "A": "Aumentare il numero di documenti separati che ogni ente deve approvare",
-        "B": "Unificare in un solo documento triennale diversi ambiti programmatori per superare la frammentazione",
+        "A": "Unificare in un solo documento triennale diversi ambiti programmatori per superare la frammentazione",
+        "B": "Aumentare il numero di documenti separati che ogni ente deve approvare",
         "C": "Sostituire lo Statuto e il bilancio consuntivo dell'ente",
         "D": "Eliminare la formazione del personale pubblico"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il brano indica come finalità del PIAO il superamento della frammentazione mediante l'accorpamento in un unico strumento triennale."
     },
     {
@@ -5572,11 +5572,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'Il diritto di accesso difensivo prevale, entro i limiti della stretta indispensabilità, sulle ordinarie esigenze di riservatezza dei controinteressati ogniqualvolta l'ostensione del documento sia necessaria per curare o difendere in giudizio una situazione giuridicamente rilevante.' Dal brano si deduce che:",
       "opzioni": {
         "A": "Per esercitare l'accesso difensivo è consentito ottenere anche dati eccedenti e non pertinenti alla difesa",
-        "B": "L'accesso difensivo può comprimere la riservatezza di terzi solo nella misura strettamente indispensabile alla tutela giudiziaria",
-        "C": "La riservatezza prevale sempre anche quando impedisce il diritto di difesa in giudizio",
+        "B": "La riservatezza prevale sempre anche quando impedisce il diritto di difesa in giudizio",
+        "C": "L'accesso difensivo può comprimere la riservatezza di terzi solo nella misura strettamente indispensabile alla tutela giudiziaria",
         "D": "L'accesso difensivo non richiede alcun collegamento con la difesa di un interesse giuridico"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Il testo sottolinea il limite della 'stretta indispensabilità' entro cui l'accesso difensivo prevale sulla riservatezza dei controinteressati."
     },
     {
@@ -5585,12 +5585,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'innovazione tecnologica nella pubblica amministrazione non produce automaticamente semplificazione se si limita a replicare in formato digitale vecchi processi cartacei ridondanti senza ripensarne le fasi.' Qual è la tesi del brano?",
       "opzioni": {
-        "A": "Digitalizzare un processo inefficiente senza riorganizzarlo non garantisce una reale semplificazione",
+        "A": "Non è mai necessario ripensare le fasi di un procedimento",
         "B": "I processi cartacei sono sempre preferibili a quelli digitali",
         "C": "La tecnologia risolve da sola ogni inefficienza burocratica",
-        "D": "Non è mai necessario ripensare le fasi di un procedimento"
+        "D": "Digitalizzare un processo inefficiente senza riorganizzarlo non garantisce una reale semplificazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il brano sostiene che la mera trasposizione digitale di flussi cartacei ridondanti non basta a produrre semplificazione senza reingegnerizzazione dei processi."
     },
     {
@@ -5599,12 +5599,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Nell'ultimo anno, presso la segreteria studentesca, il numero di richieste telefoniche di informazioni è diminuito del 40% dopo la pubblicazione delle nuove FAQ sul sito web. Pertanto, gli studenti hanno ormai risolto tutti i loro dubbi amministrativi.' Quale delle seguenti affermazioni INDEBOLISCE maggiormente questa conclusione?",
       "opzioni": {
-        "A": "Il sito web dell'Ateneo ha ricevuto un premio per l'accessibilità grafica",
-        "B": "Nello stesso periodo il centralino telefonico ha subito frequenti guasti che impedivano agli studenti di prendere la linea, spingendoli a recarsi di persona allo sportello",
+        "A": "Nello stesso periodo il centralino telefonico ha subito frequenti guasti che impedivano agli studenti di prendere la linea, spingendoli a recarsi di persona allo sportello",
+        "B": "Il sito web dell'Ateneo ha ricevuto un premio per l'accessibilità grafica",
         "C": "Le FAQ sono state tradotte anche in lingua inglese",
         "D": "Il personale della segreteria ha seguito un corso di comunicazione efficace"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Se il calo delle telefonate è dovuto a guasti tecnici della linea e gli utenti si sono riversati allo sportello fisico, viene meno il nesso causale tra FAQ e risoluzione di tutti i dubbi."
     },
     {
@@ -5613,12 +5613,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Tutti i candidati che hanno frequentato il corso preparatorio hanno superato la prova preselettiva. Giulia non ha frequentato il corso preparatorio. Dunque Giulia non supererà la prova preselettiva.' Qual è l'errore logico contenuto in questo ragionamento?",
       "opzioni": {
-        "A": "Confondere una condizione sufficiente con una condizione necessaria (negazione dell'antecedente)",
-        "B": "Utilizzare dati statistici non aggiornati",
+        "A": "Utilizzare dati statistici non aggiornati",
+        "B": "Confondere una condizione sufficiente con una condizione necessaria (negazione dell'antecedente)",
         "C": "Generalizzare a partire da un solo caso isolato",
         "D": "Attribuire a Giulia un titolo di studio falso"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Frequantare il corso è presentato come condizione sufficiente ('tutti quelli che lo frequentano passano'), non necessaria: Giulia può superare la prova anche studiando autonomamente."
     },
     {
@@ -5628,11 +5628,11 @@ var BANCA_DATI = {
       "domanda": "Argomento: 'Per ridurre il consumo di carta negli uffici amministrativi, l'Ateneo dovrebbe vietare l'uso delle stampanti ai collaboratori amministrativi.' Quale presupposto implicito assume chi formula questa proposta?",
       "opzioni": {
         "A": "I collaboratori amministrativi sono gli unici dipendenti che utilizzano le stampanti d'ufficio",
-        "B": "Una parte rilevante del consumo di carta deriva dalle stampe effettuate dai collaboratori amministrativi e tali stampe sono evitabili",
-        "C": "Le stampanti consumano più energia elettrica dei computer",
+        "B": "Le stampanti consumano più energia elettrica dei computer",
+        "C": "Una parte rilevante del consumo di carta deriva dalle stampe effettuate dai collaboratori amministrativi e tali stampe sono evitabili",
         "D": "Tutti i documenti amministrativi devono essere conservati su carta per 50 anni"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "La proposta presuppone che il consumo di carta imputabile ai collaboratori sia significativo e sostituibile con flussi digitali."
     },
     {
@@ -5641,12 +5641,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Due Dipartimenti hanno adottato lo stesso software di gestione contabile; nel Dipartimento Alfa i tempi di liquidazione delle fatture si sono dimezzati, mentre nel Dipartimento Beta sono rimasti invariati. Quindi il software non influisce sui tempi di liquidazione.' Quale osservazione confuta meglio questa conclusione?",
       "opzioni": {
-        "A": "Nel Dipartimento Beta il personale non ha ancora ricevuto le credenziali per accedere al nuovo software e continua a lavorare con i vecchi fogli cartacei",
+        "A": "Entrambi i Dipartimenti hanno sede nella stessa città",
         "B": "Il Dipartimento Alfa ha un numero maggiore di studenti iscritti",
         "C": "Il software è stato sviluppato da una società certificata",
-        "D": "Entrambi i Dipartimenti hanno sede nella stessa città"
+        "D": "Nel Dipartimento Beta il personale non ha ancora ricevuto le credenziali per accedere al nuovo software e continua a lavorare con i vecchi fogli cartacei"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Se nel Dipartimento Beta il software non viene effettivamente utilizzato per mancanza di credenziali, il confronto non dimostra l'inefficacia del software."
     },
     {
@@ -5683,12 +5683,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'I concorsi che prevedono una prova preselettiva selezionano candidati più preparati nelle materie giuridiche rispetto ai concorsi senza preselettiva.' Quale dato fattuale SMENTISCE direttamente questa affermazione?",
       "opzioni": {
-        "A": "La prova preselettiva di molti concorsi verte esclusivamente su quiz di logica e cultura generale, senza alcuna domanda sulle materie giuridiche",
+        "A": "La prova preselettiva si svolge spesso al computer",
         "B": "I concorsi con preselettiva hanno in media più partecipanti",
-        "C": "La prova preselettiva si svolge spesso al computer",
+        "C": "La prova preselettiva di molti concorsi verte esclusivamente su quiz di logica e cultura generale, senza alcuna domanda sulle materie giuridiche",
         "D": "Il punteggio della preselettiva non fa media con il voto finale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Se la preselettiva non contiene domande giuridiche, non può fungere da filtro sulla preparazione giuridica."
     },
     {
@@ -5697,12 +5697,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Poiché il 90% dei reclami ricevuti dall'URP riguarda ritardi nelle risposte via email, automatizzare una risposta immediata di presa in carico risolverà il 90% dell'insoddisfazione degli utenti.' Qual è il punto debole di questo ragionamento?",
       "opzioni": {
-        "A": "Gli utenti lamentano il ritardo nella risposta di merito al loro problema, non la mancanza di una ricevuta automatica di presa in carico",
+        "A": "L'URP riceve anche telefonate",
         "B": "Le email automatiche sono vietate dal Codice dell'Amministrazione Digitale",
         "C": "Il 10% restante dei reclami riguarda gli orari di apertura",
-        "D": "L'URP riceve anche telefonate"
+        "D": "Gli utenti lamentano il ritardo nella risposta di merito al loro problema, non la mancanza di una ricevuta automatica di presa in carico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Confondere una conferma automatica di ricezione con la risoluzione sostanziale dell'istanza costituisce la fallacia del ragionamento."
     },
     {
@@ -5725,12 +5725,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione verbale: Rateo : Quota di competenza futura da incassare/pagare = Risconto : X",
       "opzioni": {
-        "A": "Quota già rilevata ma di competenza futura da stornare",
-        "B": "Fondo di dotazione iniziale",
+        "A": "Fondo di dotazione iniziale",
+        "B": "Quota già rilevata ma di competenza futura da stornare",
         "C": "Mandato di pagamento estinto",
         "D": "Bene immobile inventariato"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "In contabilità (art. 42 Regolamento AFC), i ratei integrano quote di competenza dell'esercizio con manifestazione finanziaria futura, mentre i risconti stornano quote già rilevate ma di competenza di esercizi futuri."
     },
     {
@@ -5741,10 +5741,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Peculato",
         "B": "Concussione",
-        "C": "Corruzione",
-        "D": "Encomio"
+        "C": "Encomio",
+        "D": "Corruzione"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Peculato, concussione e corruzione sono reati contro la Pubblica Amministrazione (Libro II, Titolo II, Capo I c.p.), mentre 'encomio' è un riconoscimento al merito."
     },
     {
@@ -5753,12 +5753,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Qual è il contrario (antonimo) più preciso dell'aggettivo 'esiguo'?",
       "opzioni": {
-        "A": "Cospicuo",
+        "A": "Irrilevante",
         "B": "Scarso",
         "C": "Modico",
-        "D": "Irrilevante"
+        "D": "Cospicuo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "'Esiguo' significa scarso, minimo; il suo contrario diretto è 'cospicuo' (abbondante, rilevante)."
     },
     {
@@ -5782,11 +5782,11 @@ var BANCA_DATI = {
       "domanda": "Individua l'intruso tra i seguenti termini giuridici:",
       "opzioni": {
         "A": "Decreto",
-        "B": "Determinazione",
+        "B": "Sentenza",
         "C": "Ordinanza",
-        "D": "Sentenza"
+        "D": "Determinazione"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Decreto, determinazione e ordinanza sono atti/provvedimenti amministrativi, mentre la sentenza è un atto giurisdizionale tipico del giudice."
     },
     {
@@ -5796,11 +5796,11 @@ var BANCA_DATI = {
       "domanda": "Completa la serie alfabetica (alfabeto italiano di 21 lettere): C, F, I, N, ?",
       "opzioni": {
         "A": "P",
-        "B": "Q",
-        "C": "R",
+        "B": "R",
+        "C": "Q",
         "D": "S"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano (A B C D E F G H I L M N O P Q R S T U V Z) si saltano 2 lettere ogni volta: C (d,e) F (g,h) I (l,m) N (o,p) Q."
     },
     {
@@ -5810,11 +5810,11 @@ var BANCA_DATI = {
       "domanda": "Completa la serie alfabetica (alfabeto italiano di 21 lettere): B, C, E, H, N, ?",
       "opzioni": {
         "A": "Q",
-        "B": "S",
+        "B": "U",
         "C": "T",
-        "D": "U"
+        "D": "S"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Posizioni nell'alfabeto italiano (21 lettere): B(2) +1 = C(3); C(3) +2 = E(5); E(5) +3 = H(8); H(8) +4 = N(12); N(12) +5 = 17° lettera, che è S."
     },
     {
@@ -5837,12 +5837,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua il sinonimo più preciso del verbo 'dirimere' (usato all'art. 23 Statuto UniSS: 'dirime gli eventuali conflitti'):",
       "opzioni": {
-        "A": "Risolvere",
-        "B": "Alimentare",
+        "A": "Alimentare",
+        "B": "Risolvere",
         "C": "Ignorare",
         "D": "Rinviare"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "'Dirimere' significa risolvere, comporre una controversia o un conflitto di competenze."
     },
     {
@@ -5851,12 +5851,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa logicamente lo schema (codici a 3 cifre):\n14 - 28 - 42 [PIÙ]\n20 - 40 - 60 [PIÙ]\n15 - 30 - 40 [MENO]\n11 - 22 - 44 [MENO]",
       "opzioni": {
-        "A": "13 - 26 - 39",
+        "A": "10 - 30 - 50",
         "B": "12 - 24 - 48",
-        "C": "10 - 30 - 50",
+        "C": "13 - 26 - 39",
         "D": "16 - 32 - 36"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è il doppio del primo (x2) e il terzo è il triplo del primo (x3). Solo 13 - 26 (13x2) - 39 (13x3) rispetta la regola."
     },
     {
@@ -5865,12 +5865,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che rispetta la regola delle righe PIÙ:\n8 - 5 - 13 [PIÙ]\n19 - 7 - 26 [PIÙ]\n12 - 4 - 15 [MENO]\n9 - 6 - 18 [MENO]",
       "opzioni": {
-        "A": "14 - 9 - 23",
+        "A": "20 - 5 - 24",
         "B": "15 - 8 - 22",
         "C": "11 - 6 - 18",
-        "D": "20 - 5 - 24"
+        "D": "14 - 9 - 23"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: il terzo numero è uguale alla somma dei primi due (8+5=13; 19+7=26). Tra le opzioni solo 14 + 9 = 23."
     },
     {
@@ -5893,12 +5893,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema:\n12 - 21 - 33 [PIÙ]\n24 - 42 - 66 [PIÙ]\n13 - 31 - 45 [MENO]\n23 - 23 - 46 [MENO]",
       "opzioni": {
-        "A": "15 - 51 - 66",
-        "B": "14 - 41 - 54",
+        "A": "14 - 41 - 54",
+        "B": "15 - 51 - 66",
         "C": "21 - 12 - 30",
         "D": "32 - 23 - 50"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero si ottiene invertendo le cifre del primo (12 -> 21; 24 -> 42) e il terzo è la somma dei primi due (12+21=33; 24+42=66). Solo 15 - 51 - 66 (15+51=66) rispetta la regola."
     },
     {
@@ -5907,12 +5907,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che soddisfa la regola delle righe PIÙ:\n3 - 9 - 27 [PIÙ]\n2 - 6 - 18 [PIÙ]\n4 - 12 - 24 [MENO]\n5 - 10 - 30 [MENO]",
       "opzioni": {
-        "A": "4 - 12 - 36",
+        "A": "5 - 15 - 30",
         "B": "3 - 6 - 12",
-        "C": "5 - 15 - 30",
+        "C": "4 - 12 - 36",
         "D": "2 - 4 - 16"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: progressione geometrica di ragione 3 (ogni numero si moltiplica per 3: 3x3=9, 9x3=27; 2x3=6, 6x3=18). Solo 4 -> 12 -> 36 rispetta la regola."
     },
     {
@@ -5921,12 +5921,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n45 - 9 - 5 [PIÙ]\n72 - 8 - 9 [PIÙ]\n50 - 10 - 6 [MENO]\n30 - 5 - 5 [MENO]",
       "opzioni": {
-        "A": "63 - 7 - 9",
+        "A": "54 - 9 - 5",
         "B": "48 - 6 - 7",
         "C": "40 - 8 - 6",
-        "D": "54 - 9 - 5"
+        "D": "63 - 7 - 9"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: il primo numero è il prodotto del secondo per il terzo (9x5=45; 8x9=72). Solo 7 x 9 = 63 rispetta la regola."
     },
     {
@@ -5949,12 +5949,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n23 - 5 [PIÙ]\n47 - 11 [PIÙ]\n34 - 8 [MENO]\n51 - 5 [MENO]",
       "opzioni": {
-        "A": "68 - 14",
-        "B": "53 - 9",
+        "A": "53 - 9",
+        "B": "68 - 14",
         "C": "72 - 10",
         "D": "44 - 7"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo numero (2+3=5; 4+7=11). Solo 6 + 8 = 14 soddisfa la regola."
     },
     {
@@ -5963,12 +5963,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Osserva la sequenza di simboli: [▲ ■ ●] -> [● ▲ ■] -> [■ ● ▲] -> [ ? ]. Quale terzina completa logicamente la rotazione?",
       "opzioni": {
-        "A": "[▲ ■ ●]",
+        "A": "[■ ▲ ●]",
         "B": "[● ■ ▲]",
-        "C": "[■ ▲ ●]",
+        "C": "[▲ ■ ●]",
         "D": "[▲ ● ■]"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ad ogni passo l'ultimo simbolo a destra si sposta in prima posizione a sinistra (rotazione ciclica di 3 elementi). Dopo 3 passi si ritorna alla configurazione iniziale [▲ ■ ●]."
     },
     {
@@ -5977,12 +5977,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua la relazione insiemistica corretta tra i seguenti tre concetti: 'Atti amministrativi', 'Provvedimenti amministrativi', 'Decreti rettorali'.",
       "opzioni": {
-        "A": "Tre insiemi concentri: 'Decreti rettorali' è contenuto in 'Provvedimenti amministrativi', che a sua volta è contenuto in 'Atti amministrativi'",
+        "A": "'Provvedimenti amministrativi' e 'Decreti rettorali' sono disgiunti",
         "B": "Tre insiemi completamente disgiunti",
         "C": "'Atti amministrativi' è un sottoinsieme dei 'Decreti rettorali'",
-        "D": "'Provvedimenti amministrativi' e 'Decreti rettorali' sono disgiunti"
+        "D": "Tre insiemi concentri: 'Decreti rettorali' è contenuto in 'Provvedimenti amministrativi', che a sua volta è contenuto in 'Atti amministrativi'"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Tutti i decreti rettorali sono provvedimenti amministrativi (atti capaci di incidere unilateralmente nella sfera giuridica dei destinatari), i quali sono a loro volta una sottocategoria degli atti amministrativi in senso lato."
     },
     {
@@ -6005,12 +6005,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Quale parola/sequenza si ottiene specchiando orizzontalmente (da destra a sinistra) la stringa 'UNISS2026'?",
       "opzioni": {
-        "A": "6202SSINU",
-        "B": "2026UNISS",
+        "A": "2026UNISS",
+        "B": "6202SSINU",
         "C": "6202UNISS",
         "D": "SSINU6202"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Invertendo l'ordine dei caratteri dall'ultimo al primo: 6-2-0-2-S-S-I-N-U -> 6202SSINU."
     },
     {
@@ -6019,12 +6019,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua la relazione insiemistica corretta tra: 'Laureati', 'Dipendenti UniSS', 'Residenti a Sassari'.",
       "opzioni": {
-        "A": "Tre insiemi che si intersecano parzialmente tra loro (esistono laureati dipendenti UniSS residenti a Sassari, così come elementi appartenenti a uno o due soli insiemi)",
+        "A": "L'insieme 'Residenti a Sassari' contiene interamente 'Laureati'",
         "B": "Tre insiemi completamente separati senza alcuna intersezione",
-        "C": "L'insieme 'Residenti a Sassari' contiene interamente 'Laureati'",
+        "C": "Tre insiemi che si intersecano parzialmente tra loro (esistono laureati dipendenti UniSS residenti a Sassari, così come elementi appartenenti a uno o due soli insiemi)",
         "D": "L'insieme 'Dipendenti UniSS' è interamente contenuto in 'Laureati'"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Le tre proprietà sono indipendenti e compatibili tra loro, quindi si rappresentano con tre cerchi che si intersecano reciprocamente generando 7 regioni distinte."
     },
     {
@@ -6033,12 +6033,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Se un dado standard (la cui somma delle facce opposte è sempre 7) viene appoggiato sul tavolo con il numero 2 rivolto verso l'alto e il numero 3 rivolto verso di te, quale numero si trova sulla faccia appoggiata al tavolo?",
       "opzioni": {
-        "A": "5",
+        "A": "1",
         "B": "4",
         "C": "6",
-        "D": "1"
+        "D": "5"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Poiché la somma delle facce opposte di un dado regolare è sempre 7, la faccia opposta al 2 (rivolto in alto) è 7 - 2 = 5."
     },
     {
@@ -6061,12 +6061,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Osserva l'analogia visivo-simbolica: [↑ → ↓] sta a [← ↑ →] come [△ ▷ ▽] sta a [ ? ] (rotazione di 90° in senso antiorario di ogni elemento).",
       "opzioni": {
-        "A": "[◁ △ ▷]",
-        "B": "[▽ ◁ △]",
+        "A": "[▽ ◁ △]",
+        "B": "[◁ △ ▷]",
         "C": "[▷ ▽ ◁]",
         "D": "[△ ◁ ▽]"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ruotando di 90° in senso antiorario: il triangolo verso l'alto (△) punta a sinistra (◁), quello a destra (▷) punta in alto (△), e quello in basso (▽) punta a destra (▷)."
     },
     {
@@ -6077,10 +6077,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "45 unità",
         "B": "100 unità",
-        "C": "105 unità",
-        "D": "75 unità"
+        "C": "75 unità",
+        "D": "105 unità"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Calcolo percentuale: (300 × 25) / 100 = 75 unità."
     },
     {
@@ -6091,10 +6091,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "700 unità",
         "B": "645 unità",
-        "C": "675 unità",
-        "D": "825 unità"
+        "C": "825 unità",
+        "D": "675 unità"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Calcolo percentuale: (1500 × 45) / 100 = 675 unità."
     },
     {
@@ -6103,12 +6103,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una procedura di catalogazione amministrativa su 300 fascicoli complessivi, il 15% riguarda pratiche di ricerca. Quanti sono i fascicoli relativi alle pratiche di ricerca?",
       "opzioni": {
-        "A": "75 unità",
+        "A": "45 unità",
         "B": "70 unità",
-        "C": "45 unità",
+        "C": "75 unità",
         "D": "15 unità"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo percentuale: (300 × 15) / 100 = 45 unità."
     },
     {
@@ -6117,12 +6117,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una procedura di catalogazione amministrativa su 200 fascicoli complessivi, il 45% riguarda pratiche di ricerca. Quanti sono i fascicoli relativi alle pratiche di ricerca?",
       "opzioni": {
-        "A": "90 unità",
-        "B": "115 unità",
+        "A": "115 unità",
+        "B": "90 unità",
         "C": "60 unità",
         "D": "110 unità"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Calcolo percentuale: (200 × 45) / 100 = 90 unità."
     },
     {
@@ -6131,12 +6131,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una procedura di catalogazione amministrativa su 500 fascicoli complessivi, il 30% riguarda pratiche di ricerca. Quanti sono i fascicoli relativi alle pratiche di ricerca?",
       "opzioni": {
-        "A": "150 unità",
+        "A": "175 unità",
         "B": "200 unità",
-        "C": "175 unità",
+        "C": "150 unità",
         "D": "120 unità"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Calcolo percentuale: (500 × 30) / 100 = 150 unità."
     },
     {
@@ -6174,11 +6174,11 @@ var BANCA_DATI = {
       "domanda": "In una procedura di catalogazione amministrativa su 400 fascicoli complessivi, il 40% riguarda pratiche di ricerca. Quanti sono i fascicoli relativi alle pratiche di ricerca?",
       "opzioni": {
         "A": "200 unità",
-        "B": "185 unità",
-        "C": "160 unità",
+        "B": "160 unità",
+        "C": "185 unità",
         "D": "130 unità"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Calcolo percentuale: (400 × 40) / 100 = 160 unità."
     },
     {
@@ -6230,11 +6230,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la seguente serie aritmetica: 10, 17, 24, 31, 38, ?",
       "opzioni": {
         "A": "52",
-        "B": "47",
+        "B": "45",
         "C": "44",
-        "D": "45"
+        "D": "47"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Ogni numero della serie si ottiene sommando +7 al precedente: 38 + 7 = 45."
     },
     {
@@ -6245,10 +6245,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "58",
         "B": "51",
-        "C": "48",
-        "D": "49"
+        "C": "49",
+        "D": "48"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Ogni numero della serie si ottiene sommando +9 al precedente: 40 + 9 = 49."
     },
     {
@@ -6259,10 +6259,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "40",
         "B": "47",
-        "C": "41",
-        "D": "43"
+        "C": "43",
+        "D": "41"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ogni numero della serie si ottiene sommando +6 al precedente: 35 + 6 = 41."
     },
     {
@@ -6271,12 +6271,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la seguente serie aritmetica: 5, 14, 23, 32, 41, ?",
       "opzioni": {
-        "A": "52",
+        "A": "50",
         "B": "59",
         "C": "49",
-        "D": "50"
+        "D": "52"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Ogni numero della serie si ottiene sommando +9 al precedente: 41 + 9 = 50."
     },
     {
@@ -6285,12 +6285,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la seguente serie aritmetica: 12, 18, 24, 30, 36, ?",
       "opzioni": {
-        "A": "42",
-        "B": "48",
+        "A": "48",
+        "B": "42",
         "C": "44",
         "D": "41"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ogni numero della serie si ottiene sommando +6 al precedente: 36 + 6 = 42."
     },
     {
@@ -6299,12 +6299,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la seguente serie aritmetica: 12, 17, 22, 27, 32, ?",
       "opzioni": {
-        "A": "37",
+        "A": "42",
         "B": "36",
-        "C": "42",
+        "C": "37",
         "D": "39"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ogni numero della serie si ottiene sommando +5 al precedente: 32 + 5 = 37."
     },
     {
@@ -6315,10 +6315,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "35",
         "B": "32",
-        "C": "30",
-        "D": "29"
+        "C": "29",
+        "D": "30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Ogni numero della serie si ottiene sommando +5 al precedente: 25 + 5 = 30."
     },
     {
@@ -6341,12 +6341,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la seguente serie aritmetica: 7, 11, 15, 19, 23, ?",
       "opzioni": {
-        "A": "27",
-        "B": "31",
+        "A": "31",
+        "B": "27",
         "C": "29",
         "D": "26"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ogni numero della serie si ottiene sommando +4 al precedente: 23 + 4 = 27."
     },
     {
@@ -6356,11 +6356,11 @@ var BANCA_DATI = {
       "domanda": "Una fornitura d'ufficio del costo iniziale di 1000 euro subisce una prima riduzione del 30% e successivamente un'ulteriore riduzione del 50% sul prezzo già scontato. Qual è l'importo finale?",
       "opzioni": {
         "A": "200 euro",
-        "B": "350 euro",
-        "C": "370 euro",
+        "B": "370 euro",
+        "C": "350 euro",
         "D": "325 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Dopo il primo sconto del 30% il prezzo diventa 700 euro; applicando l'ulteriore sconto del 50% su 700 euro si ottiene 350 euro."
     },
     {
@@ -6383,12 +6383,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Una fornitura d'ufficio del costo iniziale di 1000 euro subisce una prima riduzione del 30% e successivamente un'ulteriore riduzione del 10% sul prezzo già scontato. Qual è l'importo finale?",
       "opzioni": {
-        "A": "650 euro",
+        "A": "630 euro",
         "B": "600 euro",
-        "C": "630 euro",
+        "C": "650 euro",
         "D": "605 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Dopo il primo sconto del 30% il prezzo diventa 700 euro; applicando l'ulteriore sconto del 10% su 700 euro si ottiene 630 euro."
     },
     {
@@ -6397,12 +6397,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Una fornitura d'ufficio del costo iniziale di 200 euro subisce una prima riduzione del 30% e successivamente un'ulteriore riduzione del 20% sul prezzo già scontato. Qual è l'importo finale?",
       "opzioni": {
-        "A": "112 euro",
-        "B": "87 euro",
+        "A": "87 euro",
+        "B": "112 euro",
         "C": "132 euro",
         "D": "100 euro"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Dopo il primo sconto del 30% il prezzo diventa 140 euro; applicando l'ulteriore sconto del 20% su 140 euro si ottiene 112 euro."
     },
     {
@@ -6413,10 +6413,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "148 euro",
         "B": "120 euro",
-        "C": "103 euro",
-        "D": "128 euro"
+        "C": "128 euro",
+        "D": "103 euro"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Dopo il primo sconto del 20% il prezzo diventa 160 euro; applicando l'ulteriore sconto del 20% su 160 euro si ottiene 128 euro."
     },
     {
@@ -6427,10 +6427,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "155 euro",
         "B": "200 euro",
-        "C": "180 euro",
-        "D": "160 euro"
+        "C": "160 euro",
+        "D": "180 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Dopo il primo sconto del 10% il prezzo diventa 360 euro; applicando l'ulteriore sconto del 50% su 360 euro si ottiene 180 euro."
     },
     {
@@ -6439,12 +6439,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Una fornitura d'ufficio del costo iniziale di 500 euro subisce una prima riduzione del 25% e successivamente un'ulteriore riduzione del 50% sul prezzo già scontato. Qual è l'importo finale?",
       "opzioni": {
-        "A": "207 euro",
+        "A": "187 euro",
         "B": "162 euro",
-        "C": "187 euro",
+        "C": "207 euro",
         "D": "125 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Dopo il primo sconto del 25% il prezzo diventa 375 euro; applicando l'ulteriore sconto del 50% su 375 euro si ottiene 187 euro."
     },
     {
@@ -6482,11 +6482,11 @@ var BANCA_DATI = {
       "domanda": "Una fornitura d'ufficio del costo iniziale di 400 euro subisce una prima riduzione del 30% e successivamente un'ulteriore riduzione del 20% sul prezzo già scontato. Qual è l'importo finale?",
       "opzioni": {
         "A": "244 euro",
-        "B": "224 euro",
+        "B": "200 euro",
         "C": "199 euro",
-        "D": "200 euro"
+        "D": "224 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dopo il primo sconto del 30% il prezzo diventa 280 euro; applicando l'ulteriore sconto del 20% su 280 euro si ottiene 224 euro."
     },
     {
@@ -6495,12 +6495,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Se è vero che 'Tutti i decreti dirigenziali sono atti amministrativi' e 'Alcuni atti amministrativi sono soggetti a pubblicazione su Amministrazione Trasparente', quale conclusione è logicamente corretta?",
       "opzioni": {
-        "A": "Tutti i decreti dirigenziali sono soggetti a pubblicazione su Amministrazione Trasparente",
-        "B": "Non si può dedurre con certezza che tutti i decreti dirigenziali siano soggetti a pubblicazione",
+        "A": "Non si può dedurre con certezza che tutti i decreti dirigenziali siano soggetti a pubblicazione",
+        "B": "Tutti i decreti dirigenziali sono soggetti a pubblicazione su Amministrazione Trasparente",
         "C": "Nessun decreto dirigenziale è soggetto a pubblicazione",
         "D": "Tutti gli atti soggetti a pubblicazione sono decreti dirigenziali"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Dalle due premesse ('Tutti gli A sono B' e 'Alcuni B sono C') non discende alcuna relazione necessaria tra A e C (fallacia del termine medio non distribuito)."
     },
     {
@@ -6509,12 +6509,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Nessun collaboratore amministrativo è docente di ruolo. Alcuni dipendenti del Dipartimento sono collaboratori amministrativi.' Cosa si deduce con certezza?",
       "opzioni": {
-        "A": "Almeno un dipendente del Dipartimento non è docente di ruolo",
-        "B": "Nessun dipendente del Dipartimento è docente di ruolo",
+        "A": "Nessun dipendente del Dipartimento è docente di ruolo",
+        "B": "Almeno un dipendente del Dipartimento non è docente di ruolo",
         "C": "Tutti i docenti di ruolo sono collaboratori amministrativi",
         "D": "Tutti i dipendenti del Dipartimento sono collaboratori amministrativi"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Sillogismo Ferio: se nessun C è D, e alcuni P sono C, allora quegli elementi P che sono C certamente non sono D."
     },
     {
@@ -6523,12 +6523,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Se la commissione approva il verbale e il Direttore firma il decreto, allora la graduatoria viene pubblicata.' Sapendo che la graduatoria NON è stata pubblicata, cosa si deduce necessariamente?",
       "opzioni": {
-        "A": "La commissione non ha approvato il verbale oppure il Direttore non ha firmato il decreto (o entrambe le cose)",
+        "A": "La commissione ha approvato il verbale ma il Direttore non lo ha firmato",
         "B": "Né la commissione ha approvato il verbale né il Direttore ha firmato il decreto",
-        "C": "La commissione ha approvato il verbale ma il Direttore non lo ha firmato",
+        "C": "La commissione non ha approvato il verbale oppure il Direttore non ha firmato il decreto (o entrambe le cose)",
         "D": "La graduatoria verrà pubblicata il giorno seguente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Contronominale con legge di De Morgan: da (A ∧ B) -> C, negando C si ottiene ¬(A ∧ B), equivalente a (¬A ∨ ¬B)."
     },
     {
@@ -6537,12 +6537,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Qual è la negazione logica corretta della proposizione: 'Almeno un candidato ha consegnato il modulo firmato'?",
       "opzioni": {
-        "A": "Nessun candidato ha consegnato il modulo firmato",
+        "A": "Solo un candidato ha consegnato il modulo firmato",
         "B": "Tutti i candidati hanno consegnato il modulo firmato",
         "C": "Almeno un candidato non ha consegnato il modulo firmato",
-        "D": "Solo un candidato ha consegnato il modulo firmato"
+        "D": "Nessun candidato ha consegnato il modulo firmato"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La negazione del quantificatore esistenziale affermativo ('Esiste almeno un X tale che P(X)') è l'universale negativo ('Per ogni X, non P(X)', ossia 'Nessuno')."
     },
     {
@@ -6565,12 +6565,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "In un archivio ci sono quattro faldoni colorati in fila da sinistra a destra: Rosso, Blu, Verde, Giallo. Sappiamo che: il Verde non è agli estremi; il Blu è immediatamente a sinistra del Verde; il Rosso non è adiacente al Blu. Qual è l'ordine corretto da sinistra a destra?",
       "opzioni": {
-        "A": "Blu, Verde, Giallo, Rosso",
-        "B": "Rosso, Blu, Verde, Giallo",
+        "A": "Rosso, Blu, Verde, Giallo",
+        "B": "Blu, Verde, Giallo, Rosso",
         "C": "Giallo, Blu, Verde, Rosso",
         "D": "Blu, Giallo, Verde, Rosso"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Blu è subito a sinistra di Verde (coppia B-V). Verde non è agli estremi, quindi B-V può essere in posizione 1-2 o 2-3. Se fosse 2-3, i due estremi (1 e 4) sarebbero Rosso e Giallo, ma così Rosso (1) sarebbe adiacente a Blu (2), vietato. Quindi B-V è 1-2, seguito da Giallo (3) e Rosso (4): Blu, Verde, Giallo, Rosso."
     },
     {
@@ -6579,12 +6579,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Ogni volta che il sistema Titulus è in manutenzione, gli invii esterni vengono sospesi.' Oggi gli invii esterni NON sono sospesi. Cosa si può dedurre?",
       "opzioni": {
-        "A": "Il sistema Titulus non è in manutenzione",
+        "A": "Non ci sono invii esterni da effettuare oggi",
         "B": "Il sistema Titulus è in manutenzione straordinaria",
-        "C": "Non ci sono invii esterni da effettuare oggi",
+        "C": "Il sistema Titulus non è in manutenzione",
         "D": "Il protocollo funziona solo in modalità cartacea"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Modus tollens: se M -> S, e ¬S, allora necessariamente ¬M."
     },
     {
@@ -6593,12 +6593,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Se 'Tutti i membri della Giunta sono membri del Consiglio di Dipartimento' e 'Tutti i membri del Consiglio di Dipartimento sono eletti o membri di diritto', cosa consegue necessariamente?",
       "opzioni": {
-        "A": "Tutti i membri della Giunta sono eletti o membri di diritto",
+        "A": "La Giunta coincide con il Consiglio di Dipartimento",
         "B": "Tutti i membri di diritto fanno parte della Giunta",
         "C": "Nessun membro della Giunta è eletto",
-        "D": "La Giunta coincide con il Consiglio di Dipartimento"
+        "D": "Tutti i membri della Giunta sono eletti o membri di diritto"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Sillogismo ipotetico / transitività dell'inclusione: se ogni G è C e ogni C è E, allora ogni G è E."
     },
     {
@@ -6607,12 +6607,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa la seguente serie: 2, 5, 11, 23, 47, ?",
       "opzioni": {
-        "A": "100",
+        "A": "95",
         "B": "92",
-        "C": "95",
+        "C": "100",
         "D": "97"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 1. Quindi: 47 × 2 + 1 = 95."
     },
     {
@@ -6622,11 +6622,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa la seguente serie: 3, 11, 35, 107, 323, ?",
       "opzioni": {
         "A": "973",
-        "B": "968",
+        "B": "971",
         "C": "976",
-        "D": "971"
+        "D": "968"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 3 e aggiungere 2. Quindi: 323 × 3 + 2 = 971."
     },
     {
@@ -6637,10 +6637,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "1939",
         "B": "1944",
-        "C": "1947",
-        "D": "1942"
+        "C": "1942",
+        "D": "1947"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 3 e aggiungere 4. Quindi: 646 × 3 + 4 = 1942."
     },
     {
@@ -6650,11 +6650,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa la seguente serie: 3, 9, 21, 45, 93, ?",
       "opzioni": {
         "A": "194",
-        "B": "189",
+        "B": "191",
         "C": "186",
-        "D": "191"
+        "D": "189"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 3. Quindi: 93 × 2 + 3 = 189."
     },
     {
@@ -6678,11 +6678,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa la seguente serie: 2, 7, 22, 67, 202, ?",
       "opzioni": {
         "A": "604",
-        "B": "609",
+        "B": "607",
         "C": "612",
-        "D": "607"
+        "D": "609"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 3 e aggiungere 1. Quindi: 202 × 3 + 1 = 607."
     },
     {
@@ -6705,12 +6705,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa la seguente serie: 6, 15, 33, 69, 141, ?",
       "opzioni": {
-        "A": "285",
+        "A": "282",
         "B": "290",
         "C": "287",
-        "D": "282"
+        "D": "285"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 3. Quindi: 141 × 2 + 3 = 285."
     },
     {
@@ -6749,10 +6749,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "193",
         "B": "188",
-        "C": "196",
-        "D": "191"
+        "C": "191",
+        "D": "196"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 1. Quindi: 95 × 2 + 1 = 191."
     },
     {
@@ -6763,10 +6763,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "1338",
         "B": "1333",
-        "C": "1336",
-        "D": "1341"
+        "C": "1341",
+        "D": "1336"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 3 e aggiungere 1. Quindi: 445 × 3 + 1 = 1336."
     },
     {
@@ -6775,12 +6775,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa la seguente serie: 2, 8, 26, 80, 242, ?",
       "opzioni": {
-        "A": "725",
+        "A": "728",
         "B": "730",
         "C": "733",
-        "D": "728"
+        "D": "725"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 3 e aggiungere 2. Quindi: 242 × 3 + 2 = 728."
     },
     {
@@ -6790,11 +6790,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa la seguente serie: 2, 7, 17, 37, 77, ?",
       "opzioni": {
         "A": "154",
-        "B": "159",
-        "C": "157",
+        "B": "157",
+        "C": "159",
         "D": "162"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 3. Quindi: 77 × 2 + 3 = 157."
     },
     {
@@ -6803,12 +6803,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa la seguente serie: 4, 10, 22, 46, 94, ?",
       "opzioni": {
-        "A": "190",
+        "A": "195",
         "B": "187",
-        "C": "195",
+        "C": "190",
         "D": "192"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La regola della serie è: moltiplicare il termine precedente per 2 e aggiungere 2. Quindi: 94 × 2 + 2 = 190."
     },
     {
@@ -6817,12 +6817,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Se 3 collaboratori amministrativi lavorando allo stesso ritmo evadono 45 pratiche in 3 ore, quante pratiche evaderanno 6 collaboratori allo stesso ritmo in 4 ore?",
       "opzioni": {
-        "A": "120 pratiche",
+        "A": "130 pratiche",
         "B": "65 pratiche",
         "C": "110 pratiche",
-        "D": "130 pratiche"
+        "D": "120 pratiche"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Un singolo collaboratore evade 45 / (3 × 3) = 5 pratiche l'ora. Quindi 6 collaboratori in 4 ore evadono 6 × 4 × 5 = 120 pratiche."
     },
     {
@@ -6874,11 +6874,11 @@ var BANCA_DATI = {
       "domanda": "Se 4 collaboratori amministrativi lavorando allo stesso ritmo evadono 32 pratiche in 2 ore, quante pratiche evaderanno 4 collaboratori allo stesso ritmo in 3 ore?",
       "opzioni": {
         "A": "56 pratiche",
-        "B": "48 pratiche",
+        "B": "40 pratiche",
         "C": "52 pratiche",
-        "D": "40 pratiche"
+        "D": "48 pratiche"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Un singolo collaboratore evade 32 / (4 × 2) = 4 pratiche l'ora. Quindi 4 collaboratori in 3 ore evadono 4 × 3 × 4 = 48 pratiche."
     },
     {
@@ -6887,12 +6887,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Se 2 collaboratori amministrativi lavorando allo stesso ritmo evadono 48 pratiche in 4 ore, quante pratiche evaderanno 5 collaboratori allo stesso ritmo in 2 ore?",
       "opzioni": {
-        "A": "72 pratiche",
-        "B": "60 pratiche",
+        "A": "60 pratiche",
+        "B": "72 pratiche",
         "C": "48 pratiche",
         "D": "68 pratiche"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Un singolo collaboratore evade 48 / (2 × 4) = 6 pratiche l'ora. Quindi 5 collaboratori in 2 ore evadono 5 × 2 × 6 = 60 pratiche."
     },
     {
@@ -6915,12 +6915,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Se 2 collaboratori amministrativi lavorando allo stesso ritmo evadono 40 pratiche in 4 ore, quante pratiche evaderanno 5 collaboratori allo stesso ritmo in 4 ore?",
       "opzioni": {
-        "A": "100 pratiche",
+        "A": "110 pratiche",
         "B": "60 pratiche",
-        "C": "110 pratiche",
+        "C": "100 pratiche",
         "D": "90 pratiche"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Un singolo collaboratore evade 40 / (2 × 4) = 5 pratiche l'ora. Quindi 5 collaboratori in 4 ore evadono 5 × 4 × 5 = 100 pratiche."
     },
     {
@@ -6930,11 +6930,11 @@ var BANCA_DATI = {
       "domanda": "Se 6 collaboratori amministrativi lavorando allo stesso ritmo evadono 48 pratiche in 2 ore, quante pratiche evaderanno 4 collaboratori allo stesso ritmo in 6 ore?",
       "opzioni": {
         "A": "104 pratiche",
-        "B": "96 pratiche",
+        "B": "68 pratiche",
         "C": "88 pratiche",
-        "D": "68 pratiche"
+        "D": "96 pratiche"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Un singolo collaboratore evade 48 / (6 × 2) = 4 pratiche l'ora. Quindi 4 collaboratori in 6 ore evadono 4 × 6 × 4 = 96 pratiche."
     },
     {
@@ -6958,11 +6958,11 @@ var BANCA_DATI = {
       "domanda": "Se 3 collaboratori amministrativi lavorando allo stesso ritmo evadono 72 pratiche in 4 ore, quante pratiche evaderanno 8 collaboratori allo stesso ritmo in 6 ore?",
       "opzioni": {
         "A": "92 pratiche",
-        "B": "300 pratiche",
+        "B": "288 pratiche",
         "C": "276 pratiche",
-        "D": "288 pratiche"
+        "D": "300 pratiche"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Un singolo collaboratore evade 72 / (3 × 4) = 6 pratiche l'ora. Quindi 8 collaboratori in 6 ore evadono 8 × 6 × 6 = 288 pratiche."
     },
     {
@@ -6973,10 +6973,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "300 pratiche",
         "B": "92 pratiche",
-        "C": "276 pratiche",
-        "D": "288 pratiche"
+        "C": "288 pratiche",
+        "D": "276 pratiche"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Un singolo collaboratore evade 72 / (4 × 3) = 6 pratiche l'ora. Quindi 8 collaboratori in 6 ore evadono 8 × 6 × 6 = 288 pratiche."
     },
     {
@@ -6987,10 +6987,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "160 pratiche",
         "B": "128 pratiche",
-        "C": "144 pratiche",
-        "D": "148 pratiche"
+        "C": "148 pratiche",
+        "D": "144 pratiche"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Un singolo collaboratore evade 128 / (4 × 4) = 8 pratiche l'ora. Quindi 6 collaboratori in 3 ore evadono 6 × 3 × 8 = 144 pratiche."
     },
     {
@@ -6999,12 +6999,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Se 4 collaboratori amministrativi lavorando allo stesso ritmo evadono 128 pratiche in 4 ore, quante pratiche evaderanno 4 collaboratori allo stesso ritmo in 2 ore?",
       "opzioni": {
-        "A": "48 pratiche",
+        "A": "64 pratiche",
         "B": "148 pratiche",
-        "C": "64 pratiche",
+        "C": "48 pratiche",
         "D": "80 pratiche"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Un singolo collaboratore evade 128 / (4 × 4) = 8 pratiche l'ora. Quindi 4 collaboratori in 2 ore evadono 4 × 2 × 8 = 64 pratiche."
     },
     {
@@ -7028,11 +7028,11 @@ var BANCA_DATI = {
       "domanda": "Un progetto dipartimentale dispone di 500 euro. Nel primo trimestre viene impegnato 2/5 del totale e nel secondo trimestre 2/5 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
         "A": "100 euro",
-        "B": "180 euro",
-        "C": "160 euro",
+        "B": "160 euro",
+        "C": "180 euro",
         "D": "200 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Nel primo trimestre si impegnano (2/5) di 500 = 200 euro; restano 300 euro. Nel secondo trimestre si impegnano (2/5) di 300 = 120 euro. Residuo finale: 300 - 120 = 180 euro."
     },
     {
@@ -7043,10 +7043,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "580 euro",
         "B": "550 euro",
-        "C": "600 euro",
-        "D": "620 euro"
+        "C": "620 euro",
+        "D": "600 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Nel primo trimestre si impegnano (1/5) di 1000 = 200 euro; restano 800 euro. Nel secondo trimestre si impegnano (1/4) di 800 = 200 euro. Residuo finale: 800 - 200 = 600 euro."
     },
     {
@@ -7055,12 +7055,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un progetto dipartimentale dispone di 2000 euro. Nel primo trimestre viene impegnato 3/10 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
-        "A": "720 euro",
+        "A": "700 euro",
         "B": "400 euro",
-        "C": "700 euro",
+        "C": "720 euro",
         "D": "680 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Nel primo trimestre si impegnano (3/10) di 2000 = 600 euro; restano 1400 euro. Nel secondo trimestre si impegnano (1/2) di 1400 = 700 euro. Residuo finale: 1400 - 700 = 700 euro."
     },
     {
@@ -7097,12 +7097,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un progetto dipartimentale dispone di 500 euro. Nel primo trimestre viene impegnato 2/5 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
-        "A": "150 euro",
+        "A": "50 euro",
         "B": "170 euro",
         "C": "130 euro",
-        "D": "50 euro"
+        "D": "150 euro"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Nel primo trimestre si impegnano (2/5) di 500 = 200 euro; restano 300 euro. Nel secondo trimestre si impegnano (1/2) di 300 = 150 euro. Residuo finale: 300 - 150 = 150 euro."
     },
     {
@@ -7111,12 +7111,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un progetto dipartimentale dispone di 400 euro. Nel primo trimestre viene impegnato 1/5 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
-        "A": "120 euro",
-        "B": "160 euro",
+        "A": "160 euro",
+        "B": "120 euro",
         "C": "140 euro",
         "D": "180 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Nel primo trimestre si impegnano (1/5) di 400 = 80 euro; restano 320 euro. Nel secondo trimestre si impegnano (1/2) di 320 = 160 euro. Residuo finale: 320 - 160 = 160 euro."
     },
     {
@@ -7126,11 +7126,11 @@ var BANCA_DATI = {
       "domanda": "Un progetto dipartimentale dispone di 800 euro. Nel primo trimestre viene impegnato 3/10 del totale e nel secondo trimestre 1/4 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
         "A": "400 euro",
-        "B": "440 euro",
+        "B": "420 euro",
         "C": "360 euro",
-        "D": "420 euro"
+        "D": "440 euro"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Nel primo trimestre si impegnano (3/10) di 800 = 240 euro; restano 560 euro. Nel secondo trimestre si impegnano (1/4) di 560 = 140 euro. Residuo finale: 560 - 140 = 420 euro."
     },
     {
@@ -7141,10 +7141,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "200 euro",
         "B": "320 euro",
-        "C": "280 euro",
-        "D": "300 euro"
+        "C": "300 euro",
+        "D": "280 euro"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Nel primo trimestre si impegnano (1/4) di 800 = 200 euro; restano 600 euro. Nel secondo trimestre si impegnano (1/2) di 600 = 300 euro. Residuo finale: 600 - 300 = 300 euro."
     },
     {
@@ -7154,11 +7154,11 @@ var BANCA_DATI = {
       "domanda": "Un progetto dipartimentale dispone di 600 euro. Nel primo trimestre viene impegnato 1/5 del totale e nel secondo trimestre 1/3 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
         "A": "340 euro",
-        "B": "320 euro",
+        "B": "300 euro",
         "C": "280 euro",
-        "D": "300 euro"
+        "D": "320 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Nel primo trimestre si impegnano (1/5) di 600 = 120 euro; restano 480 euro. Nel secondo trimestre si impegnano (1/3) di 480 = 160 euro. Residuo finale: 480 - 160 = 320 euro."
     },
     {
@@ -7167,12 +7167,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un progetto dipartimentale dispone di 1000 euro. Nel primo trimestre viene impegnato 3/10 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
-        "A": "200 euro",
+        "A": "350 euro",
         "B": "370 euro",
-        "C": "350 euro",
+        "C": "200 euro",
         "D": "330 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Nel primo trimestre si impegnano (3/10) di 1000 = 300 euro; restano 700 euro. Nel secondo trimestre si impegnano (1/2) di 700 = 350 euro. Residuo finale: 700 - 350 = 350 euro."
     },
     {
@@ -7182,11 +7182,11 @@ var BANCA_DATI = {
       "domanda": "Un progetto dipartimentale dispone di 1000 euro. Nel primo trimestre viene impegnato 1/5 del totale e nel secondo trimestre 2/5 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
         "A": "400 euro",
-        "B": "500 euro",
-        "C": "480 euro",
+        "B": "480 euro",
+        "C": "500 euro",
         "D": "460 euro"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Nel primo trimestre si impegnano (1/5) di 1000 = 200 euro; restano 800 euro. Nel secondo trimestre si impegnano (2/5) di 800 = 320 euro. Residuo finale: 800 - 320 = 480 euro."
     },
     {
@@ -7197,10 +7197,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "620 euro",
         "B": "580 euro",
-        "C": "400 euro",
-        "D": "600 euro"
+        "C": "600 euro",
+        "D": "400 euro"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Nel primo trimestre si impegnano (2/5) di 1500 = 600 euro; restano 900 euro. Nel secondo trimestre si impegnano (1/3) di 900 = 300 euro. Residuo finale: 900 - 300 = 600 euro."
     },
     {
@@ -7210,11 +7210,11 @@ var BANCA_DATI = {
       "domanda": "Un progetto dipartimentale dispone di 200 euro. Nel primo trimestre viene impegnato 2/5 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
         "A": "40 euro",
-        "B": "60 euro",
+        "B": "80 euro",
         "C": "20 euro",
-        "D": "80 euro"
+        "D": "60 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Nel primo trimestre si impegnano (2/5) di 200 = 80 euro; restano 120 euro. Nel secondo trimestre si impegnano (1/2) di 120 = 60 euro. Residuo finale: 120 - 60 = 60 euro."
     },
     {
@@ -7223,12 +7223,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un progetto dipartimentale dispone di 500 euro. Nel primo trimestre viene impegnato 2/5 del totale e nel secondo trimestre 1/2 della somma residua. Quanti euro restano ancora disponibili?",
       "opzioni": {
-        "A": "50 euro",
-        "B": "150 euro",
+        "A": "150 euro",
+        "B": "50 euro",
         "C": "170 euro",
         "D": "130 euro"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Nel primo trimestre si impegnano (2/5) di 500 = 200 euro; restano 300 euro. Nel secondo trimestre si impegnano (1/2) di 300 = 150 euro. Residuo finale: 300 - 150 = 150 euro."
     },
     {
@@ -7252,11 +7252,11 @@ var BANCA_DATI = {
       "domanda": "In una prova a quiz da 40 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 33 risposte esatte, 4 errate e lascia 3 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
         "A": "33,00 punti",
-        "B": "32,00 punti",
-        "C": "31,75 punti",
+        "B": "31,75 punti",
+        "C": "32,00 punti",
         "D": "32,50 punti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Calcolo: (33 × 1) - (4 × 0,25) + (3 × 0) = 33 - 1,00 = 32,00 punti,"
     },
     {
@@ -7265,12 +7265,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 50 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 43 risposte esatte, 4 errate e lascia 3 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "42,00 punti",
+        "A": "41,75 punti",
         "B": "42,50 punti",
         "C": "43,00 punti",
-        "D": "41,75 punti"
+        "D": "42,00 punti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Calcolo: (43 × 1) - (4 × 0,25) + (3 × 0) = 43 - 1,00 = 42,00 punti,"
     },
     {
@@ -7279,12 +7279,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 50 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 43 risposte esatte, 6 errate e lascia 1 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "41,25 punti",
-        "B": "41,50 punti",
+        "A": "41,50 punti",
+        "B": "41,25 punti",
         "C": "43,00 punti",
         "D": "42,00 punti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo: (43 × 1) - (6 × 0,25) + (1 × 0) = 43 - 1,50 = 41,50 punti,"
     },
     {
@@ -7309,10 +7309,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "32,75 punti",
         "B": "33,00 punti",
-        "C": "32,00 punti",
-        "D": "32,25 punti"
+        "C": "32,25 punti",
+        "D": "32,00 punti"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Calcolo: (33 × 1) - (3 × 0,25) + (4 × 0) = 33 - 0,75 = 32,25 punti,"
     },
     {
@@ -7335,12 +7335,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 40 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 34 risposte esatte, 3 errate e lascia 3 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "33,75 punti",
+        "A": "33,25 punti",
         "B": "33,00 punti",
-        "C": "33,25 punti",
+        "C": "33,75 punti",
         "D": "34,00 punti"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo: (34 × 1) - (3 × 0,25) + (3 × 0) = 34 - 0,75 = 33,25 punti,"
     },
     {
@@ -7363,12 +7363,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 30 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 27 risposte esatte, 2 errate e lascia 1 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "26,50 punti",
+        "A": "27,75 punti",
         "B": "27,25 punti",
-        "C": "27,75 punti",
+        "C": "26,50 punti",
         "D": "26,00 punti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Calcolo: (27 × 1) - (2 × 0,25) + (1 × 0) = 27 - 0,50 = 26,50 punti,"
     },
     {
@@ -7378,11 +7378,11 @@ var BANCA_DATI = {
       "domanda": "In una prova a quiz da 30 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 22 risposte esatte, 3 errate e lascia 5 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
         "A": "21,00 punti",
-        "B": "21,25 punti",
+        "B": "21,75 punti",
         "C": "22,00 punti",
-        "D": "21,75 punti"
+        "D": "21,25 punti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Calcolo: (22 × 1) - (3 × 0,25) + (5 × 0) = 22 - 0,75 = 21,25 punti,"
     },
     {
@@ -7391,12 +7391,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 40 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 29 risposte esatte, 6 errate e lascia 5 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "29,00 punti",
+        "A": "27,50 punti",
         "B": "27,25 punti",
         "C": "28,00 punti",
-        "D": "27,50 punti"
+        "D": "29,00 punti"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo: (29 × 1) - (6 × 0,25) + (5 × 0) = 29 - 1,50 = 27,50 punti,"
     },
     {
@@ -7406,11 +7406,11 @@ var BANCA_DATI = {
       "domanda": "In una prova a quiz da 30 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 24 risposte esatte, 5 errate e lascia 1 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
         "A": "23,25 punti",
-        "B": "22,50 punti",
-        "C": "22,75 punti",
+        "B": "22,75 punti",
+        "C": "22,50 punti",
         "D": "24,00 punti"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Calcolo: (24 × 1) - (5 × 0,25) + (1 × 0) = 24 - 1,25 = 22,75 punti,"
     },
     {
@@ -7434,11 +7434,11 @@ var BANCA_DATI = {
       "domanda": "In una prova a quiz da 40 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 27 risposte esatte, 8 errate e lascia 5 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
         "A": "24,75 punti",
-        "B": "25,00 punti",
+        "B": "27,00 punti",
         "C": "25,50 punti",
-        "D": "27,00 punti"
+        "D": "25,00 punti"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Calcolo: (27 × 1) - (8 × 0,25) + (5 × 0) = 27 - 2,00 = 25,00 punti,"
     },
     {
@@ -7447,12 +7447,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 50 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 41 risposte esatte, 5 errate e lascia 4 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "40,25 punti",
+        "A": "39,75 punti",
         "B": "39,50 punti",
-        "C": "39,75 punti",
+        "C": "40,25 punti",
         "D": "41,00 punti"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo: (41 × 1) - (5 × 0,25) + (4 × 0) = 41 - 1,25 = 39,75 punti,"
     },
     {
@@ -7461,12 +7461,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 30 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 20 risposte esatte, 7 errate e lascia 3 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "18,25 punti",
-        "B": "18,00 punti",
+        "A": "18,00 punti",
+        "B": "18,25 punti",
         "C": "18,75 punti",
         "D": "20,00 punti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Calcolo: (20 × 1) - (7 × 0,25) + (3 × 0) = 20 - 1,75 = 18,25 punti,"
     },
     {
@@ -7491,10 +7491,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "32,75 punti",
         "B": "33,00 punti",
-        "C": "32,25 punti",
-        "D": "32,00 punti"
+        "C": "32,00 punti",
+        "D": "32,25 punti"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Calcolo: (33 × 1) - (3 × 0,25) + (4 × 0) = 33 - 0,75 = 32,25 punti,"
     },
     {
@@ -7503,12 +7503,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In una prova a quiz da 40 domande, ogni risposta esatta vale +1 punto, ogni risposta errata -0,25 punti e ogni risposta non data 0 punti. Se un candidato fornisce 35 risposte esatte, 3 errate e lascia 2 domande senza risposta, quale punteggio ottiene?",
       "opzioni": {
-        "A": "35,00 punti",
+        "A": "34,25 punti",
         "B": "34,75 punti",
         "C": "34,00 punti",
-        "D": "34,25 punti"
+        "D": "35,00 punti"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Calcolo: (35 × 1) - (3 × 0,25) + (2 × 0) = 35 - 0,75 = 34,25 punti,"
     },
     {
@@ -7518,11 +7518,11 @@ var BANCA_DATI = {
       "domanda": "Quattro candidati (Davide, Elena, Sara, Chiara) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Davide ha ottenuto un punteggio superiore a Elena; Sara ha ottenuto un punteggio inferiore a Elena ma superiore a Chiara. Chi si è classificato al terzo posto?",
       "opzioni": {
         "A": "Davide",
-        "B": "Elena",
-        "C": "Sara",
+        "B": "Sara",
+        "C": "Elena",
         "D": "Chiara"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Davide (1°) > Elena (2°) > Sara (3°) > Chiara (4°). Al terzo posto si colloca Sara."
     },
     {
@@ -7547,10 +7547,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Matteo",
         "B": "Giulia",
-        "C": "Marco",
-        "D": "Davide"
+        "C": "Davide",
+        "D": "Marco"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Matteo (1°) > Giulia (2°) > Marco (3°) > Davide (4°). Al terzo posto si colloca Marco."
     },
     {
@@ -7559,12 +7559,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quattro candidati (Chiara, Davide, Lorenzo, Marco) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Chiara ha ottenuto un punteggio superiore a Davide; Lorenzo ha ottenuto un punteggio inferiore a Davide ma superiore a Marco. Chi si è classificato al terzo posto?",
       "opzioni": {
-        "A": "Chiara",
+        "A": "Lorenzo",
         "B": "Davide",
-        "C": "Lorenzo",
+        "C": "Chiara",
         "D": "Marco"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Chiara (1°) > Davide (2°) > Lorenzo (3°) > Marco (4°). Al terzo posto si colloca Lorenzo."
     },
     {
@@ -7574,11 +7574,11 @@ var BANCA_DATI = {
       "domanda": "Quattro candidati (Marco, Matteo, Davide, Lorenzo) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Marco ha ottenuto un punteggio superiore a Matteo; Davide ha ottenuto un punteggio inferiore a Matteo ma superiore a Lorenzo. Chi si è classificato al terzo posto?",
       "opzioni": {
         "A": "Marco",
-        "B": "Matteo",
-        "C": "Davide",
+        "B": "Davide",
+        "C": "Matteo",
         "D": "Lorenzo"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Marco (1°) > Matteo (2°) > Davide (3°) > Lorenzo (4°). Al terzo posto si colloca Davide."
     },
     {
@@ -7603,10 +7603,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Matteo",
         "B": "Giulia",
-        "C": "Davide",
-        "D": "Lorenzo"
+        "C": "Lorenzo",
+        "D": "Davide"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Matteo (1°) > Giulia (2°) > Davide (3°) > Lorenzo (4°). Al terzo posto si colloca Davide."
     },
     {
@@ -7615,12 +7615,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quattro candidati (Marco, Giulia, Matteo, Chiara) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Marco ha ottenuto un punteggio superiore a Giulia; Matteo ha ottenuto un punteggio inferiore a Giulia ma superiore a Chiara. Chi si è classificato al terzo posto?",
       "opzioni": {
-        "A": "Marco",
+        "A": "Matteo",
         "B": "Giulia",
-        "C": "Matteo",
+        "C": "Marco",
         "D": "Chiara"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Marco (1°) > Giulia (2°) > Matteo (3°) > Chiara (4°). Al terzo posto si colloca Matteo."
     },
     {
@@ -7630,11 +7630,11 @@ var BANCA_DATI = {
       "domanda": "Quattro candidati (Davide, Matteo, Marco, Giulia) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Davide ha ottenuto un punteggio superiore a Matteo; Marco ha ottenuto un punteggio inferiore a Matteo ma superiore a Giulia. Chi si è classificato al terzo posto?",
       "opzioni": {
         "A": "Davide",
-        "B": "Matteo",
-        "C": "Marco",
+        "B": "Marco",
+        "C": "Matteo",
         "D": "Giulia"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Davide (1°) > Matteo (2°) > Marco (3°) > Giulia (4°). Al terzo posto si colloca Marco."
     },
     {
@@ -7659,10 +7659,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Davide",
         "B": "Lorenzo",
-        "C": "Sara",
-        "D": "Giulia"
+        "C": "Giulia",
+        "D": "Sara"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Davide (1°) > Lorenzo (2°) > Sara (3°) > Giulia (4°). Al terzo posto si colloca Sara."
     },
     {
@@ -7671,12 +7671,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quattro candidati (Sara, Davide, Marco, Lorenzo) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Sara ha ottenuto un punteggio superiore a Davide; Marco ha ottenuto un punteggio inferiore a Davide ma superiore a Lorenzo. Chi si è classificato al terzo posto?",
       "opzioni": {
-        "A": "Sara",
+        "A": "Marco",
         "B": "Davide",
-        "C": "Marco",
+        "C": "Sara",
         "D": "Lorenzo"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Sara (1°) > Davide (2°) > Marco (3°) > Lorenzo (4°). Al terzo posto si colloca Marco."
     },
     {
@@ -7686,11 +7686,11 @@ var BANCA_DATI = {
       "domanda": "Quattro candidati (Davide, Matteo, Giulia, Sara) ottengono quattro punteggi diversi nella prova orale. Sappiamo che: Davide ha ottenuto un punteggio superiore a Matteo; Giulia ha ottenuto un punteggio inferiore a Matteo ma superiore a Sara. Chi si è classificato al terzo posto?",
       "opzioni": {
         "A": "Davide",
-        "B": "Matteo",
-        "C": "Giulia",
+        "B": "Giulia",
+        "C": "Matteo",
         "D": "Sara"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Davide (1°) > Matteo (2°) > Giulia (3°) > Sara (4°). Al terzo posto si colloca Giulia."
     },
     {
@@ -7715,10 +7715,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Giulia",
         "B": "Elena",
-        "C": "Matteo",
-        "D": "Davide"
+        "C": "Davide",
+        "D": "Matteo"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Mettendo in ordine decrescente i punteggi: Giulia (1°) > Elena (2°) > Matteo (3°) > Davide (4°). Al terzo posto si colloca Matteo."
     },
     {
@@ -7741,12 +7741,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Tutti gli atti soggetti a controllo preventivo della Corte dei Conti acquistano efficacia solo dopo il visto.' Il decreto X non è soggetto a controllo preventivo. Cosa si può dedurre?",
       "opzioni": {
-        "A": "Non si può dedurre dalla sola premessa quando il decreto X acquisti efficacia",
-        "B": "Il decreto X non acquista mai efficacia",
+        "A": "Il decreto X non acquista mai efficacia",
+        "B": "Non si può dedurre dalla sola premessa quando il decreto X acquisti efficacia",
         "C": "Il decreto X richiede comunque il visto della Corte dei Conti",
         "D": "Il decreto X è nullo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La premessa regola esclusivamente gli atti soggetti a controllo preventivo; nulla dice sugli atti che non vi sono soggetti."
     },
     {
@@ -7755,12 +7755,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Qual è la negazione logica della frase: 'Nessun componente esterno del CdA può appartenere ai ruoli dell'Ateneo'?",
       "opzioni": {
-        "A": "Almeno un componente esterno del CdA può appartenere ai ruoli dell'Ateneo",
+        "A": "Alcuni componenti interni non appartengono ai ruoli dell'Ateneo",
         "B": "Tutti i componenti esterni del CdA appartengono ai ruoli dell'Ateneo",
-        "C": "Alcuni componenti interni non appartengono ai ruoli dell'Ateneo",
+        "C": "Almeno un componente esterno del CdA può appartenere ai ruoli dell'Ateneo",
         "D": "Nessun docente fa parte del CdA"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La negazione dell'universale negativo ('Nessun A è B') è il particolare affermativo ('Almeno un A è B')."
     },
     {
@@ -7769,12 +7769,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "In un'aula d'esame ci sono 5 file di banchi. La fila 3 è occupata dai candidati con cognome da G a M. Se Paolo Rossi è seduto due file più indietro rispetto alla fila 3, in quale fila si trova?",
       "opzioni": {
-        "A": "Fila 5",
+        "A": "Fila 2",
         "B": "Fila 1",
         "C": "Fila 4",
-        "D": "Fila 2"
+        "D": "Fila 5"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Partendo dalla fila 3 e spostandosi di 2 file indietro (3 + 2), si arriva alla fila 5."
     },
     {
@@ -7797,12 +7797,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quattro uffici (Protocollo, Bilancio, Personale, Didattica) si trovano sullo stesso corridoio in stanze numerate da 1 a 4. Il Bilancio è nella stanza 1; il Personale non è adiacente al Bilancio e non è nella stanza 4. Dove si trova l'ufficio Personale?",
       "opzioni": {
-        "A": "Stanza 3",
-        "B": "Stanza 2",
+        "A": "Stanza 2",
+        "B": "Stanza 3",
         "C": "Stanza 4",
         "D": "Non è determinabile"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Le stanze sono 1, 2, 3, 4. Bilancio = 1. Personale non è adiacente a 1 (esclusa 2) e non è nella 4: resta solo la stanza 3."
     },
     {
@@ -7811,12 +7811,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Se un dipendente ha un conflitto d'interessi potenziale, deve astenersi.' Carlo non deve astenersi. Cosa si deduce con certezza?",
       "opzioni": {
-        "A": "Carlo non ha un conflitto d'interessi potenziale",
+        "A": "Carlo è un dirigente",
         "B": "Carlo ha un conflitto d'interessi attuale",
-        "C": "Carlo è un dirigente",
+        "C": "Carlo non ha un conflitto d'interessi potenziale",
         "D": "Il responsabile ha autorizzato Carlo a procedere"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Modus tollens: da C -> A, negando A (¬A) si deduce necessariamente ¬C."
     },
     {
@@ -7825,12 +7825,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Mario dice: 'Oggi è lunedì o martedì'. Lucia dice: 'Oggi non è lunedì'. Sapendo che entrambi dicono la verità, che giorno è oggi?",
       "opzioni": {
-        "A": "Martedì",
+        "A": "Domenica",
         "B": "Lunedì",
         "C": "Mercoledì",
-        "D": "Domenica"
+        "D": "Martedì"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Sillogismo disgiuntivo: da (L ∨ M) e ¬L segue necessariamente M (Martedì)."
     },
     {
@@ -7853,12 +7853,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Cinque faldoni (A, B, C, D, E) sono impilati uno sull'altro. A è sopra B; D è sotto E; B è sopra E; C è in cima alla pila. Quale faldone si trova esattamente al centro (terza posizione)?",
       "opzioni": {
-        "A": "B",
-        "B": "A",
+        "A": "A",
+        "B": "B",
         "C": "E",
         "D": "D"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Dall'alto verso il basso: C (1°) > A (2°) > B (3°) > E (4°) > D (5°). Al centro (3° posto) c'è B."
     },
     {
@@ -7867,12 +7867,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "'Affinché un contratto sia valido è necessario che sia stipulato in forma scritta.' Il contratto Z è stato stipulato in forma scritta. Cosa si deduce?",
       "opzioni": {
-        "A": "Il contratto Z soddisfa il requisito della forma, ma potrebbe essere invalido per altri motivi",
+        "A": "Il contratto Z è nullo",
         "B": "Il contratto Z è certamente valido",
-        "C": "Il contratto Z è nullo",
+        "C": "Il contratto Z soddisfa il requisito della forma, ma potrebbe essere invalido per altri motivi",
         "D": "Il contratto Z è stato stipulato dal Rettore"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La forma scritta è posta come condizione necessaria, non sufficiente: la sua presenza non basta da sola a garantire l'assenza di altri vizi."
     },
     {
@@ -7881,12 +7881,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "In un'indagine interna risulta che ogni pratica gestita dall'Ufficio X è stata protocollata su Titulus, e nessuna pratica protocollata su Titulus è andata smarrita. Cosa si deduce?",
       "opzioni": {
-        "A": "Nessuna pratica gestita dall'Ufficio X è andata smarrita",
+        "A": "Tutte le pratiche protocollate appartengono all'Ufficio X",
         "B": "Solo le pratiche dell'Ufficio X sono state protocollate",
         "C": "Alcune pratiche dell'Ufficio X sono andate smarrite",
-        "D": "Tutte le pratiche protocollate appartengono all'Ufficio X"
+        "D": "Nessuna pratica gestita dall'Ufficio X è andata smarrita"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Transitività negativa: se ogni X è T e nessun T è S, allora nessun X è S."
     },
     {
@@ -7909,12 +7909,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Anna è più alta di Bea; Carla è più bassa di Bea; Delia è più alta di Anna. Chi è la più bassa delle quattro?",
       "opzioni": {
-        "A": "Carla",
-        "B": "Bea",
+        "A": "Bea",
+        "B": "Carla",
         "C": "Anna",
         "D": "Delia"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ordine di altezza: Delia > Anna > Bea > Carla. La più bassa è Carla."
     },
     {
@@ -7923,12 +7923,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Quale tra le seguenti coppie di proposizioni è logicamente contraddittoria (non possono essere né entrambe vere né entrambe false)?",
       "opzioni": {
-        "A": "'Tutti i bandi sono pubblici' e 'Almeno un bando non è pubblico'",
+        "A": "'Alcuni bandi sono pubblici' e 'Alcuni bandi non sono pubblici'",
         "B": "'Tutti i bandi sono pubblici' e 'Nessun bando è pubblico'",
-        "C": "'Alcuni bandi sono pubblici' e 'Alcuni bandi non sono pubblici'",
+        "C": "'Tutti i bandi sono pubblici' e 'Almeno un bando non è pubblico'",
         "D": "'Se piove fa freddo' e 'Se fa freddo piove'"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Nel quadrato aristotelico delle opposizioni, l'universale affermativa (A) e la particolare negativa (O) sono contraddittorie."
     },
     {
@@ -7937,12 +7937,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n16 - 4 - 2 [PIÙ]\n25 - 5 - 2 [PIÙ]\n36 - 6 - 3 [MENO]\n49 - 7 - 4 [MENO]",
       "opzioni": {
-        "A": "81 - 9 - 2",
+        "A": "9 - 3 - 3",
         "B": "64 - 8 - 8",
         "C": "100 - 10 - 5",
-        "D": "9 - 3 - 3"
+        "D": "81 - 9 - 2"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola PIÙ: il primo numero è il quadrato del secondo (4²=16, 5²=25) e il terzo numero è fisso pari a 2. Solo 81 - 9 - 2 rispetta entrambe le regole."
     },
     {
@@ -7965,12 +7965,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n7 - 14 - 21 - 28 [PIÙ]\n4 - 8 - 12 - 16 [PIÙ]\n5 - 10 - 15 - 25 [MENO]\n3 - 6 - 12 - 24 [MENO]",
       "opzioni": {
-        "A": "6 - 12 - 18 - 24",
-        "B": "8 - 16 - 24 - 36",
+        "A": "8 - 16 - 24 - 36",
+        "B": "6 - 12 - 18 - 24",
         "C": "9 - 18 - 27 - 35",
         "D": "2 - 4 - 8 - 16"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola PIÙ: i primi quattro multipli consecutivi del primo numero (x1, x2, x3, x4). Solo 6, 12, 18, 24 rispetta la regola."
     },
     {
@@ -7979,12 +7979,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n34 - 12 [PIÙ]\n52 - 10 [PIÙ]\n41 - 5 [MENO]\n63 - 9 [MENO]",
       "opzioni": {
-        "A": "73 - 21",
+        "A": "82 - 10",
         "B": "45 - 9",
-        "C": "82 - 10",
+        "C": "73 - 21",
         "D": "55 - 10"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola PIÙ: il secondo numero è il prodotto delle due cifre del primo (3×4=12; 5×2=10). Solo 7 × 3 = 21 soddisfa la regola."
     },
     {
@@ -7993,12 +7993,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che rispetta la regola delle righe PIÙ:\n100 - 25 - 4 [PIÙ]\n60 - 15 - 4 [PIÙ]\n80 - 20 - 5 [MENO]\n40 - 8 - 4 [MENO]",
       "opzioni": {
-        "A": "48 - 12 - 4",
+        "A": "90 - 30 - 4",
         "B": "50 - 10 - 4",
         "C": "36 - 6 - 4",
-        "D": "90 - 30 - 4"
+        "D": "48 - 12 - 4"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola PIÙ: il primo numero diviso il secondo dà sempre 4 (100/25=4; 60/15=4). Solo 48 / 12 = 4 rispetta la condizione."
     },
     {
@@ -8021,12 +8021,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema:\n13 - 31 [PIÙ]\n27 - 72 [PIÙ]\n44 - 45 [MENO]\n56 - 56 [MENO]",
       "opzioni": {
-        "A": "49 - 94",
-        "B": "38 - 84",
+        "A": "38 - 84",
+        "B": "49 - 94",
         "C": "61 - 15",
         "D": "23 - 23"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola PIÙ: il secondo numero si ottiene invertendo l'ordine delle cifre del primo (13->31; 27->72). Solo 49 -> 94 rispetta la regola."
     },
     {
@@ -8035,12 +8035,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n2 - 5 - 11 [PIÙ]\n3 - 7 - 15 [PIÙ]\n4 - 8 - 16 [MENO]\n5 - 11 - 21 [MENO]",
       "opzioni": {
-        "A": "6 - 13 - 27",
+        "A": "7 - 15 - 29",
         "B": "4 - 9 - 17",
-        "C": "7 - 15 - 29",
+        "C": "6 - 13 - 27",
         "D": "8 - 16 - 33"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola PIÙ: ogni termine si ottiene raddoppiando il precedente e aggiungendo +1 (2×2+1=5, 5×2+1=11; 3×2+1=7, 7×2+1=15). Solo 6 -> 13 (6×2+1) -> 27 (13×2+1) rispetta la regola."
     },
     {
@@ -8049,12 +8049,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n40 - 10 - 30 [PIÙ]\n75 - 25 - 50 [PIÙ]\n60 - 20 - 30 [MENO]\n90 - 40 - 40 [MENO]",
       "opzioni": {
-        "A": "85 - 35 - 50",
+        "A": "100 - 30 - 60",
         "B": "70 - 20 - 40",
         "C": "55 - 15 - 30",
-        "D": "100 - 30 - 60"
+        "D": "85 - 35 - 50"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola PIÙ: il terzo numero è la differenza tra il primo e il secondo (40-10=30; 75-25=50). Solo 85 - 35 = 50 rispetta la regola."
     },
     {
@@ -8077,12 +8077,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n120 - 60 - 20 - 5 [PIÙ]\n240 - 120 - 40 - 10 [PIÙ]\n96 - 48 - 16 - 8 [MENO]\n72 - 36 - 18 - 6 [MENO]",
       "opzioni": {
-        "A": "480 - 240 - 80 - 20",
-        "B": "360 - 180 - 60 - 12",
+        "A": "360 - 180 - 60 - 12",
+        "B": "480 - 240 - 80 - 20",
         "C": "180 - 90 - 45 - 15",
         "D": "144 - 72 - 24 - 8"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola PIÙ: si divide prima per 2, poi per 3, infine per 4 (480/2=240; 240/3=80; 80/4=20)."
     },
     {
@@ -8091,12 +8091,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n15 - 5 - 3 [PIÙ]\n28 - 7 - 4 [PIÙ]\n20 - 5 - 5 [MENO]\n30 - 6 - 6 [MENO]",
       "opzioni": {
-        "A": "42 - 7 - 6",
+        "A": "24 - 8 - 4",
         "B": "35 - 7 - 6",
-        "C": "24 - 8 - 4",
+        "C": "42 - 7 - 6",
         "D": "50 - 10 - 4"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola PIÙ: il primo numero è divisibile per il secondo dando come quoziente il terzo (15/5=3; 28/7=4). Solo 42 / 7 = 6 rispetta la regola."
     },
     {
@@ -8105,12 +8105,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n19 - 28 - 37 [PIÙ]\n41 - 50 - 59 [PIÙ]\n22 - 31 - 41 [MENO]\n15 - 25 - 35 [MENO]",
       "opzioni": {
-        "A": "63 - 72 - 81",
+        "A": "70 - 79 - 89",
         "B": "52 - 60 - 68",
         "C": "34 - 43 - 53",
-        "D": "70 - 79 - 89"
+        "D": "63 - 72 - 81"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola PIÙ: progressione aritmetica con passo costante +9 (+9, +9). Solo 63 + 9 = 72 e 72 + 9 = 81 rispetta la regola."
     },
     {
@@ -8133,12 +8133,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n54 - 9 - 6 [PIÙ]\n32 - 8 - 4 [PIÙ]\n45 - 9 - 6 [MENO]\n27 - 3 - 8 [MENO]",
       "opzioni": {
-        "A": "56 - 7 - 8",
-        "B": "48 - 6 - 7",
+        "A": "48 - 6 - 7",
+        "B": "56 - 7 - 8",
         "C": "63 - 9 - 6",
         "D": "40 - 5 - 7"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola PIÙ: il primo numero è il prodotto degli altri due (9×6=54; 8×4=32). Solo 7 × 8 = 56 rispetta la regola."
     },
     {
@@ -8147,12 +8147,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione verbale: Mandato di pagamento : Uscita = Reversale di incasso : X",
       "opzioni": {
-        "A": "Entrata",
+        "A": "Inventario",
         "B": "Ammortamento",
-        "C": "Inventario",
+        "C": "Entrata",
         "D": "Svalutazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Nella contabilità pubblica/universitaria, il mandato (ordinativo di pagamento) estingue un debito/uscita, mentre la reversale (ordinativo di incasso) riscuote un credito/entrata."
     },
     {
@@ -8161,12 +8161,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione verbale: Decano : Indizione elezioni Rettore = Prorettore vicario : X",
       "opzioni": {
-        "A": "Sostituzione del Rettore in caso di assenza o impedimento",
+        "A": "Adozione del Regolamento di contabilità",
         "B": "Revisione contabile dei bilanci dipartimentali",
         "C": "Presidenza del Collegio dei Revisori",
-        "D": "Adozione del Regolamento di contabilità"
+        "D": "Sostituzione del Rettore in caso di assenza o impedimento"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi degli artt. 21 e 22 dello Statuto UniSS, il Decano indice le elezioni del Rettore, mentre il Prorettore vicario sostituisce il Rettore in caso di assenza o impedimento temporaneo."
     },
     {
@@ -8189,12 +8189,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua l'antonimo (contrario) dell'aggettivo 'vincolante' riferito a un parere amministrativo:",
       "opzioni": {
-        "A": "Non vincolante (o facoltativo/consultivo superabile con motivazione)",
-        "B": "Obbligatorio",
+        "A": "Obbligatorio",
+        "B": "Non vincolante (o facoltativo/consultivo superabile con motivazione)",
         "C": "Perentorio",
         "D": "Tassativo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Un parere è vincolante quando l'organo decidente non può discostarsene; il suo opposto è non vincolante."
     },
     {
@@ -8203,12 +8203,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la serie alfabetica (alfabeto italiano di 21 lettere): D, G, L, O, ?",
       "opzioni": {
-        "A": "R",
+        "A": "Q",
         "B": "S",
-        "C": "Q",
+        "C": "R",
         "D": "T"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano (21 lettere) si saltano due lettere ogni volta: D (e,f) G (h,i) L (m,n) O (p,q) R."
     },
     {
@@ -8217,12 +8217,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la serie alfabetica (alfabeto italiano di 21 lettere): A, C, F, L, ?",
       "opzioni": {
-        "A": "Q",
+        "A": "S",
         "B": "R",
         "C": "P",
-        "D": "S"
+        "D": "Q"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Posizioni nell'alfabeto italiano (21 lettere): A(1) +2 = C(3); C(3) +3 = F(6); F(6) +4 = L(10); L(10) +5 = 15° lettera, che è Q."
     },
     {
@@ -8231,12 +8231,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua il termine intruso tra i seguenti:",
       "opzioni": {
-        "A": "Oneroso",
-        "B": "Gratuito",
+        "A": "Gratuito",
+        "B": "Oneroso",
         "C": "Corrispettivo",
         "D": "A pagamento"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Oneroso, corrispettivo e a pagamento implicano una controprestazione economica, mentre 'gratuito' indica assenza di corrispettivo."
     },
     {
@@ -8245,12 +8245,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: GDPR : Protezione dati personali = CAD : X",
       "opzioni": {
-        "A": "Amministrazione digitale",
-        "B": "Contratti pubblici",
+        "A": "Contratti pubblici",
+        "B": "Amministrazione digitale",
         "C": "Contabilità economico-patrimoniale",
         "D": "Sicurezza sul lavoro"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il GDPR (Reg. UE 2016/679) disciplina la protezione dei dati personali, mentre il CAD (D.Lgs. 82/2005) è il Codice dell'Amministrazione Digitale."
     },
     {
@@ -8259,12 +8259,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Qual è il significato dell'aggettivo 'caducato' riferito a un atto amministrativo?",
       "opzioni": {
-        "A": "Venuto meno nei suoi effetti giuridici",
+        "A": "Convalidato all'unanimità",
         "B": "Appena emanato",
-        "C": "Convalidato all'unanimità",
+        "C": "Venuto meno nei suoi effetti giuridici",
         "D": "Pubblicato in Gazzetta Ufficiale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "'Caducato' significa decaduto, privato di efficacia giuridica."
     },
     {
@@ -8273,12 +8273,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: L. 241/1990 : Procedimento amministrativo = D.Lgs. 165/2001 : X",
       "opzioni": {
-        "A": "Lavoro alle dipendenze delle pubbliche amministrazioni",
+        "A": "Codice dei beni culturali",
         "B": "Codice della strada",
         "C": "Ordinamento degli enti locali",
-        "D": "Codice dei beni culturali"
+        "D": "Lavoro alle dipendenze delle pubbliche amministrazioni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La L. 241/1990 disciplina il procedimento amministrativo, mentre il D.Lgs. 165/2001 è il Testo Unico sul Pubblico Impiego."
     },
     {
@@ -8301,12 +8301,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la serie alfanumerica (alfabeto italiano di 21 lettere): Z1, V3, T5, R7, ?",
       "opzioni": {
-        "A": "P9",
-        "B": "Q9",
+        "A": "Q9",
+        "B": "P9",
         "C": "O8",
         "D": "P8"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Le lettere retrocedono di 2 posizioni nell'alfabeto italiano (Z -> V -> T -> R -> P) e i numeri aumentano di +2 (1 -> 3 -> 5 -> 7 -> 9)."
     },
     {
@@ -8317,10 +8317,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Rettore",
         "B": "Senato Accademico",
-        "C": "Consiglio di Amministrazione",
-        "D": "Giunta Regionale"
+        "C": "Giunta Regionale",
+        "D": "Consiglio di Amministrazione"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Rettore, Senato Accademico e Consiglio di Amministrazione sono organi di governo dell'Ateneo (Titolo II Statuto UniSS), mentre la Giunta Regionale è l'organo esecutivo della Regione."
     },
     {
@@ -8329,12 +8329,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: Stato patrimoniale : Consistenze attive e passive = Conto economico : X",
       "opzioni": {
-        "A": "Costi e proventi d'esercizio",
+        "A": "Graduatorie concorsuali",
         "B": "Flussi di cassa postali",
         "C": "Elenco dei beni immobili storici",
-        "D": "Graduatorie concorsuali"
+        "D": "Costi e proventi d'esercizio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 19, comma 3 del Regolamento AFC UniSS, lo Stato patrimoniale espone attività e passività, mentre il Conto economico evidenzia costi e proventi dell'esercizio."
     },
     {
@@ -8357,12 +8357,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Il principio di leale collaborazione tra pubbliche amministrazioni impone agli enti di scambiarsi tempestivamente dati e informazioni già in loro possesso, evitando di gravare il cittadino con richieste documentali superflue.' Cosa si deduce?",
       "opzioni": {
-        "A": "Le PA devono acquisire d'ufficio i dati già detenuti da altre amministrazioni invece di chiederli al cittadino",
-        "B": "Il cittadino deve sempre produrre certificati cartacei rilasciati da altri enti",
+        "A": "Il cittadino deve sempre produrre certificati cartacei rilasciati da altri enti",
+        "B": "Le PA devono acquisire d'ufficio i dati già detenuti da altre amministrazioni invece di chiederli al cittadino",
         "C": "Lo scambio di dati tra PA è vietato dalla normativa sulla privacy",
         "D": "La leale collaborazione riguarda solo i rapporti con imprese private"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il brano riafferma il principio di decertificazione e cooperazione applicativa tra PA a tutela del cittadino."
     },
     {
@@ -8371,12 +8371,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Nel sistema universitario italiano, il passaggio dalla contabilità finanziaria alla contabilità economico-patrimoniale non ha eliminato la necessità di monitorare i flussi di cassa, ma ha affiancato al controllo sulla spesa autorizzata la misurazione dei costi effettivi dei servizi e della sostenibilità patrimoniale nel lungo periodo.' Secondo il testo:",
       "opzioni": {
-        "A": "La contabilità economico-patrimoniale integra il monitoraggio finanziario con la misurazione dei costi effettivi e della sostenibilità patrimoniale",
+        "A": "La contabilità finanziaria misurava già l'ammortamento del patrimonio",
         "B": "I flussi di cassa non vengono più controllati nelle università",
-        "C": "La contabilità finanziaria misurava già l'ammortamento del patrimonio",
+        "C": "La contabilità economico-patrimoniale integra il monitoraggio finanziario con la misurazione dei costi effettivi e della sostenibilità patrimoniale",
         "D": "La sostenibilità patrimoniale riguarda solo il breve periodo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il brano spiega che il nuovo sistema affianca al controllo dei flussi di cassa la misurazione dei costi effettivi e dell'equilibrio patrimoniale."
     },
     {
@@ -8385,12 +8385,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'efficacia di un codice etico e di comportamento non risiede esclusivamente nella previsione di sanzioni disciplinari per le violazioni più gravi, ma soprattutto nella sua capacità di orientare preventivamente le scelte quotidiane dei dipendenti nei casi dubbi.' Qual è l'idea centrale del brano?",
       "opzioni": {
-        "A": "La funzione principale del codice etico è preventiva e di orientamento quotidiano, non meramente sanzionatoria",
+        "A": "I dipendenti non incontrano mai casi dubbi nel lavoro amministrativo",
         "B": "Le sanzioni disciplinari sono del tutto inutili",
         "C": "Il codice etico si applica solo quando si commette un reato penale",
-        "D": "I dipendenti non incontrano mai casi dubbi nel lavoro amministrativo"
+        "D": "La funzione principale del codice etico è preventiva e di orientamento quotidiano, non meramente sanzionatoria"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il testo evidenzia la primarietà della funzione preventiva e di guida comportamentale rispetto a quella repressiva."
     },
     {
@@ -8413,12 +8413,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'accessibilità digitale dei siti web delle pubbliche amministrazioni mira a garantire che tutti gli utenti, incluse le persone con disabilità visive, uditive o motorie, possano fruire autonomamente dei servizi online senza barriere tecnologiche.' Secondo il brano:",
       "opzioni": {
-        "A": "L'accessibilità digitale serve a permettere anche agli utenti con disabilità di utilizzare autonomamente i servizi web della PA",
-        "B": "I siti della PA devono essere accessibili solo da computer fissi",
+        "A": "I siti della PA devono essere accessibili solo da computer fissi",
+        "B": "L'accessibilità digitale serve a permettere anche agli utenti con disabilità di utilizzare autonomamente i servizi web della PA",
         "C": "Le barriere tecnologiche riguardano solo la velocità della connessione",
         "D": "I servizi online sostituiscono completamente ogni sportello fisico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il testo definisce lo scopo dell'accessibilità digitale nella fruizione autonoma e senza barriere da parte di tutti i cittadini."
     },
     {
@@ -8427,12 +8427,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Nell'ultimo trimestre il numero di accessi al portale PICA è triplicato rispetto all'anno precedente. Dunque, il numero di giovani laureati disoccupati nella provincia è triplicato.' Quale fallacia invalida questo ragionamento?",
       "opzioni": {
-        "A": "Attribuire un aumento degli accessi a un portale di concorsi universitari (aperto a livello nazionale e anche a chi già lavora o ha solo il diploma) esclusivamente alla disoccupazione dei laureati di una sola provincia",
+        "A": "Ignorare che PICA è gestito dal CINECA",
         "B": "Calcolare male il triplo di un numero",
-        "C": "Ignorare che PICA è gestito dal CINECA",
+        "C": "Attribuire un aumento degli accessi a un portale di concorsi universitari (aperto a livello nazionale e anche a chi già lavora o ha solo il diploma) esclusivamente alla disoccupazione dei laureati di una sola provincia",
         "D": "Confondere i concorsi pubblici con gli appalti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'aumento degli accessi può dipendere dall'uscita di nuovi bandi aperti a diplomati e a candidati di tutta Italia, non dalla disoccupazione locale dei laureati."
     },
     {
@@ -8441,12 +8441,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Se un bando prevede la riserva di 4 posti ai volontari delle Forze Armate, e si presentano 6 candidati riservatari che superano tutte le prove risultando idonei, tutti e 6 verranno assunti grazie alla riserva.' Perché questa conclusione è errata?",
       "opzioni": {
-        "A": "Perché la riserva opera nei limiti dei 4 posti ad essa destinati; gli altri 2 idonei concorreranno nella graduatoria generale secondo il loro punteggio di merito",
+        "A": "Perché i posti riservati vengono divisi a metà",
         "B": "Perché i volontari delle Forze Armate non possono partecipare ai concorsi universitari",
         "C": "Perché la riserva si applica solo se non ci sono altri candidati",
-        "D": "Perché i posti riservati vengono divisi a metà"
+        "D": "Perché la riserva opera nei limiti dei 4 posti ad essa destinati; gli altri 2 idonei concorreranno nella graduatoria generale secondo il loro punteggio di merito"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La riserva garantisce prioritariamente i 4 posti riservati ai primi 4 riservatari idonei in graduatoria; gli ulteriori idonei restano in graduatoria ordinaria."
     },
     {
@@ -8469,12 +8469,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Per aumentare la trasparenza, dovremmo pubblicare online sul sito d'Ateneo i certificati medici allegati dai candidati che chiedono tempi aggiuntivi per DSA o disabilità.' Quale principio giuridico confuta immediatamente questa proposta?",
       "opzioni": {
-        "A": "Il divieto di diffusione dei dati relativi alla salute sancito dal GDPR (art. 9) e dal D.Lgs. 33/2013 (art. 7-bis), che impone la tutela rigorosa della riservatezza",
-        "B": "La mancanza di spazio sui server dell'Ateneo",
+        "A": "La mancanza di spazio sui server dell'Ateneo",
+        "B": "Il divieto di diffusione dei dati relativi alla salute sancito dal GDPR (art. 9) e dal D.Lgs. 33/2013 (art. 7-bis), che impone la tutela rigorosa della riservatezza",
         "C": "Il fatto che i certificati medici siano scritti a mano",
         "D": "L'obbligo di pubblicarli solo in lingua inglese"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La normativa privacy vieta in modo assoluto la diffusione online di dati idonei a rivelare lo stato di salute."
     },
     {
@@ -8483,12 +8483,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'L'Ufficio Acquisti ha impiegato in media 12 giorni per concludere gli affidamenti diretti sotto i 5.000 euro, mentre l'Ufficio Edilizia ne ha impiegati 45 per le gare sopra soglia. Quindi l'Ufficio Acquisti è più efficiente dell'Ufficio Edilizia.' Quale elemento INDEBOLISCE il confronto?",
       "opzioni": {
-        "A": "Le gare sopra soglia gestite dall'Ufficio Edilizia sono soggette per legge a termini di pubblicazione europei, verifiche tecniche complesse e tempistiche procedimentali molto più lunghe rispetto agli affidamenti diretti sotto i 5.000 euro",
+        "A": "Entrambi gli uffici usano lo stesso protocollo informatico",
         "B": "L'Ufficio Edilizia ha più scrivanie dell'Ufficio Acquisti",
-        "C": "Entrambi gli uffici usano lo stesso protocollo informatico",
+        "C": "Le gare sopra soglia gestite dall'Ufficio Edilizia sono soggette per legge a termini di pubblicazione europei, verifiche tecniche complesse e tempistiche procedimentali molto più lunghe rispetto agli affidamenti diretti sotto i 5.000 euro",
         "D": "Gli affidamenti diretti sotto i 5.000 euro richiedono il CIG"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Confrontare tempistiche di procedure normative completamente diverse rende il paragone non omogeneo."
     },
     {
@@ -8497,12 +8497,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Osserva la sequenza di simboli: [○ ● ○ ●] -> [● ○ ● ○] -> [○ ● ○ ●] -> [ ? ]. Quale quartina completa la serie alternata?",
       "opzioni": {
-        "A": "[● ○ ● ○]",
+        "A": "[○ ● ○ ●]",
         "B": "[○ ○ ● ●]",
         "C": "[● ● ○ ○]",
-        "D": "[○ ● ○ ●]"
+        "D": "[● ○ ● ○]"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ad ogni passaggio ogni cerchio bianco (○) diventa nero (●) e viceversa (inversione cromatica alternata)."
     },
     {
@@ -8525,12 +8525,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Quale figura/stringa completa l'analogia: 'ROMA' sta a 'AMOR' come '1492' sta a '?'",
       "opzioni": {
-        "A": "2941",
-        "B": "1942",
+        "A": "1942",
+        "B": "2941",
         "C": "2491",
         "D": "4921"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La trasformazione consiste nell'inversione speculare completa dei caratteri da destra a sinistra: 1492 -> 2941."
     },
     {
@@ -8539,12 +8539,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua la relazione insiemistica corretta tra: 'Contratti pubblici', 'Appalti di servizi', 'Concessioni di lavori'.",
       "opzioni": {
-        "A": "'Appalti di servizi' e 'Concessioni di lavori' sono due sottoinsiemi disgiunti entrambi contenuti nell'insieme più grande 'Contratti pubblici'",
+        "A": "I tre insiemi coincidono",
         "B": "'Appalti di servizi' contiene 'Contratti pubblici'",
-        "C": "I tre insiemi coincidono",
+        "C": "'Appalti di servizi' e 'Concessioni di lavori' sono due sottoinsiemi disgiunti entrambi contenuti nell'insieme più grande 'Contratti pubblici'",
         "D": "'Concessioni di lavori' è un sottoinsieme di 'Appalti di servizi'"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi del D.Lgs. 36/2023, i contratti pubblici comprendono sia gli appalti (di lavori, servizi, forniture) sia le concessioni, che costituiscono categorie distinte."
     },
     {
@@ -8553,12 +8553,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "In una griglia 2x2, la casella in alto a sinistra contiene 1 stella, in alto a destra 2 stelle, in basso a sinistra 3 stelle. Quante stelle contiene la casella in basso a destra seguendo una progressione crescente per riga e colonna?",
       "opzioni": {
-        "A": "4 stelle",
+        "A": "2 stelle",
         "B": "5 stelle",
         "C": "6 stelle",
-        "D": "2 stelle"
+        "D": "4 stelle"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Seguendo la progressione 1, 2 (prima riga) e 3, 4 (seconda riga), la casella in basso a destra contiene 4 stelle."
     },
     {
@@ -8581,12 +8581,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Chi può partecipare alle sedute del Consiglio degli Studenti senza diritto di voto ai sensi dell'art. 29, comma 5 dello Statuto UniSS?",
       "opzioni": {
-        "A": "I rappresentanti degli studenti nel CdA dell'Ente regionale per il diritto allo studio universitario (ERSU) di Sassari, nel Comitato per lo sport universitario (CUS) e un rappresentante del Nucleo di Valutazione",
-        "B": "Esclusivamente il Direttore Generale",
+        "A": "Esclusivamente il Direttore Generale",
+        "B": "I rappresentanti degli studenti nel CdA dell'Ente regionale per il diritto allo studio universitario (ERSU) di Sassari, nel Comitato per lo sport universitario (CUS) e un rappresentante del Nucleo di Valutazione",
         "C": "Tutti i Direttori di Dipartimento",
         "D": "I componenti del Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 29, comma 5 prevede espressamente la partecipazione dei rappresentanti degli studenti nel CdA dell'ERSU di Sassari, nel Comitato per lo sport universitario e di un rappresentante del Nucleo di Valutazione."
     },
     {
@@ -8595,12 +8595,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Chi designa il Presidente del Collegio dei revisori dei conti dell'Università degli Studi di Sassari ai sensi dell'art. 30, comma 3, lett. a) dello Statuto?",
       "opzioni": {
-        "A": "È scelto tra i magistrati amministrativi e contabili e gli avvocati dello Stato e designato dal Senato Accademico, su proposta del Rettore",
+        "A": "È eletto dal Consiglio di Amministrazione tra i professori di economia",
         "B": "È nominato direttamente dal Ministro dell'Economia e delle Finanze",
-        "C": "È eletto dal Consiglio di Amministrazione tra i professori di economia",
+        "C": "È scelto tra i magistrati amministrativi e contabili e gli avvocati dello Stato e designato dal Senato Accademico, su proposta del Rettore",
         "D": "È designato dalla Corte dei Conti regionale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 30, comma 3, lett. a) stabilisce che il membro effettivo con funzioni di Presidente è scelto tra i magistrati amministrativi e contabili e gli avvocati dello Stato ed è designato dal Senato Accademico, su proposta del Rettore."
     },
     {
@@ -8609,12 +8609,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Come vengono designati i componenti interni di ruolo ed esterni del Nucleo di Valutazione di UniSS ai sensi dell'art. 31, comma 5 dello Statuto?",
       "opzioni": {
-        "A": "Sono designati dal Consiglio di Amministrazione, sentito il Senato Accademico, sulla base di nominativi proposti dal Rettore in numero doppio rispetto al numero di candidati da eleggere",
+        "A": "Sono scelti per sorteggio tra i Direttori di Dipartimento",
         "B": "Sono eletti direttamente dal corpo docente senza intervento del CdA",
         "C": "Sono nominati dal Ministero dell'Università",
-        "D": "Sono scelti per sorteggio tra i Direttori di Dipartimento"
+        "D": "Sono designati dal Consiglio di Amministrazione, sentito il Senato Accademico, sulla base di nominativi proposti dal Rettore in numero doppio rispetto al numero di candidati da eleggere"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 31, comma 5 dello Statuto prevede che i componenti di ruolo dell'Ateneo e i componenti esterni del Nucleo di Valutazione siano designati dal CdA, sentito il Senato Accademico, su una rosa in numero doppio proposta dal Rettore."
     },
     {
@@ -8637,12 +8637,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "Quali soggetti, oltre al Direttore, ai docenti, al PTA e agli studenti dei corsi di laurea, fanno parte del Consiglio del Dipartimento ai sensi dell'art. 39, comma 3 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Un rappresentante dei docenti a contratto (1 anno), un rappresentante degli assegnisti di ricerca (1 anno), un rappresentante degli specializzandi e dottorandi (2 anni) e il Responsabile amministrativo con voto consultivo",
-        "B": "Due rappresentanti del Comune di Sassari",
+        "A": "Due rappresentanti del Comune di Sassari",
+        "B": "Un rappresentante dei docenti a contratto (1 anno), un rappresentante degli assegnisti di ricerca (1 anno), un rappresentante degli specializzandi e dottorandi (2 anni) e il Responsabile amministrativo con voto consultivo",
         "C": "Il Presidente del Collegio dei Revisori dei conti",
         "D": "Nessun altro soggetto oltre ai professori ordinari"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 39, comma 3, lett. e), f), g), h) include nel Consiglio di Dipartimento anche 1 rappresentante dei docenti a contratto (in carica 1 anno accademico), 1 degli assegnisti (1 anno), 1 di specializzandi e dottorandi (2 anni) e il Responsabile amministrativo con voto consultivo."
     },
     {
@@ -8651,12 +8651,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "Chi designa e chi nomina il Vicedirettore del Dipartimento ai sensi dell'art. 40, comma 3 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Il Direttore designa tra i docenti di ruolo a tempo pieno del Dipartimento un Vicedirettore, che è nominato con decreto del Rettore",
+        "A": "È nominato dal Direttore Generale tra i funzionari amministrativi",
         "B": "È eletto direttamente dagli studenti del Dipartimento",
-        "C": "È nominato dal Direttore Generale tra i funzionari amministrativi",
+        "C": "Il Direttore designa tra i docenti di ruolo a tempo pieno del Dipartimento un Vicedirettore, che è nominato con decreto del Rettore",
         "D": "È il professore ordinario più giovane del Dipartimento"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 40, comma 3 stabilisce che il Direttore designa tra i docenti di ruolo a tempo pieno del Dipartimento un Vicedirettore, che lo sostituisce in caso di assenza o impedimento ed è nominato con decreto del Rettore."
     },
     {
@@ -8665,12 +8665,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "Con quali cariche è incompatibile la nomina a Presidente e componente della Commissione paritetica docenti-studenti ai sensi dell'art. 42, comma 3 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Con la carica di Direttore di Dipartimento, Presidente della struttura di raccordo e Presidente di corso di laurea",
+        "A": "Con l'appartenenza a un gruppo di ricerca interdipartimentale",
         "B": "Con la qualifica di ricercatore a tempo indeterminato",
         "C": "Con l'iscrizione al primo anno di laurea magistrale",
-        "D": "Con l'appartenenza a un gruppo di ricerca interdipartimentale"
+        "D": "Con la carica di Direttore di Dipartimento, Presidente della struttura di raccordo e Presidente di corso di laurea"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 42, comma 3 dello Statuto sancisce l'incompatibilità della carica di Presidente e componente della Commissione paritetica con quella di Direttore di Dipartimento, Presidente della struttura di raccordo e Presidente di corso di laurea."
     },
     {
@@ -8693,12 +8693,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Strutture di raccordo e didattica",
       "domanda": "Da chi è composto il Consiglio della struttura di raccordo ai sensi dell'art. 50, comma 5 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Dai Direttori dei Dipartimenti in essa raggruppati, da una rappresentanza degli studenti pari al 15% dei componenti e da una rappresentanza pari al 10% dei Consigli di ciascun Dipartimento raggruppato",
-        "B": "Esclusivamente dai Direttori dei Dipartimenti",
+        "A": "Esclusivamente dai Direttori dei Dipartimenti",
+        "B": "Dai Direttori dei Dipartimenti in essa raggruppati, da una rappresentanza degli studenti pari al 15% dei componenti e da una rappresentanza pari al 10% dei Consigli di ciascun Dipartimento raggruppato",
         "C": "Dal Rettore, dal Direttore Generale e da cinque membri esterni",
         "D": "Da tutti i docenti afferenti ai Dipartimenti raggruppati"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 50, comma 5 definisce la composizione del Consiglio della struttura di raccordo: Direttori dei Dipartimenti raggruppati, studenti (15% dei componenti) e una rappresentanza pari al 10% dei Consigli di ciascun Dipartimento raggruppato (eletta tra membri delle Giunte e presidenti di corsi di studio)."
     },
     {
@@ -8707,12 +8707,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Sedi e Poli decentrati",
       "domanda": "Quale requisito strutturale è richiesto per l'istituzione di una nuova sede dell'Ateneo ai sensi dell'art. 54, comma 3 dello Statuto UniSS?",
       "opzioni": {
-        "A": "La presenza di almeno un Dipartimento (e segue la procedura prevista per la costituzione dei Dipartimenti)",
+        "A": "L'autorizzazione del Presidente della Repubblica",
         "B": "La presenza di almeno cinque Dipartimenti",
-        "C": "L'autorizzazione del Presidente della Repubblica",
+        "C": "La presenza di almeno un Dipartimento (e segue la procedura prevista per la costituzione dei Dipartimenti)",
         "D": "Un numero minimo di 10.000 studenti residenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 54, comma 3 dello Statuto stabilisce che l'istituzione di una nuova sede richiede la presenza di almeno un Dipartimento e segue la procedura prevista per la costituzione dei Dipartimenti."
     },
     {
@@ -8721,12 +8721,12 @@ var BANCA_DATI = {
       "argomento": "Titolo V - Disposizioni generali",
       "domanda": "Con quale condizione la condizione di docente a tempo definito e di ricercatore a tempo determinato è compatibile con l'esercizio di cariche accademiche ai sensi dell'art. 63, comma 2 dello Statuto UniSS?",
       "opzioni": {
-        "A": "È incompatibile: l'art. 63, comma 2 stabilisce che la condizione di docente a tempo definito e di ricercatore a tempo determinato è incompatibile con l'esercizio di cariche accademiche",
+        "A": "È compatibile solo per la carica di Direttore di Dipartimento",
         "B": "È sempre compatibile senza alcuna limitazione",
         "C": "È compatibile solo per la carica di Rettore",
-        "D": "È compatibile solo per la carica di Direttore di Dipartimento"
+        "D": "È incompatibile: l'art. 63, comma 2 stabilisce che la condizione di docente a tempo definito e di ricercatore a tempo determinato è incompatibile con l'esercizio di cariche accademiche"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 63, comma 2 dello Statuto sancisce espressamente l'incompatibilità della condizione di docente a tempo definito e di ricercatore a tempo determinato con l'esercizio di cariche accademiche."
     },
     {
@@ -8749,12 +8749,12 @@ var BANCA_DATI = {
       "argomento": "Titolo V - Disposizioni generali",
       "domanda": "A quali soggetti spetta il potere di assumere l'iniziativa per la revisione dello Statuto dell'Università degli Studi di Sassari ai sensi dell'art. 67, comma 1?",
       "opzioni": {
-        "A": "Al Rettore, al Senato Accademico, al Consiglio di Amministrazione, al Consiglio degli Studenti, a un Consiglio di Dipartimento, al Consiglio del personale tecnico-amministrativo",
-        "B": "Esclusivamente al Rettore e al Direttore Generale",
+        "A": "Esclusivamente al Rettore e al Direttore Generale",
+        "B": "Al Rettore, al Senato Accademico, al Consiglio di Amministrazione, al Consiglio degli Studenti, a un Consiglio di Dipartimento, al Consiglio del personale tecnico-amministrativo",
         "C": "Solo al Senato Accademico a maggioranza assoluta",
         "D": "Al Ministro dell'Università e della Ricerca"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 67, comma 1 dello Statuto riconosce l'iniziativa di revisione statutaria a sei soggetti: Rettore, Senato Accademico, Consiglio di Amministrazione, Consiglio degli Studenti, un Consiglio di Dipartimento e il Consiglio del personale tecnico-amministrativo."
     },
     {
@@ -8763,12 +8763,12 @@ var BANCA_DATI = {
       "argomento": "Titolo I - Caratteri dell'amministrazione",
       "domanda": "Di quali risultati si tiene conto nell'assegnazione delle risorse finanziarie e di personale ai Dipartimenti ai sensi dell'art. 15, comma 5 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Dei risultati conseguiti nell'ambito della didattica e della ricerca dai docenti afferenti, sulla base dei criteri elaborati dagli organismi preposti alla valutazione del sistema universitario nazionale e degli orientamenti internazionali",
+        "A": "Del solo numero di metri quadri occupati dalle aule",
         "B": "Esclusivamente dell'anzianità di istituzione del Dipartimento",
-        "C": "Del solo numero di metri quadri occupati dalle aule",
+        "C": "Dei risultati conseguiti nell'ambito della didattica e della ricerca dai docenti afferenti, sulla base dei criteri elaborati dagli organismi preposti alla valutazione del sistema universitario nazionale e degli orientamenti internazionali",
         "D": "Di una ripartizione in quote perfettamente uguali tra tutti i Dipartimenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 15, comma 5 dello Statuto collega l'assegnazione delle risorse ai Dipartimenti ai risultati conseguiti nella didattica e nella ricerca secondo i criteri degli organismi nazionali di valutazione."
     },
     {
@@ -8777,12 +8777,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Senato Accademico",
       "domanda": "Quale organo approva il Regolamento didattico di Ateneo ai sensi dell'art. 66, comma 1, lett. c) dello Statuto UniSS?",
       "opzioni": {
-        "A": "Il Senato Accademico, previo parere favorevole del Consiglio di Amministrazione",
+        "A": "Il Presidio di Qualità",
         "B": "Il Consiglio di Amministrazione, previo parere del Consiglio degli Studenti",
         "C": "Il Rettore con proprio decreto",
-        "D": "Il Presidio di Qualità"
+        "D": "Il Senato Accademico, previo parere favorevole del Consiglio di Amministrazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 66, comma 1, lett. c) attribuisce al Senato Accademico l'adozione del Regolamento didattico di Ateneo, previo parere favorevole del Consiglio di Amministrazione (a differenza del Regolamento Generale per il quale è richiesto il 'previo parere' semplice del CdA)."
     },
     {
@@ -8805,12 +8805,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Quale durata ha il mandato dei membri del Collegio dei revisori dei conti di UniSS ai sensi dell'art. 30, comma 4 dello Statuto?",
       "opzioni": {
-        "A": "Tre anni, immediatamente riconfermabili per una sola volta",
-        "B": "Quattro anni, non rinnovabili",
+        "A": "Quattro anni, non rinnovabili",
+        "B": "Tre anni, immediatamente riconfermabili per una sola volta",
         "C": "Sei anni, non rinnovabili",
         "D": "Due anni, rinnovabili due volte"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 30, comma 4 dello Statuto stabilisce che i membri del Collegio dei revisori dei conti restano in carica tre anni e possono essere immediatamente riconfermati per una sola volta."
     },
     {
@@ -8819,12 +8819,12 @@ var BANCA_DATI = {
       "argomento": "Titolo II - Organi di controllo, consultivi e di garanzia",
       "domanda": "Quale durata ha il mandato del rappresentante degli studenti nel Nucleo di Valutazione ai sensi dell'art. 31, comma 6 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Due anni (mentre i componenti esterni ed interni restano in carica per tre anni), immediatamente riconfermabile per una sola volta",
+        "A": "Quattro anni",
         "B": "Tre anni come tutti gli altri membri",
-        "C": "Quattro anni",
+        "C": "Due anni (mentre i componenti esterni ed interni restano in carica per tre anni), immediatamente riconfermabile per una sola volta",
         "D": "Un anno accademico"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 31, comma 6 dello Statuto prevede che i componenti esterni ed interni del Nucleo di Valutazione restino in carica tre anni, ad eccezione del rappresentante degli studenti che resta in carica per due anni."
     },
     {
@@ -8833,12 +8833,12 @@ var BANCA_DATI = {
       "argomento": "Titolo III - Dipartimenti e Corsi di studio",
       "domanda": "Chi può sostituire il Responsabile amministrativo di un Centro dotato di autonomia gestionale e amministrativa in caso di assenza o temporaneo impedimento (art. 8, comma 6 Regolamento AFC)?",
       "opzioni": {
-        "A": "Un altro funzionario o un collaboratore dell'area amministrativo-contabile",
+        "A": "Un professore ordinario del Dipartimento",
         "B": "Esclusivamente il Direttore Generale",
         "C": "Il Rettore",
-        "D": "Un professore ordinario del Dipartimento"
+        "D": "Un altro funzionario o un collaboratore dell'area amministrativo-contabile"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 8, comma 6 del Regolamento AFC stabilisce che in caso di assenza o temporaneo impedimento il Responsabile amministrativo può essere sostituito da un altro funzionario o da un collaboratore dell'area amministrativo-contabile."
     },
     {
@@ -8861,12 +8861,12 @@ var BANCA_DATI = {
       "argomento": "Titolo V - Disposizioni generali",
       "domanda": "Con quale sanzione aggiuntiva viene accompagnato il richiamo scritto in caso di recidiva nella violazione del Codice etico ai sensi dell'art. 62, comma 5 dello Statuto UniSS?",
       "opzioni": {
-        "A": "Con la pubblicazione del richiamo scritto sul sito dell'Ateneo",
-        "B": "Con la decurtazione dello stipendio del 20%",
+        "A": "Con la decurtazione dello stipendio del 20%",
+        "B": "Con la pubblicazione del richiamo scritto sul sito dell'Ateneo",
         "C": "Con il trasferimento d'ufficio ad altra sede",
         "D": "Con l'esclusione permanente dalle commissioni d'esame"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 62, comma 5 dello Statuto dispone che in caso di recidiva nella violazione del Codice etico, il richiamo scritto è accompagnato dalla sua pubblicazione sul sito dell'Ateneo."
     },
     {
@@ -8875,12 +8875,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Ciclo attivo e passivo",
       "domanda": "Nel ciclo passivo (art. 34, comma 2 Regolamento AFC), chi è responsabile degli ordinativi di pagamento rispettivamente per i Centri dotati di autonomia gestionale e per le Strutture dirigenziali?",
       "opzioni": {
-        "A": "I Centri dotati di autonomia sono responsabili dei propri ordinativi di pagamento; per le Strutture dirigenziali è responsabile l'Area bilancio e politiche finanziarie",
+        "A": "Il Rettore per entrambi",
         "B": "L'Economo per entrambi",
-        "C": "Il Rettore per entrambi",
+        "C": "I Centri dotati di autonomia sono responsabili dei propri ordinativi di pagamento; per le Strutture dirigenziali è responsabile l'Area bilancio e politiche finanziarie",
         "D": "Il Collegio dei Revisori dei conti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 34, comma 2 distingue chiaramente: i Centri dotati di autonomia gestionale emettono i propri ordinativi di pagamento, mentre per le Strutture dirigenziali gli ordinativi di pagamento sono di competenza dell'Area bilancio e politiche finanziarie."
     },
     {
@@ -8889,12 +8889,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Ciclo attivo e passivo",
       "domanda": "A quale condizione è subordinata la registrazione degli eventi contabili correlati al ciclo passivo ai sensi dell'art. 36, comma 1 del Regolamento AFC?",
       "opzioni": {
-        "A": "Alla disponibilità assegnata al budget",
+        "A": "All'incasso preventivo di tutti i crediti verso studenti",
         "B": "Alla preventiva approvazione del Senato Accademico per ogni fattura",
         "C": "Al parere del Nucleo di Valutazione",
-        "D": "All'incasso preventivo di tutti i crediti verso studenti"
+        "D": "Alla disponibilità assegnata al budget"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 36, comma 1 del Regolamento AFC stabilisce che la registrazione degli eventi contabili correlati al ciclo passivo è subordinata alla disponibilità assegnata al budget."
     },
     {
@@ -8917,12 +8917,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio e inventari",
       "domanda": "Quando vengono chiusi gli inventari dell'Università degli Studi di Sassari ai sensi dell'art. 53, comma 5 del Regolamento AFC?",
       "opzioni": {
-        "A": "Al termine di ogni esercizio",
-        "B": "Ogni cinque anni",
+        "A": "Ogni cinque anni",
+        "B": "Al termine di ogni esercizio",
         "C": "Al termine di ogni mandato rettorale",
         "D": "Ogni trimestre"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 53, comma 5 del Regolamento AFC stabilisce che gli inventari sono chiusi al termine di ogni esercizio (mentre almeno ogni cinque anni si provvede alla ricognizione generale e al rinnovo ex art. 54)."
     },
     {
@@ -8931,12 +8931,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Documenti contabili",
       "domanda": "Quale prospetto del Bilancio unico d'Ateneo d'esercizio riassume le relazioni tra fonti e impieghi di risorse finanziarie evidenziando le variazioni di liquidità (art. 19, comma 3, lett. a Regolamento AFC)?",
       "opzioni": {
-        "A": "Il Rendiconto finanziario",
+        "A": "Il Conto economico",
         "B": "Lo Stato patrimoniale",
-        "C": "Il Conto economico",
+        "C": "Il Rendiconto finanziario",
         "D": "La Nota integrativa"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 19, comma 3, lett. a) definisce il Rendiconto finanziario come il prospetto che riassume le relazioni tra fonti e impieghi di risorse finanziarie evidenziando le variazioni di liquidità (incrementi e utilizzi di disponibilità liquide)."
     },
     {
@@ -8945,12 +8945,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Programmazione",
       "domanda": "Che cosa deve garantire il bilancio unico d'Ateneo di previsione annuale autorizzatorio ai sensi dell'art. 21, comma 2 del Regolamento AFC?",
       "opzioni": {
-        "A": "Il pareggio tra costi e proventi (anche tenendo conto dell'utilizzo del risultato previsto dell'esercizio precedente) nonché la copertura finanziaria degli investimenti programmati",
+        "A": "La distribuzione di dividendi ai Dipartimenti",
         "B": "Un avanzo economico minimo del 20%",
         "C": "L'azzeramento totale di tutti i debiti pluriennali",
-        "D": "La distribuzione di dividendi ai Dipartimenti"
+        "D": "Il pareggio tra costi e proventi (anche tenendo conto dell'utilizzo del risultato previsto dell'esercizio precedente) nonché la copertura finanziaria degli investimenti programmati"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 21, comma 2 del Regolamento AFC impone il pareggio tra costi e proventi e la copertura finanziaria degli investimenti programmati nel bilancio preventivo annuale autorizzatorio."
     },
     {
@@ -8973,12 +8973,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Controlli",
       "domanda": "Quali quattro profili verifica l'attività di internal audit secondo l'art. 61, comma 3 del Regolamento AFC?",
       "opzioni": {
-        "A": "Integrità dei processi e conformità a leggi/regolamenti; competenza e rigore nella gestione documentale; completezza, affidabilità e tempestività delle informazioni; gestione dei rischi interni ed esterni",
-        "B": "La puntualità dei docenti a lezione",
+        "A": "La puntualità dei docenti a lezione",
+        "B": "Integrità dei processi e conformità a leggi/regolamenti; competenza e rigore nella gestione documentale; completezza, affidabilità e tempestività delle informazioni; gestione dei rischi interni ed esterni",
         "C": "Il voto di laurea degli studenti",
         "D": "La pulizia delle aule didattiche"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 61, comma 3, lett. a)-d) elenca i quattro ambiti di verifica dell'internal audit presso i Centri di gestione."
     },
     {
@@ -8987,12 +8987,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Rapporti con il pubblico",
       "domanda": "Entro quale ordine i dipendenti trattano le pratiche e le istanze degli utenti ai sensi dell'art. 21, comma 6 del Codice Etico e di Comportamento UniSS?",
       "opzioni": {
-        "A": "Rispettano l'ordine cronologico di arrivo delle istanze (anche se non protocollate), salvo diverse esigenze di servizio o diverso ordine di priorità stabilito dall'Università",
+        "A": "Dando precedenza alle richieste inoltrate telefonicamente rispetto a quelle scritte",
         "B": "Secondo l'ordine alfabetico del cognome del richiedente",
-        "C": "Dando precedenza alle richieste inoltrate telefonicamente rispetto a quelle scritte",
+        "C": "Rispettano l'ordine cronologico di arrivo delle istanze (anche se non protocollate), salvo diverse esigenze di servizio o diverso ordine di priorità stabilito dall'Università",
         "D": "A discrezione del singolo operatore di sportello"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 21, comma 6 del Codice prescrive il rispetto dell'ordine cronologico di arrivo delle istanze (anche se non protocollate), salve diverse esigenze di servizio o priorità fissate dall'Ateneo."
     },
     {
@@ -9001,12 +9001,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Contratti",
       "domanda": "Cosa devono inserire i dipendenti negli atti di incarico o nei contratti di acquisizione delle collaborazioni, consulenze o servizi ai sensi dell'art. 22, comma 5 del Codice Etico UniSS?",
       "opzioni": {
-        "A": "Apposite disposizioni di risoluzione o decadenza del rapporto conseguenti all'inosservanza del Codice da parte dei soggetti esterni individuati all'art. 3",
+        "A": "Il pagamento anticipato del 100% prima della prestazione",
         "B": "Una clausola di rinnovo automatico decennale",
         "C": "L'esonero dal rispetto delle norme sulla privacy",
-        "D": "Il pagamento anticipato del 100% prima della prestazione"
+        "D": "Apposite disposizioni di risoluzione o decadenza del rapporto conseguenti all'inosservanza del Codice da parte dei soggetti esterni individuati all'art. 3"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 22, comma 5 e l'art. 33 del Codice impongono l'inserimento nei contratti con collaboratori, consulenti e fornitori di apposite clausole di risoluzione o decadenza per violazione del Codice Etico e di Comportamento."
     },
     {
@@ -9029,12 +9029,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Vigilanza e formazione",
       "domanda": "Quale ufficio cura l'aggiornamento del Codice Etico e di Comportamento, l'esame delle segnalazioni di violazione dello stesso e la raccolta delle condotte illecite accertate e sanzionate (art. 34, comma 5)?",
       "opzioni": {
-        "A": "L'Ufficio Procedimenti Disciplinari (UPD)",
-        "B": "L'Ufficio Relazioni Internazionali",
+        "A": "L'Ufficio Relazioni Internazionali",
+        "B": "L'Ufficio Procedimenti Disciplinari (UPD)",
         "C": "L'Area Edilizia e Patrimonio",
         "D": "La Segreteria Studenti"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 34, comma 5 del Codice attribuisce all'Ufficio Procedimenti Disciplinari il compito di curare l'aggiornamento del Codice, l'esame delle segnalazioni e la raccolta delle condotte illecite accertate e sanzionate."
     },
     {
@@ -9043,12 +9043,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Diffusione",
       "domanda": "In quale momento viene consegnata ai nuovi assunti copia del Codice Etico e di Comportamento con sottoscrizione della ricezione (art. 36, comma 2)?",
       "opzioni": {
-        "A": "Contestualmente alla sottoscrizione del contratto di lavoro o, in mancanza, all'atto di conferimento dell'incarico (anche in forma telematica)",
+        "A": "Dopo un anno dall'assunzione",
         "B": "Solo al termine del periodo di prova di tre mesi",
-        "C": "Dopo un anno dall'assunzione",
+        "C": "Contestualmente alla sottoscrizione del contratto di lavoro o, in mancanza, all'atto di conferimento dell'incarico (anche in forma telematica)",
         "D": "Solo su richiesta scritta del dipendente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 36, comma 2 del Codice prevede che l'Università consegni copia del Codice (anche telematicamente) contestualmente alla sottoscrizione del contratto di lavoro o al conferimento dell'incarico, facendone sottoscrivere la ricezione."
     },
     {
@@ -9057,12 +9057,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Studenti",
       "domanda": "Quale delle seguenti condotte è espressamente vietata agli studenti e ai frequentanti dall'art. 30, comma 2 del Codice Etico UniSS?",
       "opzioni": {
-        "A": "Utilizzare il logo Uniss su account, profili o siti web personali in assenza di espressa autorizzazione dell'Università, nonché divulgare immagini e video contenenti spazi e persone relativi all'Università senza autorizzazione (fatte salve cerimonie ed eventi pubblici)",
+        "A": "Presentare istanze al Garante degli studenti",
         "B": "Partecipare alle assemblee studentesche autorizzate",
         "C": "Utilizzare le biblioteche dell'Ateneo durante gli orari di apertura",
-        "D": "Presentare istanze al Garante degli studenti"
+        "D": "Utilizzare il logo Uniss su account, profili o siti web personali in assenza di espressa autorizzazione dell'Università, nonché divulgare immagini e video contenenti spazi e persone relativi all'Università senza autorizzazione (fatte salve cerimonie ed eventi pubblici)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 30, comma 2 elenca i divieti specifici per studenti e frequentanti, tra cui l'uso non autorizzato del logo Uniss, la divulgazione non autorizzata di immagini/video e l'alterazione di atti di carriera."
     },
     {
@@ -9085,12 +9085,12 @@ var BANCA_DATI = {
       "argomento": "Codice Etico e di Comportamento - Rapporti con il pubblico",
       "domanda": "Di quali strumenti alternativi gli interessati devono essere sempre informati dai dipendenti quando chiedono notizie relative ad atti o procedimenti amministrativi (art. 21, comma 11 Codice Etico UniSS)?",
       "opzioni": {
-        "A": "Della possibilità di avvalersi anche dell'Ufficio per le relazioni con il pubblico (URP) o del sito internet istituzionale",
-        "B": "Della possibilità di rivolgersi a un'agenzia investigativa privata",
+        "A": "Della possibilità di rivolgersi a un'agenzia investigativa privata",
+        "B": "Della possibilità di avvalersi anche dell'Ufficio per le relazioni con il pubblico (URP) o del sito internet istituzionale",
         "C": "Della possibilità di consultare i registri contabili cartacei in rettorato",
         "D": "Della possibilità di contattare personalmente il Rettore"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 21, comma 11 del Codice prescrive che i dipendenti informino sempre gli interessati della possibilità di avvalersi anche dell'Ufficio per le relazioni con il pubblico o del sito internet istituzionale."
     },
     {
@@ -9099,12 +9099,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Rendicontazione",
       "domanda": "Da quali relazioni è accompagnato il Bilancio unico d'Ateneo d'esercizio in sede di approvazione (art. 19, comma 4 e art. 45 Regolamento AFC)?",
       "opzioni": {
-        "A": "Dalla Relazione sulla gestione predisposta dal Rettore (di concerto con il Direttore Generale) e dalla relazione del Collegio dei Revisori",
+        "A": "Dalla relazione del CUG",
         "B": "Dalla relazione del Consiglio degli Studenti",
-        "C": "Dalla relazione del CUG",
+        "C": "Dalla Relazione sulla gestione predisposta dal Rettore (di concerto con il Direttore Generale) e dalla relazione del Collegio dei Revisori",
         "D": "Dalla sola nota dell'Economo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Ai sensi dell'art. 19, comma 4 e dell'art. 45 del Regolamento AFC, i documenti contabili consuntivi sono accompagnati dalla Relazione sulla gestione predisposta dal Rettore (di concerto con il DG ex art. 4) e dalla relazione del Collegio dei Revisori."
     },
     {
@@ -9113,12 +9113,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Patrimonio",
       "domanda": "Chi cura la tenuta dell'inventario dei beni immobili presso l'Amministrazione Centrale e ne è consegnatario (artt. 49-50 Regolamento AFC)?",
       "opzioni": {
-        "A": "Il Dirigente dell'Area edilizia e patrimonio",
+        "A": "Il Presidente del Nucleo di Valutazione",
         "B": "Il Responsabile dell'Ufficio Stipendi",
         "C": "Il Direttore della Biblioteca centrale",
-        "D": "Il Presidente del Nucleo di Valutazione"
+        "D": "Il Dirigente dell'Area edilizia e patrimonio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 50, comma 1 del Regolamento AFC individua nel Dirigente dell'Area edilizia e patrimonio il consegnatario dei beni immobili dell'Ateneo."
     },
     {
@@ -9141,12 +9141,12 @@ var BANCA_DATI = {
       "argomento": "Regolamento Amministrazione, Finanza e Contabilità - Ciclo attivo",
       "domanda": "Da cosa può essere rettificato il valore nominale dei crediti iscritti in bilancio ai sensi dell'art. 32, comma 1, lett. b) del Regolamento AFC?",
       "opzioni": {
-        "A": "Tramite il fondo di svalutazione crediti appositamente previsto",
-        "B": "Tramite il fondo di dotazione iniziale",
+        "A": "Tramite il fondo di dotazione iniziale",
+        "B": "Tramite il fondo di svalutazione crediti appositamente previsto",
         "C": "Tramite la cancellazione arbitraria senza delibera",
         "D": "Tramite il fondo di cassa economale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 32, comma 1, lett. b) del Regolamento AFC prevede che i crediti siano esposti al valore nominale ovvero al valore di presunto realizzo, rettificabile tramite l'apposito fondo di svalutazione crediti."
     },
     {
@@ -9155,12 +9155,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 2, comma 9-bis della Legge n. 241/1990, chi individua il soggetto cui attribuire il potere sostitutivo in caso di inerzia nella conclusione del procedimento?",
       "opzioni": {
-        "A": "L'organo di governo di ciascuna amministrazione (in mancanza, il potere sostitutivo si considera attribuito al dirigente generale o, in mancanza, al dirigente preposto all'ufficio o al funzionario di più elevato livello)",
-        "B": "Il Tribunale Amministrativo Regionale",
+        "A": "Il Tribunale Amministrativo Regionale",
+        "B": "L'organo di governo di ciascuna amministrazione (in mancanza, il potere sostitutivo si considera attribuito al dirigente generale o, in mancanza, al dirigente preposto all'ufficio o al funzionario di più elevato livello)",
         "C": "L'istante stesso",
         "D": "L'ANAC"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 2, comma 9-bis della L. 241/1990 disciplina l'individuazione del titolare del potere sostitutivo anti-ritardo da parte dell'organo di governo."
     },
     {
@@ -9169,12 +9169,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 10 della Legge n. 241/1990, quali diritti spettano ai partecipanti al procedimento amministrativo?",
       "opzioni": {
-        "A": "Prendere visione degli atti del procedimento (salvi i limiti ex art. 24) e presentare memorie scritte e documenti, che l'amministrazione ha l'obbligo di valutare ove siano pertinenti all'oggetto del procedimento",
+        "A": "Sospendere il procedimento a tempo indeterminato",
         "B": "Sostituirsi al dirigente nella firma del provvedimento finale",
-        "C": "Sospendere il procedimento a tempo indeterminato",
+        "C": "Prendere visione degli atti del procedimento (salvi i limiti ex art. 24) e presentare memorie scritte e documenti, che l'amministrazione ha l'obbligo di valutare ove siano pertinenti all'oggetto del procedimento",
         "D": "Nominare direttamente la commissione di gara"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 10 della L. 241/1990 sancisce i due diritti partecipativi fondamentali: accesso endoprocedimentale e presentazione di memorie/documenti pertinenti con obbligo di valutazione da parte della PA."
     },
     {
@@ -9183,12 +9183,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 17 della Legge n. 241/1990, qualora per disposizione di legge o regolamento l'adozione di un provvedimento debba essere preceduta dall'acquisizione di valutazioni tecniche di organi o enti appositi e questi non provvedano entro il termine (di norma 90 giorni), il responsabile del procedimento:",
       "opzioni": {
-        "A": "Deve chiedere le suddette valutazioni tecniche ad altri organi dell'amministrazione pubblica o ad enti pubblici che siano dotati di qualificazione e capacità tecnica equipollenti, ovvero ad istituti universitari",
+        "A": "Attende fino a due anni",
         "B": "Archivia definitivamente l'istanza per silenzio-rigetto",
         "C": "Emana il provvedimento senza alcuna valutazione tecnica in ogni materia (inclusa tutela ambientale e salute)",
-        "D": "Attende fino a due anni"
+        "D": "Deve chiedere le suddette valutazioni tecniche ad altri organi dell'amministrazione pubblica o ad enti pubblici che siano dotati di qualificazione e capacità tecnica equipollenti, ovvero ad istituti universitari"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 17 della L. 241/1990 impone al responsabile del procedimento di richiedere le valutazioni tecniche ad altri organi pubblici equipollenti o istituti universitari (salvi i casi di tutela ambientale, paesaggistico-territoriale e della salute)."
     },
     {
@@ -9211,12 +9211,12 @@ var BANCA_DATI = {
       "argomento": "Procedimento amministrativo (L. 241/1990)",
       "domanda": "Ai sensi dell'art. 20 della Legge n. 241/1990, nei procedimenti ad istanza di parte per il rilascio di provvedimenti amministrativi (fatta salva l'applicazione dell'art. 19 sulla SCIA), il silenzio dell'amministrazione competente equivale a provvedimento di accoglimento della domanda (silenzio-assenso) se:",
       "opzioni": {
-        "A": "L'amministrazione non comunica all'interessato, nel termine di cui all'art. 2, il provvedimento di diniego ovvero non indice una conferenza di servizi entro trenta giorni",
-        "B": "L'interessato paga una tassa aggiuntiva di 500 euro",
+        "A": "L'interessato paga una tassa aggiuntiva di 500 euro",
+        "B": "L'amministrazione non comunica all'interessato, nel termine di cui all'art. 2, il provvedimento di diniego ovvero non indice una conferenza di servizi entro trenta giorni",
         "C": "Si tratta di atti in materia di pubblica sicurezza o immigrazione",
         "D": "Il silenzio si protrae per almeno un anno"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 20, comma 1 della L. 241/1990 generalizza il silenzio-assenso nei procedimenti ad istanza di parte (fatte salve le eccezioni del comma 4 su ambiente, patrimonio culturale, difesa, pubblica sicurezza, immigrazione, salute)."
     },
     {
@@ -9225,12 +9225,12 @@ var BANCA_DATI = {
       "argomento": "Contratti pubblici (D.Lgs. 36/2023)",
       "domanda": "Ai sensi dell'art. 18, comma 1 del D.Lgs. 36/2023, come avviene la stipula del contratto in caso di procedura negoziata oppure per gli affidamenti diretti?",
       "opzioni": {
-        "A": "Mediante corrispondenza secondo l'uso commerciale, consistente in un apposito scambio di lettere, anche tramite posta elettronica certificata o sistemi elettronici di recapito certificato qualificato",
+        "A": "Mediante stretta di mano verbale tra il RUP e il fornitore",
         "B": "Esclusivamente per atto pubblico notarile",
-        "C": "Mediante stretta di mano verbale tra il RUP e il fornitore",
+        "C": "Mediante corrispondenza secondo l'uso commerciale, consistente in un apposito scambio di lettere, anche tramite posta elettronica certificata o sistemi elettronici di recapito certificato qualificato",
         "D": "Tramite pubblicazione sulla Gazzetta Ufficiale dell'Unione Europea"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 18, comma 1 del D.Lgs. 36/2023 consente per gli affidamenti diretti e le procedure negoziate la stipula semplificata mediante scambio di lettere commerciali via PEC o recapito certificato."
     },
     {
@@ -9239,12 +9239,12 @@ var BANCA_DATI = {
       "argomento": "Contratti pubblici (D.Lgs. 36/2023)",
       "domanda": "Ai sensi dell'art. 53, comma 1 del D.Lgs. 36/2023, nelle procedure di affidamento sotto-soglia di cui all'art. 50, comma 1 (inclusi gli affidamenti diretti), la stazione appaltante richiede le garanzie provvisorie di cui all'art. 106?",
       "opzioni": {
-        "A": "No, la stazione appaltante non richiede le garanzie provvisorie (salvo che nelle procedure negoziate ricorrano particolari esigenze che ne giustifichino la richiesta)",
+        "A": "Sì, sotto forma di deposito in contanti presso l'Economo",
         "B": "Sì, sempre nella misura del 10% dell'importo",
         "C": "Sì, solo per importi inferiori a 1.000 euro",
-        "D": "Sì, sotto forma di deposito in contanti presso l'Economo"
+        "D": "No, la stazione appaltante non richiede le garanzie provvisorie (salvo che nelle procedure negoziate ricorrano particolari esigenze che ne giustifichino la richiesta)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 53, comma 1 del D.Lgs. 36/2023 esclude di regola la richiesta della garanzia provvisoria negli affidamenti sotto-soglia per semplificare l'accesso delle PMI."
     },
     {
@@ -9267,12 +9267,12 @@ var BANCA_DATI = {
       "argomento": "Documentazione amministrativa (D.P.R. 445/2000)",
       "domanda": "Ai sensi dell'art. 41 del D.P.R. 445/2000, quale validità temporale hanno i certificati rilasciati dalle pubbliche amministrazioni attestanti stati, qualità personali e fatti non soggetti a modificazioni?",
       "opzioni": {
-        "A": "Validità illimitata (mentre le restanti certificazioni hanno validità di sei mesi dalla data di rilascio se disposizioni di legge o regolamentari non prevedono una validità superiore)",
-        "B": "Validità di trenta giorni in ogni caso",
+        "A": "Validità di trenta giorni in ogni caso",
+        "B": "Validità illimitata (mentre le restanti certificazioni hanno validità di sei mesi dalla data di rilascio se disposizioni di legge o regolamentari non prevedono una validità superiore)",
         "C": "Validità di un anno",
         "D": "Validità di dieci anni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 41 del D.P.R. 445/2000 stabilisce la validità illimitata per i certificati relativi a fatti non soggetti a modificazioni e di sei mesi per gli altri certificati."
     },
     {
@@ -9281,12 +9281,12 @@ var BANCA_DATI = {
       "argomento": "Documentazione amministrativa (D.P.R. 445/2000)",
       "domanda": "Ai sensi dell'art. 71 del D.P.R. 445/2000, le amministrazioni procedenti sono tenute ad effettuare idonei controlli sulle dichiarazioni sostitutive:",
       "opzioni": {
-        "A": "Anche a campione in misura proporzionale al rischio e all'entità del beneficio, e nei casi di ragionevole dubbio sulla veridicità delle dichiarazioni",
+        "A": "Esclusivamente previa autorizzazione del Giudice penale",
         "B": "Mai, poiché l'autocertificazione impedisce ogni controllo successivo",
-        "C": "Esclusivamente previa autorizzazione del Giudice penale",
+        "C": "Anche a campione in misura proporzionale al rischio e all'entità del beneficio, e nei casi di ragionevole dubbio sulla veridicità delle dichiarazioni",
         "D": "Solo dopo dieci anni dall'assunzione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 71 del D.P.R. 445/2000 (richiamato anche dall'art. 6 del bando UniSS) impone controlli a campione e ogni qualvolta sorgano fondati dubbi sulla veridicità delle dichiarazioni sostitutive."
     },
     {
@@ -9309,12 +9309,12 @@ var BANCA_DATI = {
       "argomento": "Protezione dei dati personali (GDPR)",
       "domanda": "Ai sensi dell'art. 28 del GDPR, come viene definito il soggetto (persona fisica o giuridica, autorità pubblica, servizio o altro organismo) che tratta dati personali per conto del Titolare del trattamento (es. CINECA per la gestione della piattaforma PICA o Esse3)?",
       "opzioni": {
-        "A": "Responsabile del trattamento (Data Processor)",
-        "B": "Interessato",
+        "A": "Interessato",
+        "B": "Responsabile del trattamento (Data Processor)",
         "C": "Autorità di controllo",
         "D": "Controinteressato"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi dell'art. 4, n. 8 e dell'art. 28 del GDPR, il soggetto esterno che tratta dati personali per conto del Titolare (l'Università) è designato quale Responsabile del trattamento mediante contratto o altro atto giuridico vincolante."
     },
     {
@@ -9323,12 +9323,12 @@ var BANCA_DATI = {
       "argomento": "Trasparenza amministrativa (D.Lgs. 33/2013)",
       "domanda": "Ai sensi dell'art. 5, comma 6 del D.Lgs. 33/2013, entro quale termine il procedimento di accesso civico deve concludersi con provvedimento espresso e motivato?",
       "opzioni": {
-        "A": "Entro trenta giorni dalla presentazione dell'istanza",
+        "A": "Entro sessanta giorni",
         "B": "Entro dieci giorni",
-        "C": "Entro sessanta giorni",
+        "C": "Entro trenta giorni dalla presentazione dell'istanza",
         "D": "Entro novanta giorni"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 5, comma 6 del D.Lgs. 33/2013 stabilisce che il procedimento di accesso civico deve concludersi con provvedimento espresso e motivato nel termine di trenta giorni dalla presentazione dell'istanza."
     },
     {
@@ -9337,12 +9337,12 @@ var BANCA_DATI = {
       "argomento": "Trasparenza amministrativa (D.Lgs. 33/2013)",
       "domanda": "Ai sensi dell'art. 5, comma 4 del D.Lgs. 33/2013, il rilascio di dati o documenti in formato elettronico o cartaceo a seguito di istanza di accesso civico è:",
       "opzioni": {
-        "A": "Gratuito, salvo il rimborso del costo effettivamente sostenuto e documentato dall'amministrazione per la riproduzione su supporti materiali",
+        "A": "Gratuito solo per i dipendenti pubblici",
         "B": "Soggetto al pagamento di un diritto fisso di 50 euro",
         "C": "Consentito solo previa marca da bollo da 16 euro",
-        "D": "Gratuito solo per i dipendenti pubblici"
+        "D": "Gratuito, salvo il rimborso del costo effettivamente sostenuto e documentato dall'amministrazione per la riproduzione su supporti materiali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 5, comma 4 del D.Lgs. 33/2013 sancisce la gratuità del rilascio dei dati/documenti, fatto salvo il solo rimborso dei costi vivi di riproduzione materiale."
     },
     {
@@ -9351,12 +9351,12 @@ var BANCA_DATI = {
       "argomento": "Pubblico impiego (D.Lgs. 165/2001)",
       "domanda": "Ai sensi dell'art. 54-bis / D.Lgs. 24/2023, quale misura ritorsiva adottata nei confronti del dipendente che ha segnalato un illecito (whistleblower) è sanzionata con la nullità?",
       "opzioni": {
-        "A": "Qualsiasi atto ritorsivo, compreso il licenziamento, il mutamento di mansioni, il trasferimento o qualsiasi altra misura organizzativa avente effetti negativi sulle condizioni di lavoro determinata dalla segnalazione",
+        "A": "Solo la sospensione dallo stipendio",
         "B": "Solo il licenziamento disciplinare",
         "C": "Nessuna misura, poiché il dirigente può sempre trasferire il segnalante",
-        "D": "Solo la sospensione dallo stipendio"
+        "D": "Qualsiasi atto ritorsivo, compreso il licenziamento, il mutamento di mansioni, il trasferimento o qualsiasi altra misura organizzativa avente effetti negativi sulle condizioni di lavoro determinata dalla segnalazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La normativa sul whistleblowing (D.Lgs. 24/2023 e art. 18 Codice Etico UniSS) dichiara nulli tutti gli atti ritorsivi adottati in ragione della segnalazione."
     },
     {
@@ -9379,12 +9379,12 @@ var BANCA_DATI = {
       "argomento": "Codice dell'Amministrazione Digitale (D.Lgs. 82/2005)",
       "domanda": "Che cos'è il 'domicilio digitale' disciplinato dal Codice dell'Amministrazione Digitale (D.Lgs. 82/2005)?",
       "opzioni": {
-        "A": "Un indirizzo elettronico eletto presso un servizio di posta elettronica certificata (PEC) o un servizio elettronico di recapito certificato qualificato valido ai fini delle comunicazioni elettroniche aventi valore legale",
+        "A": "Il profilo Instagram o LinkedIn del cittadino",
         "B": "L'indirizzo di residenza anagrafica cartacea",
-        "C": "Il profilo Instagram o LinkedIn del cittadino",
+        "C": "Un indirizzo elettronico eletto presso un servizio di posta elettronica certificata (PEC) o un servizio elettronico di recapito certificato qualificato valido ai fini delle comunicazioni elettroniche aventi valore legale",
         "D": "L'indirizzo IP del computer dell'ufficio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "L'art. 1, comma 1, lett. n-ter) del CAD definisce il domicilio digitale come l'indirizzo PEC o servizio qualificato eletto per le comunicazioni con valore legale (es. registro INAD per i cittadini e IPA per le PA)."
     },
     {
@@ -9393,12 +9393,12 @@ var BANCA_DATI = {
       "argomento": "Syllabus Competenze digitali PA - Conservazione",
       "domanda": "Qual è il formato di file standard prescritto dalla normativa archivistica italiana per la conservazione digitale a lungo termine dei documenti informatici nelle pubbliche amministrazioni?",
       "opzioni": {
-        "A": "PDF/A (ISO 19005)",
+        "A": "EXE",
         "B": "MP4",
         "C": "JPEG non compresso",
-        "D": "EXE"
+        "D": "PDF/A (ISO 19005)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il formato PDF/A è lo standard internazionale (ISO 19005) adottato dalle Linee Guida AgID per garantire l'immodificabilità e la leggibilità nel tempo dei documenti informatici conservati."
     },
     {
@@ -9422,11 +9422,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 8, 59, 12, 57, 16, 55, ?",
       "opzioni": {
         "A": "18",
-        "B": "53",
+        "B": "20",
         "C": "24",
-        "D": "20"
+        "D": "53"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (8, 12, 16, 20), mentre i termini in posizione pari diminuiscono di -2 (59, 57, 55). Il termine mancante è in posizione dispari: 16 + 4 = 20."
     },
     {
@@ -9436,11 +9436,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 11, 60, 15, 58, 19, 56, ?",
       "opzioni": {
         "A": "27",
-        "B": "23",
-        "C": "54",
+        "B": "54",
+        "C": "23",
         "D": "21"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (11, 15, 19, 23), mentre i termini in posizione pari diminuiscono di -2 (60, 58, 56). Il termine mancante è in posizione dispari: 19 + 4 = 23."
     },
     {
@@ -9450,11 +9450,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 6, 72, 10, 66, 14, 60, ?",
       "opzioni": {
         "A": "16",
-        "B": "18",
+        "B": "54",
         "C": "22",
-        "D": "54"
+        "D": "18"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (6, 10, 14, 18), mentre i termini in posizione pari diminuiscono di -6 (72, 66, 60). Il termine mancante è in posizione dispari: 14 + 4 = 18."
     },
     {
@@ -9463,12 +9463,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 19, 67, 22, 61, 25, 55, ?",
       "opzioni": {
-        "A": "26",
-        "B": "28",
+        "A": "28",
+        "B": "26",
         "C": "31",
         "D": "49"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +3 (19, 22, 25, 28), mentre i termini in posizione pari diminuiscono di -6 (67, 61, 55). Il termine mancante è in posizione dispari: 25 + 3 = 28."
     },
     {
@@ -9478,11 +9478,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 6, 69, 8, 67, 10, 65, ?",
       "opzioni": {
         "A": "63",
-        "B": "14",
+        "B": "12",
         "C": "10",
-        "D": "12"
+        "D": "14"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +2 (6, 8, 10, 12), mentre i termini in posizione pari diminuiscono di -2 (69, 67, 65). Il termine mancante è in posizione dispari: 10 + 2 = 12."
     },
     {
@@ -9492,11 +9492,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 18, 37, 21, 31, 24, 25, ?",
       "opzioni": {
         "A": "19",
-        "B": "27",
-        "C": "25",
+        "B": "25",
+        "C": "27",
         "D": "30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +3 (18, 21, 24, 27), mentre i termini in posizione pari diminuiscono di -6 (37, 31, 25). Il termine mancante è in posizione dispari: 24 + 3 = 27."
     },
     {
@@ -9505,12 +9505,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 11, 34, 15, 32, 19, 30, ?",
       "opzioni": {
-        "A": "23",
+        "A": "28",
         "B": "27",
         "C": "21",
-        "D": "28"
+        "D": "23"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (11, 15, 19, 23), mentre i termini in posizione pari diminuiscono di -2 (34, 32, 30). Il termine mancante è in posizione dispari: 19 + 4 = 23."
     },
     {
@@ -9519,12 +9519,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 6, 61, 10, 56, 14, 51, ?",
       "opzioni": {
-        "A": "46",
+        "A": "18",
         "B": "16",
         "C": "22",
-        "D": "18"
+        "D": "46"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (6, 10, 14, 18), mentre i termini in posizione pari diminuiscono di -5 (61, 56, 51). Il termine mancante è in posizione dispari: 14 + 4 = 18."
     },
     {
@@ -9534,11 +9534,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 14, 62, 20, 58, 26, 54, ?",
       "opzioni": {
         "A": "38",
-        "B": "50",
-        "C": "32",
+        "B": "32",
+        "C": "50",
         "D": "30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +6 (14, 20, 26, 32), mentre i termini in posizione pari diminuiscono di -4 (62, 58, 54). Il termine mancante è in posizione dispari: 26 + 6 = 32."
     },
     {
@@ -9562,11 +9562,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 13, 72, 20, 67, 27, 62, ?",
       "opzioni": {
         "A": "57",
-        "B": "34",
+        "B": "32",
         "C": "41",
-        "D": "32"
+        "D": "34"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +7 (13, 20, 27, 34), mentre i termini in posizione pari diminuiscono di -5 (72, 67, 62). Il termine mancante è in posizione dispari: 27 + 7 = 34."
     },
     {
@@ -9575,12 +9575,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 9, 46, 13, 43, 17, 40, ?",
       "opzioni": {
-        "A": "19",
-        "B": "21",
+        "A": "21",
+        "B": "19",
         "C": "25",
         "D": "37"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (9, 13, 17, 21), mentre i termini in posizione pari diminuiscono di -3 (46, 43, 40). Il termine mancante è in posizione dispari: 17 + 4 = 21."
     },
     {
@@ -9590,11 +9590,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 18, 80, 22, 77, 26, 74, ?",
       "opzioni": {
         "A": "28",
-        "B": "71",
-        "C": "30",
+        "B": "30",
+        "C": "71",
         "D": "34"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (18, 22, 26, 30), mentre i termini in posizione pari diminuiscono di -3 (80, 77, 74). Il termine mancante è in posizione dispari: 26 + 4 = 30."
     },
     {
@@ -9604,11 +9604,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 3, 50, 6, 45, 9, 40, ?",
       "opzioni": {
         "A": "10",
-        "B": "12",
-        "C": "35",
+        "B": "35",
+        "C": "12",
         "D": "15"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +3 (3, 6, 9, 12), mentre i termini in posizione pari diminuiscono di -5 (50, 45, 40). Il termine mancante è in posizione dispari: 9 + 3 = 12."
     },
     {
@@ -9617,12 +9617,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 15, 40, 19, 34, 23, 28, ?",
       "opzioni": {
-        "A": "27",
+        "A": "22",
         "B": "31",
         "C": "25",
-        "D": "22"
+        "D": "27"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (15, 19, 23, 27), mentre i termini in posizione pari diminuiscono di -6 (40, 34, 28). Il termine mancante è in posizione dispari: 23 + 4 = 27."
     },
     {
@@ -9631,12 +9631,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 4, 65, 9, 62, 14, 59, ?",
       "opzioni": {
-        "A": "17",
+        "A": "19",
         "B": "24",
-        "C": "19",
+        "C": "17",
         "D": "56"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +5 (4, 9, 14, 19), mentre i termini in posizione pari diminuiscono di -3 (65, 62, 59). Il termine mancante è in posizione dispari: 14 + 5 = 19."
     },
     {
@@ -9645,12 +9645,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 17, 58, 21, 53, 25, 48, ?",
       "opzioni": {
-        "A": "29",
-        "B": "43",
+        "A": "43",
+        "B": "29",
         "C": "33",
         "D": "27"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (17, 21, 25, 29), mentre i termini in posizione pari diminuiscono di -5 (58, 53, 48). Il termine mancante è in posizione dispari: 25 + 4 = 29."
     },
     {
@@ -9660,11 +9660,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 3, 50, 6, 45, 9, 40, ?",
       "opzioni": {
         "A": "10",
-        "B": "12",
-        "C": "15",
+        "B": "15",
+        "C": "12",
         "D": "35"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +3 (3, 6, 9, 12), mentre i termini in posizione pari diminuiscono di -5 (50, 45, 40). Il termine mancante è in posizione dispari: 9 + 3 = 12."
     },
     {
@@ -9673,12 +9673,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 6, 31, 8, 28, 10, 25, ?",
       "opzioni": {
-        "A": "12",
+        "A": "14",
         "B": "10",
         "C": "22",
-        "D": "14"
+        "D": "12"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +2 (6, 8, 10, 12), mentre i termini in posizione pari diminuiscono di -3 (31, 28, 25). Il termine mancante è in posizione dispari: 10 + 2 = 12."
     },
     {
@@ -9702,11 +9702,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 14, 61, 20, 56, 26, 51, ?",
       "opzioni": {
         "A": "46",
-        "B": "30",
+        "B": "32",
         "C": "38",
-        "D": "32"
+        "D": "30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +6 (14, 20, 26, 32), mentre i termini in posizione pari diminuiscono di -5 (61, 56, 51). Il termine mancante è in posizione dispari: 26 + 6 = 32."
     },
     {
@@ -9717,10 +9717,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "43",
         "B": "35",
-        "C": "29",
-        "D": "37"
+        "C": "37",
+        "D": "29"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +6 (19, 25, 31, 37), mentre i termini in posizione pari diminuiscono di -2 (35, 33, 31). Il termine mancante è in posizione dispari: 31 + 6 = 37."
     },
     {
@@ -9730,11 +9730,11 @@ var BANCA_DATI = {
       "domanda": "Individua il numero che completa correttamente la serie alternata: 10, 72, 13, 68, 16, 64, ?",
       "opzioni": {
         "A": "22",
-        "B": "19",
+        "B": "60",
         "C": "17",
-        "D": "60"
+        "D": "19"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +3 (10, 13, 16, 19), mentre i termini in posizione pari diminuiscono di -4 (72, 68, 64). Il termine mancante è in posizione dispari: 16 + 3 = 19."
     },
     {
@@ -9743,12 +9743,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Individua il numero che completa correttamente la serie alternata: 2, 68, 6, 63, 10, 58, ?",
       "opzioni": {
-        "A": "18",
+        "A": "14",
         "B": "53",
-        "C": "14",
+        "C": "18",
         "D": "12"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Sono due sottoserie alternate: i termini in posizione dispari aumentano di +4 (2, 6, 10, 14), mentre i termini in posizione pari diminuiscono di -5 (68, 63, 58). Il termine mancante è in posizione dispari: 10 + 4 = 14."
     },
     {
@@ -9773,10 +9773,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "35",
         "B": "41",
-        "C": "37",
-        "D": "39"
+        "C": "39",
+        "D": "37"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +9, prossimo incremento +11). Quindi: 28 + 11 = 39."
     },
     {
@@ -9785,12 +9785,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 2, 4, 8, 14, 22, ?",
       "opzioni": {
-        "A": "32",
+        "A": "30",
         "B": "28",
         "C": "34",
-        "D": "30"
+        "D": "32"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +8, prossimo incremento +10). Quindi: 22 + 10 = 32."
     },
     {
@@ -9799,12 +9799,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 4, 6, 9, 13, 18, ?",
       "opzioni": {
-        "A": "22",
+        "A": "24",
         "B": "25",
         "C": "23",
-        "D": "24"
+        "D": "22"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +5, prossimo incremento +6). Quindi: 18 + 6 = 24."
     },
     {
@@ -9814,11 +9814,11 @@ var BANCA_DATI = {
       "domanda": "Quale numero completa la seguente successione: 1, 2, 4, 7, 11, ?",
       "opzioni": {
         "A": "15",
-        "B": "14",
+        "B": "16",
         "C": "17",
-        "D": "16"
+        "D": "14"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +4, prossimo incremento +5). Quindi: 11 + 5 = 16."
     },
     {
@@ -9827,12 +9827,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 14, 18, 23, 29, 36, ?",
       "opzioni": {
-        "A": "44",
+        "A": "42",
         "B": "43",
-        "C": "42",
+        "C": "44",
         "D": "45"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +7, prossimo incremento +8). Quindi: 36 + 8 = 44."
     },
     {
@@ -9841,12 +9841,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 5, 8, 13, 20, 29, ?",
       "opzioni": {
-        "A": "40",
+        "A": "38",
         "B": "36",
         "C": "42",
-        "D": "38"
+        "D": "40"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +9, prossimo incremento +11). Quindi: 29 + 11 = 40."
     },
     {
@@ -9869,12 +9869,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 13, 16, 20, 25, 31, ?",
       "opzioni": {
-        "A": "38",
-        "B": "36",
+        "A": "36",
+        "B": "38",
         "C": "39",
         "D": "37"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +6, prossimo incremento +7). Quindi: 31 + 7 = 38."
     },
     {
@@ -9911,12 +9911,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 12, 15, 19, 24, 30, ?",
       "opzioni": {
-        "A": "36",
-        "B": "37",
+        "A": "37",
+        "B": "36",
         "C": "38",
         "D": "35"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +6, prossimo incremento +7). Quindi: 30 + 7 = 37."
     },
     {
@@ -9925,12 +9925,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 2, 3, 5, 8, 12, ?",
       "opzioni": {
-        "A": "17",
-        "B": "18",
+        "A": "18",
+        "B": "17",
         "C": "16",
         "D": "15"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +4, prossimo incremento +5). Quindi: 12 + 5 = 17."
     },
     {
@@ -9941,10 +9941,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "52",
         "B": "58",
-        "C": "49",
-        "D": "55"
+        "C": "55",
+        "D": "49"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +3 ad ogni passaggio (ultimo incremento +11, prossimo incremento +14). Quindi: 41 + 14 = 55."
     },
     {
@@ -9953,12 +9953,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 2, 5, 11, 20, 32, ?",
       "opzioni": {
-        "A": "47",
+        "A": "44",
         "B": "50",
         "C": "41",
-        "D": "44"
+        "D": "47"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +3 ad ogni passaggio (ultimo incremento +12, prossimo incremento +15). Quindi: 32 + 15 = 47."
     },
     {
@@ -9967,12 +9967,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 9, 13, 20, 30, 43, ?",
       "opzioni": {
-        "A": "56",
-        "B": "59",
+        "A": "59",
+        "B": "56",
         "C": "53",
         "D": "62"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +3 ad ogni passaggio (ultimo incremento +13, prossimo incremento +16). Quindi: 43 + 16 = 59."
     },
     {
@@ -9982,11 +9982,11 @@ var BANCA_DATI = {
       "domanda": "Quale numero completa la seguente successione: 14, 15, 18, 23, 30, ?",
       "opzioni": {
         "A": "41",
-        "B": "35",
-        "C": "39",
+        "B": "39",
+        "C": "35",
         "D": "37"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +7, prossimo incremento +9). Quindi: 30 + 9 = 39."
     },
     {
@@ -9997,10 +9997,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "30",
         "B": "24",
-        "C": "26",
-        "D": "28"
+        "C": "28",
+        "D": "26"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +7, prossimo incremento +9). Quindi: 19 + 9 = 28."
     },
     {
@@ -10009,12 +10009,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 4, 8, 13, 19, 26, ?",
       "opzioni": {
-        "A": "34",
+        "A": "33",
         "B": "35",
         "C": "32",
-        "D": "33"
+        "D": "34"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +1 ad ogni passaggio (ultimo incremento +7, prossimo incremento +8). Quindi: 26 + 8 = 34."
     },
     {
@@ -10023,12 +10023,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Quale numero completa la seguente successione: 8, 9, 12, 17, 24, ?",
       "opzioni": {
-        "A": "29",
+        "A": "33",
         "B": "35",
-        "C": "33",
+        "C": "29",
         "D": "31"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "La differenza tra termini consecutivi aumenta costantemente di +2 ad ogni passaggio (ultimo incremento +7, prossimo incremento +9). Quindi: 24 + 9 = 33."
     },
     {
@@ -10038,11 +10038,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 132. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "118 domande",
-        "B": "140 domande",
-        "C": "120 domande",
+        "B": "120 domande",
+        "C": "140 domande",
         "D": "100 domande"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (132) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 132 / 1.10 = 120 domande."
     },
     {
@@ -10052,11 +10052,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 1200. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "780 domande",
-        "B": "800 domande",
-        "C": "600 domande",
+        "B": "600 domande",
+        "C": "800 domande",
         "D": "820 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Se il valore finale (1200) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 1200 / 1.50 = 800 domande."
     },
     {
@@ -10065,12 +10065,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 20% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 288. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "240 domande",
+        "A": "260 domande",
         "B": "230 domande",
         "C": "220 domande",
-        "D": "260 domande"
+        "D": "240 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (288) corrisponde al 120% del valore iniziale, allora il valore iniziale è: 288 / 1.20 = 240 domande."
     },
     {
@@ -10079,12 +10079,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 220. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "198 domande",
-        "B": "200 domande",
+        "A": "200 domande",
+        "B": "198 domande",
         "C": "180 domande",
         "D": "220 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Se il valore finale (220) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 220 / 1.10 = 200 domande."
     },
     {
@@ -10093,12 +10093,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 20% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 240. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "200 domande",
-        "B": "220 domande",
+        "A": "220 domande",
+        "B": "200 domande",
         "C": "192 domande",
         "D": "180 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (240) corrisponde al 120% del valore iniziale, allora il valore iniziale è: 240 / 1.20 = 200 domande."
     },
     {
@@ -10108,11 +10108,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 20% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 144. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "115 domande",
-        "B": "120 domande",
-        "C": "100 domande",
+        "B": "100 domande",
+        "C": "120 domande",
         "D": "140 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Se il valore finale (144) corrisponde al 120% del valore iniziale, allora il valore iniziale è: 144 / 1.20 = 120 domande."
     },
     {
@@ -10122,11 +10122,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 1200. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "820 domande",
-        "B": "800 domande",
+        "B": "780 domande",
         "C": "600 domande",
-        "D": "780 domande"
+        "D": "800 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (1200) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 1200 / 1.50 = 800 domande."
     },
     {
@@ -10149,12 +10149,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 120. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "80 domande",
-        "B": "95 domande",
+        "A": "95 domande",
+        "B": "80 domande",
         "C": "110 domande",
         "D": "65 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (120) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 120 / 1.50 = 80 domande."
     },
     {
@@ -10177,12 +10177,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 25% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 1000. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "800 domande",
+        "A": "780 domande",
         "B": "750 domande",
         "C": "820 domande",
-        "D": "780 domande"
+        "D": "800 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (1000) corrisponde al 125% del valore iniziale, allora il valore iniziale è: 1000 / 1.25 = 800 domande."
     },
     {
@@ -10191,12 +10191,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 600. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "300 domande",
+        "A": "400 domande",
         "B": "380 domande",
         "C": "420 domande",
-        "D": "400 domande"
+        "D": "300 domande"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Se il valore finale (600) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 600 / 1.50 = 400 domande."
     },
     {
@@ -10206,11 +10206,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 176. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "140 domande",
-        "B": "158 domande",
-        "C": "160 domande",
+        "B": "160 domande",
+        "C": "158 domande",
         "D": "180 domande"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (176) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 176 / 1.10 = 160 domande."
     },
     {
@@ -10219,12 +10219,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 25% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 250. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "200 domande",
+        "A": "187 domande",
         "B": "180 domande",
-        "C": "187 domande",
+        "C": "200 domande",
         "D": "220 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Se il valore finale (250) corrisponde al 125% del valore iniziale, allora il valore iniziale è: 250 / 1.25 = 200 domande."
     },
     {
@@ -10234,11 +10234,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 132. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "100 domande",
-        "B": "120 domande",
+        "B": "118 domande",
         "C": "140 domande",
-        "D": "118 domande"
+        "D": "120 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (132) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 132 / 1.10 = 120 domande."
     },
     {
@@ -10247,12 +10247,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 240. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "120 domande",
+        "A": "160 domande",
         "B": "180 domande",
         "C": "140 domande",
-        "D": "160 domande"
+        "D": "120 domande"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Se il valore finale (240) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 240 / 1.50 = 160 domande."
     },
     {
@@ -10262,11 +10262,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 900. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "620 domande",
-        "B": "580 domande",
-        "C": "600 domande",
+        "B": "600 domande",
+        "C": "580 domande",
         "D": "450 domande"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (900) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 900 / 1.50 = 600 domande."
     },
     {
@@ -10277,10 +10277,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "225 domande",
         "B": "260 domande",
-        "C": "220 domande",
-        "D": "240 domande"
+        "C": "240 domande",
+        "D": "220 domande"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Se il valore finale (300) corrisponde al 125% del valore iniziale, allora il valore iniziale è: 300 / 1.25 = 240 domande."
     },
     {
@@ -10290,11 +10290,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 50% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 450. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "225 domande",
-        "B": "300 domande",
+        "B": "320 domande",
         "C": "280 domande",
-        "D": "320 domande"
+        "D": "300 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (450) corrisponde al 150% del valore iniziale, allora il valore iniziale è: 450 / 1.50 = 300 domande."
     },
     {
@@ -10303,12 +10303,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 88. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "100 domande",
+        "A": "80 domande",
         "B": "60 domande",
-        "C": "80 domande",
+        "C": "100 domande",
         "D": "79 domande"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Se il valore finale (88) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 88 / 1.10 = 80 domande."
     },
     {
@@ -10317,12 +10317,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 176. Quante erano le domande nell'anno precedente?",
       "opzioni": {
-        "A": "160 domande",
-        "B": "140 domande",
+        "A": "140 domande",
+        "B": "160 domande",
         "C": "158 domande",
         "D": "180 domande"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Se il valore finale (176) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 176 / 1.10 = 160 domande."
     },
     {
@@ -10333,10 +10333,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "768 domande",
         "B": "820 domande",
-        "C": "780 domande",
-        "D": "800 domande"
+        "C": "800 domande",
+        "D": "780 domande"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Se il valore finale (960) corrisponde al 120% del valore iniziale, allora il valore iniziale è: 960 / 1.20 = 800 domande."
     },
     {
@@ -10346,11 +10346,11 @@ var BANCA_DATI = {
       "domanda": "A seguito di un incremento del 10% rispetto all'anno precedente, le domande pervenute per una selezione pubblica sono diventate 660. Quante erano le domande nell'anno precedente?",
       "opzioni": {
         "A": "594 domande",
-        "B": "600 domande",
+        "B": "620 domande",
         "C": "580 domande",
-        "D": "620 domande"
+        "D": "600 domande"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Se il valore finale (660) corrisponde al 110% del valore iniziale, allora il valore iniziale è: 660 / 1.10 = 600 domande."
     },
     {
@@ -10388,11 +10388,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 28/30, 25/30, 21/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
         "A": "24/30",
-        "B": "26/30",
-        "C": "28/30",
+        "B": "28/30",
+        "C": "26/30",
         "D": "25/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 25 su 4 prove, la somma totale deve essere 25 × 4 = 100. Sottraendo i voti già ottenuti (74), serve 100 - 74 = 26/30."
     },
     {
@@ -10403,10 +10403,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "27/30",
         "B": "30/30",
-        "C": "29/30",
-        "D": "26/30"
+        "C": "26/30",
+        "D": "29/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (49), serve 78 - 49 = 29/30."
     },
     {
@@ -10415,12 +10415,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 22/30, 24/30, 26/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 24/30?",
       "opzioni": {
-        "A": "25/30",
+        "A": "24/30",
         "B": "23/30",
-        "C": "24/30",
+        "C": "25/30",
         "D": "21/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 24 su 4 prove, la somma totale deve essere 24 × 4 = 96. Sottraendo i voti già ottenuti (72), serve 96 - 72 = 24/30."
     },
     {
@@ -10429,12 +10429,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 26/30, 27/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
-        "A": "25/30",
-        "B": "27/30",
+        "A": "27/30",
+        "B": "25/30",
         "C": "23/30",
         "D": "26/30"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (53), serve 78 - 53 = 25/30."
     },
     {
@@ -10444,11 +10444,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 26/30, 25/30, 27/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
         "A": "24/30",
-        "B": "22/30",
-        "C": "25/30",
+        "B": "25/30",
+        "C": "22/30",
         "D": "20/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 25 su 4 prove, la somma totale deve essere 25 × 4 = 100. Sottraendo i voti già ottenuti (78), serve 100 - 78 = 22/30."
     },
     {
@@ -10459,10 +10459,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "27/30",
         "B": "30/30",
-        "C": "29/30",
-        "D": "26/30"
+        "C": "26/30",
+        "D": "29/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (75), serve 104 - 75 = 29/30."
     },
     {
@@ -10471,12 +10471,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 24/30, 25/30, 26/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
-        "A": "27/30",
+        "A": "29/30",
         "B": "26/30",
-        "C": "29/30",
+        "C": "27/30",
         "D": "30/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (75), serve 104 - 75 = 29/30."
     },
     {
@@ -10486,11 +10486,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 24/30, 24/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 24/30?",
       "opzioni": {
         "A": "25/30",
-        "B": "23/30",
+        "B": "24/30",
         "C": "21/30",
-        "D": "24/30"
+        "D": "23/30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Per avere una media di 24 su 3 prove, la somma totale deve essere 24 × 3 = 72. Sottraendo i voti già ottenuti (48), serve 72 - 48 = 24/30."
     },
     {
@@ -10501,10 +10501,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "26/30",
         "B": "29/30",
-        "C": "25/30",
-        "D": "27/30"
+        "C": "27/30",
+        "D": "25/30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (51), serve 78 - 51 = 27/30."
     },
     {
@@ -10514,11 +10514,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 26/30, 28/30, 25/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 27/30?",
       "opzioni": {
         "A": "28/30",
-        "B": "29/30",
+        "B": "26/30",
         "C": "30/30",
-        "D": "26/30"
+        "D": "29/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Per avere una media di 27 su 4 prove, la somma totale deve essere 27 × 4 = 108. Sottraendo i voti già ottenuti (79), serve 108 - 79 = 29/30."
     },
     {
@@ -10527,12 +10527,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 23/30, 25/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
-        "A": "28/30",
-        "B": "27/30",
+        "A": "27/30",
+        "B": "28/30",
         "C": "24/30",
         "D": "26/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 25 su 3 prove, la somma totale deve essere 25 × 3 = 75. Sottraendo i voti già ottenuti (48), serve 75 - 48 = 27/30."
     },
     {
@@ -10542,11 +10542,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 27/30, 25/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
         "A": "25/30",
-        "B": "23/30",
-        "C": "26/30",
+        "B": "26/30",
+        "C": "23/30",
         "D": "27/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (52), serve 78 - 52 = 26/30."
     },
     {
@@ -10556,11 +10556,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 23/30, 26/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
         "A": "30/30",
-        "B": "29/30",
-        "C": "26/30",
+        "B": "26/30",
+        "C": "29/30",
         "D": "27/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (49), serve 78 - 49 = 29/30."
     },
     {
@@ -10571,10 +10571,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "21/30",
         "B": "25/30",
-        "C": "23/30",
-        "D": "24/30"
+        "C": "24/30",
+        "D": "23/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Per avere una media di 24 su 4 prove, la somma totale deve essere 24 × 4 = 96. Sottraendo i voti già ottenuti (73), serve 96 - 73 = 23/30."
     },
     {
@@ -10583,12 +10583,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 26/30, 22/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
-        "A": "26/30",
+        "A": "27/30",
         "B": "24/30",
         "C": "28/30",
-        "D": "27/30"
+        "D": "26/30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 25 su 3 prove, la somma totale deve essere 25 × 3 = 75. Sottraendo i voti già ottenuti (48), serve 75 - 48 = 27/30."
     },
     {
@@ -10612,11 +10612,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 24/30, 25/30, 26/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
         "A": "30/30",
-        "B": "29/30",
-        "C": "27/30",
+        "B": "27/30",
+        "C": "29/30",
         "D": "26/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (75), serve 104 - 75 = 29/30."
     },
     {
@@ -10639,12 +10639,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 22/30, 27/30, 24/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
-        "A": "28/30",
+        "A": "27/30",
         "B": "24/30",
-        "C": "27/30",
+        "C": "28/30",
         "D": "26/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 25 su 4 prove, la somma totale deve essere 25 × 4 = 100. Sottraendo i voti già ottenuti (73), serve 100 - 73 = 27/30."
     },
     {
@@ -10654,11 +10654,11 @@ var BANCA_DATI = {
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 24/30, 26/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
         "A": "25/30",
-        "B": "29/30",
-        "C": "28/30",
+        "B": "28/30",
+        "C": "29/30",
         "D": "27/30"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Per avere una media di 26 su 3 prove, la somma totale deve essere 26 × 3 = 78. Sottraendo i voti già ottenuti (50), serve 78 - 50 = 28/30."
     },
     {
@@ -10669,10 +10669,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "26/30",
         "B": "30/30",
-        "C": "27/30",
-        "D": "29/30"
+        "C": "29/30",
+        "D": "27/30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (75), serve 104 - 75 = 29/30."
     },
     {
@@ -10681,12 +10681,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 24/30, 22/30, 22/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 24/30?",
       "opzioni": {
-        "A": "28/30",
+        "A": "30/30",
         "B": "24/30",
         "C": "26/30",
-        "D": "30/30"
+        "D": "28/30"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Per avere una media di 24 su 4 prove, la somma totale deve essere 24 × 4 = 96. Sottraendo i voti già ottenuti (68), serve 96 - 68 = 28/30."
     },
     {
@@ -10695,12 +10695,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 3 prove i seguenti punteggi: 24/30, 25/30, 26/30. Quale punteggio deve ottenere nella 4ª prova affinché la media aritmetica complessiva sia esattamente 26/30?",
       "opzioni": {
-        "A": "26/30",
+        "A": "29/30",
         "B": "27/30",
         "C": "30/30",
-        "D": "29/30"
+        "D": "26/30"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (75), serve 104 - 75 = 29/30."
     },
     {
@@ -10709,12 +10709,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "Un candidato ha conseguito nelle prime 2 prove i seguenti punteggi: 25/30, 24/30. Quale punteggio deve ottenere nella 3ª prova affinché la media aritmetica complessiva sia esattamente 25/30?",
       "opzioni": {
-        "A": "26/30",
-        "B": "24/30",
+        "A": "24/30",
+        "B": "26/30",
         "C": "25/30",
         "D": "28/30"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per avere una media di 25 su 3 prove, la somma totale deve essere 25 × 3 = 75. Sottraendo i voti già ottenuti (49), serve 75 - 49 = 26/30."
     },
     {
@@ -10728,7 +10728,7 @@ var BANCA_DATI = {
         "C": "30/30",
         "D": "27/30"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Per avere una media di 26 su 4 prove, la somma totale deve essere 26 × 4 = 104. Sottraendo i voti già ottenuti (74), serve 104 - 74 = 30/30."
     },
     {
@@ -10738,11 +10738,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 10 fascicoli, di cui 6 sono decreti rettorali e 4 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "50%",
-        "B": "60%",
+        "B": "70%",
         "C": "40%",
-        "D": "70%"
+        "D": "60%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (6 / 10) × 100 = 60%."
     },
     {
@@ -10765,12 +10765,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 25 fascicoli, di cui 10 sono decreti rettorali e 15 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "40%",
-        "B": "60%",
+        "A": "60%",
+        "B": "40%",
         "C": "30%",
         "D": "50%"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (10 / 25) × 100 = 40%."
     },
     {
@@ -10780,11 +10780,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 10 fascicoli, di cui 2 sono decreti rettorali e 8 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "10%",
-        "B": "20%",
-        "C": "80%",
+        "B": "80%",
+        "C": "20%",
         "D": "30%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (2 / 10) × 100 = 20%."
     },
     {
@@ -10795,10 +10795,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "30%",
         "B": "80%",
-        "C": "20%",
-        "D": "10%"
+        "C": "10%",
+        "D": "20%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (2 / 10) × 100 = 20%."
     },
     {
@@ -10807,12 +10807,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 20 fascicoli, di cui 8 sono decreti rettorali e 12 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "60%",
+        "A": "40%",
         "B": "50%",
         "C": "30%",
-        "D": "40%"
+        "D": "60%"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (8 / 20) × 100 = 40%."
     },
     {
@@ -10836,11 +10836,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 50 fascicoli, di cui 3 sono decreti rettorali e 47 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "5%",
-        "B": "6%",
-        "C": "16%",
+        "B": "16%",
+        "C": "6%",
         "D": "94%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (3 / 50) × 100 = 6%."
     },
     {
@@ -10850,11 +10850,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 20 fascicoli, di cui 10 sono decreti rettorali e 10 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "45%",
-        "B": "50%",
+        "B": "55%",
         "C": "65%",
-        "D": "55%"
+        "D": "50%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (10 / 20) × 100 = 50%."
     },
     {
@@ -10878,11 +10878,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 10 fascicoli, di cui 7 sono decreti rettorali e 3 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "30%",
-        "B": "60%",
-        "C": "70%",
+        "B": "70%",
+        "C": "60%",
         "D": "80%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (7 / 10) × 100 = 70%."
     },
     {
@@ -10893,10 +10893,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "85%",
         "B": "25%",
-        "C": "5%",
-        "D": "15%"
+        "C": "15%",
+        "D": "5%"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (3 / 20) × 100 = 15%."
     },
     {
@@ -10907,10 +10907,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "76%",
         "B": "34%",
-        "C": "24%",
-        "D": "14%"
+        "C": "14%",
+        "D": "24%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (6 / 25) × 100 = 24%."
     },
     {
@@ -10919,12 +10919,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 25 fascicoli, di cui 4 sono decreti rettorali e 21 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "6%",
+        "A": "16%",
         "B": "26%",
         "C": "84%",
-        "D": "16%"
+        "D": "6%"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "A",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (4 / 25) × 100 = 16%."
     },
     {
@@ -10934,11 +10934,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 25 fascicoli, di cui 4 sono decreti rettorali e 21 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "84%",
-        "B": "26%",
+        "B": "16%",
         "C": "6%",
-        "D": "16%"
+        "D": "26%"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (4 / 25) × 100 = 16%."
     },
     {
@@ -10948,11 +10948,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 10 fascicoli, di cui 3 sono decreti rettorali e 7 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "40%",
-        "B": "30%",
-        "C": "20%",
+        "B": "20%",
+        "C": "30%",
         "D": "70%"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (3 / 10) × 100 = 30%."
     },
     {
@@ -10963,10 +10963,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "86%",
         "B": "66%",
-        "C": "76%",
-        "D": "24%"
+        "C": "24%",
+        "D": "76%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (38 / 50) × 100 = 76%."
     },
     {
@@ -10975,12 +10975,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 20 fascicoli, di cui 4 sono decreti rettorali e 16 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "80%",
+        "A": "20%",
         "B": "30%",
-        "C": "20%",
+        "C": "80%",
         "D": "10%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (4 / 20) × 100 = 20%."
     },
     {
@@ -10990,11 +10990,11 @@ var BANCA_DATI = {
       "domanda": "In un raccoglitore sono inseriti 20 fascicoli, di cui 5 sono decreti rettorali e 15 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
         "A": "35%",
-        "B": "15%",
-        "C": "25%",
+        "B": "25%",
+        "C": "15%",
         "D": "75%"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (5 / 20) × 100 = 25%."
     },
     {
@@ -11003,12 +11003,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 25 fascicoli, di cui 7 sono decreti rettorali e 18 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "28%",
+        "A": "72%",
         "B": "38%",
-        "C": "72%",
+        "C": "28%",
         "D": "18%"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (7 / 25) × 100 = 28%."
     },
     {
@@ -11017,12 +11017,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 50 fascicoli, di cui 41 sono decreti rettorali e 9 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "82%",
+        "A": "72%",
         "B": "92%",
         "C": "18%",
-        "D": "72%"
+        "D": "82%"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (41 / 50) × 100 = 82%."
     },
     {
@@ -11045,12 +11045,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 50 fascicoli, di cui 29 sono decreti rettorali e 21 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "58%",
-        "B": "48%",
+        "A": "48%",
+        "B": "58%",
         "C": "68%",
         "D": "42%"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (29 / 50) × 100 = 58%."
     },
     {
@@ -11059,12 +11059,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico",
       "domanda": "In un raccoglitore sono inseriti 50 fascicoli, di cui 3 sono decreti rettorali e 47 sono determine dirigenziali. Estraendo a caso un fascicolo, qual è la probabilità percentuale che sia un decreto rettorale?",
       "opzioni": {
-        "A": "6%",
+        "A": "94%",
         "B": "5%",
-        "C": "94%",
+        "C": "6%",
         "D": "16%"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Probabilità = (casi favorevoli / casi totali) × 100 = (3 / 50) × 100 = 6%."
     },
     {
@@ -11101,12 +11101,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario possedere il diploma di scuola superiore E aver versato il contributo di 10 euro.' Sapendo che Federica NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Federica non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Federica non soddisfa nessuno dei due requisiti",
+        "A": "Federica non soddisfa nessuno dei due requisiti",
+        "B": "Federica non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Federica soddisfa il primo requisito ma non il secondo",
         "D": "Federica ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11115,12 +11115,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i Dipartimenti UniSS sono strutture dotate di autonomia gestionale' e 'Tutti gli elementi che sono strutture dotate di autonomia gestionale sono centri di gestione', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i Dipartimenti UniSS sono centri di gestione",
+        "A": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
         "B": "Solo i Dipartimenti UniSS sono centri di gestione",
-        "C": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
+        "C": "Tutti i Dipartimenti UniSS sono centri di gestione",
         "D": "Tutti gli elementi che sono centri di gestione sono i Dipartimenti UniSS"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11130,11 +11130,11 @@ var BANCA_DATI = {
       "domanda": "Se oggi è domenica, che giorno della settimana sarà esattamente tra 15 giorni?",
       "opzioni": {
         "A": "Sabato",
-        "B": "Lunedì",
+        "B": "Domenica",
         "C": "Giovedì",
-        "D": "Domenica"
+        "D": "Lunedì"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 15 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 1 giorni. Avanzando di 1 giorni da domenica si arriva a lunedì."
     },
     {
@@ -11157,12 +11157,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Alessia NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Alessia non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Alessia non soddisfa nessuno dei due requisiti",
+        "A": "Alessia non soddisfa nessuno dei due requisiti",
+        "B": "Alessia non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Alessia soddisfa il primo requisito ma non il secondo",
         "D": "Alessia ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11171,12 +11171,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i componenti del Collegio dei Revisori sono soggetti esterni ai ruoli dell'Ateneo' e 'Tutti gli elementi che sono soggetti esterni ai ruoli dell'Ateneo sono tenuti al segreto d'ufficio', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
+        "A": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
         "B": "Solo i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
-        "C": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
+        "C": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
         "D": "Tutti gli elementi che sono tenuti al segreto d'ufficio sono i componenti del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11185,12 +11185,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Se oggi è mercoledì, che giorno della settimana sarà esattamente tra 45 giorni?",
       "opzioni": {
-        "A": "Sabato",
+        "A": "Lunedì",
         "B": "Mercoledì",
         "C": "Domenica",
-        "D": "Lunedì"
+        "D": "Sabato"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 45 per 7 giorni della settimana si ottiene 6 settimane complete con resto di 3 giorni. Avanzando di 3 giorni da mercoledì si arriva a sabato."
     },
     {
@@ -11213,12 +11213,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Valentina NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Valentina non soddisfa nessuno dei due requisiti",
+        "A": "Valentina non soddisfa nessuno dei due requisiti",
+        "B": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Valentina soddisfa il primo requisito ma non il secondo",
         "D": "Valentina ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11227,12 +11227,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i componenti del Collegio dei Revisori sono soggetti esterni ai ruoli dell'Ateneo' e 'Tutti gli elementi che sono soggetti esterni ai ruoli dell'Ateneo sono tenuti al segreto d'ufficio', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
+        "A": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
         "B": "Solo i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
-        "C": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
+        "C": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
         "D": "Tutti gli elementi che sono tenuti al segreto d'ufficio sono i componenti del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11242,11 +11242,11 @@ var BANCA_DATI = {
       "domanda": "Se oggi è martedì, che giorno della settimana sarà esattamente tra 30 giorni?",
       "opzioni": {
         "A": "Mercoledì",
-        "B": "Giovedì",
+        "B": "Domenica",
         "C": "Martedì",
-        "D": "Domenica"
+        "D": "Giovedì"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 30 per 7 giorni della settimana si ottiene 4 settimane complete con resto di 2 giorni. Avanzando di 2 giorni da martedì si arriva a giovedì."
     },
     {
@@ -11269,12 +11269,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario possedere il diploma di scuola superiore E aver versato il contributo di 10 euro.' Sapendo che Simone NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Simone non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Simone non soddisfa nessuno dei due requisiti",
+        "A": "Simone non soddisfa nessuno dei due requisiti",
+        "B": "Simone non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Simone soddisfa il primo requisito ma non il secondo",
         "D": "Simone ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11283,12 +11283,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i regolamenti d'Ateneo sono fonti normative interne' e 'Tutti gli elementi che sono fonti normative interne sono emanati con decreto del Rettore', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i regolamenti d'Ateneo sono emanati con decreto del Rettore",
+        "A": "Nessuno tra i regolamenti d'Ateneo è emanati con decreto del Rettore",
         "B": "Solo i regolamenti d'Ateneo sono emanati con decreto del Rettore",
-        "C": "Nessuno tra i regolamenti d'Ateneo è emanati con decreto del Rettore",
+        "C": "Tutti i regolamenti d'Ateneo sono emanati con decreto del Rettore",
         "D": "Tutti gli elementi che sono emanati con decreto del Rettore sono i regolamenti d'Ateneo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11325,12 +11325,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Giorgio NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Giorgio non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Giorgio non soddisfa nessuno dei due requisiti",
+        "A": "Giorgio non soddisfa nessuno dei due requisiti",
+        "B": "Giorgio non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Giorgio soddisfa il primo requisito ma non il secondo",
         "D": "Giorgio ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11339,12 +11339,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i componenti del Collegio dei Revisori sono soggetti esterni ai ruoli dell'Ateneo' e 'Tutti gli elementi che sono soggetti esterni ai ruoli dell'Ateneo sono tenuti al segreto d'ufficio', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
+        "A": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
         "B": "Solo i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
-        "C": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
+        "C": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
         "D": "Tutti gli elementi che sono tenuti al segreto d'ufficio sono i componenti del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11354,11 +11354,11 @@ var BANCA_DATI = {
       "domanda": "Se oggi è giovedì, che giorno della settimana sarà esattamente tra 15 giorni?",
       "opzioni": {
         "A": "Lunedì",
-        "B": "Venerdì",
+        "B": "Martedì",
         "C": "Mercoledì",
-        "D": "Martedì"
+        "D": "Venerdì"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 15 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 1 giorni. Avanzando di 1 giorni da giovedì si arriva a venerdì."
     },
     {
@@ -11381,12 +11381,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Valentina NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Valentina non soddisfa nessuno dei due requisiti",
+        "A": "Valentina non soddisfa nessuno dei due requisiti",
+        "B": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Valentina soddisfa il primo requisito ma non il secondo",
         "D": "Valentina ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11395,12 +11395,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i decreti rettorali sono atti amministrativi' e 'Tutti gli elementi che sono atti amministrativi sono soggetti a registrazione', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i decreti rettorali sono soggetti a registrazione",
+        "A": "Nessuno tra i decreti rettorali è soggetti a registrazione",
         "B": "Solo i decreti rettorali sono soggetti a registrazione",
-        "C": "Nessuno tra i decreti rettorali è soggetti a registrazione",
+        "C": "Tutti i decreti rettorali sono soggetti a registrazione",
         "D": "Tutti gli elementi che sono soggetti a registrazione sono i decreti rettorali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11411,10 +11411,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Mercoledì",
         "B": "Venerdì",
-        "C": "Sabato",
-        "D": "Martedì"
+        "C": "Martedì",
+        "D": "Sabato"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 15 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 1 giorni. Avanzando di 1 giorni da venerdì si arriva a sabato."
     },
     {
@@ -11437,12 +11437,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario avere la cittadinanza italiana o UE E godere dei diritti civili e politici.' Sapendo che Federica NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Federica non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Federica non soddisfa nessuno dei due requisiti",
+        "A": "Federica non soddisfa nessuno dei due requisiti",
+        "B": "Federica non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Federica soddisfa il primo requisito ma non il secondo",
         "D": "Federica ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11451,12 +11451,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i Dipartimenti UniSS sono strutture dotate di autonomia gestionale' e 'Tutti gli elementi che sono strutture dotate di autonomia gestionale sono centri di gestione', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i Dipartimenti UniSS sono centri di gestione",
+        "A": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
         "B": "Solo i Dipartimenti UniSS sono centri di gestione",
-        "C": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
+        "C": "Tutti i Dipartimenti UniSS sono centri di gestione",
         "D": "Tutti gli elementi che sono centri di gestione sono i Dipartimenti UniSS"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11466,11 +11466,11 @@ var BANCA_DATI = {
       "domanda": "Se oggi è martedì, che giorno della settimana sarà esattamente tra 15 giorni?",
       "opzioni": {
         "A": "Sabato",
-        "B": "Mercoledì",
+        "B": "Venerdì",
         "C": "Martedì",
-        "D": "Venerdì"
+        "D": "Mercoledì"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 15 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 1 giorni. Avanzando di 1 giorni da martedì si arriva a mercoledì."
     },
     {
@@ -11493,12 +11493,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Andrea NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Andrea non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Andrea non soddisfa nessuno dei due requisiti",
+        "A": "Andrea non soddisfa nessuno dei due requisiti",
+        "B": "Andrea non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Andrea soddisfa il primo requisito ma non il secondo",
         "D": "Andrea ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11507,12 +11507,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i componenti del Collegio dei Revisori sono soggetti esterni ai ruoli dell'Ateneo' e 'Tutti gli elementi che sono soggetti esterni ai ruoli dell'Ateneo sono tenuti al segreto d'ufficio', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
+        "A": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
         "B": "Solo i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
-        "C": "Nessuno tra i componenti del Collegio dei Revisori è tenuti al segreto d'ufficio",
+        "C": "Tutti i componenti del Collegio dei Revisori sono tenuti al segreto d'ufficio",
         "D": "Tutti gli elementi che sono tenuti al segreto d'ufficio sono i componenti del Collegio dei Revisori"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11523,10 +11523,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Giovedì",
         "B": "Sabato",
-        "C": "Martedì",
-        "D": "Domenica"
+        "C": "Domenica",
+        "D": "Martedì"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 15 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 1 giorni. Avanzando di 1 giorni da lunedì si arriva a martedì."
     },
     {
@@ -11549,12 +11549,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario presentare la domanda entro le ore 13:00 E allegare un documento di identità valido.' Sapendo che Andrea NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Andrea non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Andrea non soddisfa nessuno dei due requisiti",
+        "A": "Andrea non soddisfa nessuno dei due requisiti",
+        "B": "Andrea non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Andrea soddisfa il primo requisito ma non il secondo",
         "D": "Andrea ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11563,12 +11563,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i regolamenti d'Ateneo sono fonti normative interne' e 'Tutti gli elementi che sono fonti normative interne sono emanati con decreto del Rettore', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i regolamenti d'Ateneo sono emanati con decreto del Rettore",
+        "A": "Nessuno tra i regolamenti d'Ateneo è emanati con decreto del Rettore",
         "B": "Solo i regolamenti d'Ateneo sono emanati con decreto del Rettore",
-        "C": "Nessuno tra i regolamenti d'Ateneo è emanati con decreto del Rettore",
+        "C": "Tutti i regolamenti d'Ateneo sono emanati con decreto del Rettore",
         "D": "Tutti gli elementi che sono emanati con decreto del Rettore sono i regolamenti d'Ateneo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11577,12 +11577,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Se oggi è mercoledì, che giorno della settimana sarà esattamente tra 20 giorni?",
       "opzioni": {
-        "A": "Martedì",
+        "A": "Mercoledì",
         "B": "Sabato",
         "C": "Domenica",
-        "D": "Mercoledì"
+        "D": "Martedì"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 20 per 7 giorni della settimana si ottiene 2 settimane complete con resto di 6 giorni. Avanzando di 6 giorni da mercoledì si arriva a martedì."
     },
     {
@@ -11605,12 +11605,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Regola del bando: 'Per essere ammessi al concorso è necessario possedere il diploma di scuola superiore E aver versato il contributo di 10 euro.' Sapendo che Valentina NON è stato/a ammesso/a per difetto dei requisiti, quale affermazione è certamente vera?",
       "opzioni": {
-        "A": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
-        "B": "Valentina non soddisfa nessuno dei due requisiti",
+        "A": "Valentina non soddisfa nessuno dei due requisiti",
+        "B": "Valentina non soddisfa almeno uno dei due requisiti (non possiede il primo, oppure non possiede il secondo, oppure non ne possiede nessuno dei due)",
         "C": "Valentina soddisfa il primo requisito ma non il secondo",
         "D": "Valentina ha presentato la domanda in formato cartaceo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Per la legge di De Morgan, la negazione di una congiunzione (P ∧ Q) è la disgiunzione inclusiva delle negazioni (¬P ∨ ¬Q): basta che manchi anche uno solo dei due requisiti necessari."
     },
     {
@@ -11619,12 +11619,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento logico-deduttivo",
       "domanda": "Date le premesse: 'Tutti i Dipartimenti UniSS sono strutture dotate di autonomia gestionale' e 'Tutti gli elementi che sono strutture dotate di autonomia gestionale sono centri di gestione', quale conclusione è necessariamente vera?",
       "opzioni": {
-        "A": "Tutti i Dipartimenti UniSS sono centri di gestione",
+        "A": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
         "B": "Solo i Dipartimenti UniSS sono centri di gestione",
-        "C": "Nessuno tra i Dipartimenti UniSS è centri di gestione",
+        "C": "Tutti i Dipartimenti UniSS sono centri di gestione",
         "D": "Tutti gli elementi che sono centri di gestione sono i Dipartimenti UniSS"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Sillogismo categorico Barbara: se ogni A è B e ogni B è C, allora necessariamente ogni A è C."
     },
     {
@@ -11634,11 +11634,11 @@ var BANCA_DATI = {
       "domanda": "Se oggi è giovedì, che giorno della settimana sarà esattamente tra 60 giorni?",
       "opzioni": {
         "A": "Martedì",
-        "B": "Lunedì",
+        "B": "Sabato",
         "C": "Venerdì",
-        "D": "Sabato"
+        "D": "Lunedì"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Dividendo 60 per 7 giorni della settimana si ottiene 8 settimane complete con resto di 4 giorni. Avanzando di 4 giorni da giovedì si arriva a lunedì."
     },
     {
@@ -11661,12 +11661,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n30 - 4 [PIÙ]\n10 - 12 [PIÙ]\n30 - 6 [MENO]\n11 - 12 [MENO]",
       "opzioni": {
-        "A": "60 - 2",
-        "B": "60 - 5",
+        "A": "60 - 5",
+        "B": "60 - 2",
         "C": "61 - 2",
         "D": "62 - 3"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 120 (30×4=120; 10×12=120). Solo 60 × 2 = 120 soddisfa la regola."
     },
     {
@@ -11675,12 +11675,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n40 - 4 [PIÙ]\n57 - 12 [PIÙ]\n40 - 5 [MENO]\n57 - 11 [MENO]",
       "opzioni": {
-        "A": "95 - 14",
+        "A": "95 - 12",
         "B": "95 - 16",
-        "C": "95 - 12",
+        "C": "95 - 14",
         "D": "95 - 15"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (4+0=4; 5+7=12). Per 95, 9 + 5 = 14."
     },
     {
@@ -11689,12 +11689,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n15 - 19 - 23 [PIÙ]\n23 - 27 - 31 [PIÙ]\n15 - 19 - 24 [MENO]\n23 - 26 - 31 [MENO]",
       "opzioni": {
-        "A": "29 - 33 - 37",
+        "A": "29 - 31 - 37",
         "B": "29 - 34 - 37",
         "C": "29 - 33 - 39",
-        "D": "29 - 31 - 37"
+        "D": "29 - 33 - 37"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +4 ad ogni passaggio. Solo 29 -> 33 -> 37 rispetta il passo +4."
     },
     {
@@ -11717,12 +11717,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n12 - 6 [PIÙ]\n36 - 2 [PIÙ]\n12 - 8 [MENO]\n37 - 2 [MENO]",
       "opzioni": {
-        "A": "24 - 3",
-        "B": "24 - 6",
+        "A": "24 - 6",
+        "B": "24 - 3",
         "C": "25 - 3",
         "D": "26 - 4"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 72 (12×6=72; 36×2=72). Solo 24 × 3 = 72 soddisfa la regola."
     },
     {
@@ -11731,12 +11731,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n73 - 10 [PIÙ]\n64 - 10 [PIÙ]\n73 - 11 [MENO]\n64 - 9 [MENO]",
       "opzioni": {
-        "A": "78 - 15",
+        "A": "78 - 13",
         "B": "78 - 17",
-        "C": "78 - 13",
+        "C": "78 - 15",
         "D": "78 - 16"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (7+3=10; 6+4=10). Per 78, 7 + 8 = 15."
     },
     {
@@ -11745,12 +11745,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n20 - 29 - 38 [PIÙ]\n17 - 26 - 35 [PIÙ]\n20 - 29 - 39 [MENO]\n17 - 25 - 35 [MENO]",
       "opzioni": {
-        "A": "23 - 32 - 41",
+        "A": "23 - 30 - 41",
         "B": "23 - 33 - 41",
         "C": "23 - 32 - 43",
-        "D": "23 - 30 - 41"
+        "D": "23 - 32 - 41"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +9 ad ogni passaggio. Solo 23 -> 32 -> 41 rispetta il passo +9."
     },
     {
@@ -11773,12 +11773,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n15 - 8 [PIÙ]\n40 - 3 [PIÙ]\n15 - 10 [MENO]\n41 - 3 [MENO]",
       "opzioni": {
-        "A": "2 - 60",
-        "B": "2 - 63",
+        "A": "2 - 63",
+        "B": "2 - 60",
         "C": "3 - 60",
         "D": "4 - 61"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 120 (15×8=120; 40×3=120). Solo 2 × 60 = 120 soddisfa la regola."
     },
     {
@@ -11787,12 +11787,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n80 - 8 [PIÙ]\n56 - 11 [PIÙ]\n80 - 9 [MENO]\n56 - 10 [MENO]",
       "opzioni": {
-        "A": "98 - 17",
+        "A": "98 - 15",
         "B": "98 - 19",
-        "C": "98 - 15",
+        "C": "98 - 17",
         "D": "98 - 18"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (8+0=8; 5+6=11). Per 98, 9 + 8 = 17."
     },
     {
@@ -11801,12 +11801,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n8 - 13 - 18 [PIÙ]\n35 - 40 - 45 [PIÙ]\n8 - 13 - 19 [MENO]\n35 - 39 - 45 [MENO]",
       "opzioni": {
-        "A": "18 - 23 - 28",
+        "A": "18 - 21 - 28",
         "B": "18 - 24 - 28",
         "C": "18 - 23 - 30",
-        "D": "18 - 21 - 28"
+        "D": "18 - 23 - 28"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +5 ad ogni passaggio. Solo 18 -> 23 -> 28 rispetta il passo +5."
     },
     {
@@ -11829,12 +11829,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n30 - 3 [PIÙ]\n3 - 30 [PIÙ]\n30 - 5 [MENO]\n4 - 30 [MENO]",
       "opzioni": {
-        "A": "10 - 9",
-        "B": "10 - 12",
+        "A": "10 - 12",
+        "B": "10 - 9",
         "C": "11 - 9",
         "D": "12 - 10"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 90 (30×3=90; 3×30=90). Solo 10 × 9 = 90 soddisfa la regola."
     },
     {
@@ -11843,12 +11843,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n60 - 6 [PIÙ]\n77 - 14 [PIÙ]\n60 - 7 [MENO]\n77 - 13 [MENO]",
       "opzioni": {
-        "A": "80 - 8",
+        "A": "80 - 6",
         "B": "80 - 10",
-        "C": "80 - 6",
+        "C": "80 - 8",
         "D": "80 - 9"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (6+0=6; 7+7=14). Per 80, 8 + 0 = 8."
     },
     {
@@ -11857,12 +11857,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n12 - 18 - 24 [PIÙ]\n23 - 29 - 35 [PIÙ]\n12 - 18 - 25 [MENO]\n23 - 28 - 35 [MENO]",
       "opzioni": {
-        "A": "28 - 34 - 40",
+        "A": "28 - 32 - 40",
         "B": "28 - 35 - 40",
         "C": "28 - 34 - 42",
-        "D": "28 - 32 - 40"
+        "D": "28 - 34 - 40"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +6 ad ogni passaggio. Solo 28 -> 34 -> 40 rispetta il passo +6."
     },
     {
@@ -11885,12 +11885,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n4 - 12 [PIÙ]\n8 - 6 [PIÙ]\n4 - 14 [MENO]\n9 - 6 [MENO]",
       "opzioni": {
-        "A": "24 - 2",
-        "B": "24 - 5",
+        "A": "24 - 5",
+        "B": "24 - 2",
         "C": "25 - 2",
         "D": "26 - 3"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 48 (4×12=48; 8×6=48). Solo 24 × 2 = 48 soddisfa la regola."
     },
     {
@@ -11899,12 +11899,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n25 - 7 [PIÙ]\n35 - 8 [PIÙ]\n25 - 8 [MENO]\n35 - 7 [MENO]",
       "opzioni": {
-        "A": "92 - 11",
+        "A": "92 - 9",
         "B": "92 - 13",
-        "C": "92 - 9",
+        "C": "92 - 11",
         "D": "92 - 12"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (2+5=7; 3+5=8). Per 92, 9 + 2 = 11."
     },
     {
@@ -11913,12 +11913,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n10 - 20 - 30 [PIÙ]\n19 - 29 - 39 [PIÙ]\n10 - 20 - 31 [MENO]\n19 - 28 - 39 [MENO]",
       "opzioni": {
-        "A": "42 - 52 - 62",
+        "A": "42 - 50 - 62",
         "B": "42 - 53 - 62",
         "C": "42 - 52 - 64",
-        "D": "42 - 50 - 62"
+        "D": "42 - 52 - 62"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +10 ad ogni passaggio. Solo 42 -> 52 -> 62 rispetta il passo +10."
     },
     {
@@ -11941,12 +11941,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n6 - 8 [PIÙ]\n12 - 4 [PIÙ]\n6 - 10 [MENO]\n13 - 4 [MENO]",
       "opzioni": {
-        "A": "3 - 16",
-        "B": "3 - 19",
+        "A": "3 - 19",
+        "B": "3 - 16",
         "C": "4 - 16",
         "D": "5 - 17"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 48 (6×8=48; 12×4=48). Solo 3 × 16 = 48 soddisfa la regola."
     },
     {
@@ -11955,12 +11955,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n86 - 14 [PIÙ]\n81 - 9 [PIÙ]\n86 - 15 [MENO]\n81 - 8 [MENO]",
       "opzioni": {
-        "A": "82 - 10",
+        "A": "82 - 8",
         "B": "82 - 12",
-        "C": "82 - 8",
+        "C": "82 - 10",
         "D": "82 - 11"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (8+6=14; 8+1=9). Per 82, 8 + 2 = 10."
     },
     {
@@ -11969,12 +11969,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n19 - 30 - 41 [PIÙ]\n11 - 22 - 33 [PIÙ]\n19 - 30 - 42 [MENO]\n11 - 21 - 33 [MENO]",
       "opzioni": {
-        "A": "22 - 33 - 44",
+        "A": "22 - 31 - 44",
         "B": "22 - 34 - 44",
         "C": "22 - 33 - 46",
-        "D": "22 - 31 - 44"
+        "D": "22 - 33 - 44"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +11 ad ogni passaggio. Solo 22 -> 33 -> 44 rispetta il passo +11."
     },
     {
@@ -11997,12 +11997,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n24 - 2 [PIÙ]\n6 - 8 [PIÙ]\n24 - 4 [MENO]\n7 - 8 [MENO]",
       "opzioni": {
-        "A": "2 - 24",
-        "B": "2 - 27",
+        "A": "2 - 27",
+        "B": "2 - 24",
         "C": "3 - 24",
         "D": "4 - 25"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 48 (24×2=48; 6×8=48). Solo 2 × 24 = 48 soddisfa la regola."
     },
     {
@@ -12011,12 +12011,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n28 - 10 [PIÙ]\n45 - 9 [PIÙ]\n28 - 11 [MENO]\n45 - 8 [MENO]",
       "opzioni": {
-        "A": "46 - 10",
+        "A": "46 - 8",
         "B": "46 - 12",
-        "C": "46 - 8",
+        "C": "46 - 10",
         "D": "46 - 11"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (2+8=10; 4+5=9). Per 46, 4 + 6 = 10."
     },
     {
@@ -12025,12 +12025,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n9 - 15 - 21 [PIÙ]\n17 - 23 - 29 [PIÙ]\n9 - 15 - 22 [MENO]\n17 - 22 - 29 [MENO]",
       "opzioni": {
-        "A": "45 - 51 - 57",
+        "A": "45 - 49 - 57",
         "B": "45 - 52 - 57",
         "C": "45 - 51 - 59",
-        "D": "45 - 49 - 57"
+        "D": "45 - 51 - 57"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +6 ad ogni passaggio. Solo 45 -> 51 -> 57 rispetta il passo +6."
     },
     {
@@ -12053,12 +12053,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n4 - 18 [PIÙ]\n24 - 3 [PIÙ]\n4 - 20 [MENO]\n25 - 3 [MENO]",
       "opzioni": {
-        "A": "3 - 24",
-        "B": "3 - 27",
+        "A": "3 - 27",
+        "B": "3 - 24",
         "C": "4 - 24",
         "D": "5 - 25"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 72 (4×18=72; 24×3=72). Solo 3 × 24 = 72 soddisfa la regola."
     },
     {
@@ -12067,12 +12067,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n60 - 6 [PIÙ]\n78 - 15 [PIÙ]\n60 - 7 [MENO]\n78 - 14 [MENO]",
       "opzioni": {
-        "A": "63 - 9",
+        "A": "63 - 7",
         "B": "63 - 11",
-        "C": "63 - 7",
+        "C": "63 - 9",
         "D": "63 - 10"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (6+0=6; 7+8=15). Per 63, 6 + 3 = 9."
     },
     {
@@ -12081,12 +12081,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n22 - 31 - 40 [PIÙ]\n23 - 32 - 41 [PIÙ]\n22 - 31 - 41 [MENO]\n23 - 31 - 41 [MENO]",
       "opzioni": {
-        "A": "19 - 28 - 37",
+        "A": "19 - 26 - 37",
         "B": "19 - 29 - 37",
         "C": "19 - 28 - 39",
-        "D": "19 - 26 - 37"
+        "D": "19 - 28 - 37"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +9 ad ogni passaggio. Solo 19 -> 28 -> 37 rispetta il passo +9."
     },
     {
@@ -12109,12 +12109,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n30 - 3 [PIÙ]\n15 - 6 [PIÙ]\n30 - 5 [MENO]\n16 - 6 [MENO]",
       "opzioni": {
-        "A": "6 - 15",
-        "B": "6 - 18",
+        "A": "6 - 18",
+        "B": "6 - 15",
         "C": "7 - 15",
         "D": "8 - 16"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 90 (30×3=90; 15×6=90). Solo 6 × 15 = 90 soddisfa la regola."
     },
     {
@@ -12123,12 +12123,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n46 - 10 [PIÙ]\n53 - 8 [PIÙ]\n46 - 11 [MENO]\n53 - 7 [MENO]",
       "opzioni": {
-        "A": "48 - 12",
+        "A": "48 - 10",
         "B": "48 - 14",
-        "C": "48 - 10",
+        "C": "48 - 12",
         "D": "48 - 13"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (4+6=10; 5+3=8). Per 48, 4 + 8 = 12."
     },
     {
@@ -12137,12 +12137,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n12 - 22 - 32 [PIÙ]\n19 - 29 - 39 [PIÙ]\n12 - 22 - 33 [MENO]\n19 - 28 - 39 [MENO]",
       "opzioni": {
-        "A": "41 - 51 - 61",
+        "A": "41 - 49 - 61",
         "B": "41 - 52 - 61",
         "C": "41 - 51 - 63",
-        "D": "41 - 49 - 61"
+        "D": "41 - 51 - 61"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +10 ad ogni passaggio. Solo 41 -> 51 -> 61 rispetta il passo +10."
     },
     {
@@ -12165,12 +12165,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la coppia coerente con le righe PIÙ:\n3 - 20 [PIÙ]\n20 - 3 [PIÙ]\n3 - 22 [MENO]\n21 - 3 [MENO]",
       "opzioni": {
-        "A": "2 - 30",
-        "B": "2 - 33",
+        "A": "2 - 33",
+        "B": "2 - 30",
         "C": "3 - 30",
         "D": "4 - 31"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Regola delle righe PIÙ: il prodotto dei due numeri è sempre costante e pari a 60 (3×20=60; 20×3=60). Solo 2 × 30 = 60 soddisfa la regola."
     },
     {
@@ -12179,12 +12179,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga coerente con le righe PIÙ:\n27 - 9 [PIÙ]\n33 - 6 [PIÙ]\n27 - 10 [MENO]\n33 - 5 [MENO]",
       "opzioni": {
-        "A": "64 - 10",
+        "A": "64 - 8",
         "B": "64 - 12",
-        "C": "64 - 8",
+        "C": "64 - 10",
         "D": "64 - 11"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Regola delle righe PIÙ: il secondo numero è la somma delle cifre del primo (2+7=9; 3+3=6). Per 64, 6 + 4 = 10."
     },
     {
@@ -12193,12 +12193,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento numerico-deduttivo",
       "domanda": "Individua la riga che completa lo schema secondo le righe PIÙ:\n11 - 21 - 31 [PIÙ]\n31 - 41 - 51 [PIÙ]\n11 - 21 - 32 [MENO]\n31 - 40 - 51 [MENO]",
       "opzioni": {
-        "A": "38 - 48 - 58",
+        "A": "38 - 46 - 58",
         "B": "38 - 49 - 58",
         "C": "38 - 48 - 60",
-        "D": "38 - 46 - 58"
+        "D": "38 - 48 - 58"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Regola delle righe PIÙ: progressione aritmetica con incremento costante +10 ad ogni passaggio. Solo 38 -> 48 -> 58 rispetta il passo +10."
     },
     {
@@ -12207,12 +12207,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): E, G, I, M, ?",
       "opzioni": {
-        "A": "N",
-        "B": "O",
+        "A": "O",
+        "B": "N",
         "C": "P",
         "D": "B"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo M la 2ª lettera successiva è O."
     },
     {
@@ -12221,12 +12221,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): B, F, L, P, ?",
       "opzioni": {
-        "A": "T",
-        "B": "O",
+        "A": "O",
+        "B": "T",
         "C": "H",
         "D": "L"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo P la 4ª lettera successiva è T."
     },
     {
@@ -12237,10 +12237,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "U",
         "B": "L",
-        "C": "T",
-        "D": "V"
+        "C": "V",
+        "D": "T"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo R la 4ª lettera successiva è V."
     },
     {
@@ -12249,12 +12249,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): B, F, L, P, ?",
       "opzioni": {
-        "A": "T",
+        "A": "L",
         "B": "B",
         "C": "F",
-        "D": "L"
+        "D": "T"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo P la 4ª lettera successiva è T."
     },
     {
@@ -12263,12 +12263,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): E, I, O, S, ?",
       "opzioni": {
-        "A": "F",
-        "B": "Z",
+        "A": "Z",
+        "B": "F",
         "C": "E",
         "D": "B"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo S la 4ª lettera successiva è Z."
     },
     {
@@ -12277,12 +12277,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): B, F, L, P, ?",
       "opzioni": {
-        "A": "T",
-        "B": "U",
+        "A": "U",
+        "B": "T",
         "C": "F",
         "D": "S"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo P la 4ª lettera successiva è T."
     },
     {
@@ -12293,10 +12293,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "M",
         "B": "G",
-        "C": "C",
-        "D": "P"
+        "C": "P",
+        "D": "C"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 3 posizioni ogni volta (saltando 2 lettere): dopo M la 3ª lettera successiva è P."
     },
     {
@@ -12319,12 +12319,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): O, Q, S, U, ?",
       "opzioni": {
-        "A": "A",
-        "B": "Z",
+        "A": "Z",
+        "B": "A",
         "C": "F",
         "D": "Q"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo U la 2ª lettera successiva è Z."
     },
     {
@@ -12334,11 +12334,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): B, D, F, H, ?",
       "opzioni": {
         "A": "P",
-        "B": "E",
-        "C": "L",
+        "B": "L",
+        "C": "E",
         "D": "H"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo H la 2ª lettera successiva è L."
     },
     {
@@ -12348,11 +12348,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): E, H, M, P, ?",
       "opzioni": {
         "A": "V",
-        "B": "S",
-        "C": "Q",
+        "B": "Q",
+        "C": "S",
         "D": "F"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 3 posizioni ogni volta (saltando 2 lettere): dopo P la 3ª lettera successiva è S."
     },
     {
@@ -12363,10 +12363,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "E",
         "B": "V",
-        "C": "U",
-        "D": "C"
+        "C": "C",
+        "D": "U"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "D",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo Q la 4ª lettera successiva è U."
     },
     {
@@ -12375,12 +12375,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): D, F, H, L, ?",
       "opzioni": {
-        "A": "U",
+        "A": "N",
         "B": "R",
-        "C": "N",
+        "C": "U",
         "D": "S"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo L la 2ª lettera successiva è N."
     },
     {
@@ -12390,11 +12390,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): D, H, N, R, ?",
       "opzioni": {
         "A": "M",
-        "B": "G",
+        "B": "V",
         "C": "S",
-        "D": "V"
+        "D": "G"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo R la 4ª lettera successiva è V."
     },
     {
@@ -12404,11 +12404,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): C, G, M, Q, ?",
       "opzioni": {
         "A": "G",
-        "B": "U",
-        "C": "Q",
+        "B": "Q",
+        "C": "U",
         "D": "A"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "C",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 4 posizioni ogni volta (saltando 3 lettere): dopo Q la 4ª lettera successiva è U."
     },
     {
@@ -12418,11 +12418,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): I, M, O, Q, ?",
       "opzioni": {
         "A": "L",
-        "B": "S",
+        "B": "D",
         "C": "C",
-        "D": "D"
+        "D": "S"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo Q la 2ª lettera successiva è S."
     },
     {
@@ -12431,12 +12431,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): A, C, E, G, ?",
       "opzioni": {
-        "A": "C",
+        "A": "I",
         "B": "O",
-        "C": "I",
+        "C": "C",
         "D": "N"
       },
-      "risposta_corretta": "C",
+      "risposta_corretta": "A",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 2 posizioni ogni volta (saltando 1 lettere): dopo G la 2ª lettera successiva è I."
     },
     {
@@ -12446,11 +12446,11 @@ var BANCA_DATI = {
       "domanda": "Individua la lettera che completa la serie (considerando l'alfabeto italiano di 21 lettere): C, F, I, N, ?",
       "opzioni": {
         "A": "L",
-        "B": "F",
+        "B": "Q",
         "C": "Z",
-        "D": "Q"
+        "D": "F"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Nell'alfabeto italiano di 21 lettere si avanza costantemente di 3 posizioni ogni volta (saltando 2 lettere): dopo N la 3ª lettera successiva è Q."
     },
     {
@@ -12501,12 +12501,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: Annullamento d'ufficio : Illegittimità originaria = Revoca : X",
       "opzioni": {
-        "A": "Sopravvenuti motivi di pubblico interesse o nuova valutazione dell'interesse pubblico",
-        "B": "Mancanza degli elementi essenziali",
+        "A": "Mancanza degli elementi essenziali",
+        "B": "Sopravvenuti motivi di pubblico interesse o nuova valutazione dell'interesse pubblico",
         "C": "Difetto assoluto di attribuzione",
         "D": "Falsa attestazione della presenza"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ai sensi degli artt. 21-quinquies e 21-nonies della L. 241/1990, l'annullamento colpisce l'atto illegittimo, mentre la revoca incide sull'atto inopportuno per sopravvenuti motivi di interesse pubblico."
     },
     {
@@ -12515,12 +12515,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua il sinonimo più preciso del termine 'derimere':",
       "opzioni": {
-        "A": "Comporre / risolvere",
+        "A": "Ratificare",
         "B": "Prorogare",
-        "C": "Ratificare",
+        "C": "Comporre / risolvere",
         "D": "Sospendere"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Dirimere significa risolvere o comporre una controversia o un conflitto."
     },
     {
@@ -12529,12 +12529,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua l'antonimo (contrario) dell'aggettivo 'lodevole' (es. 'lodevole servizio'):",
       "opzioni": {
-        "A": "Biasimevole",
+        "A": "Pregievole",
         "B": "Meritorio",
         "C": "Encomiabile",
-        "D": "Pregievole"
+        "D": "Biasimevole"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il contrario di lodevole è biasimevole (degno di riprovazione)."
     },
     {
@@ -12558,11 +12558,11 @@ var BANCA_DATI = {
       "domanda": "Individua il termine intruso tra i seguenti:",
       "opzioni": {
         "A": "Stato patrimoniale",
-        "B": "Conto economico",
+        "B": "Bando di concorso",
         "C": "Nota integrativa",
-        "D": "Bando di concorso"
+        "D": "Conto economico"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "B",
       "spiegazione": "Stato patrimoniale, Conto economico e Nota integrativa sono documenti del bilancio d'esercizio, mentre il bando di concorso è un atto di reclutamento."
     },
     {
@@ -12571,12 +12571,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: InPA : Portale del reclutamento = PICA : X",
       "opzioni": {
-        "A": "Piattaforma presentazione domande concorsi universitari",
+        "A": "Registro dei revisori contabili",
         "B": "Sistema di contabilità analitica",
-        "C": "Registro dei revisori contabili",
+        "C": "Piattaforma presentazione domande concorsi universitari",
         "D": "Software antivirus di Ateneo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "InPA è il portale nazionale del reclutamento PA, mentre PICA (Cineca) è la piattaforma telematica usata da UniSS per inviare le candidature."
     },
     {
@@ -12585,12 +12585,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Qual è il significato dell'espressione latina 'ipso iure' (presente negli artt. 24 e 26 dello Statuto UniSS: 'decade ipso iure dalla carica')?",
       "opzioni": {
-        "A": "Per effetto diretto della norma stessa, automaticamente",
+        "A": "Solo dopo cinque anni",
         "B": "Su richiesta scritta dell'interessato",
         "C": "Previa sentenza della Corte Costituzionale",
-        "D": "Solo dopo cinque anni"
+        "D": "Per effetto diretto della norma stessa, automaticamente"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "'Ipso iure' significa 'per il diritto stesso', ossia automaticamente senza bisogno di ulteriori atti discrezionali."
     },
     {
@@ -12613,12 +12613,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: CAdES : .p7m = PAdES : X",
       "opzioni": {
-        "A": ".pdf",
-        "B": ".xlsx",
+        "A": ".xlsx",
+        "B": ".pdf",
         "C": ".docx",
         "D": ".zip"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "La firma digitale CAdES genera una busta crittografica con estensione .p7m, mentre la firma PAdES mantiene l'estensione nativa .pdf."
     },
     {
@@ -12629,10 +12629,10 @@ var BANCA_DATI = {
       "opzioni": {
         "A": "Censura",
         "B": "Richiamo scritto",
-        "C": "Sospensione dal servizio",
-        "D": "Encomio solenne"
+        "C": "Encomio solenne",
+        "D": "Sospensione dal servizio"
       },
-      "risposta_corretta": "D",
+      "risposta_corretta": "C",
       "spiegazione": "Censura, richiamo scritto e sospensione sono sanzioni, mentre l'encomio è un premio/riconoscimento."
     },
     {
@@ -12641,12 +12641,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: SPID : Identità digitale = PEC : X",
       "opzioni": {
-        "A": "Posta elettronica certificata",
+        "A": "Presidio di qualità",
         "B": "Piano economico contabile",
         "C": "Procedimento disciplinare",
-        "D": "Presidio di qualità"
+        "D": "Posta elettronica certificata"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "SPID è il Sistema Pubblico di Identità Digitale, mentre PEC è la Posta Elettronica Certificata."
     },
     {
@@ -12669,12 +12669,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Completa la proporzione: Titulus : Protocollo informatico = U-GOV : X",
       "opzioni": {
-        "A": "Sistema gestionale contabile/amministrativo universitario",
-        "B": "Social network istituzionale",
+        "A": "Social network istituzionale",
+        "B": "Sistema gestionale contabile/amministrativo universitario",
         "C": "Browser web",
         "D": "Antivirus"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Titulus è l'applicativo di protocollazione e gestione documentale, mentre U-GOV è la suite gestionale Cineca per contabilità e risorse umane negli atenei."
     },
     {
@@ -12683,12 +12683,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento verbale",
       "domanda": "Individua il sinonimo più preciso del verbo 'ostare' (es. 'non osta all'adozione di misure specifiche', art. 5 Codice Etico UniSS):",
       "opzioni": {
-        "A": "Impedire / opporsi",
+        "A": "Obbligare",
         "B": "Favorire",
-        "C": "Obbligare",
+        "C": "Impedire / opporsi",
         "D": "Sostituire"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "'Ostare' significa essere d'ostacolo, impedire o opporsi."
     },
     {
@@ -12698,11 +12698,11 @@ var BANCA_DATI = {
       "domanda": "Leggi il brano: 'Il responsabile del procedimento cura le comunicazioni, le pubblicazioni e le notificazioni previste dalle leggi e dai regolamenti e adotta, ove ne abbia la competenza, il provvedimento finale, ovvero trasmette gli atti all'organo competente per l'adozione.' Secondo il testo:",
       "opzioni": {
         "A": "Il responsabile del procedimento adotta sempre il provvedimento finale, anche quando non ne ha la competenza",
-        "B": "Se non è competente ad adottare il provvedimento finale, il responsabile del procedimento trasmette gli atti all'organo competente",
+        "B": "L'organo competente non riceve mai gli atti dall'istruttore",
         "C": "Le notificazioni non rientrano mai nei compiti del responsabile del procedimento",
-        "D": "L'organo competente non riceve mai gli atti dall'istruttore"
+        "D": "Se non è competente ad adottare il provvedimento finale, il responsabile del procedimento trasmette gli atti all'organo competente"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "D",
       "spiegazione": "Il brano distingue chiaramente tra adozione diretta (se competente) e trasmissione degli atti all'organo competente."
     },
     {
@@ -12711,12 +12711,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'L'accesso civico generalizzato, pur non richiedendo alcuna motivazione da parte dell'istante, non può essere utilizzato in modo emulativo o pretestuoso per paralizzare il buon funzionamento dell'amministrazione attraverso richieste massive e manifestamente irragionevoli.' Cosa si deduce?",
       "opzioni": {
-        "A": "L'accesso civico generalizzato richiede sempre una motivazione giuridica",
-        "B": "L'amministrazione può respingere richieste massive e manifestamente irragionevoli che mirano a paralizzare l'attività degli uffici",
+        "A": "L'amministrazione può respingere richieste massive e manifestamente irragionevoli che mirano a paralizzare l'attività degli uffici",
+        "B": "L'accesso civico generalizzato richiede sempre una motivazione giuridica",
         "C": "Il buon funzionamento dell'amministrazione cede sempre di fronte a qualsiasi richiesta massiva",
         "D": "L'accesso civico generalizzato è vietato ai cittadini"
       },
-      "risposta_corretta": "B",
+      "risposta_corretta": "A",
       "spiegazione": "Il brano evidenzia il limite del divieto di abuso del diritto / richieste massive irragionevoli lesive del buon andamento."
     },
     {
@@ -12739,12 +12739,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Nei contratti pubblici sotto soglia, il principio di rotazione mira ad evitare il consolidarsi di rendite di posizione in capo al contraente uscente, favorendo la distribuzione delle opportunità tra gli operatori economici del mercato.' Qual è la ratio del principio di rotazione?",
       "opzioni": {
-        "A": "Impedire rendite di posizione del fornitore uscente e favorire la concorrenza tra più operatori",
+        "A": "Aumentare i prezzi degli affidamenti diretti",
         "B": "Affidare tutti i contratti sempre allo stesso fornitore per comodità",
-        "C": "Aumentare i prezzi degli affidamenti diretti",
+        "C": "Impedire rendite di posizione del fornitore uscente e favorire la concorrenza tra più operatori",
         "D": "Escludere le piccole e medie imprese dalle gare"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il brano individua la finalità della rotazione nell'evitare rendite di posizione e distribuire le opportunità di mercato."
     },
     {
@@ -12753,12 +12753,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La firma digitale qualificata garantisce tre requisiti fondamentali del documento informatico: l'autenticità (certezza dell'identità del sottoscrittore), l'integrità (assenza di modifiche successive alla firma) e il non ripudio (impossibilità per il firmatario di disconoscere l'atto).' Secondo il testo, quale requisito assicura che il file non sia stato alterato dopo la sottoscrizione?",
       "opzioni": {
-        "A": "L'integrità",
+        "A": "La conservazione analogica",
         "B": "Il non ripudio",
         "C": "La protocollazione",
-        "D": "La conservazione analogica"
+        "D": "L'integrità"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il brano definisce l'integrità come 'assenza di modifiche successive alla firma'."
     },
     {
@@ -12781,12 +12781,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Il diritto di accesso agli atti endoprocedimentale spetta ai soggetti nei confronti dei quali il provvedimento finale è destinato a produrre effetti diretti, consentendo loro di partecipare consapevolmente all'istruttoria prima dell'adozione della decisione.' Cosa si ricava?",
       "opzioni": {
-        "A": "I destinatari diretti del provvedimento possono visionare gli atti durante il procedimento per partecipare all'istruttoria",
-        "B": "Gli atti possono essere visionati solo dopo che il provvedimento è stato eseguito",
+        "A": "Gli atti possono essere visionati solo dopo che il provvedimento è stato eseguito",
+        "B": "I destinatari diretti del provvedimento possono visionare gli atti durante il procedimento per partecipare all'istruttoria",
         "C": "La partecipazione all'istruttoria è riservata agli avvocati",
         "D": "Il provvedimento finale non produce effetti sui destinatari"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il brano descrive l'accesso partecipativo ex art. 10 L. 241/1990 esercitabile prima della decisione finale."
     },
     {
@@ -12795,12 +12795,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La posta elettronica certificata (PEC) attesta l'avvenuto invio e l'avvenuta consegna del messaggio nella casella del destinatario, ma non certifica di per sé la veridicità del contenuto delle dichiarazioni inserite nel documento allegato.' Dal brano si deduce che:",
       "opzioni": {
-        "A": "La PEC certifica la trasmissione e la consegna, ma non rende automaticamente vere le dichiarazioni contenute negli allegati",
+        "A": "Qualsiasi documento inviato via PEC diventa automaticamente un atto pubblico notarile",
         "B": "La PEC non ha alcun valore probatorio circa la data di consegna",
-        "C": "Qualsiasi documento inviato via PEC diventa automaticamente un atto pubblico notarile",
+        "C": "La PEC certifica la trasmissione e la consegna, ma non rende automaticamente vere le dichiarazioni contenute negli allegati",
         "D": "La PEC sostituisce la firma digitale in ogni caso"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il brano distingue tra certezza legale di invio/consegna e veridicità sostanziale del contenuto."
     },
     {
@@ -12809,12 +12809,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La segregazione delle funzioni consiste nel suddividere le fasi chiave di un processo amministrativo o contabile tra soggetti diversi, in modo che nessuno possa controllare da solo l'intero iter dall'inizio alla fine.' Qual è l'effetto della segregazione delle funzioni?",
       "opzioni": {
-        "A": "Ridurre il rischio di errori e abusi evitando che un unico soggetto gestisca in autonomia tutte le fasi di un processo",
+        "A": "Raddoppiare il numero di uffici dell'Ateneo",
         "B": "Accentrate tutte le firme in capo a un solo impiegato",
         "C": "Eliminare i controlli contabili",
-        "D": "Raddoppiare il numero di uffici dell'Ateneo"
+        "D": "Ridurre il rischio di errori e abusi evitando che un unico soggetto gestisca in autonomia tutte le fasi di un processo"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "La segregazione delle funzioni ripartisce le fasi tra soggetti diversi per prevenire concentrazioni di potere e rischi corruttivi."
     },
     {
@@ -12837,12 +12837,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La decertificazione nei rapporti tra cittadini e pubblica amministrazione implica che le amministrazioni non possono più richiedere atti o certificati concernenti stati, qualità personali e fatti già attestati in documenti in loro possesso o che esse siano tenute a certificare.' Cosa comporta la decertificazione?",
       "opzioni": {
-        "A": "Il divieto per le PA di chiedere ai cittadini certificati su dati già detenuti da pubbliche amministrazioni",
-        "B": "L'obbligo per i cittadini di presentare certificati bollati per ogni istanza",
+        "A": "L'obbligo per i cittadini di presentare certificati bollati per ogni istanza",
+        "B": "Il divieto per le PA di chiedere ai cittadini certificati su dati già detenuti da pubbliche amministrazioni",
         "C": "La soppressione delle autocertificazioni",
         "D": "La validità dei certificati privati nei concorsi pubblici"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il brano sintetizza il principio dell'art. 40 D.P.R. 445/2000 e dell'art. 18 L. 241/1990."
     },
     {
@@ -12851,12 +12851,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'Il Nucleo di Valutazione di Ateneo opera in posizione di indipendenza, raccordandosi con l'ANVUR, per verificare la qualità e l'efficacia dell'offerta didattica, dell'attività di ricerca e dei servizi di supporto agli studenti.' Secondo il brano:",
       "opzioni": {
-        "A": "Il Nucleo di Valutazione agisce in indipendenza e in raccordo con l'ANVUR per valutare didattica, ricerca e servizi",
+        "A": "L'ANVUR sostituisce il Nucleo di Valutazione nelle delibere di spesa",
         "B": "Il Nucleo di Valutazione è subordinato gerarchicamente ai Direttori di Dipartimento",
-        "C": "L'ANVUR sostituisce il Nucleo di Valutazione nelle delibere di spesa",
+        "C": "Il Nucleo di Valutazione agisce in indipendenza e in raccordo con l'ANVUR per valutare didattica, ricerca e servizi",
         "D": "I servizi di supporto agli studenti non sono oggetto di valutazione"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il testo evidenzia indipendenza, raccordo con ANVUR e ambito triplice di valutazione (didattica, ricerca, servizi)."
     },
     {
@@ -12865,12 +12865,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La riservatezza dell'identità del segnalante (whistleblower) costituisce il cardine della normativa sulla segnalazione di illeciti: la sua identità non può essere rivelata senza il suo consenso espresso a persone diverse da quelle competenti a ricevere o a dare seguito alle segnalazioni.' Secondo il brano:",
       "opzioni": {
-        "A": "L'identità del segnalante è protetta e non può essere divulgata a soggetti non competenti senza il suo consenso espresso",
+        "A": "Il consenso del segnalante non è mai necessario per rivelarne il nome",
         "B": "Il nome del segnalante viene comunicato immediatamente al soggetto segnalato",
         "C": "Le segnalazioni sono pubblicate sul sito dell'ente",
-        "D": "Il consenso del segnalante non è mai necessario per rivelarne il nome"
+        "D": "L'identità del segnalante è protetta e non può essere divulgata a soggetti non competenti senza il suo consenso espresso"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il testo ribadisce il divieto di rivelazione dell'identità del whistleblower senza consenso espresso."
     },
     {
@@ -12893,12 +12893,12 @@ var BANCA_DATI = {
       "argomento": "Comprensione verbale",
       "domanda": "Leggi il brano: 'La parità di genere negli organi collegiali e nelle commissioni di concorso rappresenta non solo un principio costituzionale di eguaglianza sostanziale, ma anche un criterio di legittimità della composizione degli organi amministrativi.' Secondo il brano:",
       "opzioni": {
-        "A": "La violazione delle norme sulla parità di genere nella composizione delle commissioni può incidere sulla legittimità dell'organo",
-        "B": "La parità di genere è un mero auspicio privo di rilevanza giuridica",
+        "A": "La parità di genere è un mero auspicio privo di rilevanza giuridica",
+        "B": "La violazione delle norme sulla parità di genere nella composizione delle commissioni può incidere sulla legittimità dell'organo",
         "C": "Le commissioni di concorso devono essere composte esclusivamente da uomini o esclusivamente da donne",
         "D": "Il principio di eguaglianza non si applica agli organi collegiali"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il testo qualifica la parità di genere come vero e proprio criterio di legittimità della composizione."
     },
     {
@@ -12907,12 +12907,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Dopo l'introduzione del nuovo portale studenti, il numero di errori nella compilazione dei piani di studio è sceso del 50%. Pertanto, il nuovo portale è più intuitivo del precedente.' Quale elemento RAFFORZA maggiormente questa conclusione?",
       "opzioni": {
-        "A": "Nessuna modifica è stata apportata ai regolamenti didattici né all'assistenza dei tutor, e il nuovo portale ha introdotto controlli automatici guidati passo-passo",
+        "A": "Il nuovo portale utilizza colori diversi rispetto al vecchio",
         "B": "Nello stesso anno il numero totale degli studenti immatricolati è diminuito del 60%",
-        "C": "Il nuovo portale utilizza colori diversi rispetto al vecchio",
+        "C": "Nessuna modifica è stata apportata ai regolamenti didattici né all'assistenza dei tutor, e il nuovo portale ha introdotto controlli automatici guidati passo-passo",
         "D": "Gli studenti hanno ricevuto un manuale cartaceo di 300 pagine"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Escludere il calo degli iscritti e confermare che l'unica variabile cambiata è l'interfaccia guidata rafforza il nesso causale."
     },
     {
@@ -12921,12 +12921,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Chiunque voglia partecipare al concorso deve versare un contributo di 10 euro tramite PagoPA. Il sig. Rossi ha versato 10 euro tramite PagoPA. Quindi il sig. Rossi parteciperà sicuramente al concorso.' Qual è l'errore nel ragionamento?",
       "opzioni": {
-        "A": "Scambiare una condizione necessaria (il pagamento) con una condizione sufficiente: il sig. Rossi potrebbe non aver inviato la domanda entro la scadenza o non avere il titolo di studio",
+        "A": "Nessun errore, il pagamento garantisce l'ammissione",
         "B": "Sbagliare l'importo del contributo previsto dal bando",
         "C": "Ignorare che PagoPA è un sistema elettronico",
-        "D": "Nessun errore, il pagamento garantisce l'ammissione"
+        "D": "Scambiare una condizione necessaria (il pagamento) con una condizione sufficiente: il sig. Rossi potrebbe non aver inviato la domanda entro la scadenza o non avere il titolo di studio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il pagamento è condizione necessaria ma non sufficiente per perfezionare la partecipazione."
     },
     {
@@ -12949,12 +12949,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Poiché gli atti a valenza esterna devono essere protocollati su Titulus, un'email interna tra due colleghi dello stesso ufficio per concordare la pausa pranzo è illegittima se non viene protocollata.' Perché il ragionamento è fallace?",
       "opzioni": {
-        "A": "Estende impropriamente una regola prevista per gli atti amministrativi a valenza esterna a una comunicazione informale interna priva di rilevanza giuridica",
-        "B": "Confonde Titulus con il sito web dell'Ateneo",
+        "A": "Confonde Titulus con il sito web dell'Ateneo",
+        "B": "Estende impropriamente una regola prevista per gli atti amministrativi a valenza esterna a una comunicazione informale interna priva di rilevanza giuridica",
         "C": "Presuppone che i colleghi non possano fare pausa pranzo",
         "D": "Ignora che le email non esistono nella PA"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'art. 20, comma 11 del Codice Etico UniSS esclude espressamente le comunicazioni informali dall'obbligo di protocollazione."
     },
     {
@@ -12963,12 +12963,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Negli ultimi tre anni il budget destinato alla formazione del personale tecnico-amministrativo è aumentato del 30%, e nello stesso periodo il numero di ricorsi contro gli atti dell'Ateneo è diminuito del 25%. Dunque, investire nella formazione riduce il contenzioso amministrativo.' Quale elemento RAFFORZA la tesi?",
       "opzioni": {
-        "A": "I corsi finanziati riguardavano proprio la corretta redazione degli atti amministrativi e la L. 241/1990, e la riduzione dei ricorsi si è concentrata negli uffici che hanno partecipato ai corsi",
+        "A": "I giudici amministrativi hanno aumentato il contributo unificato per i ricorsi",
         "B": "Nello stesso periodo sono aumentate le tasse universitarie",
-        "C": "I giudici amministrativi hanno aumentato il contributo unificato per i ricorsi",
+        "C": "I corsi finanziati riguardavano proprio la corretta redazione degli atti amministrativi e la L. 241/1990, e la riduzione dei ricorsi si è concentrata negli uffici che hanno partecipato ai corsi",
         "D": "Il numero di dipendenti è raddoppiato"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La correlazione specifica tra contenuto dei corsi (redazione atti) e calo dei ricorsi negli uffici formati rafforza il legame causale."
     },
     {
@@ -12977,12 +12977,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Nessun dipendente può accettare regali superiori a 100 euro. Marco ha ricevuto una penna del valore di 15 euro da un utente. Quindi Marco ha sicuramente rispettato il Codice di Comportamento.' Quale eccezione potrebbe rendere FALSA la conclusione?",
       "opzioni": {
-        "A": "Marco aveva già ricevuto dallo stesso soggetto o nell'arco dell'anno altri regali per 95 euro (superando il tetto annuo di 100 euro), oppure ha chiesto la penna come corrispettivo per un atto d'ufficio",
+        "A": "L'utente era uno studente laureando",
         "B": "La penna era di colore blu anziché nero",
         "C": "Marco lavora nell'Area dei Collaboratori",
-        "D": "L'utente era uno studente laureando"
+        "D": "Marco aveva già ricevuto dallo stesso soggetto o nell'arco dell'anno altri regali per 95 euro (superando il tetto annuo di 100 euro), oppure ha chiesto la penna come corrispettivo per un atto d'ufficio"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ai sensi dell'art. 13 Codice Etico UniSS, il limite di 100 euro è complessivo nell'arco dell'anno ed è comunque vietato chiedere/accettare regali a titolo di corrispettivo per atti d'ufficio."
     },
     {
@@ -13005,12 +13005,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Tutti i provvedimenti motivati sono legittimi. Il provvedimento K è motivato. Dunque il provvedimento K è legittimo.' Quale critica si può muovere alla premessa maggiore ('Tutti i provvedimenti motivati sono legittimi')?",
       "opzioni": {
-        "A": "La premessa è falsa: la motivazione è un requisito necessario, ma un provvedimento motivato può comunque essere illegittimo per incompetenza, violazione di legge o contraddittorietà",
-        "B": "La premessa è sempre vera in ogni ordinamento",
+        "A": "La premessa è sempre vera in ogni ordinamento",
+        "B": "La premessa è falsa: la motivazione è un requisito necessario, ma un provvedimento motivato può comunque essere illegittimo per incompetenza, violazione di legge o contraddittorietà",
         "C": "Nessun provvedimento deve essere motivato",
         "D": "Il sillogismo non è formalmente valido"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il sillogismo è formalmente valido ma parte da una premessa falsa (la motivazione non esclude altri vizi ex art. 21-octies L. 241/1990)."
     },
     {
@@ -13019,12 +13019,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'L'Università ha deciso di svolgere la prova preselettiva da remoto per ridurre i costi logistici di affitto dei padiglioni fieristici.' Quale conseguenza organizzativa diretta deriva da questa scelta?",
       "opzioni": {
-        "A": "La necessità di predisporre sistemi di proctoring a distanza e regole tecniche (webcam, connessione, identificazione) per garantire la regolarità della prova",
+        "A": "L'ammissione automatica di tutti i candidati senza prova scritta",
         "B": "L'eliminazione della soglia minima di 21/30",
-        "C": "L'ammissione automatica di tutti i candidati senza prova scritta",
+        "C": "La necessità di predisporre sistemi di proctoring a distanza e regole tecniche (webcam, connessione, identificazione) per garantire la regolarità della prova",
         "D": "L'abolizione del documento di identità"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La modalità telematica da remoto sostituisce la logistica fisica con requisiti di sorveglianza digitale (proctoring)."
     },
     {
@@ -13033,12 +13033,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Poiché il Consiglio di Amministrazione approva il bilancio preventivo entro il 31 dicembre, qualsiasi spesa effettuata il 15 gennaio è sicuramente coperta da un bilancio già approvato.' Quale circostanza può smentire la conclusione?",
       "opzioni": {
-        "A": "Il Consiglio di Amministrazione potrebbe non essere riuscito ad approvare il bilancio entro il 31 dicembre e aver autorizzato l'esercizio provvisorio (art. 29 Regolamento AFC)",
+        "A": "Il bilancio preventivo non esiste nelle università",
         "B": "Il 15 gennaio è un giorno festivo",
         "C": "L'esercizio contabile inizia il 1° luglio",
-        "D": "Il bilancio preventivo non esiste nelle università"
+        "D": "Il Consiglio di Amministrazione potrebbe non essere riuscito ad approvare il bilancio entro il 31 dicembre e aver autorizzato l'esercizio provvisorio (art. 29 Regolamento AFC)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'art. 29 del Regolamento AFC disciplina espressamente l'esercizio provvisorio proprio per l'ipotesi di mancata approvazione entro i termini."
     },
     {
@@ -13061,12 +13061,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Se un candidato ha un'invalidità pari all'85%, è esonerato dalla prova preselettiva, quindi accede direttamente alla prova orale senza sostenere la prova scritta.' Dove sta l'errore?",
       "opzioni": {
-        "A": "L'art. 20 della L. 104/1992 e l'art. 4 del bando esonerano i candidati con invalidità ≥80% dalla sola prova preselettiva, ferme restando tutte le altre prove (scritta e orale)",
-        "B": "L'esonero scatta solo al 100% di invalidità",
+        "A": "L'esonero scatta solo al 100% di invalidità",
+        "B": "L'art. 20 della L. 104/1992 e l'art. 4 del bando esonerano i candidati con invalidità ≥80% dalla sola prova preselettiva, ferme restando tutte le altre prove (scritta e orale)",
         "C": "L'esonero riguarda solo la prova orale",
         "D": "Non c'è alcun errore"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "L'esonero riguarda esclusivamente l'eventuale prova preselettiva, non la prova scritta."
     },
     {
@@ -13075,12 +13075,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Il Direttore Generale partecipa alle sedute del Senato Accademico e del Consiglio di Amministrazione. Quindi il Direttore Generale concorre con il proprio voto deliberativo all'approvazione dello Statuto.' Perché è errato?",
       "opzioni": {
-        "A": "Perché ai sensi degli artt. 24, 26 e 27 dello Statuto UniSS il Direttore Generale partecipa alle sedute di SA e CdA esclusivamente con voto consultivo, non deliberativo",
+        "A": "Perché lo Statuto è approvato dal Collegio dei Revisori",
         "B": "Perché il Direttore Generale non partecipa mai alle sedute del CdA",
-        "C": "Perché lo Statuto è approvato dal Collegio dei Revisori",
+        "C": "Perché ai sensi degli artt. 24, 26 e 27 dello Statuto UniSS il Direttore Generale partecipa alle sedute di SA e CdA esclusivamente con voto consultivo, non deliberativo",
         "D": "Perché il Direttore Generale vota solo in caso di parità"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il Direttore Generale ha voto consultivo (non deliberativo) negli organi di governo."
     },
     {
@@ -13089,12 +13089,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento critico-verbale",
       "domanda": "Argomento: 'Poiché l'accesso documentale (L. 241/90) richiede un interesse diretto, concreto e attuale, nessun cittadino può mai ottenere dati detenuti dalla PA senza dimostrare un interesse personale.' Quale istituto confuta questa affermazione?",
       "opzioni": {
-        "A": "L'accesso civico generalizzato (FOIA) previsto dall'art. 5, comma 2 del D.Lgs. 33/2013, esercitabile da chiunque senza dover motivare alcun interesse personale",
+        "A": "La firma digitale",
         "B": "Il segreto d'ufficio",
         "C": "Il ricorso straordinario al Capo dello Stato",
-        "D": "La firma digitale"
+        "D": "L'accesso civico generalizzato (FOIA) previsto dall'art. 5, comma 2 del D.Lgs. 33/2013, esercitabile da chiunque senza dover motivare alcun interesse personale"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "L'accesso civico generalizzato (FOIA) ha superato il requisito della legittimazione soggettiva qualificata per i dati/documenti non soggetti a limiti."
     },
     {
@@ -13117,12 +13117,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Osserva la sequenza di simboli: [◆ ◇ ◆] -> [◇ ◆ ◇] -> [◆ ◇ ◆] -> [ ? ]. Quale terzina completa la sequenza?",
       "opzioni": {
-        "A": "[◇ ◆ ◇]",
-        "B": "[◆ ◆ ◇]",
+        "A": "[◆ ◆ ◇]",
+        "B": "[◇ ◆ ◇]",
         "C": "[◇ ◇ ◆]",
         "D": "[◆ ◇ ◆]"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Alternanza completa tra rombo nero (◆) e rombo bianco (◇) ad ogni passo."
     },
     {
@@ -13131,12 +13131,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "In una sequenza di quattro figure geometriche: la prima ha 3 lati (triangolo), la seconda ha 4 lati (quadrato), la terza ha 5 lati (pentagono). Quale figura completa la serie?",
       "opzioni": {
-        "A": "Esagono (6 lati)",
+        "A": "Cerchio",
         "B": "Ettagono (7 lati)",
-        "C": "Cerchio",
+        "C": "Esagono (6 lati)",
         "D": "Ottagono (8 lati)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Il numero dei lati aumenta di +1 ad ogni passaggio: 3 -> 4 -> 5 -> 6 (esagono)."
     },
     {
@@ -13145,12 +13145,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Se ruoti la lettera maiuscola 'N' di 90 gradi in senso orario sul piano del foglio, quale lettera maiuscola ottieni?",
       "opzioni": {
-        "A": "Z",
+        "A": "H",
         "B": "M",
         "C": "W",
-        "D": "H"
+        "D": "Z"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Ruotando una 'N' di 90° in senso orario, i due tratti verticali diventano orizzontali e la diagonale da alto-sinistra a basso-destra diventa da alto-destra a basso-sinistra, formando una 'Z'."
     },
     {
@@ -13173,12 +13173,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua l'elemento estraneo nella serie visivo-simbolica: [A1], [B2], [C3], [D5], [E5]",
       "opzioni": {
-        "A": "[D5]",
-        "B": "[A1]",
+        "A": "[A1]",
+        "B": "[D5]",
         "C": "[C3]",
         "D": "[E5]"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Ogni coppia associa alla lettera la sua posizione progressiva nell'alfabeto (A=1, B=2, C=3, E=5), mentre D è la 4ª lettera (dovrebbe essere [D4], non [D5])."
     },
     {
@@ -13187,12 +13187,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Un cubo di legno verniciato di rosso su tutte le 6 facce viene tagliato in 27 cubetti identici (griglia 3x3x3). Quanti cubetti hanno esattamente 3 facce verniciate di rosso?",
       "opzioni": {
-        "A": "8 cubetti (quelli posti agli 8 vertici del cubo grande)",
+        "A": "6 cubetti",
         "B": "12 cubetti",
-        "C": "6 cubetti",
+        "C": "8 cubetti (quelli posti agli 8 vertici del cubo grande)",
         "D": "1 cubetto"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Solo i cubetti situati agli 8 vertici del cubo 3x3x3 espongono 3 facce esterne."
     },
     {
@@ -13201,12 +13201,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Nel medesimo cubo 3x3x3 verniciato su tutte le 6 facce e tagliato in 27 cubetti identici, quanti cubetti NON hanno alcuna faccia verniciata di rosso?",
       "opzioni": {
-        "A": "1 cubetto (quello centrale interno)",
+        "A": "0 cubetti",
         "B": "6 cubetti",
         "C": "8 cubetti",
-        "D": "0 cubetti"
+        "D": "1 cubetto (quello centrale interno)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Solo il cubetto situato esattamente al centro geometrico del cubo 3x3x3 resta completamente interno senza facce verniciate."
     },
     {
@@ -13229,12 +13229,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Individua la relazione insiemistica corretta tra: 'Organi universitari', 'Organi monocratici', 'Collegio dei Revisori dei conti'.",
       "opzioni": {
-        "A": "'Organi monocratici' e 'Collegio dei Revisori dei conti' (organo collegiale) sono due sottoinsiemi disgiunti entrambi contenuti in 'Organi universitari'",
-        "B": "'Collegio dei Revisori dei conti' è contenuto in 'Organi monocratici'",
+        "A": "'Collegio dei Revisori dei conti' è contenuto in 'Organi monocratici'",
+        "B": "'Organi monocratici' e 'Collegio dei Revisori dei conti' (organo collegiale) sono due sottoinsiemi disgiunti entrambi contenuti in 'Organi universitari'",
         "C": "I tre insiemi coincidono",
         "D": "'Organi universitari' è contenuto in 'Organi monocratici'"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Il Collegio dei Revisori è un organo collegiale, quindi disgiunto dagli organi monocratici (Rettore, Direttore Generale), ma entrambi appartengono agli organi universitari."
     },
     {
@@ -13243,12 +13243,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Quale delle seguenti lettere maiuscole possiede sia un asse di simmetria verticale sia un asse di simmetria orizzontale?",
       "opzioni": {
-        "A": "H",
+        "A": "E",
         "B": "A",
-        "C": "E",
+        "C": "H",
         "D": "L"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "La lettera 'H' (come I, O, X) è simmetrica sia rispetto all'asse verticale centrale sia rispetto all'asse orizzontale centrale ('A' ha solo simmetria verticale, 'E' solo orizzontale)."
     },
     {
@@ -13257,12 +13257,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "In una sequenza di coppie di simboli: [1-A], [4-D], [9-I], [16-?]. Quale lettera completa l'ultima coppia?",
       "opzioni": {
-        "A": "R (16ª lettera dell'alfabeto italiano di 21 lettere)",
+        "A": "S",
         "B": "O",
         "C": "P",
-        "D": "S"
+        "D": "R (16ª lettera dell'alfabeto italiano di 21 lettere)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Il numero indica il quadrato perfetto e la lettera corrisponde alla posizione numerica nell'alfabeto italiano (21 lettere): 1=A, 4=D, 9=I, 16=R."
     },
     {
@@ -13285,12 +13285,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Osserva la progressione: [■], [■ ■], [■ ■ ■ ■], [ ? ]. Quanti quadrati contiene il quarto elemento raddoppiando ad ogni passo?",
       "opzioni": {
-        "A": "8 quadrati",
-        "B": "6 quadrati",
+        "A": "6 quadrati",
+        "B": "8 quadrati",
         "C": "5 quadrati",
         "D": "16 quadrati"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "B",
       "spiegazione": "Progressione geometrica di ragione 2: 1 -> 2 -> 4 -> 8 quadrati."
     },
     {
@@ -13299,12 +13299,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "Quale coppia completa l'analogia: 'Cerchio : Sfera = Quadrato : X'?",
       "opzioni": {
-        "A": "Cubo",
+        "A": "Cilindro",
         "B": "Triangolo",
-        "C": "Cilindro",
+        "C": "Cubo",
         "D": "Cono"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "C",
       "spiegazione": "Passaggio dalla figura piana al corrispondente solido tridimensionale regolare: il cerchio genera la sfera, il quadrato genera il cubo."
     },
     {
@@ -13313,12 +13313,12 @@ var BANCA_DATI = {
       "argomento": "Ragionamento astratto e abilità visiva",
       "domanda": "In un diagramma di Venn, l'insieme A rappresenta 'Dipendenti con diploma', l'insieme B 'Dipendenti con laurea', l'insieme C 'Personale Area Collaboratori'. Quale affermazione è coerente col bando UniSS?",
       "opzioni": {
-        "A": "L'insieme C ('Personale Area Collaboratori') è interamente contenuto in A ('Dipendenti con diploma'), e può intersecare B ('Dipendenti con laurea' che possiedono un titolo superiore al diploma richiesto)",
+        "A": "A, B e C sono tre insiemi disgiunti",
         "B": "C e B sono completamente disgiunti (chi è laureato non può essere Collaboratore)",
         "C": "C e A sono completamente disgiunti",
-        "D": "A, B e C sono tre insiemi disgiunti"
+        "D": "L'insieme C ('Personale Area Collaboratori') è interamente contenuto in A ('Dipendenti con diploma'), e può intersecare B ('Dipendenti con laurea' che possiedono un titolo superiore al diploma richiesto)"
       },
-      "risposta_corretta": "A",
+      "risposta_corretta": "D",
       "spiegazione": "Per accedere all'Area dei Collaboratori è richiesto il diploma (quindi tutti appartengono ad A), ma molti collaboratori possiedono anche la laurea (intersezione tra C e B)."
     }
   ],
@@ -13332,15 +13332,3 @@ var BANCA_DATI = {
     "Ragionamento astratto e abilità visiva"
   ]
 };
-
-if (typeof window !== 'undefined') {
-  window.BANCA_DATI = BANCA_DATI;
-}
-
-if (typeof globalThis !== 'undefined') {
-  globalThis.BANCA_DATI = BANCA_DATI;
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = BANCA_DATI;
-}

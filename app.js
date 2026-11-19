@@ -86,6 +86,7 @@
   // STATO GLOBALE DELL'APPLICAZIONE
   // =========================================================================
   const AppState = {
+    appVersion: '7.0.2',
     allQuestions: [],
     categories: [],
     topicsByCategory: {},
@@ -131,7 +132,9 @@
 
     // Impostazioni modalità studio
     settings: {
-      autoExplain: true // Spiegazione immediata automatica al clic
+      autoExplain: true, // Spiegazione immediata automatica al clic
+      shuffleQuestions: true, // Default: ordine domande casuale
+      shuffleOptions: true    // Default: ordine risposte A, B, C, D casuale
     },
 
     // Stato Allenamento
@@ -144,6 +147,7 @@
       filterStatus: 'ALL', // 'ALL', 'WRONG', 'BOOKMARKED', 'UNANSWERED'
       viewMode: 'card', // 'card' o 'list'
       userAnswers: {}, // { questionId: { selectedOption, isCorrect } }
+      retrySessionAnswers: {}, // Risposte date durante la sessione attiva di "Ripassa Errori"
       bookmarks: new Set()
     },
 
@@ -164,6 +168,7 @@
     // Storico
     history: []
   };
+  window.AppState = AppState;
 
   // =========================================================================
   // PERSISTENZA LOCALSTORAGE
@@ -176,7 +181,9 @@
       THEME: 'uniss_theme_pref',
       SOUND: 'uniss_sound_pref',
       CUSTOM_BANCA_DATI: 'uniss_custom_banca_dati_2026',
-      LAST_SESSION: 'uniss_last_session_2026'
+      LAST_SESSION: 'uniss_last_session_2026',
+      SHUFFLE_QUESTIONS: 'uniss_shuffle_questions_pref',
+      SHUFFLE_OPTIONS: 'uniss_shuffle_options_pref'
     },
 
     getNative(key) {
@@ -232,6 +239,12 @@
         const t = this.getItem(this.KEYS.THEME) || 'light';
         document.documentElement.setAttribute('data-theme', t);
         updateThemeToggleIcon(t);
+
+        const sq = this.getItem(this.KEYS.SHUFFLE_QUESTIONS);
+        if (sq !== null) AppState.settings.shuffleQuestions = (sq === 'true');
+
+        const so = this.getItem(this.KEYS.SHUFFLE_OPTIONS);
+        if (so !== null) AppState.settings.shuffleOptions = (so === 'true');
       } catch (e) {
         console.warn('Errore lettura dati salvati:', e);
       }
@@ -321,6 +334,7 @@
       } catch (e) {}
     }
   };
+  window.Storage = Storage;
 
   // =========================================================================
   // HELPER E UTILITY
@@ -354,6 +368,47 @@
     return arr;
   }
 
+  function getDisplayOptions(q) {
+    if (!q || !q.opzioni) return [];
+
+    // Se esiste già una mappatura generata coerente con l'impostazione corrente, riusala
+    if (q._displayOptions && q._displayOptionsMode === AppState.settings.shuffleOptions) {
+      return q._displayOptions;
+    }
+
+    const origLetters = ['A', 'B', 'C', 'D'];
+    const list = [];
+    origLetters.forEach(l => {
+      const text = q.opzioni[l];
+      if (text) {
+        list.push({
+          origLetter: l,
+          text: text,
+          isCorrect: (l === q.risposta_corretta)
+        });
+      }
+    });
+
+    // Mescola le opzioni se l'impostazione è attiva (esclusi ID 122 e 150 con riferimenti posizionali)
+    if (AppState.settings.shuffleOptions && q.id !== 122 && q.id !== 150) {
+      for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [list[i], list[j]] = [list[j], list[i]];
+      }
+    }
+
+    const result = list.map((item, idx) => ({
+      displayLetter: origLetters[idx],
+      text: item.text,
+      isCorrect: item.isCorrect,
+      origLetter: item.origLetter
+    }));
+
+    q._displayOptions = result;
+    q._displayOptionsMode = AppState.settings.shuffleOptions;
+    return result;
+  }
+
   function showToast(message, icon = 'ℹ️') {
     const container = document.getElementById('toast-container');
     if (!container) return;
@@ -385,26 +440,25 @@
       : (typeof BANCA_DATI !== 'undefined' ? BANCA_DATI : null);
     const customData = Storage.getCustomBancaDati();
 
-    // Se la banca dati integrata (v6.0 con 949 quesiti) è disponibile e ha più o uguali quesiti della cache locale
-    if (integrated && integrated.quesiti && Array.isArray(integrated.quesiti) && integrated.quesiti.length > 0) {
-      const customLen = (customData && Array.isArray(customData.quesiti)) ? customData.quesiti.length : 0;
-      if (integrated.quesiti.length >= customLen) {
-        console.log('[Init] Caricata banca dati integrata v' + (integrated.versione || '6.0') + ' (' + integrated.quesiti.length + ' quesiti)');
-        loadData(integrated, 'Integrata (v' + (integrated.versione || '6.0') + ' Completa)');
+    // 1. Se l'utente ha scaricato un aggiornamento online o ha una banca dati personalizzata valida
+    if (customData && Array.isArray(customData.quesiti) && customData.quesiti.length > 0) {
+      const isOnline = !!customData.isOnlineUpdate;
+      const customLen = customData.quesiti.length;
+      const integratedLen = (integrated && Array.isArray(integrated.quesiti)) ? integrated.quesiti.length : 0;
+      
+      // Carica se è un aggiornamento OTA scaricato online oppure se ha almeno tanti quesiti quanti la versione integrata
+      if (isOnline || customLen >= integratedLen) {
+        console.log('[Storage] Caricata banca dati aggiornata:', customLen, 'quesiti', isOnline ? '(OTA Online)' : '(Custom)');
+        loadData(customData, customData.sourceLabel || ('Aggiornamento Online (v' + (customData.versione || 'Cloud') + ')'));
         return;
       }
     }
 
-    // 1. Controlla se l'utente ha salvato una banca dati personalizzata/aggiornata in locale
-    if (customData && Array.isArray(customData.quesiti) && customData.quesiti.length > 0) {
-      console.log('[Storage] Caricata banca dati salvata in locale:', customData.quesiti.length, 'quesiti');
-      loadData(customData, 'Personalizzata / Aggiornata (' + (customData.versione || 'Aggiornata') + ')');
-      return;
-    }
-
-    // 2. Altrimenti usa la banca dati integrata in banca_dati.js
+    // 2. Altrimenti usa la banca dati integrata (v6.1 Completa con 949 quesiti)
     if (integrated && integrated.quesiti && Array.isArray(integrated.quesiti) && integrated.quesiti.length > 0) {
-      loadData(integrated, 'Integrata (v' + (integrated.versione || '6.0') + ' Completa)');
+      console.log('[Init] Caricata banca dati integrata v' + (integrated.versione || '6.1') + ' (' + integrated.quesiti.length + ' quesiti)');
+      loadData(integrated, 'Integrata (v' + (integrated.versione || '6.1') + ' Completa)');
+      return;
     } else {
       // Fallback asincrono se caricato via web server
       fetch('banca_dati_concorso_uniss_2026.json')
@@ -442,6 +496,10 @@
     const repoNavTab = document.getElementById('tab-repo');
     if (repoNavTab) {
       repoNavTab.innerHTML = `<span>📚 Banca Dati (${AppState.allQuestions.length})</span>`;
+    }
+    const deskRepoLabel = document.getElementById('desk-repo-nav-label');
+    if (deskRepoLabel) {
+      deskRepoLabel.textContent = `📖 Banca Dati (${AppState.allQuestions.length})`;
     }
 
     if (data.modalita_simulazione) {
@@ -664,7 +722,9 @@
     AppState.training.filterArgomento = 'ALL';
     AppState.training.filterStatus = 'ALL';
     AppState.training.filterSearch = '';
-    AppState.training.filteredList = macroQuestions;
+    AppState.training.filteredList = AppState.settings.shuffleQuestions 
+      ? shuffleArray(macroQuestions) 
+      : [...macroQuestions];
 
     // Posiziona automaticamente al primo quesito non ancora svolto
     const firstUnanswered = macroQuestions.findIndex(q => !AppState.training.userAnswers[q.id]);
@@ -979,7 +1039,7 @@
         btnExtraClass = 'btn-secondary';
       }
 
-      const meta = SUBJECTS_META[materia] || { icon: '📘', desc: 'Quesiti ufficiali del concorso UniSS 2026.' };
+      const meta = SUBJECTS_META[materia] || { icon: '📘', desc: 'Quesiti di preparazione per il concorso UniSS 2026.' };
       const topicsList = AppState.topicsByCategory[materia] || [];
 
       const topicsData = topicsList.map(topic => {
@@ -1119,7 +1179,7 @@
 
     const currentMode = AppState.simulationModes[AppState.currentSimulationMode];
     if (titleEl && currentMode) {
-      titleEl.textContent = `Distribuzione Ufficiale: ${currentMode.nome} (${currentMode.numero_domande || 30} Domande)`;
+      titleEl.textContent = `Distribuzione Quesiti: ${currentMode.nome} (${currentMode.numero_domande || 30} Domande)`;
     }
 
     listEl.innerHTML = '';
@@ -1207,6 +1267,9 @@
       return true;
     });
 
+    if (AppState.settings.shuffleQuestions) {
+      filtered = shuffleArray(filtered);
+    }
     AppState.training.filteredList = filtered;
     if (preserveIndex) {
       if (AppState.training.currentIndex >= filtered.length) {
@@ -1214,8 +1277,13 @@
       }
     } else {
       // Posiziona automaticamente al primo quesito non ancora svolto tra quelli filtrati
-      const firstUnansweredIndex = filtered.findIndex(q => !AppState.training.userAnswers[q.id]);
-      AppState.training.currentIndex = (firstUnansweredIndex !== -1) ? firstUnansweredIndex : 0;
+      if (status === 'WRONG') {
+        const firstUnansweredRetry = filtered.findIndex(q => !AppState.training.retrySessionAnswers || !AppState.training.retrySessionAnswers[q.id]);
+        AppState.training.currentIndex = (firstUnansweredRetry !== -1) ? firstUnansweredRetry : 0;
+      } else {
+        const firstUnansweredIndex = filtered.findIndex(q => !AppState.training.userAnswers[q.id]);
+        AppState.training.currentIndex = (firstUnansweredIndex !== -1) ? firstUnansweredIndex : 0;
+      }
     }
 
     // Aggiorna contatori laterali
@@ -1326,16 +1394,20 @@
 
     if (!sheet) return;
 
+    const isReviewingWrong = (AppState.training && AppState.training.filterStatus === 'WRONG');
+
     if (isCorrect) {
       if (card) {
         card.className = 'modal-card feedback-sheet-card is-correct-sheet';
       }
       if (title) {
-        title.innerHTML = 'ESATTO! RISPOSTA CORRETTA';
+        title.innerHTML = isReviewingWrong ? 'ERRORE CORRETTO! BRAVO! 🎉' : 'ESATTO! RISPOSTA CORRETTA';
         title.style.color = 'var(--md-success)';
       }
       if (subtitle) {
-        subtitle.innerHTML = '✨ Ottimo lavoro! Hai risposto correttamente (+1 punto).';
+        subtitle.innerHTML = isReviewingWrong
+          ? '✨ Hai risolto l\'errore rispondendo esattamente (+1 punto recuperato)!'
+          : '✨ Ottimo lavoro! Hai risposto correttamente (+1 punto).';
         subtitle.style.color = 'var(--md-success)';
       }
       if (icon) icon.textContent = '✅';
@@ -1406,7 +1478,20 @@
       elMateria.textContent = q.materia;
       elMateria.className = `badge ${getBadgeClass(q.materia)}`;
     }
-    if (elArg) elArg.textContent = q.argomento || 'Generale';
+    const isReviewingWrong = (AppState.training.filterStatus === 'WRONG');
+    let effectiveAnswer = AppState.training.userAnswers[q.id];
+    if (isReviewingWrong) {
+      effectiveAnswer = (AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]) || null;
+    }
+    const isAnswered = !!effectiveAnswer;
+
+    if (elArg) {
+      if (isReviewingWrong && !isAnswered) {
+        elArg.innerHTML = `${q.argomento || 'Generale'} <span style="background:rgba(239,68,68,0.15); color:var(--md-error); padding:2px 8px; border-radius:12px; font-weight:800; font-size:0.75rem; margin-left:6px;">🎯 Riprova l'errore senza suggerimenti</span>`;
+      } else {
+        elArg.textContent = q.argomento || 'Generale';
+      }
+    }
 
     if (elBm) {
       const isBm = AppState.training.bookmarks.has(q.id);
@@ -1421,13 +1506,12 @@
     const optContainer = document.getElementById('card-options-container');
     optContainer.innerHTML = '';
 
-    const savedAnswer = AppState.training.userAnswers[q.id];
-    const isAnswered = !!savedAnswer;
+    const displayOptions = getDisplayOptions(q);
 
-    const letters = ['A', 'B', 'C', 'D'];
-    letters.forEach(letter => {
-      const optText = q.opzioni[letter];
-      if (!optText) return;
+    displayOptions.forEach((opt, optIdx) => {
+      const letter = opt.displayLetter;
+      const optText = opt.text;
+      const keyHint = optIdx + 1;
 
       const btn = document.createElement('button');
       btn.type = 'button';
@@ -1439,10 +1523,10 @@
       if (isAnswered) {
         btn.classList.add('disabled');
         btn.disabled = true;
-        if (letter === q.risposta_corretta) {
+        if (opt.isCorrect) {
           btn.classList.add('correct');
           iconHtml = '<span class="option-status-icon" style="color:var(--md-success); font-weight:800; margin-left:auto;">✔️ Risposta Esatta</span>';
-        } else if (letter === savedAnswer.selectedOption) {
+        } else if (letter === effectiveAnswer.selectedDisplayLetter || opt.origLetter === effectiveAnswer.selectedOption) {
           btn.classList.add('incorrect');
           iconHtml = '<span class="option-status-icon" style="color:var(--md-error); font-weight:800; margin-left:auto;">❌ La tua risposta</span>';
         }
@@ -1451,11 +1535,12 @@
       btn.innerHTML = `
         <div class="option-letter">${letter}</div>
         <div class="option-text">${optText}</div>
+        <span class="desktop-kbd-hint" title="Premi tasto ${keyHint} o ${letter}">[${keyHint}]</span>
         ${iconHtml}
       `;
 
       if (!isAnswered) {
-        btn.addEventListener('click', () => handleTrainingAnswer(q, letter));
+        btn.addEventListener('click', () => handleTrainingAnswer(q, opt));
       }
 
       optContainer.appendChild(btn);
@@ -1470,16 +1555,38 @@
     if (isAnswered) {
       expBox.style.display = 'block';
       expText.innerHTML = q.spiegazione;
-      if (savedAnswer.isCorrect) {
+      if (effectiveAnswer.isCorrect) {
         expBox.className = 'explanation-card is-success-alert';
         expBadge.className = 'explanation-badge succ';
-        expBadge.textContent = 'Esatto!';
+        expBadge.textContent = isReviewingWrong ? 'Errore Corretto!' : 'Esatto!';
         expIcon.textContent = '✅';
       } else {
         expBox.className = 'explanation-card is-error-alert';
         expBadge.className = 'explanation-badge err';
         expBadge.textContent = 'Risposta Errata';
         expIcon.textContent = '❌';
+
+        // Aggiungi pulsante per riprovare subito il quesito
+        let retryBtn = expBox.querySelector('#btn-retry-single-card');
+        if (!retryBtn) {
+          retryBtn = document.createElement('button');
+          retryBtn.id = 'btn-retry-single-card';
+          retryBtn.className = 'btn btn-sm btn-secondary';
+          retryBtn.style.marginTop = '10px';
+          retryBtn.style.display = 'inline-flex';
+          retryBtn.style.alignItems = 'center';
+          retryBtn.style.gap = '6px';
+          retryBtn.innerHTML = '<span>🔄</span> Riprova questo quesito ora';
+          retryBtn.onclick = () => {
+            delete AppState.training.userAnswers[q.id];
+            if (AppState.training.retrySessionAnswers) delete AppState.training.retrySessionAnswers[q.id];
+            Storage.saveTrainingAnswers();
+            updateTrainingStatsMini();
+            updateStatusPillCounts();
+            renderTrainingCard();
+          };
+          expBox.appendChild(retryBtn);
+        }
       }
     } else {
       expBox.style.display = 'none';
@@ -1496,12 +1603,33 @@
     Storage.saveTrainingSession();
   }
 
-  function handleTrainingAnswer(question, selectedLetter) {
+  function handleTrainingAnswer(question, selectedOpt) {
     try {
-      const isCorrect = (selectedLetter === question.risposta_corretta);
+      const isCorrect = (typeof selectedOpt === 'object') ? selectedOpt.isCorrect : (selectedOpt === question.risposta_corretta);
+      const selectedLetter = (typeof selectedOpt === 'object') ? selectedOpt.origLetter : selectedOpt;
+      const selectedDisplayLetter = (typeof selectedOpt === 'object') ? selectedOpt.displayLetter : selectedOpt;
+      const isReviewingWrong = (AppState.training.filterStatus === 'WRONG');
+
+      // Trova la lettera corretta a video
+      const displayOpts = getDisplayOptions(question);
+      const corrOpt = displayOpts.find(o => o.isCorrect);
+      const correctDisplayLetter = corrOpt ? corrOpt.displayLetter : question.risposta_corretta;
+
+      if (!AppState.training.retrySessionAnswers) {
+        AppState.training.retrySessionAnswers = {};
+      }
+      if (isReviewingWrong) {
+        AppState.training.retrySessionAnswers[question.id] = {
+          selectedOption: selectedLetter,
+          selectedDisplayLetter: selectedDisplayLetter,
+          isCorrect: isCorrect,
+          timestamp: Date.now()
+        };
+      }
 
       AppState.training.userAnswers[question.id] = {
         selectedOption: selectedLetter,
+        selectedDisplayLetter: selectedDisplayLetter,
         isCorrect: isCorrect,
         timestamp: Date.now()
       };
@@ -1521,7 +1649,7 @@
           const oldIcon = b.querySelector('.option-status-icon');
           if (oldIcon) oldIcon.remove();
 
-          if (letter === question.risposta_corretta) {
+          if (letter === correctDisplayLetter) {
             b.classList.add('correct');
             const icon = document.createElement('span');
             icon.className = 'option-status-icon';
@@ -1530,7 +1658,7 @@
             icon.style.marginLeft = 'auto';
             icon.textContent = '✔️ Risposta Esatta';
             b.appendChild(icon);
-          } else if (letter === selectedLetter) {
+          } else if (letter === selectedDisplayLetter) {
             b.classList.add('incorrect');
             const icon = document.createElement('span');
             icon.className = 'option-status-icon';
@@ -1609,25 +1737,29 @@
       card.className = 'question-card';
       card.id = `q-list-${q.id}`;
 
-      const savedAnswer = AppState.training.userAnswers[q.id];
-      const isAnswered = !!savedAnswer;
+      const isReviewingWrong = (AppState.training.filterStatus === 'WRONG');
+      let effectiveAnswer = AppState.training.userAnswers[q.id];
+      if (isReviewingWrong) {
+        effectiveAnswer = (AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]) || null;
+      }
+      const isAnswered = !!effectiveAnswer;
 
-      const letters = ['A', 'B', 'C', 'D'];
+      const displayOpts = getDisplayOptions(q);
       let optionsHtml = '';
 
-      letters.forEach(letter => {
-        const text = q.opzioni[letter];
-        if (!text) return;
+      displayOpts.forEach(opt => {
+        const letter = opt.displayLetter;
+        const text = opt.text;
 
         let extraClass = '';
         let badgeHtml = '';
 
         if (isAnswered) {
           extraClass = 'disabled ';
-          if (letter === q.risposta_corretta) {
+          if (opt.isCorrect) {
             extraClass += 'correct ';
             badgeHtml = '<span class="option-status-icon" style="color:var(--success-badge)">✔️ Esatta</span>';
-          } else if (letter === savedAnswer.selectedOption) {
+          } else if (letter === effectiveAnswer.selectedDisplayLetter || opt.origLetter === effectiveAnswer.selectedOption) {
             extraClass += 'incorrect ';
             badgeHtml = '<span class="option-status-icon" style="color:var(--danger-badge)">❌ Scelta</span>';
           }
@@ -1644,10 +1776,10 @@
 
       let expHtml = '';
       if (isAnswered) {
-        const alertClass = savedAnswer.isCorrect ? 'is-success-alert' : 'is-error-alert';
-        const badgeClass = savedAnswer.isCorrect ? 'succ' : 'err';
-        const badgeTxt = savedAnswer.isCorrect ? 'Esatto!' : 'Risposta Errata';
-        const icon = savedAnswer.isCorrect ? '✅' : '❌';
+        const alertClass = effectiveAnswer.isCorrect ? 'is-success-alert' : 'is-error-alert';
+        const badgeClass = effectiveAnswer.isCorrect ? 'succ' : 'err';
+        const badgeTxt = effectiveAnswer.isCorrect ? (isReviewingWrong ? 'Errore Corretto!' : 'Esatto!') : 'Risposta Errata';
+        const icon = effectiveAnswer.isCorrect ? '✅' : '❌';
 
         expHtml = `
           <div class="explanation-card ${alertClass}" style="display:block;">
@@ -1683,7 +1815,9 @@
       if (!isAnswered) {
         card.querySelectorAll('.option-item').forEach(optEl => {
           optEl.addEventListener('click', () => {
-            handleTrainingAnswer(q, optEl.dataset.letter);
+            const letter = optEl.dataset.letter;
+            const chosenOpt = displayOpts.find(o => o.displayLetter === letter) || letter;
+            handleTrainingAnswer(q, chosenOpt);
             renderTrainingList();
           });
         });
@@ -1914,10 +2048,12 @@
     const optContainer = document.getElementById('exam-options-container');
     optContainer.innerHTML = '';
 
-    const letters = ['A', 'B', 'C', 'D'];
-    letters.forEach(letter => {
-      const optText = q.opzioni[letter];
-      if (!optText) return;
+    const displayOptions = getDisplayOptions(q);
+
+    displayOptions.forEach((opt, optIdx) => {
+      const letter = opt.displayLetter;
+      const optText = opt.text;
+      const keyHint = optIdx + 1;
 
       const btn = document.createElement('div');
       btn.className = 'option-item';
@@ -1927,10 +2063,10 @@
 
       if (isAnswered) {
         btn.classList.add('disabled');
-        if (letter === q.risposta_corretta) {
+        if (opt.isCorrect) {
           btn.classList.add('correct');
           iconHtml = '<span class="option-status-icon" style="color:var(--success-badge)">✔️ Esatta</span>';
-        } else if (letter === savedAns.selectedOption) {
+        } else if (letter === savedAns.selectedDisplayLetter || opt.origLetter === savedAns.selectedOption) {
           btn.classList.add('incorrect');
           iconHtml = '<span class="option-status-icon" style="color:var(--danger-badge)">❌ Tua Risposta Errata</span>';
         }
@@ -1939,11 +2075,12 @@
       btn.innerHTML = `
         <div class="option-letter">${letter}</div>
         <div class="option-text">${optText}</div>
+        <span class="desktop-kbd-hint" title="Premi tasto ${keyHint} o ${letter}">[${keyHint}]</span>
         ${iconHtml}
       `;
 
       if (!isAnswered) {
-        btn.addEventListener('click', () => handleExamAnswer(index, q, letter));
+        btn.addEventListener('click', () => handleExamAnswer(index, q, opt));
       }
 
       optContainer.appendChild(btn);
@@ -1992,12 +2129,15 @@
    * Gestione risposta cliccata durante l'esame:
    * Se sbagliata -> rivela SUBITO la spiegazione dettagliata e il riferimento normativo!
    */
-  function handleExamAnswer(index, question, selectedLetter) {
-    const isCorrect = (selectedLetter === question.risposta_corretta);
+  function handleExamAnswer(index, question, selectedOpt) {
+    const isCorrect = (typeof selectedOpt === 'object') ? selectedOpt.isCorrect : (selectedOpt === question.risposta_corretta);
+    const selectedLetter = (typeof selectedOpt === 'object') ? selectedOpt.origLetter : selectedOpt;
+    const selectedDisplayLetter = (typeof selectedOpt === 'object') ? selectedOpt.displayLetter : selectedOpt;
 
     AppState.exam.userAnswers[index] = {
       questionId: question.id,
       selectedOption: selectedLetter,
+      selectedDisplayLetter: selectedDisplayLetter,
       isCorrect: isCorrect,
       timestamp: Date.now()
     };
@@ -2370,13 +2510,12 @@
   // =========================================================================
   function switchTab(viewId) {
     document.querySelectorAll('.section-view').forEach(sec => sec.classList.remove('active'));
-    document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.nav-tab-btn, .desktop-nav-link').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.view === viewId);
+    });
 
     const targetSec = document.getElementById(viewId);
     if (targetSec) targetSec.classList.add('active');
-
-    const tabBtn = document.querySelector(`[data-view="${viewId}"]`);
-    if (tabBtn) tabBtn.classList.add('active');
 
     if (viewId === 'home-view') renderHomeDashboard();
     if (viewId === 'repo-view') renderRepository();
@@ -2384,11 +2523,40 @@
 
     const mainWrap = document.querySelector('.main-wrapper');
     if (mainWrap) mainWrap.scrollTop = 0;
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  async function performResetTrainingProgress() {
+    if (confirm('Sei sicuro di voler azzerare tutti i progressi e le risposte date? Ripartirai da 0 quesiti su 949.')) {
+      AppState.training.userAnswers = {};
+      if (AppState.training.retrySessionAnswers) AppState.training.retrySessionAnswers = {};
+      Storage.saveTrainingAnswers();
+      if (window.FirebaseSync && typeof window.FirebaseSync.resetProgress === 'function') {
+        try {
+          await window.FirebaseSync.resetProgress();
+        } catch (e) {
+          console.warn('Reset Firestore sync:', e);
+        }
+      }
+      updateTrainingStatsMini();
+      updateStatusPillCounts();
+      updateModuleProgressBar();
+      renderHomeDashboard();
+      renderStatisticsView();
+      if (AppState.training.viewMode === 'card') {
+        renderTrainingCard();
+      } else {
+        renderTrainingList();
+      }
+      showToast('Progressi azzerati con successo (0/949)', '🗑️');
+    }
   }
 
   function setupEventListeners() {
-    // Navigazione schede principali
-    document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+    // Navigazione schede principali (sia Mobile Bottom Nav sia Desktop Top Navbar)
+    document.querySelectorAll('.nav-tab-btn, .desktop-nav-link').forEach(btn => {
       btn.addEventListener('click', () => {
         // Se c'è un esame attivo, chiedi conferma prima di cambiare scheda
         if (AppState.exam.isActive && btn.dataset.view !== 'exam-view') {
@@ -2445,9 +2613,12 @@
         AppState.training.filterArgomento = 'ALL';
         AppState.training.filterStatus = 'WRONG';
         AppState.training.filterSearch = '';
-        applyTrainingFilters();
+        AppState.training.retrySessionAnswers = {}; // Reset sessione di ripasso errori
+        AppState.training.currentIndex = 0;
+        applyTrainingFilters(true);
         updateActiveSubjectHeader('ALL', 'ALL');
         switchTab('training-view');
+        showToast(`Caricati ${wrongCount} errori da ritentare senza suggerimenti`, '🎯');
       });
     }
 
@@ -2530,6 +2701,9 @@
         document.querySelectorAll('.training-status-pill').forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
         AppState.training.filterStatus = pill.dataset.status;
+        if (pill.dataset.status === 'WRONG') {
+          AppState.training.retrySessionAnswers = {};
+        }
         applyTrainingFilters();
       });
     });
@@ -2540,6 +2714,10 @@
       btnOpenFilter.addEventListener('click', () => {
         const sheet = document.getElementById('filter-sheet');
         if (sheet) sheet.style.display = 'flex';
+        const chkQ = document.getElementById('check-filter-shuffle-questions');
+        if (chkQ) chkQ.checked = !!AppState.settings.shuffleQuestions;
+        const chkOpt = document.getElementById('check-filter-shuffle-options');
+        if (chkOpt) chkOpt.checked = !!AppState.settings.shuffleOptions;
       });
     }
     const btnCloseFilter = document.getElementById('btn-close-filter-sheet');
@@ -2552,6 +2730,21 @@
     const btnApplyFilter = document.getElementById('btn-apply-filter-sheet');
     if (btnApplyFilter) {
       btnApplyFilter.addEventListener('click', () => {
+        const chkQ = document.getElementById('check-filter-shuffle-questions');
+        if (chkQ) AppState.settings.shuffleQuestions = chkQ.checked;
+        const chkOpt = document.getElementById('check-filter-shuffle-options');
+        if (chkOpt) {
+          AppState.settings.shuffleOptions = chkOpt.checked;
+          AppState.allQuestions.forEach(q => {
+            delete q._displayOptions;
+            delete q._displayOptionsMode;
+          });
+        }
+        Storage.setItem(Storage.KEYS.SHUFFLE_QUESTIONS, String(AppState.settings.shuffleQuestions));
+        Storage.setItem(Storage.KEYS.SHUFFLE_OPTIONS, String(AppState.settings.shuffleOptions));
+        updateRandomizationButtonsUI();
+        applyTrainingFilters();
+        renderTrainingCard();
         const sheet = document.getElementById('filter-sheet');
         if (sheet) sheet.style.display = 'none';
       });
@@ -2573,13 +2766,26 @@
       });
     }
 
-    // Dismiss bottom sheets when tapping on backdrop overlay
-    ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'confirm-finish-modal', 'instant-feedback-sheet'].forEach(sheetId => {
+    // Dismiss bottom sheets & modals when tapping on backdrop overlay or pressing Escape
+    const dismissableModals = ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'account-modal', 'confirm-finish-modal', 'instant-feedback-sheet'];
+    dismissableModals.forEach(sheetId => {
       const el = document.getElementById(sheetId);
       if (el) {
         el.addEventListener('click', (e) => {
           if (e.target === el) {
             el.style.display = 'none';
+          }
+        });
+      }
+    });
+
+    // Tasto Escape per chiudere comodamente su PC qualsiasi modale aperta
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        dismissableModals.forEach(id => {
+          const m = document.getElementById(id);
+          if (m && m.style.display !== 'none') {
+            m.style.display = 'none';
           }
         });
       }
@@ -2682,13 +2888,94 @@
       renderTrainingList();
     });
 
-    // Mescola Allenamento
-    document.getElementById('btn-shuffle-training').addEventListener('click', () => {
-      AppState.training.filteredList = shuffleArray(AppState.training.filteredList);
-      AppState.training.currentIndex = 0;
-      renderTrainingCard();
-      showToast('Ordine quesiti mescolato', '🔀');
-    });
+    // Aggiornamento visuale toggle randomizzazione
+    function updateRandomizationButtonsUI() {
+      const btnQ = document.getElementById('btn-toggle-shuffle-questions');
+      const lblQ = document.getElementById('btn-shuffle-questions-label');
+      const chkQ = document.getElementById('check-filter-shuffle-questions');
+
+      const isQ = !!AppState.settings.shuffleQuestions;
+      if (btnQ) btnQ.classList.toggle('active', isQ);
+      if (lblQ) lblQ.textContent = isQ ? '🔀 Domande: Casuali' : '🔢 Domande: Ordine ID';
+      if (chkQ) chkQ.checked = isQ;
+
+      const btnOpt = document.getElementById('btn-toggle-shuffle-options');
+      const lblOpt = document.getElementById('btn-shuffle-options-label');
+      const chkOpt = document.getElementById('check-filter-shuffle-options');
+
+      const isOpt = !!AppState.settings.shuffleOptions;
+      if (btnOpt) btnOpt.classList.toggle('active', isOpt);
+      if (lblOpt) lblOpt.textContent = isOpt ? '🎲 Risposte: Casuali' : '📝 Risposte: Predefinite';
+      if (chkOpt) chkOpt.checked = isOpt;
+    }
+
+    // Toggle Randomizzazione Domande
+    const btnShuffleQ = document.getElementById('btn-toggle-shuffle-questions');
+    if (btnShuffleQ) {
+      btnShuffleQ.addEventListener('click', () => {
+        AppState.settings.shuffleQuestions = !AppState.settings.shuffleQuestions;
+        Storage.setItem(Storage.KEYS.SHUFFLE_QUESTIONS, String(AppState.settings.shuffleQuestions));
+        updateRandomizationButtonsUI();
+
+        if (AppState.settings.shuffleQuestions) {
+          AppState.training.filteredList = shuffleArray(AppState.training.filteredList);
+          showToast('Ordine domande casuale attivato! 🔀', '🔀');
+        } else {
+          AppState.training.filteredList.sort((a, b) => a.id - b.id);
+          showToast('Ordine sequenziale per ID (1, 2, 3...) ripristinato 🔢', '🔢');
+        }
+        AppState.training.currentIndex = 0;
+        renderTrainingCard();
+      });
+    }
+
+    // Toggle Randomizzazione Risposte (A, B, C, D)
+    const btnShuffleOpt = document.getElementById('btn-toggle-shuffle-options');
+    if (btnShuffleOpt) {
+      btnShuffleOpt.addEventListener('click', () => {
+        AppState.settings.shuffleOptions = !AppState.settings.shuffleOptions;
+        Storage.setItem(Storage.KEYS.SHUFFLE_OPTIONS, String(AppState.settings.shuffleOptions));
+        // Reset mappature cache sui quesiti
+        AppState.allQuestions.forEach(q => {
+          delete q._displayOptions;
+          delete q._displayOptionsMode;
+        });
+        updateRandomizationButtonsUI();
+
+        if (AppState.settings.shuffleOptions) {
+          showToast('Opzioni di risposta casuali attivate! 🎲', '🎲');
+        } else {
+          showToast('Opzioni di risposta in ordine predefinito 📝', '📝');
+        }
+        renderTrainingCard();
+      });
+    }
+
+    // Checkbox sincronizzate nel foglio Filtri
+    const chkFilterQ = document.getElementById('check-filter-shuffle-questions');
+    if (chkFilterQ) {
+      chkFilterQ.addEventListener('change', (e) => {
+        AppState.settings.shuffleQuestions = e.target.checked;
+        Storage.setItem(Storage.KEYS.SHUFFLE_QUESTIONS, String(AppState.settings.shuffleQuestions));
+        updateRandomizationButtonsUI();
+      });
+    }
+
+    const chkFilterOpt = document.getElementById('check-filter-shuffle-options');
+    if (chkFilterOpt) {
+      chkFilterOpt.addEventListener('change', (e) => {
+        AppState.settings.shuffleOptions = e.target.checked;
+        Storage.setItem(Storage.KEYS.SHUFFLE_OPTIONS, String(AppState.settings.shuffleOptions));
+        AppState.allQuestions.forEach(q => {
+          delete q._displayOptions;
+          delete q._displayOptionsMode;
+        });
+        updateRandomizationButtonsUI();
+      });
+    }
+
+    // Inizializza stato pulsanti randomizzazione all'avvio
+    updateRandomizationButtonsUI();
 
     // Navigazione scheda singola
     document.getElementById('btn-card-prev').addEventListener('click', () => {
@@ -2789,9 +3076,11 @@
         if (wrongList.length > 0) {
           AppState.training.filteredList = wrongList;
           AppState.training.currentIndex = 0;
+          AppState.training.filterStatus = 'WRONG';
+          AppState.training.retrySessionAnswers = {}; // Reset sessione di ripasso errori
           hideModuleCompletionCard();
           renderTrainingCard();
-          showToast(`Modalità ripasso: caricati ${wrongList.length} quesiti con errori`, '🔄');
+          showToast(`Modalità ripasso: caricati ${wrongList.length} errori da ritentare`, '🔄');
         } else {
           showToast('Nessun errore presente in questo modulo!', '✨');
         }
@@ -2846,17 +3135,12 @@
       showToast('Soluzione rivelata con spiegazione', '💡');
     });
 
-    // Reset progressi allenamento
-    document.getElementById('btn-reset-training-progress').addEventListener('click', () => {
-      if (confirm('Sei sicuro di voler azzerare lo storico delle risposte date in allenamento?')) {
-        AppState.training.userAnswers = {};
-        Storage.saveTrainingAnswers();
-        updateTrainingStatsMini();
-        updateStatusPillCounts();
-        renderTrainingCard();
-        showToast('Storico allenamento azzerato', '🗑️');
-      }
-    });
+    // Reset progressi allenamento (da filtro e da pagina statistiche)
+    const btnResetProg = document.getElementById('btn-reset-training-progress');
+    if (btnResetProg) btnResetProg.addEventListener('click', performResetTrainingProgress);
+
+    const btnStatsResetProg = document.getElementById('btn-stats-reset-progress');
+    if (btnStatsResetProg) btnStatsResetProg.addEventListener('click', performResetTrainingProgress);
 
     // ================= ESAME =================
     const modeSelectEl = document.getElementById('exam-mode-select');
@@ -2975,7 +3259,9 @@
         if (document.getElementById('training-view').classList.contains('active') && AppState.training.viewMode === 'card') {
           const q = AppState.training.filteredList[AppState.training.currentIndex];
           if (q && !AppState.training.userAnswers[q.id]) {
-            handleTrainingAnswer(q, letter);
+            const displayOpts = getDisplayOptions(q);
+            const chosen = displayOpts.find(o => o.displayLetter === letter) || letter;
+            handleTrainingAnswer(q, chosen);
           }
         }
 
@@ -2984,7 +3270,9 @@
           const idx = AppState.exam.currentIndex;
           const q = AppState.exam.questions[idx];
           if (q && !AppState.exam.userAnswers[idx]) {
-            handleExamAnswer(idx, q, letter);
+            const displayOpts = getDisplayOptions(q);
+            const chosen = displayOpts.find(o => o.displayLetter === letter) || letter;
+            handleExamAnswer(idx, q, chosen);
           }
         }
       }
@@ -3018,6 +3306,13 @@
       this.initServiceWorker();
       this.initPwaInstall();
       this.setupUpdateUI();
+
+      // Controllo automatico OTA silenzioso all'avvio dopo 2.5 secondi
+      if (navigator.onLine) {
+        setTimeout(() => {
+          this.checkOnlineUpdate(true).catch(() => {});
+        }, 2500);
+      }
     },
 
     initServiceWorker() {
@@ -3080,16 +3375,16 @@
       }
     },
 
-    async checkOnlineUpdate() {
-      // Se siamo nell'app Android e l'interfaccia nativa è presente, attiva anche il controllo APK nativo
-      if (window.AndroidNative && typeof window.AndroidNative.checkUpdate === 'function') {
-        window.AndroidNative.checkUpdate();
+    async checkOnlineUpdate(isSilent = false) {
+      const statusContainer = document.getElementById('update-check-status');
+      if (statusContainer && !isSilent) {
+        statusContainer.innerHTML = '<div style="margin-top:0.5rem; color:var(--text-muted); font-size:0.85rem;"><span class="spinner-small"></span> Connessione al repository GitHub per verifiche OTA...</div>';
       }
 
-      const statusContainer = document.getElementById('update-check-status');
-      if (!statusContainer) return;
-
-      statusContainer.innerHTML = '<div style="margin-top:0.5rem; color:var(--text-muted); font-size:0.85rem;"><span class="spinner-small"></span> Connessione al repository GitHub per verifiche OTA...</div>';
+      // Se siamo nell'app Android nativa e non è una scansione silenziosa, attiva anche il controllo APK nativo
+      if (!isSilent && window.AndroidNative && typeof window.AndroidNative.checkUpdate === 'function') {
+        window.AndroidNative.checkUpdate();
+      }
 
       try {
         let targetUrl = (window.location.protocol === 'file:' || !window.location.host)
@@ -3104,39 +3399,73 @@
         const manifest = await res.json();
 
         const currentCount = AppState.allQuestions.length;
-        const hasNewQuestions = manifest.questionsCount && manifest.questionsCount > currentCount;
-        const hasNewVersionCode = manifest.versionCode && manifest.versionCode > 500;
+        const totalInManifest = manifest.totalQuestions || manifest.questionsCount || 0;
+        const currentCode = 702; // v7.0.2
+        const hasNewVersionCode = manifest.versionCode && manifest.versionCode > currentCode;
 
-        if (hasNewQuestions || hasNewVersionCode) {
-          statusContainer.innerHTML = `
-            <div style="background:rgba(16,185,129,0.12); border:1px solid #10b981; color:var(--text-main); border-radius:var(--radius-md); padding:0.85rem; margin-top:0.6rem; font-size:0.85rem;">
-              <div style="font-weight:700; color:#10b981; margin-bottom:0.25rem;">✨ Nuovo Aggiornamento Trovato: ${manifest.versionName || 'Versione Successiva'}</div>
-              <div><strong>Quesiti:</strong> ${manifest.questionsCount} (attualmente ne hai ${currentCount})</div>
-              <div style="margin-top:0.25rem; font-size:0.8rem; color:var(--text-muted);"><em>${manifest.changelog || ''}</em></div>
-              <div style="display:flex; gap:0.5rem; margin-top:0.75rem; flex-wrap:wrap;">
-                <button class="btn btn-sm btn-primary" id="btn-do-download-update">Scarica Nuovi Quesiti Subito</button>
-                <a href="${manifest.downloadUrl || '#'}" target="_blank" class="btn btn-sm btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Scarica APK v${manifest.versionName}</a>
-              </div>
-            </div>
-          `;
-          const btnDownload = document.getElementById('btn-do-download-update');
-          if (btnDownload) {
-            btnDownload.onclick = () => this.applyRemoteUpdate(manifest.dataUrl || 'banca_dati_concorso_uniss_2026.json');
+        // Riconoscimento avanzato aggiornamento Banca Dati online
+        const remoteDbVer = manifest.databaseVersion || manifest.versionName || '';
+        const currentDbVer = AppState.dataVersion || '6.0';
+        const hasCountChange = (totalInManifest > 0 && totalInManifest !== currentCount);
+        const hasNewDbVersion = remoteDbVer && (remoteDbVer !== currentDbVer) && (remoteDbVer !== '6.0');
+        const hasNewDate = manifest.updatedAt && AppState.dataDate && (manifest.updatedAt > AppState.dataDate);
+
+        const hasDatabaseUpdate = hasCountChange || hasNewDbVersion || hasNewDate;
+
+        // Se trovato aggiornamento della Banca Dati, mostra banner intelligente sulla Home
+        const banner = document.getElementById('home-ota-update-banner');
+        if (banner) {
+          if (hasDatabaseUpdate) {
+            const bannerTitle = document.getElementById('home-ota-banner-title');
+            const bannerSub = document.getElementById('home-ota-banner-sub');
+            const btnOtaUpdate = document.getElementById('btn-home-ota-update');
+            if (bannerTitle) bannerTitle.textContent = `Nuova Banca Dati Disponibile (v${remoteDbVer || 'OTA'})!`;
+            if (bannerSub) bannerSub.textContent = `Trovati ${totalInManifest} quesiti aggiornati nel repository online.`;
+            if (btnOtaUpdate) {
+              btnOtaUpdate.onclick = () => this.applyRemoteUpdate(manifest.dataUrl || 'banca_dati_concorso_uniss_2026.json');
+            }
+            banner.style.display = 'block';
+          } else {
+            banner.style.display = 'none';
           }
-        } else {
+        }
+
+        if (statusContainer) {
+          if (hasDatabaseUpdate || hasNewVersionCode) {
+            statusContainer.innerHTML = `
+              <div style="background:rgba(16,185,129,0.12); border:1px solid #10b981; color:var(--text-main); border-radius:var(--radius-md); padding:0.85rem; margin-top:0.6rem; font-size:0.85rem;">
+                <div style="font-weight:700; color:#10b981; margin-bottom:0.25rem;">✨ Aggiornamento Rilevato Online!</div>
+                <div><strong>Quesiti nel Cloud:</strong> ${totalInManifest} (attualmente ne hai ${currentCount})</div>
+                ${remoteDbVer ? `<div><strong>Versione Banca Dati:</strong> v${remoteDbVer}</div>` : ''}
+                <div style="margin-top:0.25rem; font-size:0.8rem; color:var(--text-muted);"><em>${manifest.changelog || ''}</em></div>
+                <div style="display:flex; gap:0.5rem; margin-top:0.75rem; flex-wrap:wrap;">
+                  ${hasDatabaseUpdate ? `<button class="btn btn-sm btn-primary" id="btn-do-download-update">📥 Scarica Nuovi Quesiti Subito (OTA)</button>` : ''}
+                  ${hasNewVersionCode ? `<a href="${manifest.downloadUrl || '#'}" target="_blank" class="btn btn-sm btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center;">Scarica APK v${manifest.versionName}</a>` : ''}
+                </div>
+              </div>
+            `;
+            const btnDownload = document.getElementById('btn-do-download-update');
+            if (btnDownload) {
+              btnDownload.onclick = () => this.applyRemoteUpdate(manifest.dataUrl || 'banca_dati_concorso_uniss_2026.json');
+            }
+          } else {
+            statusContainer.innerHTML = `
+              <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-md); padding:0.75rem; margin-top:0.6rem; font-size:0.85rem; color:var(--text-main);">
+                ✅ <strong>Applicazione e Banca Dati aggiornate!</strong><br>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Sei all'ultima versione con tutti i ${currentCount} quesiti di esercitazione attivi.</span>
+              </div>
+            `;
+          }
+        }
+      } catch (e) {
+        if (!isSilent && statusContainer) {
           statusContainer.innerHTML = `
-            <div style="background:var(--bg-surface-alt); border-radius:var(--radius-md); padding:0.65rem; margin-top:0.6rem; font-size:0.85rem; color:var(--text-muted);">
-              ✅ <strong>Sei già aggiornato!</strong> La versione attiva include tutti i ${currentCount} quesiti ufficiali.
+            <div style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; border-radius:var(--radius-md); padding:0.65rem; margin-top:0.6rem; font-size:0.85rem; color:var(--text-main);">
+              ⚠️ <strong>Verifica online non disponibile al momento.</strong><br>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Controlla la connessione internet. Puoi comunque aggiornare la banca dati caricando il file JSON manualmente.</span>
             </div>
           `;
         }
-      } catch (e) {
-        statusContainer.innerHTML = `
-          <div style="background:rgba(239,68,68,0.1); border:1px solid #ef4444; border-radius:var(--radius-md); padding:0.65rem; margin-top:0.6rem; font-size:0.85rem; color:var(--text-main);">
-            ⚠️ <strong>Verifica online non disponibile al momento.</strong><br>
-            <span style="font-size:0.8rem; color:var(--text-muted);">Se stai eseguendo l'app offline via file://, puoi comunque aggiornare la banca dati caricando il file JSON qui sotto in qualsiasi momento.</span>
-          </div>
-        `;
       }
     },
 
@@ -3148,9 +3477,31 @@
         const data = await res.json();
         if (!data || !Array.isArray(data.quesiti)) throw new Error('File non valido: mancano i quesiti');
 
+        data.isOnlineUpdate = true;
+        data.sourceLabel = 'Aggiornamento Online (v' + (data.versione || 'OTA') + ')';
+        data.downloadedAt = Date.now();
+
         Storage.saveCustomBancaDati(data);
-        loadData(data, 'Aggiornamento Online (v' + (data.versione || 'Cloud') + ')');
-        showToast(`Aggiornato con successo: ${data.quesiti.length} quesiti attivi!`, '🎉');
+        loadData(data, data.sourceLabel);
+
+        // Aggiorna tutta l'interfaccia a video istantaneamente
+        renderHomeDashboard();
+        renderStatisticsView();
+        populateArgomentiFilter();
+        populateRepoFilters();
+        renderRepository();
+        updateStatusPillCounts();
+        updateModuleProgressBar();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        } else {
+          renderTrainingList();
+        }
+
+        const banner = document.getElementById('home-ota-update-banner');
+        if (banner) banner.style.display = 'none';
+
+        showToast(`Banca dati aggiornata online: ${data.quesiti.length} quesiti attivi!`, '🎉');
         this.closeModal();
       } catch (err) {
         alert('Impossibile completare l\'aggiornamento automatico: ' + err.message);
@@ -3179,10 +3530,20 @@
     },
 
     resetDefaults() {
-      if (confirm('Vuoi ripristinare la banca dati ufficiale originaria (949 quesiti v6.0 Completa)? Eventuali file caricati manualmente verranno rimossi.')) {
+      if (confirm('Vuoi ripristinare la banca dati originaria (949 quesiti di esercitazione)? Eventuali file scaricati online verranno rimossi.')) {
         Storage.removeCustomBancaDati();
-        if (window.BANCA_DATI) {
-          loadData(window.BANCA_DATI, 'Integrata (v6.0 Completa)');
+        initDatabase();
+        renderHomeDashboard();
+        renderStatisticsView();
+        populateArgomentiFilter();
+        populateRepoFilters();
+        renderRepository();
+        updateStatusPillCounts();
+        updateModuleProgressBar();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        } else {
+          renderTrainingList();
         }
         showToast('Banca dati predefinita ripristinata con successo (949 quesiti)', '⏪');
         this.closeModal();
@@ -3272,6 +3633,18 @@
         renderHomeDashboard();
         renderStatisticsView();
         updateStatusPillCounts();
+        updateModuleProgressBar();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        } else {
+          renderTrainingList();
+        }
+        updateModuleProgressBar();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        } else {
+          renderTrainingList();
+        }
         showToast('Sincronizzazione Cloud completata!', '☁️');
       };
 
@@ -3335,13 +3708,6 @@
         if (loggedView) loggedView.style.display = 'none';
         if (authView) authView.style.display = 'block';
       }
-
-      // 4. Campi configurazione Firebase nel pannello setup
-      const cfg = window.FirebaseSync ? window.FirebaseSync.getConfig() : {};
-      const inpKey = document.getElementById('setup-firebase-apikey');
-      const inpProj = document.getElementById('setup-firebase-projectid');
-      if (inpKey && !inpKey.value) inpKey.value = cfg.apiKey || '';
-      if (inpProj && !inpProj.value) inpProj.value = cfg.projectId || '';
     },
 
     openModal() {
@@ -3430,17 +3796,31 @@
         this.hideAlert();
 
         if (this.currentTab === 'register') {
-          await window.FirebaseSync.register(email, password);
-          showToast('Account creato con successo! Progressi uniti al Cloud.', '🎉');
+          const u = await window.FirebaseSync.register(email, password);
+          if (u && u.syncError) {
+            showToast('Account creato, ma Cloud Firestore non attivo: ' + u.syncError, '⚠️');
+          } else {
+            showToast('Account creato con successo! Progressi uniti al Cloud.', '🎉');
+          }
         } else {
-          await window.FirebaseSync.login(email, password);
-          showToast('Accesso effettuato! Progressi sincronizzati con il Cloud.', '✅');
+          const u = await window.FirebaseSync.login(email, password);
+          if (u && u.syncError) {
+            showToast('Accesso effettuato, ma Cloud Firestore non attivo: ' + u.syncError, '⚠️');
+          } else {
+            showToast('Accesso effettuato! Progressi sincronizzati con il Cloud.', '✅');
+          }
         }
 
         this.updateState();
         renderHomeDashboard();
         renderStatisticsView();
         updateStatusPillCounts();
+        updateModuleProgressBar();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        } else {
+          renderTrainingList();
+        }
       } catch (err) {
         this.showAlert(err.message || 'Errore durante l\'autenticazione.');
       } finally {
@@ -3474,6 +3854,12 @@
           renderHomeDashboard();
           renderStatisticsView();
           updateStatusPillCounts();
+          updateModuleProgressBar();
+          if (AppState.training.viewMode === 'card') {
+            renderTrainingCard();
+          } else {
+            renderTrainingList();
+          }
           showToast(`Sincronizzati con successo ${res.answersCount} quesiti nel cloud!`, '☁️');
         } else {
           showToast('Errore di sincronizzazione: ' + (res.error || res.reason), '⚠️');
@@ -3523,46 +3909,10 @@
       const btnSyncNow = document.getElementById('btn-account-sync-now');
       if (btnSyncNow) btnSyncNow.addEventListener('click', () => this.handleSyncNow());
 
-      // Toggle Setup Firebase
-      const btnToggleSetup = document.getElementById('btn-toggle-firebase-setup');
-      const setupPanel = document.getElementById('firebase-setup-panel');
-      const iconToggle = document.getElementById('icon-toggle-firebase');
-      if (btnToggleSetup && setupPanel) {
-        btnToggleSetup.addEventListener('click', () => {
-          const isHidden = setupPanel.style.display === 'none';
-          setupPanel.style.display = isHidden ? 'block' : 'none';
-          if (iconToggle) iconToggle.textContent = isHidden ? '▴' : '▾';
-        });
-      }
-
-      // Salva configurazione personalizzata
-      const btnSaveCfg = document.getElementById('btn-save-firebase-config');
-      if (btnSaveCfg) {
-        btnSaveCfg.addEventListener('click', () => {
-          const k = document.getElementById('setup-firebase-apikey')?.value;
-          const p = document.getElementById('setup-firebase-projectid')?.value;
-          try {
-            window.FirebaseSync.saveConfig(k, p);
-            this.updateState();
-            showToast('Configurazione Firebase salvata con successo!', '💾');
-            this.showAlert('Configurazione salvata! Ora puoi effettuare l\'accesso o registrarti.', true);
-          } catch (e) {
-            alert(e.message);
-          }
-        });
-      }
-
-      // Reset configurazione personalizzata
-      const btnResetCfg = document.getElementById('btn-reset-firebase-config');
-      if (btnResetCfg) {
-        btnResetCfg.addEventListener('click', () => {
-          if (confirm('Vuoi ripristinare la configurazione predefinita di firebase-config.js?')) {
-            window.FirebaseSync.removeCustomConfig();
-            this.updateState();
-            showToast('Configurazione ripristinata', '🔄');
-          }
-        });
-      }
+      const btnResetAll = document.getElementById('btn-account-reset-all');
+      if (btnResetAll) btnResetAll.addEventListener('click', () => {
+        performResetTrainingProgress().then(() => this.updateState());
+      });
     }
   };
 

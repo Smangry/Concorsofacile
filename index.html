@@ -2,9 +2,9 @@
 <html lang="it" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>UniSS Concorso 2026 | Simulatore Ufficiale</title>
-  <meta name="description" content="Simulatore per il concorso a 15 Collaboratori Amministrativi UniSS 2026. Preparazione mobile-first in stile Material Design 3.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UniSS Concorso 2026 | Piattaforma Web & Simulatore</title>
+  <meta name="description" content="Simulatore e piattaforma per il concorso a 15 Collaboratori Amministrativi UniSS 2026. Esercitazione su 949 quiz con spiegazioni dettagliate.">
   
   <!-- Progressive Web App & Mobile Meta -->
   <link rel="manifest" href="manifest.webmanifest">
@@ -37,36 +37,57 @@
       <button class="icon-btn" id="btn-pwa-dismiss" style="font-size:0.8rem; width:24px; height:24px;">✕</button>
     </div>
 
-    <!-- M3 TOP APP BAR (56px) -->
+    <!-- M3 TOP APP BAR & WEB NAVBAR -->
     <header class="app-header">
-      <div class="brand-section" id="brand-home-link" style="cursor:pointer;" title="Torna alla Home">
-        <div class="brand-logo-badge" title="Università degli Studi di Sassari">SS</div>
-        <div class="brand-titles">
-          <h1>UniSS <span>2026</span></h1>
-          <div class="brand-subtitle">15 Collaboratori Amministrativi</div>
+      <div class="header-inner">
+        <div class="brand-section" id="brand-home-link" style="cursor:pointer;" title="Torna alla Home">
+          <div class="brand-logo-badge" title="Università degli Studi di Sassari">SS</div>
+          <div class="brand-titles">
+            <h1>UniSS <span>2026</span></h1>
+            <div class="brand-subtitle">15 Collaboratori Amministrativi</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Action Controls -->
-      <div class="header-actions">
-        <button class="icon-btn" id="btn-pwa-install" style="display:none;" title="Installa come App su Android" aria-label="Installa App">
-          📲
-        </button>
-        <button class="icon-btn" id="btn-account-modal" title="Account & Sincronizzazione Cloud" aria-label="Account">
-          <span id="header-account-icon" style="position:relative; display:inline-flex; align-items:center; justify-content:center;">
-            👤
-            <span id="header-account-dot" style="display:none; position:absolute; bottom:-2px; right:-2px; width:8px; height:8px; border-radius:50%; background:#22c55e; border:1.5px solid var(--md-surface);"></span>
-          </span>
-        </button>
-        <button class="icon-btn" id="btn-updates-modal" title="Centro Aggiornamenti" aria-label="Aggiornamenti">
-          🔄
-        </button>
-        <button class="icon-btn" id="btn-sound-toggle" title="Suoni Feedback" aria-label="Suoni">
-          🔊
-        </button>
-        <button class="icon-btn" id="btn-theme-toggle" title="Tema Chiaro/Scuro" aria-label="Tema">
-          🌙
-        </button>
+        <!-- Desktop Navigation Bar Links (Visible on Tablet & PC >= 900px) -->
+        <nav class="desktop-main-nav">
+          <button class="desktop-nav-link active" data-view="home-view" id="desk-tab-home">
+            <span>🏠 Home</span>
+          </button>
+          <button class="desktop-nav-link" data-view="training-view" id="desk-tab-training">
+            <span>📚 Allenamento</span>
+          </button>
+          <button class="desktop-nav-link" data-view="exam-view" id="desk-tab-exam">
+            <span>⏱️ Simulazione Esame</span>
+          </button>
+          <button class="desktop-nav-link" data-view="repo-view" id="desk-tab-repo">
+            <span id="desk-repo-nav-label">📖 Banca Dati (949)</span>
+          </button>
+          <button class="desktop-nav-link" data-view="stats-view" id="desk-tab-stats">
+            <span>📊 Statistiche</span>
+          </button>
+        </nav>
+
+        <!-- Action Controls -->
+        <div class="header-actions">
+          <button class="icon-btn" id="btn-pwa-install" style="display:none;" title="Installa come App su Android" aria-label="Installa App">
+            📲
+          </button>
+          <button class="icon-btn" id="btn-account-modal" title="Account & Sincronizzazione Cloud" aria-label="Account">
+            <span id="header-account-icon" style="position:relative; display:inline-flex; align-items:center; justify-content:center;">
+              👤
+              <span id="header-account-dot" style="display:none; position:absolute; bottom:-2px; right:-2px; width:8px; height:8px; border-radius:50%; background:#22c55e; border:1.5px solid var(--md-surface);"></span>
+            </span>
+          </button>
+          <button class="icon-btn" id="btn-updates-modal" title="Centro Aggiornamenti" aria-label="Aggiornamenti">
+            🔄
+          </button>
+          <button class="icon-btn" id="btn-sound-toggle" title="Suoni Feedback" aria-label="Suoni">
+            🔊
+          </button>
+          <button class="icon-btn" id="btn-theme-toggle" title="Tema Chiaro/Scuro" aria-label="Tema">
+            🌙
+          </button>
+        </div>
       </div>
     </header>
 
@@ -99,6 +120,23 @@
           <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--md-on-surface-variant);">
             <span>Progresso: <strong id="home-progress-text" style="color:var(--md-on-surface);">0 / 949 quesiti</strong></span>
             <span>Precisione: <strong id="home-accuracy-text" style="color:var(--md-success);">0%</strong></span>
+          </div>
+        </div>
+
+        <!-- Banner Notifica Aggiornamento OTA Banca Dati -->
+        <div id="home-ota-update-banner" style="display:none; margin-bottom:12px; background:linear-gradient(135deg, rgba(37,99,235,0.12), rgba(16,185,129,0.15)); border:1.5px solid var(--md-primary); border-radius:var(--radius-md); padding:10px 14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <div>
+              <div style="font-weight:800; font-size:0.88rem; color:var(--md-primary); display:flex; align-items:center; gap:6px;">
+                <span>✨</span> <span id="home-ota-banner-title">Nuova Banca Dati Disponibile!</span>
+              </div>
+              <div id="home-ota-banner-sub" style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:2px;">
+                Aggiorna all'ultima versione con quesiti e correzioni aggiornate.
+              </div>
+            </div>
+            <button class="btn btn-sm btn-primary" id="btn-home-ota-update" style="font-weight:800; padding:6px 12px; flex-shrink:0;">
+              Aggiorna 📥
+            </button>
           </div>
         </div>
 
@@ -161,7 +199,7 @@
             <span class="quick-card-icon">⏱️</span>
             <div class="quick-card-texts">
               <strong>Simula Prova (30)</strong>
-              <span>Criteri ufficiali UniSS</span>
+              <span>30 quesiti a tempo</span>
             </div>
           </button>
           
@@ -280,8 +318,11 @@
             <span>⚪ Nuove</span>
             <span class="m3-chip-counter" id="count-unanswered">949</span>
           </button>
-          <button class="filter-chip-btn" id="btn-shuffle-training" title="Mescola ordine">
-            <span>🔀 Mescola</span>
+          <button class="filter-chip-btn active" id="btn-toggle-shuffle-questions" title="Attiva/disattiva ordine casuale domande">
+            <span id="btn-shuffle-questions-label">🔀 Domande: Casuali</span>
+          </button>
+          <button class="filter-chip-btn active" id="btn-toggle-shuffle-options" title="Attiva/disattiva opzioni A, B, C, D casuali">
+            <span id="btn-shuffle-options-label">🎲 Risposte: Casuali</span>
           </button>
         </div>
 
@@ -427,7 +468,7 @@
             <div style="font-size:2rem; margin-bottom:6px;">⏱️</div>
             <h2 style="font-size:1.25rem; font-weight:800; margin-bottom:4px;">Simulazione d'Esame</h2>
             <p class="exam-intro-desc">
-              Test conforme ai criteri ufficiali UniSS: <strong>30 quesiti casuali</strong> con voto su 30 (idoneità a <strong>21/30</strong>) e spiegazione immediata al primo errore.
+              Test di simulazione concorso UniSS: <strong>30 quesiti casuali</strong> con voto su 30 (idoneità a <strong>21/30</strong>) e spiegazione immediata al primo errore.
             </p>
 
             <!-- Selettore Tipologia di Prova -->
@@ -647,10 +688,31 @@
               </tbody>
             </table>
           </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:10px; border-top:1px solid var(--md-outline-variant);">
+            <span style="font-size:0.82rem; color:var(--md-on-surface-variant);">Progressi Quesiti Risposti:</span>
+            <button class="btn btn-sm btn-secondary" id="btn-stats-reset-progress" style="font-size:0.75rem; padding:3px 8px; color:var(--md-error);">Azzera Risposte (0/949)</button>
+          </div>
         </div>
       </section>
 
     </main>
+
+    <!-- Desktop & Web Footer (Visible on PC >= 900px) -->
+    <footer class="desktop-web-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">SS</div>
+          <div>
+            <strong>UniSS Quiz 2026</strong> &bull; Concorso 15 Collaboratori Amministrativi
+            <div style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:2px;">Banca Dati di Esercitazione (949 Quesiti con Spiegazioni) &bull; Preparazione Concorso UniSS</div>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>Piattaforma E-Learning &bull; Sincronizzazione Cloud Firebase &bull; Modalità Offline PWA</span>
+        </div>
+      </div>
+    </footer>
 
     <!-- ====================================================================
          M3 BOTTOM NAVIGATION BAR (Navigazione da Pollice a 4 Tab)
@@ -711,6 +773,19 @@
           <span>🔍</span>
           <input type="text" id="filter-search" placeholder="Es. Rettore, 1562, Titulus...">
         </div>
+      </div>
+
+      <!-- Opzioni di Randomizzazione -->
+      <div style="background:var(--md-surface-container); padding:10px 12px; border-radius:var(--radius-sm); margin-bottom:12px; display:flex; flex-direction:column; gap:8px;">
+        <div style="font-weight:700; font-size:0.75rem; color:var(--md-on-surface-variant); text-transform:uppercase;">Modalità Randomizzazione</div>
+        <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; cursor:pointer;">
+          <input type="checkbox" id="check-filter-shuffle-questions" checked style="width:16px; height:16px; accent-color:var(--md-primary);">
+          <span>🔀 <strong>Mescola domande</strong> (ordine casuale anziché per ID)</span>
+        </label>
+        <label style="display:flex; align-items:center; gap:8px; font-size:0.8rem; cursor:pointer;">
+          <input type="checkbox" id="check-filter-shuffle-options" checked style="width:16px; height:16px; accent-color:var(--md-primary);">
+          <span>🎲 <strong>Mescola risposte</strong> (lettere A, B, C, D casuali)</span>
+        </label>
       </div>
 
       <!-- Mini-statistiche sessione -->
@@ -895,6 +970,9 @@
           <button class="btn btn-secondary" id="btn-account-logout" style="font-weight:700; color:var(--md-error);">
             <span>🚪 Disconnetti Account</span>
           </button>
+          <button class="btn btn-sm btn-ghost" id="btn-account-reset-all" style="color:var(--md-error); font-size:0.8rem; margin-top:2px;">
+            <span>🗑️ Azzera Tutti i Progressi (Cloud & Locale)</span>
+          </button>
         </div>
       </div>
 
@@ -937,32 +1015,6 @@
         <p style="font-size:0.72rem; color:var(--md-on-surface-variant); text-align:center; margin-top:12px; margin-bottom:12px;">
           🔒 I tuoi progressi attuali sul dispositivo non andranno persi: verranno uniti al tuo account.
         </p>
-      </div>
-
-      <!-- SEZIONE 3: CONFIGURAZIONE PROGETTO FIREBASE (Collapsible) -->
-      <div style="border-top:1px solid var(--md-outline-variant); padding-top:12px; margin-top:10px;">
-        <button type="button" class="btn btn-sm btn-ghost" id="btn-toggle-firebase-setup" style="width:100%; justify-content:space-between; font-size:0.78rem; padding:8px 6px;">
-          <span style="font-weight:700;">⚙️ Configurazione Firebase</span>
-          <span id="icon-toggle-firebase">▾</span>
-        </button>
-
-        <div id="firebase-setup-panel" style="display:none; margin-top:10px; background:var(--md-surface-container-high); border-radius:var(--radius-sm); padding:10px; font-size:0.78rem;">
-          <p style="margin:0 0 8px 0; color:var(--md-on-surface-variant);">
-            Inserisci l'<strong>API Key</strong> e il <strong>Project ID</strong> del tuo progetto Google Firebase (oppure modificali nel file <code>firebase-config.js</code>):
-          </p>
-          <div style="margin-bottom:8px;">
-            <label style="display:block; font-weight:700; margin-bottom:2px; font-size:0.72rem;">Firebase Web API Key:</label>
-            <input type="text" id="setup-firebase-apikey" class="search-input" placeholder="AIzaSy..." style="width:100%; box-sizing:border-box; font-size:0.75rem;">
-          </div>
-          <div style="margin-bottom:10px;">
-            <label style="display:block; font-weight:700; margin-bottom:2px; font-size:0.72rem;">Firebase Project ID:</label>
-            <input type="text" id="setup-firebase-projectid" class="search-input" placeholder="uniss-concorso-2026" style="width:100%; box-sizing:border-box; font-size:0.75rem;">
-          </div>
-          <div style="display:flex; gap:6px;">
-            <button type="button" class="btn btn-sm btn-primary" id="btn-save-firebase-config" style="flex:1; font-size:0.75rem;">Salva Configurazione</button>
-            <button type="button" class="btn btn-sm btn-secondary" id="btn-reset-firebase-config" style="font-size:0.75rem;">Reset</button>
-          </div>
-        </div>
       </div>
 
       <div style="display:flex; justify-content:flex-end; border-top:1px solid var(--md-outline-variant); padding-top:10px; margin-top:12px;">

@@ -1,7 +1,9 @@
 /* ==========================================================================
-   SIMULATORE CONCORSO UniSS 2026 - MATERIAL DESIGN 3 MOBILE-FIRST THEME
+   SIMULATORE CONCORSO UniSS 2026 - MATERIAL DESIGN 3 & MODERN WEB PLATFORM
    Università degli Studi di Sassari - 15 Collaboratori Amministrativi
    ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
 
 :root {
   /* M3 Material You Light Palette */
@@ -166,19 +168,27 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html {
   width: 100%;
-  height: 100%;
-  height: 100dvh;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll; /* Barra di scorrimento sempre attiva: scroll con rotellina fluido al 100% */
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
   background-color: var(--md-surface);
   color: var(--md-on-surface);
   font-family: var(--font-family);
   font-size: 15px;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior: none;
-  user-select: none;
 }
 
 button, input, select, textarea {
@@ -204,9 +214,9 @@ button:active {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100dvh;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* ==========================================================================
@@ -301,9 +311,8 @@ button:active {
    ========================================================================== */
 .main-wrapper {
   flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  overflow: visible;
   padding: 10px 12px;
   padding-bottom: calc(var(--bottom-nav-height) + var(--bottom-action-height) + 16px);
   position: relative;
@@ -1004,6 +1013,13 @@ button:active {
   animation: fadeIn 0.15s ease forwards;
 }
 
+.modal-overlay[style*="display: none"],
+.modal-overlay[style*="display:none"],
+.m3-bottom-sheet-overlay[style*="display: none"],
+.m3-bottom-sheet-overlay[style*="display:none"] {
+  display: none !important;
+}
+
 .modal-card, .m3-bottom-sheet-content {
   width: 100%;
   max-height: 82vh;
@@ -1055,14 +1071,424 @@ button:active {
   pointer-events: auto;
 }
 
-/* Desktop container adaptation */
+/* ==========================================================================
+   VERA PIATTAFORMA WEB DESKTOP & RESPONSIVE DESIGN (NON-IA, CONTEMPORANEA)
+   ========================================================================== */
+
+.desktop-kbd-hint {
+  display: none;
+}
+
+.desktop-main-nav {
+  display: none;
+}
+
+.desktop-web-footer {
+  display: none;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* On Desktop & Tablet Screens (>= 768px): Una VERA pagina web moderna a tutto schermo */
 @media (min-width: 768px) {
+  html {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, var(--md-surface) 50%);
+  }
+
+  [data-theme="dark"] body {
+    background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.22) 0%, var(--md-surface) 50%);
+  }
+
+  /* Rimuove la gabbia a colonna stretta: la pagina occupa l'intero schermo web */
   .app-container {
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 0 40px rgba(0,0,0,0.15);
-    border-left: 1px solid var(--md-outline-variant);
-    border-right: 1px solid var(--md-outline-variant);
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+
+  /* Barra di navigazione superiore Web completa (100% larghezza schermo) */
+  .app-header {
+    width: 100% !important;
+    height: 72px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid var(--md-outline-variant) !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04) !important;
+    padding: 0 !important;
+  }
+
+  [data-theme="dark"] .app-header {
+    background: rgba(19, 28, 49, 0.92) !important;
+  }
+
+  .header-inner {
+    width: 100% !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+    padding: 0 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
+  /* Desktop Top Navigation Menu Links */
+  .desktop-main-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .desktop-nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 9px 18px !important;
+    border-radius: var(--radius-full) !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: var(--md-on-surface-variant) !important;
+    transition: all 0.2s cubic-bezier(0.2, 0, 0, 1) !important;
+    cursor: pointer !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+  }
+
+  .desktop-nav-link:hover {
+    color: var(--md-primary) !important;
+    background-color: var(--md-surface-container-high) !important;
+  }
+
+  .desktop-nav-link.active {
+    color: var(--md-primary) !important;
+    background-color: var(--md-primary-container) !important;
+    border-color: rgba(30, 58, 138, 0.15) !important;
+    box-shadow: 0 2px 6px rgba(30, 58, 138, 0.1) !important;
+  }
+
+  [data-theme="dark"] .desktop-nav-link.active {
+    border-color: rgba(147, 197, 253, 0.25) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+  }
+
+  /* La barra mobile in basso VIENE COMPLETAMENTE NASCOSTA su PC */
+  .m3-bottom-nav {
+    display: none !important;
+  }
+
+  /* Contenuto principale con larghezza generosa e scroll naturale */
+  .main-wrapper {
+    width: 100% !important;
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+    padding: 32px 32px 80px 32px !important;
+    height: auto !important;
+    min-height: calc(100vh - 160px) !important;
+    overflow: visible !important;
+  }
+
+  /* Home View Container */
+  #home-view {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Home Hero Card: Spazioso e d'impatto */
+  .home-hero-card {
+    padding: 32px 36px !important;
+    border-radius: var(--radius-xl) !important;
+    margin-bottom: 28px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+  }
+
+  .home-hero-card h2 {
+    font-size: 1.65rem !important;
+  }
+
+  /* Pannello Azioni Rapide su Desktop */
+  .home-quick-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 18px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .home-quick-card {
+    padding: 18px !important;
+    border-radius: var(--radius-lg) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--md-outline-variant) !important;
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .home-quick-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--md-primary) !important;
+  }
+
+  .quick-card-icon {
+    font-size: 1.5rem !important;
+  }
+
+  /* Lista Materie su 2-3 Colonne Fluide */
+  .home-subjects-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+    gap: 22px !important;
+    margin-top: 16px !important;
+  }
+
+  .subject-card {
+    padding: 22px !important;
+    border-radius: var(--radius-xl) !important;
+    border: 1.5px solid var(--md-outline-variant) !important;
+    box-shadow: var(--shadow-sm) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  .subject-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--md-outline) !important;
+  }
+
+  /* Modulo Allenamento su Desktop */
+  #training-view {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+  }
+
+  .active-subject-header {
+    padding: 12px 18px !important;
+    border-radius: var(--radius-md) !important;
+    margin-bottom: 14px !important;
+  }
+
+  .training-toolbar {
+    padding: 8px 0 16px 0 !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+  }
+
+  .filter-chip-btn {
+    padding: 8px 16px !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Scheda Domanda in Allenamento & Quiz: Ampia, centrata e confortevole */
+  .single-card-container {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+  }
+
+  .question-card, .m3-question-card {
+    padding: 36px 40px !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06) !important;
+    margin-bottom: 24px !important;
+    border: 1.5px solid var(--md-outline-variant) !important;
+  }
+
+  .question-text {
+    font-size: 1.35rem !important;
+    line-height: 1.6 !important;
+    font-weight: 700 !important;
+    margin-bottom: 26px !important;
+  }
+
+  .options-list {
+    gap: 14px !important;
+  }
+
+  .option-item {
+    padding: 16px 22px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 1.05rem !important;
+    border: 1.5px solid var(--md-outline-variant) !important;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+  }
+
+  .option-item:hover:not(.disabled) {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+    border-color: var(--md-primary) !important;
+    background-color: var(--md-surface-container) !important;
+  }
+
+  .option-letter {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1rem !important;
+  }
+
+  .desktop-kbd-hint {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: var(--font-mono) !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: var(--md-on-surface-variant) !important;
+    background: var(--md-surface-container-highest) !important;
+    border: 1px solid var(--md-outline) !important;
+    border-radius: 4px !important;
+    padding: 2px 8px !important;
+    margin-left: auto !important;
+    opacity: 0.8 !important;
+  }
+
+  .explanation-card {
+    padding: 22px 28px !important;
+    border-radius: var(--radius-lg) !important;
+    font-size: 1.02rem !important;
+    line-height: 1.65 !important;
+    margin-top: 22px !important;
+  }
+
+  /* Pulsanti Avanti/Indietro integrati armoniosamente come barra desktop */
+  .question-footer-nav, .m3-sticky-action-bar {
+    position: static !important;
+    max-width: 1040px !important;
+    margin: 24px auto 0 auto !important;
+    border-radius: var(--radius-full) !important;
+    background: var(--md-surface-container) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--md-outline-variant) !important;
+    padding: 12px 28px !important;
+    height: 64px !important;
+  }
+
+  /* Modalità Esame su Desktop */
+  #exam-view {
+    max-width: 1040px !important;
+    margin: 0 auto !important;
+  }
+
+  .exam-question-card {
+    padding: 36px 40px !important;
+    border-radius: var(--radius-xl) !important;
+  }
+
+  /* Statistiche su Desktop */
+  #stats-view {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Banca Dati Integrale: 2 Colonne ampie */
+  #repo-view {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+  }
+
+  #repo-cards-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Finestre Modali & Bottom Sheet su Desktop: Dialogo centrale elegante */
+  .modal-overlay, .m3-bottom-sheet-overlay {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px !important;
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .modal-card, .m3-bottom-sheet-content {
+    max-width: 600px !important;
+    width: 100% !important;
+    margin: auto !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--md-outline-variant) !important;
+    animation: modalPop 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    max-height: 85vh !important;
+  }
+
+  @keyframes modalPop {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* Footer Web Professionale */
+  .desktop-web-footer {
+    display: block !important;
+    width: 100% !important;
+    border-top: 1px solid var(--md-outline-variant) !important;
+    background-color: var(--md-surface-container) !important;
+    padding: 32px 0 !important;
+    margin-top: auto !important;
+  }
+
+  .footer-inner {
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+    padding: 0 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    font-size: 0.88rem !important;
+    color: var(--md-on-surface-variant) !important;
+  }
+
+  .footer-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .footer-logo {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, var(--md-primary), #0284c7) !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 800 !important;
+    font-size: 0.88rem !important;
+    box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25) !important;
   }
 }
 
