@@ -86,7 +86,7 @@
   // STATO GLOBALE DELL'APPLICAZIONE
   // =========================================================================
   const AppState = {
-    appVersion: '7.0.2',
+    appVersion: '7.0.3',
     allQuestions: [],
     categories: [],
     topicsByCategory: {},
@@ -3400,7 +3400,7 @@
 
         const currentCount = AppState.allQuestions.length;
         const totalInManifest = manifest.totalQuestions || manifest.questionsCount || 0;
-        const currentCode = 702; // v7.0.2
+        const currentCode = 703; // v7.0.3
         const hasNewVersionCode = manifest.versionCode && manifest.versionCode > currentCode;
 
         // Riconoscimento avanzato aggiornamento Banca Dati online
@@ -3628,7 +3628,7 @@
       this.updateState();
 
       // Callback globale per quando la sincronizzazione Firebase termina
-      window.onFirebaseSyncCompleted = (merged) => {
+      window.onFirebaseSyncCompleted = (merged, isBackground = false) => {
         this.updateState();
         renderHomeDashboard();
         renderStatisticsView();
@@ -3639,13 +3639,11 @@
         } else {
           renderTrainingList();
         }
-        updateModuleProgressBar();
-        if (AppState.training.viewMode === 'card') {
-          renderTrainingCard();
-        } else {
-          renderTrainingList();
+
+        // Mostra la notifica toast SOLO se la sincronizzazione è manuale (MAI per l'auto-sync silenzioso in background)
+        if (!isBackground) {
+          showToast('Sincronizzazione Cloud completata!', '☁️');
         }
-        showToast('Sincronizzazione Cloud completata!', '☁️');
       };
 
       // Se l'utente è già loggato all'avvio, avvia sincronizzazione in background
@@ -3851,16 +3849,7 @@
         const res = await window.FirebaseSync.sync(false);
         if (res.success) {
           this.updateState();
-          renderHomeDashboard();
-          renderStatisticsView();
-          updateStatusPillCounts();
-          updateModuleProgressBar();
-          if (AppState.training.viewMode === 'card') {
-            renderTrainingCard();
-          } else {
-            renderTrainingList();
-          }
-          showToast(`Sincronizzati con successo ${res.answersCount} quesiti nel cloud!`, '☁️');
+          // Notifica già emessa da onFirebaseSyncCompleted!
         } else {
           showToast('Errore di sincronizzazione: ' + (res.error || res.reason), '⚠️');
         }

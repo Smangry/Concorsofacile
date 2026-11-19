@@ -1,10 +1,10 @@
 {
-  "versionCode": 702,
-  "versionName": "7.0.2",
-  "databaseVersion": "7.0.2",
+  "versionCode": 703,
+  "versionName": "7.0.3",
+  "databaseVersion": "7.0.3",
   "totalQuestions": 949,
   "updatedAt": "2026-11-19",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/app-release.apk",
-  "changelog": "Versione 7.0.2: Sbloccato lo scroll naturale con rotellina del mouse/touchpad e corretta dicitura in banca dati di esercitazione e preparazione."
+  "changelog": "Versione 7.0.3: Silenziato il popup di sincronizzazione cloud automatica in background e reso il toast elegante e compatto in basso."
 }

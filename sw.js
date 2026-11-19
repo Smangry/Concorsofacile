@@ -1,7 +1,7 @@
 // Service Worker per Simulatore Concorso UniSS 2026
 // Supporta aggiornamenti automatici in background e funzionamento offline completo
 
-const CACHE_NAME = 'uniss-simulatore-v7.0.2-web';
+const CACHE_NAME = 'uniss-simulatore-v7.0.3-web';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

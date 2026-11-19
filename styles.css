@@ -1044,31 +1044,46 @@ button:active {
   margin: 0 auto 12px auto;
 }
 
-/* Toast */
+/* Toast Notification (Elegante pillola fluttuante centrata) */
 .toast-container {
   position: fixed;
-  top: calc(var(--app-bar-height) + 8px);
-  left: 12px;
-  right: 12px;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3000;
   pointer-events: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  gap: 8px;
+  max-width: 90vw;
 }
 
 .toast {
   background: var(--md-on-surface);
   color: var(--md-surface);
-  padding: 10px 14px;
+  padding: 10px 22px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
-  font-weight: 600;
-  display: flex;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-lg);
+  gap: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
   pointer-events: auto;
+  white-space: nowrap;
+  animation: toastFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastFadeIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 767px) {
+  .toast-container {
+    bottom: calc(var(--bottom-nav-height) + 14px);
+  }
 }
 
 /* ==========================================================================

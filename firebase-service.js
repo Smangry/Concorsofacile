@@ -71,35 +71,66 @@ window.FirebaseSync = (function () {
   function getUser() {
     try {
       const raw = localStorage.getItem(STORAGE_KEYS.AUTH_USER);
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) {
-      return null;
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+
+    if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.getPref === 'function') {
+      try {
+        const val = window.AndroidNative.getPref(STORAGE_KEYS.AUTH_USER, '');
+        if (val && val !== '') return JSON.parse(val);
+      } catch (e) {}
     }
+    return null;
   }
 
   function saveUser(user) {
+    const str = JSON.stringify(user);
     try {
-      localStorage.setItem(STORAGE_KEYS.AUTH_USER, JSON.stringify(user));
+      localStorage.setItem(STORAGE_KEYS.AUTH_USER, str);
     } catch (e) {}
+    if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.savePref === 'function') {
+      try {
+        window.AndroidNative.savePref(STORAGE_KEYS.AUTH_USER, str);
+      } catch (e) {}
+    }
   }
 
   function clearUser() {
-    localStorage.removeItem(STORAGE_KEYS.AUTH_USER);
+    try {
+      localStorage.removeItem(STORAGE_KEYS.AUTH_USER);
+    } catch (e) {}
+    if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.savePref === 'function') {
+      try {
+        window.AndroidNative.savePref(STORAGE_KEYS.AUTH_USER, '');
+      } catch (e) {}
+    }
   }
 
   function getLastSyncTime() {
     try {
       const raw = localStorage.getItem(STORAGE_KEYS.LAST_SYNC);
-      return raw ? parseInt(raw, 10) : null;
-    } catch (e) {
-      return null;
+      if (raw) return parseInt(raw, 10);
+    } catch (e) {}
+
+    if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.getPref === 'function') {
+      try {
+        const val = window.AndroidNative.getPref(STORAGE_KEYS.LAST_SYNC, '');
+        if (val && val !== '') return parseInt(val, 10);
+      } catch (e) {}
     }
+    return null;
   }
 
   function setLastSyncTime(ts) {
+    const str = String(ts);
     try {
-      localStorage.setItem(STORAGE_KEYS.LAST_SYNC, String(ts));
+      localStorage.setItem(STORAGE_KEYS.LAST_SYNC, str);
     } catch (e) {}
+    if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.savePref === 'function') {
+      try {
+        window.AndroidNative.savePref(STORAGE_KEYS.LAST_SYNC, str);
+      } catch (e) {}
+    }
   }
 
   // =========================================================================
@@ -118,6 +149,12 @@ window.FirebaseSync = (function () {
     if (str.includes('WEAK_PASSWORD')) return 'La password deve contenere almeno 6 caratteri.';
     if (str.includes('INVALID_EMAIL')) return 'Inserisci un indirizzo email valido.';
     if (str.includes('MISSING_PASSWORD')) return 'Inserisci la password.';
+    if (str.includes('404') || str.includes('not found') || str.includes('NOT_FOUND')) {
+      return 'Database Cloud Firestore non ancora creato nella Console Firebase. Vai su Firebase Console -> Firestore Database e clicca su "Crea database".';
+    }
+    if (str.includes('PERMISSION_DENIED') || str.includes('403') || str.includes('Missing or insufficient permissions')) {
+      return 'Permessi di scrittura bloccati su Firestore. Vai su Firebase Console -> Firestore Database -> Regole e consenti la lettura/scrittura per utenti autenticati.';
+    }
     if (str.includes('Failed to fetch') || str.includes('NetworkError') || str.includes('network')) {
       return 'Nessuna connessione a internet. Riprova non appena sei online.';
     }
@@ -213,12 +250,15 @@ window.FirebaseSync = (function () {
     saveUser(userData);
 
     // Carica immediatamente i progressi locali correnti sul nuovo account cloud!
+    let syncError = null;
     try {
       await sync(false);
     } catch (syncErr) {
       console.warn('Primo caricamento dati cloud post-registrazione:', syncErr);
+      syncError = syncErr.message;
     }
 
+    userData.syncError = syncError;
     return userData;
   }
 
@@ -261,12 +301,15 @@ window.FirebaseSync = (function () {
     saveUser(userData);
 
     // Esegui la sincronizzazione bidirezionale per scaricare i progressi dal cloud
+    let syncError = null;
     try {
       await sync(false);
     } catch (syncErr) {
       console.warn('Sincronizzazione post-login:', syncErr);
+      syncError = syncErr.message;
     }
 
+    userData.syncError = syncError;
     return userData;
   }
 
@@ -423,13 +466,46 @@ window.FirebaseSync = (function () {
 
     isSyncing = true;
     try {
-      // 1. Raccoglie lo stato locale attuale
+      // 1. Raccoglie lo stato locale attuale (con fallback multilivello su Storage e localStorage)
+      let currentAnswers = {};
+      if (window.AppState && window.AppState.training && window.AppState.training.userAnswers) {
+        currentAnswers = window.AppState.training.userAnswers;
+      } else if (window.Storage && typeof window.Storage.getItem === 'function') {
+        try {
+          const raw = window.Storage.getItem('uniss_training_answers_2026');
+          if (raw) currentAnswers = JSON.parse(raw);
+        } catch (e) {}
+      } else {
+        try {
+          const raw = localStorage.getItem('uniss_training_answers_2026');
+          if (raw) currentAnswers = JSON.parse(raw);
+        } catch (e) {}
+      }
+
+      let currentBookmarks = [];
+      if (window.AppState && window.AppState.training && window.AppState.training.bookmarks) {
+        currentBookmarks = Array.from(window.AppState.training.bookmarks);
+      } else if (window.Storage && typeof window.Storage.getItem === 'function') {
+        try {
+          const raw = window.Storage.getItem('uniss_bookmarks_2026');
+          if (raw) currentBookmarks = JSON.parse(raw);
+        } catch (e) {}
+      }
+
+      let currentHistory = [];
+      if (window.AppState && window.AppState.history) {
+        currentHistory = window.AppState.history;
+      } else if (window.Storage && typeof window.Storage.getItem === 'function') {
+        try {
+          const raw = window.Storage.getItem('uniss_exam_history_2026');
+          if (raw) currentHistory = JSON.parse(raw);
+        } catch (e) {}
+      }
+
       const localData = {
-        userAnswers: (window.AppState && window.AppState.training) ? window.AppState.training.userAnswers : {},
-        bookmarks: (window.AppState && window.AppState.training && window.AppState.training.bookmarks) 
-          ? Array.from(window.AppState.training.bookmarks) 
-          : [],
-        history: (window.AppState && window.AppState.history) ? window.AppState.history : [],
+        userAnswers: currentAnswers,
+        bookmarks: currentBookmarks,
+        history: currentHistory,
         lastSession: (window.Storage && typeof window.Storage.getTrainingSession === 'function') 
           ? window.Storage.getTrainingSession() 
           : null,
@@ -447,16 +523,22 @@ window.FirebaseSync = (function () {
         window.AppState.training.userAnswers = merged.userAnswers;
         window.AppState.training.bookmarks = new Set(merged.bookmarks);
         window.AppState.history = merged.history;
+      }
 
-        // Salva in storage locale e native SharedPreferences
-        if (window.Storage) {
-          if (typeof window.Storage.saveTrainingAnswers === 'function') window.Storage.saveTrainingAnswers();
-          if (typeof window.Storage.saveBookmarks === 'function') window.Storage.saveBookmarks();
-          if (typeof window.Storage.saveExamHistory === 'function') window.Storage.saveExamHistory();
-          if (merged.lastSession && typeof window.Storage.setItem === 'function') {
-            window.Storage.setItem('uniss_last_session_2026', JSON.stringify(merged.lastSession));
-          }
+      // Salva in storage locale e native SharedPreferences
+      if (window.Storage) {
+        window.Storage.setItem(window.Storage.KEYS.TRAINING_ANSWERS, JSON.stringify(merged.userAnswers));
+        window.Storage.setItem(window.Storage.KEYS.BOOKMARKS, JSON.stringify(merged.bookmarks));
+        window.Storage.setItem(window.Storage.KEYS.EXAM_HISTORY, JSON.stringify(merged.history));
+        if (merged.lastSession) {
+          window.Storage.setItem(window.Storage.KEYS.LAST_SESSION, JSON.stringify(merged.lastSession));
         }
+      } else {
+        try {
+          localStorage.setItem('uniss_training_answers_2026', JSON.stringify(merged.userAnswers));
+          localStorage.setItem('uniss_bookmarks_2026', JSON.stringify(merged.bookmarks));
+          localStorage.setItem('uniss_exam_history_2026', JSON.stringify(merged.history));
+        } catch (e) {}
       }
 
       // 5. Invia lo stato unito a Firestore
@@ -467,7 +549,7 @@ window.FirebaseSync = (function () {
 
       // 6. Notifica l'app dell'avvenuta sincronizzazione
       if (typeof window.onFirebaseSyncCompleted === 'function') {
-        window.onFirebaseSyncCompleted(merged);
+        window.onFirebaseSyncCompleted(merged, isBackground);
       }
 
       return {
@@ -501,6 +583,29 @@ window.FirebaseSync = (function () {
     }, 2500);
   }
 
+  // =========================================================================
+  // RESET COMPLETO PROGRESSI CLOUD
+  // =========================================================================
+  async function resetProgress() {
+    const user = getUser();
+    if (!user || !isConfigured()) return;
+    const payload = {
+      userAnswers: {},
+      bookmarks: (window.AppState && window.AppState.training && window.AppState.training.bookmarks) 
+        ? Array.from(window.AppState.training.bookmarks) 
+        : [],
+      history: (window.AppState && window.AppState.history) ? window.AppState.history : [],
+      lastSession: null,
+      updatedAt: Date.now()
+    };
+    try {
+      await uploadProgressToFirestore(payload);
+      setLastSyncTime(Date.now());
+    } catch (e) {
+      console.warn('Errore reset progressi cloud:', e);
+    }
+  }
+
   // API PUBBLICA
   return {
     getConfig,
@@ -513,6 +618,7 @@ window.FirebaseSync = (function () {
     login,
     logout,
     sync,
+    resetProgress,
     scheduleAutoSync
   };
 })();
