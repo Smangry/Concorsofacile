@@ -1,10 +1,10 @@
 {
-  "versionCode": 703,
-  "versionName": "7.0.3",
-  "databaseVersion": "7.0.3",
+  "versionCode": 704,
+  "versionName": "7.0.4",
+  "databaseVersion": "7.0.4",
   "totalQuestions": 949,
   "updatedAt": "2026-11-19",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/app-release.apk",
-  "changelog": "Versione 7.0.3: Silenziato il popup di sincronizzazione cloud automatica in background e reso il toast elegante e compatto in basso."
+  "changelog": "Versione 7.0.4: Eliminato definitivamente popup sincronizzazione in background e forzato aggiornamento cache del browser con versioning."
 }

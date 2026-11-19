@@ -86,7 +86,7 @@
   // STATO GLOBALE DELL'APPLICAZIONE
   // =========================================================================
   const AppState = {
-    appVersion: '7.0.3',
+    appVersion: '7.0.4',
     allQuestions: [],
     categories: [],
     topicsByCategory: {},
@@ -3400,7 +3400,7 @@
 
         const currentCount = AppState.allQuestions.length;
         const totalInManifest = manifest.totalQuestions || manifest.questionsCount || 0;
-        const currentCode = 703; // v7.0.3
+        const currentCode = 704; // v7.0.4
         const hasNewVersionCode = manifest.versionCode && manifest.versionCode > currentCode;
 
         // Riconoscimento avanzato aggiornamento Banca Dati online
@@ -3627,8 +3627,8 @@
       this.setupUI();
       this.updateState();
 
-      // Callback globale per quando la sincronizzazione Firebase termina
-      window.onFirebaseSyncCompleted = (merged, isBackground = false) => {
+      // Callback globale per quando la sincronizzazione Firebase termina (SEMPRE SILENZIOSA)
+      window.onFirebaseSyncCompleted = (merged) => {
         this.updateState();
         renderHomeDashboard();
         renderStatisticsView();
@@ -3638,11 +3638,6 @@
           renderTrainingCard();
         } else {
           renderTrainingList();
-        }
-
-        // Mostra la notifica toast SOLO se la sincronizzazione è manuale (MAI per l'auto-sync silenzioso in background)
-        if (!isBackground) {
-          showToast('Sincronizzazione Cloud completata!', '☁️');
         }
       };
 
@@ -3849,7 +3844,7 @@
         const res = await window.FirebaseSync.sync(false);
         if (res.success) {
           this.updateState();
-          // Notifica già emessa da onFirebaseSyncCompleted!
+          showToast('Sincronizzazione Cloud completata!', '☁️');
         } else {
           showToast('Errore di sincronizzazione: ' + (res.error || res.reason), '⚠️');
         }
