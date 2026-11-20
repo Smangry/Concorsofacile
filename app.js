@@ -3167,14 +3167,17 @@
       showToast(`Tema ${next === 'dark' ? 'Scuro' : 'Chiaro'} attivato`, '🎨');
     });
 
-    // Sound toggle
-    document.getElementById('btn-sound-toggle').addEventListener('click', () => {
-      SoundFx.enabled = !SoundFx.enabled;
-      Storage.saveSound(SoundFx.enabled);
-      const icon = SoundFx.enabled ? '🔊' : '🔇';
-      document.getElementById('btn-sound-toggle').textContent = icon;
-      showToast(SoundFx.enabled ? 'Suoni di feedback attivati' : 'Suoni disattivati', icon);
-    });
+    // Sound toggle (se presente nell'interfaccia)
+    const btnSoundToggle = document.getElementById('btn-sound-toggle');
+    if (btnSoundToggle) {
+      btnSoundToggle.addEventListener('click', () => {
+        SoundFx.enabled = !SoundFx.enabled;
+        Storage.saveSound(SoundFx.enabled);
+        const icon = SoundFx.enabled ? '🔊' : '🔇';
+        btnSoundToggle.textContent = icon;
+        showToast(SoundFx.enabled ? 'Suoni di feedback attivati' : 'Suoni disattivati', icon);
+      });
+    }
 
     // Filtri Allenamento
     document.getElementById('filter-materia').addEventListener('change', (e) => {
@@ -4583,12 +4586,18 @@
   // =========================================================================
   // BOOTSTRAP APP
   // =========================================================================
-  document.addEventListener('DOMContentLoaded', () => {
+  function bootstrap() {
     Storage.load();
     setupEventListeners();
     initDatabase();
     UpdateManager.init();
     AccountManager.init();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootstrap);
+  } else {
+    bootstrap();
+  }
 
 })();
