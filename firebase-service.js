@@ -140,11 +140,11 @@ window.FirebaseSync = (function () {
     if (!errorMsg) return 'Errore sconosciuto di connessione.';
     const str = String(errorMsg);
 
-    if (str.includes('EMAIL_EXISTS')) return 'Questa email è già registrata. Effettua l\'accesso.';
+    if (str.includes('EMAIL_EXISTS')) return 'Questa email è già registrata: seleziona la scheda "Accedi" per effettuare il login.';
     if (str.includes('OPERATION_NOT_ALLOWED')) return 'Autenticazione Email/Password non abilitata nella Console Firebase.';
     if (str.includes('TOO_MANY_ATTEMPTS_TRY_LATER')) return 'Troppi tentativi consecutivi. Riprova tra qualche minuto.';
-    if (str.includes('EMAIL_NOT_FOUND')) return 'Nessun account trovato con questa email.';
-    if (str.includes('INVALID_PASSWORD') || str.includes('INVALID_LOGIN_CREDENTIALS')) return 'Email o password non corretti.';
+    if (str.includes('EMAIL_NOT_FOUND')) return 'Nessun account trovato con questa email. Clicca su "Crea Account" in alto per registrarti.';
+    if (str.includes('INVALID_PASSWORD') || str.includes('INVALID_LOGIN_CREDENTIALS')) return 'Email o password non corretti. Se non hai ancora creato un account, seleziona "Crea Account" in alto.';
     if (str.includes('USER_DISABLED')) return 'Questo account utente è stato disabilitato.';
     if (str.includes('WEAK_PASSWORD')) return 'La password deve contenere almeno 6 caratteri.';
     if (str.includes('INVALID_EMAIL')) return 'Inserisci un indirizzo email valido.';
@@ -446,11 +446,42 @@ window.FirebaseSync = (function () {
       }
     }
 
+    // 5. Nome Candidato
+    const mergedCandidateName = cloudData.candidateName || localData.candidateName || '';
+
+    // 6. Streak & Giorni di Studio
+    const cloudStreak = cloudData.streakData || { dates: {}, currentStreak: 0 };
+    const localStreak = localData.streakData || { dates: {}, currentStreak: 0 };
+    const mergedStreakDates = { ...(cloudStreak.dates || {}) };
+    Object.keys(localStreak.dates || {}).forEach(k => {
+      const loc = localStreak.dates[k];
+      const cld = mergedStreakDates[k];
+      if (!cld) {
+        mergedStreakDates[k] = loc;
+      } else {
+        mergedStreakDates[k] = {
+          seconds: Math.max(loc.seconds || 0, cld.seconds || 0),
+          completed: !!(loc.completed || cld.completed)
+        };
+      }
+    });
+    const mergedStreakData = {
+      dates: mergedStreakDates,
+      currentStreak: Math.max(cloudStreak.currentStreak || 0, localStreak.currentStreak || 0),
+      lastActiveDate: cloudStreak.lastActiveDate || localStreak.lastActiveDate || ''
+    };
+
+    // 7. Risposte "Al primo colpo"
+    const mergedFirstTry = { ...(cloudData.firstTryRecords || {}), ...(localData.firstTryRecords || {}) };
+
     return {
       userAnswers: mergedAnswers,
       bookmarks: mergedBookmarks,
       history: mergedHistory,
       lastSession: mergedSession,
+      candidateName: mergedCandidateName,
+      streakData: mergedStreakData,
+      firstTryRecords: mergedFirstTry,
       updatedAt: Date.now()
     };
   }
@@ -509,6 +540,9 @@ window.FirebaseSync = (function () {
         lastSession: (window.Storage && typeof window.Storage.getTrainingSession === 'function') 
           ? window.Storage.getTrainingSession() 
           : null,
+        candidateName: (window.AppState && window.AppState.candidateName) || (window.Storage && window.Storage.getItem('uniss_candidate_name_2026')) || '',
+        streakData: (window.AppState && window.AppState.streakData) || null,
+        firstTryRecords: (window.AppState && window.AppState.firstTryRecords) || null,
         updatedAt: Date.now()
       };
 
@@ -519,10 +553,15 @@ window.FirebaseSync = (function () {
       const merged = mergeProgress(localData, cloudData);
 
       // 4. Salva lo stato unito in locale
-      if (window.AppState && window.AppState.training) {
-        window.AppState.training.userAnswers = merged.userAnswers;
-        window.AppState.training.bookmarks = new Set(merged.bookmarks);
+      if (window.AppState) {
+        if (window.AppState.training) {
+          window.AppState.training.userAnswers = merged.userAnswers;
+          window.AppState.training.bookmarks = new Set(merged.bookmarks);
+        }
         window.AppState.history = merged.history;
+        if (merged.candidateName) window.AppState.candidateName = merged.candidateName;
+        if (merged.streakData) window.AppState.streakData = merged.streakData;
+        if (merged.firstTryRecords) window.AppState.firstTryRecords = merged.firstTryRecords;
       }
 
       // Salva in storage locale e native SharedPreferences
@@ -532,6 +571,15 @@ window.FirebaseSync = (function () {
         window.Storage.setItem(window.Storage.KEYS.EXAM_HISTORY, JSON.stringify(merged.history));
         if (merged.lastSession) {
           window.Storage.setItem(window.Storage.KEYS.LAST_SESSION, JSON.stringify(merged.lastSession));
+        }
+        if (merged.candidateName) {
+          window.Storage.setItem(window.Storage.KEYS.CANDIDATE_NAME, merged.candidateName);
+        }
+        if (merged.streakData) {
+          window.Storage.setItem(window.Storage.KEYS.STREAK_DATA, JSON.stringify(merged.streakData));
+        }
+        if (merged.firstTryRecords) {
+          window.Storage.setItem(window.Storage.KEYS.FIRST_TRY, JSON.stringify(merged.firstTryRecords));
         }
       } else {
         try {

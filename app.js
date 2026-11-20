@@ -4558,6 +4558,14 @@
         this.handleAuthSubmit();
       });
 
+      const btnSubmit = document.getElementById('btn-submit-auth');
+      if (btnSubmit) {
+        btnSubmit.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.handleAuthSubmit();
+        });
+      }
+
       // Azioni Utente Loggato
       const btnLogout = document.getElementById('btn-account-logout');
       if (btnLogout) btnLogout.addEventListener('click', () => this.handleLogout());
