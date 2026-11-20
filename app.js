@@ -692,17 +692,20 @@
     const container = document.getElementById('toast-container');
     if (!container) return;
 
+    // Rimuove eventuali toast precedenti per evitare sovrapposizioni o tagli a schermo
+    container.innerHTML = '';
+
     const toast = document.createElement('div');
     toast.className = 'toast';
-    toast.innerHTML = `<span>${icon}</span><span>${message}</span>`;
+    toast.innerHTML = `<span style="font-size:1.1rem; flex-shrink:0;">${icon}</span><span style="flex:1;">${message}</span>`;
     container.appendChild(toast);
 
     setTimeout(() => {
       toast.style.opacity = '0';
-      toast.style.transform = 'translateY(10px)';
-      toast.style.transition = 'all 0.3s ease';
-      setTimeout(() => toast.remove(), 300);
-    }, 2600);
+      toast.style.transform = 'translateY(12px) scale(0.95)';
+      toast.style.transition = 'all 0.25s ease';
+      setTimeout(() => toast.remove(), 250);
+    }, 2800);
   }
 
   function updateThemeToggleIcon(theme) {
@@ -981,10 +984,11 @@
 
     const totalCount = AppState.training.filteredList.length;
     const curQ = AppState.training.currentIndex + 1;
+    const cleanSubj = (materia === 'ALL') ? 'Tutte le Materie' : materia.replace("dell'Università degli Studi di Sassari", 'UniSS');
     if (AppState.training.currentIndex > 0) {
-      showToast(`Ripresa da quesito ${curQ} di ${totalCount} (${materia === 'ALL' ? 'Tutte le Materie' : materia})`, '🎯');
+      showToast(`Quesito ${curQ} di ${totalCount} • ${cleanSubj}`, '🎯');
     } else {
-      showToast(`Caricati ${totalCount} quesiti di: ${materia === 'ALL' ? 'Tutte le Materie' : materia}`, '📚');
+      showToast(`${totalCount} quesiti • ${cleanSubj}`, '📚');
     }
   }
 
@@ -1023,9 +1027,9 @@
 
     const curQ = AppState.training.currentIndex + 1;
     if (AppState.training.currentIndex > 0) {
-      showToast(`Ripresa da quesito ${curQ} di ${macroQuestions.length} (${macroInfo.title})`, '🎯');
+      showToast(`Quesito ${curQ} di ${macroQuestions.length} • ${macroInfo.title}`, '🎯');
     } else {
-      showToast(`Caricati ${macroQuestions.length} quesiti per: ${macroInfo.title}`, '🚀');
+      showToast(`${macroQuestions.length} quesiti • ${macroInfo.title}`, '🚀');
     }
   }
 
@@ -1038,6 +1042,7 @@
 
     const fill = document.getElementById('module-progress-fill');
     const counter = document.getElementById('module-progress-counter');
+    const pctLabel = document.getElementById('module-progress-pct-label');
     const liveScore = document.getElementById('module-progress-live-score');
     const btnNext = document.getElementById('btn-card-next');
 
@@ -1047,11 +1052,14 @@
     const rawPct = (currentNum / list.length) * 100;
     const pct = Math.round(rawPct);
     const displayPct = (pct === 0 && currentNum > 0) ? rawPct.toFixed(1) : pct;
-    const visualPct = currentNum > 0 ? Math.max(1, rawPct) : 0;
+    const visualPct = currentNum > 0 ? Math.max(2, rawPct) : 0;
 
     fill.style.width = `${visualPct.toFixed(1)}%`;
+    if (pctLabel) {
+      pctLabel.textContent = `${pct}%`;
+    }
     if (counter) {
-      counter.textContent = `Quesito ${currentNum} di ${list.length} (${displayPct}%)`;
+      counter.textContent = `DOMANDA ${currentNum} / ${list.length}`;
     }
 
     // Calcola risposte esatte ed errate date finora nei quesiti di questo gruppo
@@ -1352,18 +1360,37 @@
       let targetIndex = 0;
       let targetArg = 'ALL';
 
-      if (savedSession && savedSession.filterMateria) {
+      if (savedSession && savedSession.filterMateria && savedSession.filterMateria !== 'ALL') {
         targetMateria = savedSession.filterMateria;
         targetIndex = savedSession.currentIndex || 0;
         targetArg = savedSession.filterArgomento || 'ALL';
+      } else {
+        // Cerca la prima materia con quesiti svolti ma non completata al 100%
+        for (const cat of AppState.categories) {
+          const catQs = AppState.allQuestions.filter(q => q.materia === cat);
+          const ansInCat = catQs.filter(q => AppState.training.userAnswers[q.id]).length;
+          if (ansInCat > 0 && ansInCat < catQs.length) {
+            targetMateria = cat;
+            const firstUnans = catQs.findIndex(q => !AppState.training.userAnswers[q.id]);
+            targetIndex = (firstUnans !== -1) ? firstUnans : 0;
+            break;
+          }
+        }
       }
 
       const qForResume = (targetMateria === 'ALL')
         ? AppState.allQuestions
         : AppState.allQuestions.filter(q => q.materia === targetMateria);
       const totalForResume = qForResume.length || 1;
-      const currentQNum = Math.min(targetIndex + 1, totalForResume);
-      const pctForResume = Math.round((currentQNum / totalForResume) * 100);
+      
+      const answeredInResume = qForResume.filter(q => AppState.training.userAnswers[q.id]).length;
+      const firstUnansweredInResume = qForResume.findIndex(q => !AppState.training.userAnswers[q.id]);
+      const actualResumeIdx = (firstUnansweredInResume !== -1) ? firstUnansweredInResume : Math.min(targetIndex, totalForResume - 1);
+      const currentQNum = actualResumeIdx + 1;
+      
+      const rawModulePct = (answeredInResume / totalForResume) * 100;
+      const pctForResume = Math.round(rawModulePct);
+      const displayModulePct = (pctForResume === 0 && answeredInResume > 0) ? rawModulePct.toFixed(1) : pctForResume;
 
       if (resumeTitle) {
         let cleanTitle = targetMateria.replace("dell'Università degli Studi di Sassari", 'UniSS');
@@ -1371,26 +1398,46 @@
         resumeTitle.textContent = cleanTitle.toUpperCase();
       }
       if (resumeSub) {
-        resumeSub.textContent = `Domanda ${currentQNum} di ${totalForResume}`;
+        resumeSub.textContent = `Domanda ${currentQNum} di ${totalForResume} (${answeredInResume} svolti)`;
       }
       if (resumePct) {
-        resumePct.textContent = `${pctForResume}%`;
+        resumePct.textContent = `${displayModulePct}%`;
       }
       if (resumeBar) {
-        resumeBar.style.width = `${pctForResume}%`;
+        const visualBarWidth = answeredInResume > 0 ? Math.max(3, rawModulePct) : 0;
+        resumeBar.style.width = `${visualBarWidth}%`;
       }
+
+      // PANORAMICA PROGRESSI TOTALI BANCA DATI (Tutti i 949 Quesiti)
+      const globalTotalQ = AppState.allQuestions.length || 949;
+      const globalAnsQ = answeredTotal;
+      const rawGlobalPct = (globalAnsQ / globalTotalQ) * 100;
+      const globalPct = Math.round(rawGlobalPct);
+      const displayGlobalPct = (globalPct === 0 && globalAnsQ > 0) ? rawGlobalPct.toFixed(1) : globalPct;
+      const visualGlobalBar = globalAnsQ > 0 ? Math.max(3, rawGlobalPct) : 0;
+
+      const elGlobalPct = document.getElementById('home-global-pct');
+      const elGlobalBar = document.getElementById('home-global-bar');
+      const elGlobalCount = document.getElementById('home-global-count');
+      const elGlobalAccuracy = document.getElementById('home-global-accuracy');
+
+      if (elGlobalPct) elGlobalPct.textContent = `${displayGlobalPct}%`;
+      if (elGlobalBar) elGlobalBar.style.width = `${visualGlobalBar}%`;
+      if (elGlobalCount) elGlobalCount.textContent = `${globalAnsQ} di ${globalTotalQ} quesiti svolti`;
+      if (elGlobalAccuracy) elGlobalAccuracy.textContent = `Precisione: ${accuracy}%`;
+
       if (btnResume) {
         btnResume.onclick = () => {
           AppState.training.filterMateria = targetMateria;
           AppState.training.filterArgomento = targetArg;
           AppState.training.filterStatus = 'ALL';
           applyTrainingFilters();
-          AppState.training.currentIndex = Math.min(targetIndex, AppState.training.filteredList.length - 1);
+          AppState.training.currentIndex = Math.min(actualResumeIdx, AppState.training.filteredList.length - 1);
           updateActiveSubjectHeader(targetMateria, targetArg);
           hideModuleCompletionCard();
           switchTab('training-view');
           renderTrainingCard();
-          showToast(`Ripresa sessione: Domanda ${AppState.training.currentIndex + 1}`, '🚀');
+          showToast(`Ripresa sessione: Domanda ${AppState.training.currentIndex + 1} (${targetMateria.replace("dell'Università degli Studi di Sassari", 'UniSS')})`, '🚀');
         };
       }
     }
@@ -1873,6 +1920,67 @@
     sheet.style.display = 'flex';
   }
 
+  function goToNextQuestion() {
+    const list = AppState.training.filteredList;
+    if (!list || list.length === 0) return;
+
+    const isReviewingWrong = (AppState.training && AppState.training.filterStatus === 'WRONG');
+
+    // Funzione helper: verifica se un quesito ha già una risposta registrata
+    const isAnswered = (q) => {
+      if (!q) return false;
+      if (isReviewingWrong) {
+        return !!(AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]);
+      }
+      return !!AppState.training.userAnswers[q.id];
+    };
+
+    // Controlla se esistono ancora domande NON risposte in questo modulo
+    const hasUnanswered = list.some(q => !isAnswered(q));
+
+    if (hasUnanswered) {
+      // Salta automaticamente le domande già risposte per trovare la prossima non risposta
+      let nextUnansweredIdx = -1;
+      for (let i = AppState.training.currentIndex + 1; i < list.length; i++) {
+        if (!isAnswered(list[i])) {
+          nextUnansweredIdx = i;
+          break;
+        }
+      }
+
+      // Se in avanti non ce ne sono più, controlla se ne è rimasta qualcuna indietro non risposta
+      if (nextUnansweredIdx === -1) {
+        for (let i = 0; i < AppState.training.currentIndex; i++) {
+          if (!isAnswered(list[i])) {
+            nextUnansweredIdx = i;
+            break;
+          }
+        }
+      }
+
+      if (nextUnansweredIdx !== -1) {
+        AppState.training.currentIndex = nextUnansweredIdx;
+        renderTrainingCard(true);
+        return;
+      }
+    }
+
+    // Se tutte le domande sono già state risposte, avanza sequenzialmente o mostra riepilogo
+    if (AppState.training.currentIndex < list.length - 1) {
+      AppState.training.currentIndex++;
+      renderTrainingCard(true);
+    } else {
+      showModuleCompletionCard();
+    }
+  }
+
+  function goToPrevQuestion() {
+    if (AppState.training.currentIndex > 0) {
+      AppState.training.currentIndex--;
+      renderTrainingCard(true);
+    }
+  }
+
   // Renderizza la scheda singola di allenamento (Fedele al Mockup 2)
   function renderTrainingCard(resetScroll = true) {
     if (resetScroll) {
@@ -1933,22 +2041,20 @@
       elBm.title = isBm ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti';
     }
 
-    // Aggiornamento Subheader Tracker Strip (Mockup 2)
-    const liveNum = document.getElementById('count-live-num');
-    const liveTotal = document.getElementById('count-live-total');
-    const liveFill = document.getElementById('count-live-fill');
-    const livePct = document.getElementById('count-live-pct');
+    // Aggiornamento Subheader Tracker Strip (Mockup 2: DOMANDA X / Y, Barra e %)
+    const fill = document.getElementById('module-progress-fill');
+    const pctLabel = document.getElementById('module-progress-pct-label');
+    const counterLabel = document.getElementById('module-progress-counter');
     const liveCorr = document.getElementById('count-live-correct');
     const liveWrong = document.getElementById('count-live-wrong');
 
     const currNum = idx + 1;
     const totNum = list.length;
-    const pctProg = Math.round((currNum / totNum) * 100);
+    const pctProg = totNum > 0 ? Math.round((currNum / totNum) * 100) : 0;
 
-    if (liveNum) liveNum.textContent = currNum;
-    if (liveTotal) liveTotal.textContent = totNum;
-    if (liveFill) liveFill.style.width = `${pctProg}%`;
-    if (livePct) livePct.textContent = `${pctProg}%`;
+    if (fill) fill.style.width = `${Math.max(2, pctProg)}%`;
+    if (pctLabel) pctLabel.textContent = `${pctProg}%`;
+    if (counterLabel) counterLabel.textContent = `DOMANDA ${currNum} / ${totNum}`;
 
     let sessionCorrect = 0;
     let sessionWrong = 0;
@@ -2114,19 +2220,40 @@
       }
     }
 
-    // Abilita/Disabilita tasti navigazione
+    // Abilita/Disabilita tasti navigazione con gestione sicura click
     const prevBtn = document.getElementById('btn-card-prev');
-    if (prevBtn) prevBtn.disabled = (idx === 0);
+    if (prevBtn) {
+      prevBtn.disabled = (idx === 0);
+      prevBtn.onclick = (e) => {
+        if (e) e.preventDefault();
+        goToPrevQuestion();
+      };
+    }
+
+    const isQAnswered = (q) => {
+      if (!q) return false;
+      if (isReviewingWrong) {
+        return !!(AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]);
+      }
+      return !!AppState.training.userAnswers[q.id];
+    };
+    const hasMoreUnanswered = list.slice(idx + 1).some(q => !isQAnswered(q));
+    const anyUnanswered = list.some(q => !isQAnswered(q));
 
     const nextBtn = document.getElementById('btn-card-next');
     if (nextBtn) {
-      if (idx >= list.length - 1) {
+      nextBtn.disabled = false;
+      if (!anyUnanswered || (!hasMoreUnanswered && idx >= list.length - 1)) {
         nextBtn.innerHTML = '<span>🏁 Fine Modulo</span>';
         nextBtn.classList.add('btn-gold');
       } else {
         nextBtn.innerHTML = '<span>Prossima domanda →</span>';
         nextBtn.classList.remove('btn-gold');
       }
+      nextBtn.onclick = (e) => {
+        if (e) e.preventDefault();
+        goToNextQuestion();
+      };
     }
 
     // Aggiorna la barra di progresso e lo stato dei bottoni navigazione
@@ -3016,6 +3143,12 @@
     const targetSec = document.getElementById(viewId);
     if (targetSec) targetSec.classList.add('active');
 
+    if (viewId === 'training-view' || viewId === 'exam-view') {
+      document.body.classList.add('in-quiz-mode');
+    } else {
+      document.body.classList.remove('in-quiz-mode');
+    }
+
     if (viewId === 'home-view') renderHomeDashboard();
     if (viewId === 'repo-view') renderRepository();
     if (viewId === 'stats-view') renderStatisticsView();
@@ -3269,7 +3402,7 @@
     }
 
     // Dismiss bottom sheets & modals when tapping on backdrop overlay or pressing Escape
-    const dismissableModals = ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'account-modal', 'confirm-finish-modal', 'instant-feedback-sheet', 'candidate-profile-modal'];
+    const dismissableModals = ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'account-modal', 'confirm-finish-modal', 'instant-feedback-sheet', 'candidate-profile-modal', 'app-settings-modal'];
     dismissableModals.forEach(sheetId => {
       const el = document.getElementById(sheetId);
       if (el) {
@@ -3281,15 +3414,12 @@
       }
     });
 
-    // Profilo & Impostazioni Candidato (Modal & Toggles)
-    function openProfileSettingsModal() {
-      const modal = document.getElementById('candidate-profile-modal');
+    // =========================================================================
+    // SEZIONE 1: IMPOSTAZIONI APPLICAZIONE (Tasto ⚙️ a Sinistra)
+    // =========================================================================
+    function openAppSettingsModal() {
+      const modal = document.getElementById('app-settings-modal');
       if (!modal) return;
-      if (typeof AccountManager !== 'undefined' && AccountManager.updateState) {
-        AccountManager.updateState();
-      }
-      const nameInput = document.getElementById('input-candidate-name');
-      if (nameInput) nameInput.value = AppState.candidateName || '';
 
       const hapticCheck = document.getElementById('toggle-haptic-feedback');
       if (hapticCheck) hapticCheck.checked = !!AppState.settings.hapticEnabled;
@@ -3309,43 +3439,29 @@
       modal.style.display = 'flex';
     }
 
-    function closeProfileSettingsModal() {
-      const modal = document.getElementById('candidate-profile-modal');
+    function closeAppSettingsModal() {
+      const modal = document.getElementById('app-settings-modal');
       if (modal) modal.style.display = 'none';
     }
 
     const btnOpenSettings = document.getElementById('btn-open-settings-modal');
     if (btnOpenSettings) {
-      btnOpenSettings.addEventListener('click', openProfileSettingsModal);
+      btnOpenSettings.addEventListener('click', openAppSettingsModal);
     }
 
-    const btnEditName = document.getElementById('btn-edit-candidate-name');
-    if (btnEditName) {
-      btnEditName.addEventListener('click', openProfileSettingsModal);
+    const btnCloseSettings = document.getElementById('btn-close-settings-modal');
+    if (btnCloseSettings) {
+      btnCloseSettings.addEventListener('click', closeAppSettingsModal);
     }
 
-    const heroProfileTrigger = document.getElementById('hero-profile-trigger');
-    if (heroProfileTrigger) {
-      heroProfileTrigger.addEventListener('click', openProfileSettingsModal);
+    const btnCloseSettingsBottom = document.getElementById('btn-close-settings-modal-bottom');
+    if (btnCloseSettingsBottom) {
+      btnCloseSettingsBottom.addEventListener('click', closeAppSettingsModal);
     }
 
-    const btnCloseProfile = document.getElementById('btn-close-profile-modal');
-    if (btnCloseProfile) {
-      btnCloseProfile.addEventListener('click', closeProfileSettingsModal);
-    }
-
-    const btnCancelProfile = document.getElementById('btn-cancel-profile-modal');
-    if (btnCancelProfile) {
-      btnCancelProfile.addEventListener('click', closeProfileSettingsModal);
-    }
-
-    const btnSaveProfile = document.getElementById('btn-save-profile-modal');
-    if (btnSaveProfile) {
-      btnSaveProfile.addEventListener('click', () => {
-        const nameInput = document.getElementById('input-candidate-name');
-        const newName = nameInput ? nameInput.value.trim() : '';
-        Storage.saveCandidateName(newName);
-
+    const btnSaveSettings = document.getElementById('btn-save-settings-modal');
+    if (btnSaveSettings) {
+      btnSaveSettings.addEventListener('click', () => {
         const hapticCheck = document.getElementById('toggle-haptic-feedback');
         if (hapticCheck) Storage.saveHaptic(hapticCheck.checked);
 
@@ -3371,19 +3487,76 @@
           Storage.setItem(Storage.KEYS.SHUFFLE_QUESTIONS, String(qCheck.checked));
         }
 
-        closeProfileSettingsModal();
+        updateRandomizationButtonsUI();
+        closeAppSettingsModal();
+        showToast('Impostazioni salvate con successo!', '⚙️');
+      });
+    }
+
+    // =========================================================================
+    // SEZIONE 2: PROFILO CANDIDATO & CLOUD (Tasto 👤 in alto o "Ciao!" in Home)
+    // =========================================================================
+    function openCandidateProfileModal() {
+      const modal = document.getElementById('candidate-profile-modal');
+      if (!modal) return;
+      if (typeof AccountManager !== 'undefined' && AccountManager.updateState) {
+        AccountManager.updateState();
+      }
+      const nameInput = document.getElementById('input-candidate-name');
+      if (nameInput) nameInput.value = AppState.candidateName || '';
+
+      modal.style.display = 'flex';
+    }
+
+    function closeCandidateProfileModal() {
+      const modal = document.getElementById('candidate-profile-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    const btnHeaderAccount = document.getElementById('btn-account-modal');
+    if (btnHeaderAccount) {
+      btnHeaderAccount.addEventListener('click', openCandidateProfileModal);
+    }
+
+    const btnEditName = document.getElementById('btn-edit-candidate-name');
+    if (btnEditName) {
+      btnEditName.addEventListener('click', openCandidateProfileModal);
+    }
+
+    const heroProfileTrigger = document.getElementById('hero-profile-trigger');
+    if (heroProfileTrigger) {
+      heroProfileTrigger.addEventListener('click', openCandidateProfileModal);
+    }
+
+    const btnCloseProfile = document.getElementById('btn-close-profile-modal');
+    if (btnCloseProfile) {
+      btnCloseProfile.addEventListener('click', closeCandidateProfileModal);
+    }
+
+    const btnCloseProfileBottom = document.getElementById('btn-close-profile-modal-bottom');
+    if (btnCloseProfileBottom) {
+      btnCloseProfileBottom.addEventListener('click', closeCandidateProfileModal);
+    }
+
+    const btnSaveCandidateName = document.getElementById('btn-save-candidate-name');
+    if (btnSaveCandidateName) {
+      btnSaveCandidateName.addEventListener('click', () => {
+        const nameInput = document.getElementById('input-candidate-name');
+        const newName = nameInput ? nameInput.value.trim() : '';
+        Storage.saveCandidateName(newName);
         renderHomeDashboard();
-        if (AppState.training.viewMode === 'card') {
-          renderTrainingCard();
+        if (newName) {
+          showToast(`Nome salvato! Benvenuto ${newName} 👋`, '👤');
+        } else {
+          showToast('Nome rimosso (saluto predefinito "Ciao!")', '👤');
         }
-        showToast('Impostazioni e profilo salvati con successo!', '⚙️');
       });
     }
 
     const btnProfileOpenAuth = document.getElementById('btn-profile-open-auth');
     if (btnProfileOpenAuth) {
       btnProfileOpenAuth.addEventListener('click', () => {
-        closeProfileSettingsModal();
+        closeCandidateProfileModal();
         if (typeof AccountManager !== 'undefined' && AccountManager.openModal) {
           AccountManager.openModal();
         }
@@ -3610,21 +3783,11 @@
     updateRandomizationButtonsUI();
 
     // Navigazione scheda singola
-    document.getElementById('btn-card-prev').addEventListener('click', () => {
-      if (AppState.training.currentIndex > 0) {
-        AppState.training.currentIndex--;
-        renderTrainingCard();
-      }
-    });
+    const cardPrevBtn = document.getElementById('btn-card-prev');
+    if (cardPrevBtn) cardPrevBtn.addEventListener('click', goToPrevQuestion);
 
-    document.getElementById('btn-card-next').addEventListener('click', () => {
-      if (AppState.training.currentIndex < AppState.training.filteredList.length - 1) {
-        AppState.training.currentIndex++;
-        renderTrainingCard();
-      } else {
-        showModuleCompletionCard();
-      }
-    });
+    const cardNextBtn = document.getElementById('btn-card-next');
+    if (cardNextBtn) cardNextBtn.addEventListener('click', goToNextQuestion);
 
     // Filtro per Macro-Argomenti nella Home
     document.querySelectorAll('.home-macro-btn').forEach(btn => {

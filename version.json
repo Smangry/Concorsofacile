@@ -1,10 +1,10 @@
 {
-  "versionCode": 803,
-  "versionName": "8.0.3",
-  "databaseVersion": "8.0.3",
+  "versionCode": 804,
+  "versionName": "8.0.4",
+  "databaseVersion": "8.0.4",
   "totalQuestions": 949,
   "updatedAt": "2026-11-20",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/Concorso_2026.apk",
-  "changelog": "Versione 8.0.3: Separazione tra sezione Profilo (con inserimento nome candidato e cloud) e Impostazioni app, barra panoramica con tutti i progressi totali nella Home, ripristino avanzamento dinamico in Home e barra quesito ben visibile con respiro ottimizzato senza comprimere i testi."
+  "changelog": "Versione 8.0.4: Quando riapri un modulo già iniziato avanzi solo sui quesiti non ancora risposti saltando automaticamente quelli già svolti; popup toast notifiche reso completamente leggibile, centrato e fluttuante sopra la barra dei tasti."
 }

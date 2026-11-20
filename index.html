@@ -195,6 +195,21 @@
               <div class="resume-progress-bar" id="home-resume-bar" style="width: 68%;"></div>
             </div>
 
+            <!-- BARRA PROGRESSI TOTALI (Panoramica Globale Concorso 949 Quesiti) -->
+            <div class="resume-global-panoramic">
+              <div class="panoramic-header">
+                <span class="panoramic-title">📊 Avanzamento Totale Banca Dati</span>
+                <span class="panoramic-pct" id="home-global-pct">0%</span>
+              </div>
+              <div class="panoramic-track">
+                <div class="panoramic-bar" id="home-global-bar" style="width: 0%;"></div>
+              </div>
+              <div class="panoramic-footer">
+                <span id="home-global-count">0 di 949 quesiti svolti</span>
+                <span id="home-global-accuracy">Precisione: 0%</span>
+              </div>
+            </div>
+
             <button class="btn btn-coral-resume" id="btn-home-resume">
               Continua il quiz ➔
             </button>
@@ -542,22 +557,6 @@
               <span>🏠 Scegli un Altro Modulo / Torna al Menù</span>
             </button>
           </div>
-        </div>
-
-        <!-- Sticky Bottom Action Bar per Allenamento (Sempre visibile senza scorrere!) -->
-        <div class="question-footer-nav" id="training-action-bar">
-          <button class="btn-nav-arrow" id="btn-card-prev">
-            <span>◀ Prec</span>
-          </button>
-          <button class="btn-nav-arrow" id="btn-toggle-explain" style="font-size:0.8rem;">
-            <span>💡 Spiega</span>
-          </button>
-          <button class="btn-nav-arrow" id="btn-reveal-solution" style="font-size:0.8rem;">
-            <span>👁️ Soluzione</span>
-          </button>
-          <button class="btn-nav-arrow btn-primary" id="btn-card-next">
-            <span>Succ ▶</span>
-          </button>
         </div>
 
       </section>
@@ -1129,71 +1128,20 @@
   </div>
 
   <!-- ====================================================================
-       MODAL PROFILO CANDIDATO & IMPOSTAZIONI (Con Gestione Nome e Aptica)
+       MODAL 1: IMPOSTAZIONI APPLICAZIONE (Tasto ⚙️ in alto a sinistra)
        ==================================================================== -->
-  <div class="modal-overlay" id="candidate-profile-modal" style="display:none;">
+  <div class="modal-overlay" id="app-settings-modal" style="display:none;">
     <div class="modal-card">
       <div class="m3-drag-handle"></div>
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
         <h3 style="margin:0; font-size:1.15rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-          <span>⚙️</span> <span>Profilo & Impostazioni</span>
+          <span>⚙️</span> <span>Impostazioni Applicazione</span>
         </h3>
-        <button class="icon-btn" id="btn-close-profile-modal">✕</button>
-      </div>
-
-      <!-- Nome Candidato -->
-      <div style="margin-bottom:14px;">
-        <label for="input-candidate-name" style="font-size:0.82rem; font-weight:800; color:var(--md-primary); margin-bottom:4px; display:block;">
-          👤 Il tuo nome da candidato:
-        </label>
-        <input type="text" id="input-candidate-name" class="search-input" placeholder="Es. Marco, Alessandro, Giulia..." style="width:100%; box-sizing:border-box; font-weight:700; font-size:0.95rem; padding:10px 14px;">
-        <span style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:4px; display:block;">
-          Lascialo vuoto se preferisci un semplice saluto <em>"Ciao!"</em>.
-        </span>
-      </div>
-
-      <!-- SEZIONE ACCOUNT CLOUD FIREBASE (Autenticazione & Recupero Dati) -->
-      <div id="profile-cloud-box" style="background:var(--md-surface-container-high); border:1.5px solid var(--md-outline-variant); border-radius:var(--radius-md); padding:12px 14px; margin-bottom:16px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-          <strong style="font-size:0.85rem; color:var(--md-primary); display:flex; align-items:center; gap:6px;">
-            <span>☁️</span> <span>Sincronizzazione & Account Cloud</span>
-          </strong>
-          <span id="profile-cloud-status-badge" class="badge" style="font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:var(--radius-full); background:var(--md-surface-container-highest); color:var(--md-on-surface-variant);">Non Connesso</span>
-        </div>
-
-        <p id="profile-cloud-desc" style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:0 0 10px 0; line-height:1.35;">
-          Accedi o registrati per recuperare il tuo tempo di studio, serie quiz e risposte date su tutti i tuoi dispositivi.
-        </p>
-
-        <!-- Stato Non Autenticato -->
-        <div id="profile-cloud-unlogged" style="display:block;">
-          <button type="button" class="btn btn-sm btn-primary" id="btn-profile-open-auth" style="width:100%; font-weight:800; padding:9px 12px; display:flex; align-items:center; justify-content:center; gap:6px;">
-            <span>🔑</span> <span>Accedi o Registrati con Cloud Account</span>
-          </button>
-        </div>
-
-        <!-- Stato Autenticato -->
-        <div id="profile-cloud-logged" style="display:none;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.9rem;" id="profile-avatar-initial">U</div>
-            <div style="flex:1; min-width:0;">
-              <strong id="profile-user-email" style="font-size:0.85rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">email@esempio.com</strong>
-              <span id="profile-sync-time" style="font-size:0.7rem; color:var(--md-success); font-weight:700;">🟢 Sincronizzato con il tuo account</span>
-            </div>
-          </div>
-          <div style="display:flex; gap:8px;">
-            <button type="button" class="btn btn-sm btn-primary" id="btn-profile-sync-now" style="flex:2; font-weight:800; padding:8px 10px;">
-              <span>🔄 Sincronizza Ora</span>
-            </button>
-            <button type="button" class="btn btn-sm btn-secondary" id="btn-profile-logout" style="flex:1; color:var(--md-error); padding:8px 10px;">
-              <span>Disconnetti</span>
-            </button>
-          </div>
-        </div>
+        <button class="icon-btn" id="btn-close-settings-modal">✕</button>
       </div>
 
       <!-- Elenco Interruttori Impostazioni -->
-      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px; border-top:1px solid var(--md-outline-variant); padding-top:14px;">
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:18px;">
         <!-- Feedback Aptico -->
         <div style="display:flex; justify-content:space-between; align-items:center;">
           <div>
@@ -1240,9 +1188,88 @@
         </div>
       </div>
 
+      <!-- Badge Info & Crediti App -->
+      <div style="background:var(--md-surface-container-high); border-radius:12px; padding:12px; text-align:center; font-size:0.75rem; color:var(--md-on-surface-variant); margin-bottom:14px; border:1px solid var(--md-outline-variant);">
+        <div style="font-weight:900; color:var(--md-primary); margin-bottom:2px;">UniSS 2026 • Versione 8.0.3</div>
+        <div>Sviluppato per il concorso da <strong>smangry10</strong> 🇮🇹</div>
+      </div>
+
       <div style="display:flex; gap:10px;">
-        <button class="btn btn-secondary" id="btn-cancel-profile-modal" style="flex:1;">Chiudi</button>
-        <button class="btn btn-primary" id="btn-save-profile-modal" style="flex:2; font-weight:800;">Salva Modifiche</button>
+        <button class="btn btn-secondary" id="btn-close-settings-modal-bottom" style="flex:1;">Chiudi</button>
+        <button class="btn btn-primary" id="btn-save-settings-modal" style="flex:2; font-weight:800;">Salva Impostazioni</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 2: PROFILO CANDIDATO & CLOUD (Tasto 👤 in alto o "Ciao!" in Home)
+       ==================================================================== -->
+  <div class="modal-overlay" id="candidate-profile-modal" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="margin:0; font-size:1.15rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+          <span>👤</span> <span>Profilo Candidato & Cloud</span>
+        </h3>
+        <button class="icon-btn" id="btn-close-profile-modal">✕</button>
+      </div>
+
+      <!-- Gestione Nome Candidato -->
+      <div style="background:var(--md-surface-container-high); border:1.5px solid var(--md-outline-variant); border-radius:14px; padding:14px; margin-bottom:16px;">
+        <label for="input-candidate-name" style="font-size:0.85rem; font-weight:800; color:var(--md-primary); margin-bottom:6px; display:block;">
+          👤 Il tuo nome o nickname:
+        </label>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="input-candidate-name" class="search-input" placeholder="Es. Marco, Giulia, Alessandro..." style="flex:1; font-weight:700; font-size:0.95rem; padding:9px 12px;">
+          <button class="btn btn-primary" id="btn-save-candidate-name" style="font-weight:800; padding:9px 16px;">Salva</button>
+        </div>
+        <span style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:6px; display:block;">
+          Personalizza il saluto in Home (es. <em>"Ciao Marco! 👋"</em>) e i verbali di simulazione. Se lo lasci vuoto comparirà semplicemente <em>"Ciao!"</em>.
+        </span>
+      </div>
+
+      <!-- SEZIONE ACCOUNT CLOUD FIREBASE (Autenticazione & Recupero Dati) -->
+      <div id="profile-cloud-box" style="background:var(--md-surface-container-high); border:1.5px solid var(--md-outline-variant); border-radius:14px; padding:14px; margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <strong style="font-size:0.86rem; color:var(--md-primary); display:flex; align-items:center; gap:6px;">
+            <span>☁️</span> <span>Sincronizzazione Cloud (Google Firebase)</span>
+          </strong>
+          <span id="profile-cloud-status-badge" class="badge" style="font-size:0.68rem; font-weight:800; padding:2px 8px; border-radius:var(--radius-full); background:var(--md-surface-container-highest); color:var(--md-on-surface-variant);">Non Connesso</span>
+        </div>
+
+        <p id="profile-cloud-desc" style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:0 0 10px 0; line-height:1.35;">
+          Accedi o registrati per recuperare il tuo tempo di studio, serie quiz e risposte date su tutti i tuoi dispositivi.
+        </p>
+
+        <!-- Stato Non Autenticato -->
+        <div id="profile-cloud-unlogged" style="display:block;">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-profile-open-auth" style="width:100%; font-weight:800; padding:10px 14px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>🔑</span> <span>Accedi o Registrati con Cloud Account</span>
+          </button>
+        </div>
+
+        <!-- Stato Autenticato -->
+        <div id="profile-cloud-logged" style="display:none;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <div style="width:34px; height:34px; border-radius:50%; background:var(--md-primary-container); color:var(--md-on-primary-container); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.95rem;" id="profile-avatar-initial">U</div>
+            <div style="flex:1; min-width:0;">
+              <strong id="profile-user-email" style="font-size:0.85rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">email@esempio.com</strong>
+              <span id="profile-sync-time" style="font-size:0.7rem; color:var(--md-success); font-weight:700;">🟢 Sincronizzato con il tuo account</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-profile-sync-now" style="flex:2; font-weight:800; padding:8px 10px;">
+              <span>🔄 Sincronizza Ora</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary" id="btn-profile-logout" style="flex:1; color:var(--md-error); padding:8px 10px;">
+              <span>Disconnetti</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end;">
+        <button class="btn btn-secondary" id="btn-close-profile-modal-bottom">Chiudi</button>
       </div>
     </div>
   </div>
