@@ -322,6 +322,9 @@
           Haptic.enabled = (hap === 'true');
           AppState.settings.hapticEnabled = Haptic.enabled;
         }
+
+        // Recupera retroattivamente il tempo di studio se assente
+        recoverPastStudyTime();
       } catch (e) {
         console.warn('Errore lettura dati salvati:', e);
       }
@@ -507,6 +510,75 @@
     }
 
     calculateConsecutiveStreak();
+  }
+
+  // RECUPERO INTELLIGENTE DEL TEMPO PASSATO SULL'APP (Dallo storico esami e dalle risposte date)
+  function recoverPastStudyTime() {
+    if (!AppState.streakData) {
+      AppState.streakData = { dates: {}, currentStreak: 0, lastActiveDate: '' };
+    }
+    if (!AppState.streakData.dates) {
+      AppState.streakData.dates = {};
+    }
+
+    let changesMade = false;
+
+    // 1. Recupero dallo storico delle simulazioni d'esame
+    if (Array.isArray(AppState.history) && AppState.history.length > 0) {
+      AppState.history.forEach(attempt => {
+        let dateKey = '';
+        if (attempt.id && !isNaN(attempt.id)) {
+          const d = new Date(Number(attempt.id));
+          if (!isNaN(d.getTime())) {
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            dateKey = `${y}-${m}-${day}`;
+          }
+        }
+        if (!dateKey && attempt.date) {
+          const parts = attempt.date.split(',')[0].split('/');
+          if (parts.length === 3) {
+            dateKey = `${parts[2].trim()}-${parts[1].trim().padStart(2, '0')}-${parts[0].trim().padStart(2, '0')}`;
+          }
+        }
+
+        if (dateKey) {
+          if (!AppState.streakData.dates[dateKey]) {
+            AppState.streakData.dates[dateKey] = { seconds: 0, completed: false };
+          }
+          const dur = attempt.durationSeconds || 1200;
+          AppState.streakData.dates[dateKey].seconds += dur;
+          if (AppState.streakData.dates[dateKey].seconds >= 1800) {
+            AppState.streakData.dates[dateKey].completed = true;
+          }
+          changesMade = true;
+        }
+      });
+    }
+
+    // 2. Recupero dal volume di risposte di allenamento registrate
+    const answeredCount = Object.keys(AppState.training.userAnswers || {}).length;
+    if (answeredCount > 0) {
+      const today = getTodayDateString();
+      if (!AppState.streakData.dates[today]) {
+        AppState.streakData.dates[today] = { seconds: 0, completed: false };
+      }
+      // Stima di circa 40s a domanda fino a un massimo di 1800s (30m) per la sessione odierna
+      const estimatedSec = Math.min(answeredCount * 40, 1800);
+      if (AppState.streakData.dates[today].seconds < estimatedSec) {
+        AppState.streakData.dates[today].seconds = estimatedSec;
+        if (AppState.streakData.dates[today].seconds >= 1800) {
+          AppState.streakData.dates[today].completed = true;
+        }
+        changesMade = true;
+      }
+    }
+
+    if (changesMade) {
+      calculateConsecutiveStreak();
+      Storage.saveStreakData();
+    }
   }
 
   let studySessionTimer = null;
@@ -1077,7 +1149,7 @@
       pill.textContent = '✅ PROVA SUPERATA (IDONEO)';
       pill.style.background = 'var(--md-success-container)';
       pill.style.color = 'var(--md-on-success-container)';
-      msg.textContent = 'Punteggio superiore alla soglia di idoneità (21/30). Puoi perfezionare gli errori.';
+      msg.textContent = `Punteggio superiore alla soglia di idoneità (>= 70%: hai ottenuto ${scorePct}%). Puoi perfezionare gli errori.`;
     } else if (scorePct >= 50) {
       pill.textContent = '⚠️ PREPARAZIONE MEDIA';
       pill.style.background = 'var(--md-tertiary-container)';
@@ -1257,11 +1329,9 @@
         const isCompleted = AppState.streakData && AppState.streakData.dates && AppState.streakData.dates[dateKey] && AppState.streakData.dates[dateKey].completed;
 
         const pill = document.createElement('div');
-        pill.className = `streak-week-day-pill${isCompleted ? ' completed' : ''}${isDayToday ? ' today' : ''}`;
-        pill.innerHTML = `
-          <span class="day-letter">${dayNames[i]}</span>
-          <span class="day-dot">${isCompleted ? '✓' : (isDayToday ? '•' : '○')}</span>
-        `;
+        pill.className = `streak-day-badge${isCompleted ? ' completed' : ''}${isDayToday ? ' today' : ''}`;
+        pill.textContent = isCompleted ? '✓' : dayNames[i];
+        pill.title = `${dayNames[i]}: ${isCompleted ? 'Obiettivo 30 min completato' : (isDayToday ? 'Oggi in corso' : 'Non completato')}`;
         weekPillsContainer.appendChild(pill);
       }
     }
@@ -1357,31 +1427,120 @@
 
       const rawPct = totalCount > 0 ? (answeredInMat / totalCount) * 100 : 0;
       const pctAnswered = Math.round(rawPct);
+      const displayMatPct = (pctAnswered === 0 && answeredInMat > 0) ? rawPct.toFixed(1) : pctAnswered;
+      const visualMatPct = answeredInMat > 0 ? Math.max(1, rawPct) : 0;
+      const matAccuracy = answeredInMat > 0 ? Math.round((correctInMat / answeredInMat) * 100) : 0;
       const styleConfig = SUBJECT_STYLES[idx % SUBJECT_STYLES.length];
-      const meta = SUBJECTS_META[materia] || { icon: styleConfig.icon };
+      const meta = SUBJECTS_META[materia] || { icon: styleConfig.icon, desc: 'Quesiti ufficiali del concorso UniSS 2026.' };
 
-      const row = document.createElement('div');
-      row.className = 'modern-subject-row';
-      row.dataset.materia = materia;
-      row.innerHTML = `
-        <div class="subject-icon-badge ${styleConfig.badge}">${meta.icon || styleConfig.icon}</div>
-        <div class="subject-info-col">
-          <div class="subject-title-line">
-            <span class="subject-row-name">${materia}</span>
-            <span class="subject-row-pct">${pctAnswered}%</span>
-          </div>
-          <div class="subject-progress-track">
-            <div class="subject-progress-fill" style="width: ${pctAnswered}%;"></div>
+      // Trova primo quesito non svolto in questa materia
+      const firstUnansweredInMat = qInMat.findIndex(q => !AppState.training.userAnswers[q.id]);
+
+      let btnLabel = `▶ Inizia Modulo (${totalCount} Quesiti)`;
+      let btnExtraClass = 'btn-primary';
+      if (answeredInMat > 0 && answeredInMat < totalCount) {
+        const nextQNum = (firstUnansweredInMat !== -1 ? firstUnansweredInMat : 0) + 1;
+        btnLabel = `▶ Continua da Quesito ${nextQNum} (${totalCount - answeredInMat} rimasti)`;
+        btnExtraClass = 'btn-gold';
+      } else if (answeredInMat === totalCount && totalCount > 0) {
+        btnLabel = `✅ Modulo Completato (${matAccuracy}% esatte)`;
+        btnExtraClass = 'btn-secondary';
+      }
+
+      const topicsList = AppState.topicsByCategory[materia] || [];
+      const topicsData = topicsList.map(topic => {
+        const topicQs = qInMat.filter(q => q.argomento === topic);
+        const ansCount = topicQs.filter(q => AppState.training.userAnswers[q.id]).length;
+        return { name: topic, count: topicQs.length, answered: ansCount };
+      });
+
+      const card = document.createElement('div');
+      card.className = 'subject-card';
+      card.dataset.materia = materia;
+      card.dataset.macro = meta.macro || 'ALL';
+
+      card.innerHTML = `
+        <div class="subject-card-main" style="cursor:pointer;" title="Tocca per iniziare questo modulo">
+          <div class="subject-icon-badge ${styleConfig.badge}" style="width:40px; height:40px; font-size:1.25rem; flex-shrink:0;">${meta.icon || styleConfig.icon}</div>
+          <div class="subject-card-info" style="flex:1; min-width:0;">
+            <div class="subject-card-title-row" style="display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap;">
+              <span class="subject-card-module-num" style="font-size:0.65rem; font-weight:800; padding:2px 7px; border-radius:4px; background:var(--md-primary-container); color:var(--md-on-primary-container); text-transform:uppercase; letter-spacing:0.5px;">MODULO ${meta.moduleNum || (idx + 1)}</span>
+              <span class="subject-card-badge" style="font-size:0.75rem; font-weight:700; color:var(--md-on-surface-variant);">${totalCount} quesiti</span>
+            </div>
+            <h4 class="subject-card-title" style="margin:4px 0 6px 0; font-size:0.95rem; font-weight:800; color:var(--md-on-surface); line-height:1.25;">${materia}</h4>
+            <div class="subject-card-progress">
+              <div class="progress-track" style="height:6px; background:var(--md-surface-container-highest); border-radius:4px; overflow:hidden;">
+                <div class="progress-fill" style="width:${visualMatPct.toFixed(1)}%; height:100%; border-radius:4px; background:${pctAnswered >= 70 ? 'var(--md-success)' : 'var(--md-primary)'}; transition:width 0.3s ease;"></div>
+              </div>
+              <div class="subject-card-stats" style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:4px;">
+                <span>${answeredInMat} / ${totalCount} svolti (${displayMatPct}%)</span>
+                ${answeredInMat > 0 ? `<span>Precisione: <strong>${matAccuracy}%</strong></span>` : ''}
+              </div>
+            </div>
           </div>
         </div>
-        <span class="subject-row-chevron">›</span>
+
+        <div class="subject-card-actions" style="display:flex; gap:8px; margin-top:10px;">
+          <button type="button" class="btn btn-sm ${btnExtraClass} btn-start-subject-quiz" data-materia="${materia}" style="flex:2; font-weight:800; padding:9px 12px; font-size:0.8rem;">
+            <span>${btnLabel}</span>
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary btn-toggle-topics" data-materia="${materia}" style="flex:1; padding:9px 10px; font-size:0.8rem; font-weight:700;">
+            <span>Argomenti (${topicsData.length}) ▾</span>
+          </button>
+        </div>
+
+        <div class="subject-topics-tray" style="display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--md-outline-variant);">
+          <div style="font-size:0.78rem; font-weight:800; color:var(--md-primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+            <span>📚</span> <span>Scegli un singolo argomento da studiare:</span>
+          </div>
+          <div class="topics-chips-list" style="display:flex; flex-wrap:wrap; gap:6px;">
+            <button type="button" class="topic-chip-select active" data-materia="${materia}" data-argomento="ALL" style="padding:6px 12px; font-size:0.75rem; border-radius:var(--radius-full); font-weight:700;">
+              <span>Tutti gli argomenti (${totalCount})</span>
+            </button>
+            ${topicsData.map(t => `
+              <button type="button" class="topic-chip-select" data-materia="${materia}" data-argomento="${t.name}" style="padding:6px 12px; font-size:0.75rem; border-radius:var(--radius-full); font-weight:600; display:inline-flex; align-items:center; gap:6px;">
+                <span>${t.name}</span>
+                <span class="topic-count" style="font-size:0.68rem; opacity:0.85; font-weight:800; background:rgba(0,0,0,0.06); padding:1px 6px; border-radius:8px;">${t.answered > 0 ? `${t.answered}/${t.count}` : t.count}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
       `;
 
-      row.addEventListener('click', () => {
+      // Cliccando sull'intera testata della scheda o sul pulsante principale si avvia il modulo
+      card.querySelector('.subject-card-main').addEventListener('click', () => {
         startTrainingOnTopic(materia, 'ALL');
       });
 
-      container.appendChild(row);
+      card.querySelector('.btn-start-subject-quiz').addEventListener('click', (e) => {
+        e.stopPropagation();
+        startTrainingOnTopic(materia, 'ALL');
+      });
+
+      // Toggle drawer argomenti
+      const btnToggle = card.querySelector('.btn-toggle-topics');
+      const tray = card.querySelector('.subject-topics-tray');
+      if (btnToggle && tray) {
+        btnToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isHidden = tray.style.display === 'none';
+          tray.style.display = isHidden ? 'block' : 'none';
+          btnToggle.querySelector('span').textContent = isHidden 
+            ? `Chiudi Argomenti ▴` 
+            : `Argomenti (${topicsData.length}) ▾`;
+        });
+      }
+
+      // Click sui singoli argomenti per studio mirato
+      card.querySelectorAll('.topic-chip-select').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const arg = chip.dataset.argomento;
+          startTrainingOnTopic(materia, arg);
+        });
+      });
+
+      container.appendChild(card);
     });
   }
 
@@ -2747,7 +2906,15 @@
     });
 
     const passRate = totalSims > 0 ? Math.round((passedCount / totalSims) * 100) : 0;
-    const avgScore = totalSims > 0 ? (sumScore / totalSims).toFixed(1) : 0;
+
+    // Calcolo Precisione Media Complessiva (indipendente dal numero di domande)
+    let totalAns = 0;
+    let correctAns = 0;
+    Object.values(AppState.training.userAnswers || {}).forEach(ans => {
+      totalAns++;
+      if (ans.isCorrect) correctAns++;
+    });
+    const overallAccuracy = totalAns > 0 ? Math.round((correctAns / totalAns) * 100) : 0;
 
     const elTot = document.getElementById('stats-total-sims');
     const elRate = document.getElementById('stats-pass-rate');
@@ -2756,8 +2923,8 @@
 
     if (elTot) elTot.textContent = totalSims;
     if (elRate) elRate.textContent = `${passRate}%`;
-    if (elAvg) elAvg.textContent = `${avgScore} / 30`;
-    if (elBest) elBest.textContent = `${bestScore} / 30`;
+    if (elAvg) elAvg.textContent = `${overallAccuracy}%`;
+    if (elBest) elBest.textContent = totalSims > 0 ? `${bestScore} / 30` : '—';
 
     // Tabella Storico
     const tbody = document.getElementById('history-table-body');
@@ -3115,6 +3282,9 @@
     function openProfileSettingsModal() {
       const modal = document.getElementById('candidate-profile-modal');
       if (!modal) return;
+      if (typeof AccountManager !== 'undefined' && AccountManager.updateState) {
+        AccountManager.updateState();
+      }
       const nameInput = document.getElementById('input-candidate-name');
       if (nameInput) nameInput.value = AppState.candidateName || '';
 
@@ -3149,6 +3319,11 @@
     const btnEditName = document.getElementById('btn-edit-candidate-name');
     if (btnEditName) {
       btnEditName.addEventListener('click', openProfileSettingsModal);
+    }
+
+    const heroProfileTrigger = document.getElementById('hero-profile-trigger');
+    if (heroProfileTrigger) {
+      heroProfileTrigger.addEventListener('click', openProfileSettingsModal);
     }
 
     const btnCloseProfile = document.getElementById('btn-close-profile-modal');
@@ -3199,6 +3374,34 @@
           renderTrainingCard();
         }
         showToast('Impostazioni e profilo salvati con successo!', '⚙️');
+      });
+    }
+
+    const btnProfileOpenAuth = document.getElementById('btn-profile-open-auth');
+    if (btnProfileOpenAuth) {
+      btnProfileOpenAuth.addEventListener('click', () => {
+        closeProfileSettingsModal();
+        if (typeof AccountManager !== 'undefined' && AccountManager.openModal) {
+          AccountManager.openModal();
+        }
+      });
+    }
+
+    const btnProfileSyncNow = document.getElementById('btn-profile-sync-now');
+    if (btnProfileSyncNow) {
+      btnProfileSyncNow.addEventListener('click', () => {
+        if (typeof AccountManager !== 'undefined' && AccountManager.handleSyncNow) {
+          AccountManager.handleSyncNow();
+        }
+      });
+    }
+
+    const btnProfileLogout = document.getElementById('btn-profile-logout');
+    if (btnProfileLogout) {
+      btnProfileLogout.addEventListener('click', () => {
+        if (typeof AccountManager !== 'undefined' && AccountManager.handleLogout) {
+          AccountManager.handleLogout();
+        }
       });
     }
 
@@ -3831,7 +4034,7 @@
 
         const currentCount = AppState.allQuestions.length;
         const totalInManifest = manifest.totalQuestions || manifest.questionsCount || 0;
-        const currentCode = 705; // v7.0.5
+        const currentCode = 801; // v8.0.1
         const hasNewVersionCode = manifest.versionCode && manifest.versionCode > currentCode;
 
         // Riconoscimento avanzato aggiornamento Banca Dati online
@@ -4060,6 +4263,8 @@
 
       // Callback globale per quando la sincronizzazione Firebase termina (SEMPRE SILENZIOSA)
       window.onFirebaseSyncCompleted = (merged) => {
+        Storage.load();
+        recoverPastStudyTime();
         this.updateState();
         renderHomeDashboard();
         renderStatisticsView();
@@ -4112,7 +4317,7 @@
         if (cloudIcon) cloudIcon.textContent = '👤';
       }
 
-      // 3. Viste interne al Modal
+      // 3. Viste interne al Modal Account Dedicato
       const loggedView = document.getElementById('account-logged-view');
       const authView = document.getElementById('account-auth-view');
       const emailLabel = document.getElementById('account-user-email');
@@ -4131,6 +4336,42 @@
       } else {
         if (loggedView) loggedView.style.display = 'none';
         if (authView) authView.style.display = 'block';
+      }
+
+      // 4. Box Cloud integrato nel Modal Profilo & Impostazioni
+      const profBadge = document.getElementById('profile-cloud-status-badge');
+      const profDesc = document.getElementById('profile-cloud-desc');
+      const profUnlogged = document.getElementById('profile-cloud-unlogged');
+      const profLogged = document.getElementById('profile-cloud-logged');
+      const profAvatar = document.getElementById('profile-avatar-initial');
+      const profEmail = document.getElementById('profile-user-email');
+      const profSyncTime = document.getElementById('profile-sync-time');
+
+      if (user) {
+        if (profBadge) {
+          profBadge.textContent = 'Connesso';
+          profBadge.style.background = '#dcfce7';
+          profBadge.style.color = '#15803d';
+        }
+        if (profDesc) profDesc.textContent = 'I tuoi quiz, serie giornaliera e statistiche sono costantemente sincronizzati con il Cloud.';
+        if (profUnlogged) profUnlogged.style.display = 'none';
+        if (profLogged) profLogged.style.display = 'block';
+        if (profAvatar) profAvatar.textContent = (user.email ? user.email[0].toUpperCase() : 'U');
+        if (profEmail) profEmail.textContent = user.email;
+        if (profSyncTime) {
+          const lastSync = window.FirebaseSync.getLastSyncTime();
+          const syncText = lastSync ? new Date(lastSync).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'In corso';
+          profSyncTime.textContent = `🟢 Sincronizzato con il tuo account (ore ${syncText})`;
+        }
+      } else {
+        if (profBadge) {
+          profBadge.textContent = 'Non Connesso';
+          profBadge.style.background = 'var(--md-surface-container-highest)';
+          profBadge.style.color = 'var(--md-on-surface-variant)';
+        }
+        if (profDesc) profDesc.textContent = 'Accedi o registrati per recuperare il tuo tempo di studio, serie quiz e risposte date su tutti i tuoi dispositivi.';
+        if (profUnlogged) profUnlogged.style.display = 'block';
+        if (profLogged) profLogged.style.display = 'none';
       }
     },
 

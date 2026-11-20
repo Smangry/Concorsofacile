@@ -282,19 +282,27 @@ button:active {
   display: flex;
   align-items: center;
   gap: 4px;
+  position: relative;
+  z-index: 50;
+  flex-shrink: 0;
 }
 
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--md-on-surface);
   background: transparent;
-  transition: background var(--transition-fast);
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast), transform 0.1s ease;
 }
 
 .icon-btn:hover {
@@ -303,6 +311,30 @@ button:active {
 
 .icon-btn:active {
   background-color: var(--md-surface-container-highest);
+  transform: scale(0.92);
+}
+
+@media (max-width: 580px) {
+  .brand-subtitle {
+    display: none !important;
+  }
+  .brand-titles h1 {
+    font-size: 0.88rem !important;
+  }
+  .by-smangry-pill {
+    font-size: 0.6rem !important;
+    padding: 1px 6px !important;
+  }
+}
+
+.home-cloud-bar:hover {
+  border-color: var(--md-primary) !important;
+  background: var(--md-surface-container-high) !important;
+}
+
+.home-cloud-bar:active {
+  transform: scale(0.985);
+}
   transform: scale(0.92);
 }
 
@@ -2276,28 +2308,46 @@ table tr:hover {
 
 .streak-week-pills {
   display: flex;
-  gap: 5px;
-  margin-top: 4px;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
 }
 
-.streak-day-dot {
-  width: 24px;
-  height: 24px;
+.streak-day-badge {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: var(--md-surface-container-high);
+  background: var(--md-surface-container-highest);
   color: var(--md-on-surface-variant);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--md-outline-variant);
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+  user-select: none;
 }
 
-.streak-day-dot.completed {
-  background: #10b981;
-  color: #ffffff;
-  border-color: #059669;
+.streak-day-badge.today {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #eff6ff;
+  font-weight: 900;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="dark"] .streak-day-badge.today {
+  background: rgba(37, 99, 235, 0.25);
+  color: #93c5fd;
+  border-color: #3b82f6;
+}
+
+.streak-day-badge.completed {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
 }
 
 /* Big Cobalt Blue Resume Card */
