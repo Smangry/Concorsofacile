@@ -1,10 +1,10 @@
 {
-  "versionCode": 705,
-  "versionName": "7.0.5",
-  "databaseVersion": "7.0.5",
+  "versionCode": 801,
+  "versionName": "8.0.1",
+  "databaseVersion": "8.0.1",
   "totalQuestions": 949,
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-20",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/Concorso_2026.apk",
-  "changelog": "Versione 7.0.5: Risolto disallineamento lettere opzioni (A, B, C, D) nei messaggi di spiegazione immediata e revisione d'esame con opzioni casuali attive."
+  "changelog": "Versione 8.0.1: Fix grafica obiettivo settimanale e streak pills circolari, autenticazione e sincronizzazione Cloud integrate direttamente nel modal profilo, recupero automatico e intelligente del tempo di studio e serie quiz pregresse, sostituzione 'Media Voto 0/30' con Precisione Globale % per rispecchiare fedelmente lo studio libero e a blocchi."
 }
