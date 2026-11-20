@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=7.0.5">
+  <link rel="stylesheet" href="styles.css?v=8.0.0">
 </head>
 <body>
 
@@ -40,30 +40,40 @@
     <!-- M3 TOP APP BAR & WEB NAVBAR -->
     <header class="app-header">
       <div class="header-inner">
+        <!-- Tasto Impostazioni Spostato a SINISTRA come richiesto -->
+        <div class="header-left-actions">
+          <button class="icon-btn header-settings-btn" id="btn-open-settings-modal" title="Impostazioni & Profilo" aria-label="Impostazioni">
+            ⚙️
+          </button>
+        </div>
+
         <div class="brand-section" id="brand-home-link" style="cursor:pointer;" title="Torna alla Home">
           <div class="brand-logo-badge" title="Università degli Studi di Sassari">SS</div>
           <div class="brand-titles">
-            <h1>UniSS <span>2026</span></h1>
-            <div class="brand-subtitle">15 Collaboratori Amministrativi</div>
+            <div class="brand-title-row">
+              <h1>UniSS <span>2026</span></h1>
+              <span class="by-smangry-pill" title="Creata da smangry10">by smangry10</span>
+            </div>
+            <div class="brand-subtitle">CONCORSO • 15 COLLABORATORI AMMINISTRATIVI</div>
           </div>
         </div>
 
         <!-- Desktop Navigation Bar Links (Visible on Tablet & PC >= 900px) -->
         <nav class="desktop-main-nav">
           <button class="desktop-nav-link active" data-view="home-view" id="desk-tab-home">
-            <span>🏠 Home</span>
+            <span>Home</span>
           </button>
           <button class="desktop-nav-link" data-view="training-view" id="desk-tab-training">
-            <span>📚 Allenamento</span>
+            <span>Allenamento</span>
           </button>
           <button class="desktop-nav-link" data-view="exam-view" id="desk-tab-exam">
-            <span>⏱️ Simulazione Esame</span>
+            <span>Simulazione</span>
           </button>
           <button class="desktop-nav-link" data-view="repo-view" id="desk-tab-repo">
-            <span id="desk-repo-nav-label">📖 Banca Dati (949)</span>
+            <span id="desk-repo-nav-label">Banca dati</span>
           </button>
           <button class="desktop-nav-link" data-view="stats-view" id="desk-tab-stats">
-            <span>📊 Statistiche</span>
+            <span>Statistiche</span>
           </button>
         </nav>
 
@@ -81,9 +91,6 @@
           <button class="icon-btn" id="btn-updates-modal" title="Centro Aggiornamenti" aria-label="Aggiornamenti">
             🔄
           </button>
-          <button class="icon-btn" id="btn-sound-toggle" title="Suoni Feedback" aria-label="Suoni">
-            🔊
-          </button>
           <button class="icon-btn" id="btn-theme-toggle" title="Tema Chiaro/Scuro" aria-label="Tema">
             🌙
           </button>
@@ -95,36 +102,55 @@
     <main class="main-wrapper">
 
       <!-- ====================================================================
-           SEZIONE 0: HOME & MENÙ SCELTA MATERIE/ARGOMENTI
+           SEZIONE 0: HOME & MENÙ SCELTA MATERIE/ARGOMENTI (MODERN 2026 REDESIGN)
            ==================================================================== -->
       <section class="section-view active" id="home-view">
         
-        <!-- Welcome Hero Banner -->
-        <div class="home-hero-card">
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
-            <div style="font-size:2.2rem; line-height:1;">🏛️</div>
-            <div>
-              <h2 style="font-size:1.18rem; font-weight:900; margin:0; line-height:1.2; color:var(--md-on-surface);">Concorso UniSS 2026</h2>
-              <div style="font-size:0.75rem; color:var(--md-primary); font-weight:700;">15 Collaboratori Amministrativi</div>
+        <!-- HERO DASHBOARD CANDIDATO (Centro Statistiche Nerd & Gamification) -->
+        <div class="home-nerd-hero">
+          <div class="hero-left-content">
+            <div class="hero-greeting-row">
+              <span class="hero-greeting" id="hero-candidate-greeting">Ciao! 👋</span>
+              <button class="hero-edit-name-btn" id="btn-edit-candidate-name" title="Personalizza il tuo nome candidato">✏️</button>
             </div>
+            <h1 class="hero-headline">
+              La preparazione,<br>
+              <span class="highlight-coral">un passo alla volta.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Allenati per il concorso UniSS 2026, monitora i progressi e arriva pronto alla prova.
+            </p>
           </div>
-          
-          <p style="font-size:0.8rem; color:var(--md-on-surface-variant); margin-bottom:10px; line-height:1.4;">
-            Seleziona una materia o un argomento specifico per avviare subito i quiz mirati con spiegazioni immediate.
-          </p>
 
-          <!-- Overall Progress Bar -->
-          <div style="background:var(--md-surface-container-highest); border-radius:var(--radius-full); height:8px; overflow:hidden; margin-bottom:6px;">
-            <div id="home-progress-fill" style="width:0%; height:100%; background:var(--md-primary); border-radius:var(--radius-full); transition:width 0.3s ease;"></div>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--md-on-surface-variant);">
-            <span>Progresso: <strong id="home-progress-text" style="color:var(--md-on-surface);">0 / 949 quesiti</strong></span>
-            <span>Precisione: <strong id="home-accuracy-text" style="color:var(--md-success);">0%</strong></span>
+          <!-- WIDGET GAMIFICATION STREAK (Regola 30 min / giorno) -->
+          <div class="hero-streak-card" title="Studio quotidiano: completa 30 minuti al giorno per mantenere la serie attiva!">
+            <div class="streak-circle-wrap">
+              <svg class="streak-svg" viewBox="0 0 80 80">
+                <circle class="streak-bg-circle" cx="40" cy="40" r="32"></circle>
+                <circle class="streak-progress-circle" id="streak-svg-fill" cx="40" cy="40" r="32" stroke-dasharray="201.06" stroke-dashoffset="201.06"></circle>
+              </svg>
+              <div class="streak-center-info">
+                <strong id="streak-daily-ratio">0/30</strong>
+                <span>minuti</span>
+              </div>
+            </div>
+            <div class="streak-meta-content">
+              <div class="streak-goal-title">
+                <span style="font-weight:800; font-size:0.95rem;">Obiettivo giornaliero</span>
+                <span class="streak-flame-pill" id="streak-flame-badge">🔥 0 giorni</span>
+              </div>
+              <div class="streak-sub-desc" id="streak-daily-subdesc">
+                Completa almeno 30 minuti di quiz oggi per convalidare la serie.
+              </div>
+              <div class="streak-week-pills" id="streak-week-pills">
+                <!-- Generato da JS: L M M G V S D con checkmark se completati -->
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Banner Notifica Aggiornamento OTA Banca Dati -->
-        <div id="home-ota-update-banner" style="display:none; margin-bottom:12px; background:linear-gradient(135deg, rgba(37,99,235,0.12), rgba(16,185,129,0.15)); border:1.5px solid var(--md-primary); border-radius:var(--radius-md); padding:10px 14px;">
+        <!-- BANNER NOTIFICA AGGIORNAMENTO BANCA DATI -->
+        <div id="home-ota-update-banner" style="display:none; margin-bottom:14px; background:linear-gradient(135deg, rgba(37,99,235,0.12), rgba(16,185,129,0.15)); border:1.5px solid var(--md-primary); border-radius:var(--radius-md); padding:12px 16px;">
           <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
             <div>
               <div style="font-weight:800; font-size:0.88rem; color:var(--md-primary); display:flex; align-items:center; gap:6px;">
@@ -134,195 +160,230 @@
                 Aggiorna all'ultima versione con quesiti e correzioni aggiornate.
               </div>
             </div>
-            <button class="btn btn-sm btn-primary" id="btn-home-ota-update" style="font-weight:800; padding:6px 12px; flex-shrink:0;">
+            <button class="btn btn-sm btn-primary" id="btn-home-ota-update" style="font-weight:800; padding:6px 14px; flex-shrink:0;">
               Aggiorna 📥
             </button>
           </div>
         </div>
 
-        <!-- Card Riprendi Sessione Precedente (se presente) -->
-        <div id="home-resume-card" class="home-resume-card" style="display:none;">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
-            <div style="flex:1;">
-              <div style="font-size:0.68rem; font-weight:800; color:var(--md-primary); text-transform:uppercase; letter-spacing:0.5px;">⭐ Continua da dove eri rimasto:</div>
-              <div id="home-resume-title" style="font-size:0.95rem; font-weight:900; color:var(--md-on-surface); margin:2px 0;">Statuto UniSS</div>
-              <div id="home-resume-sub" style="font-size:0.75rem; color:var(--md-on-surface-variant);">Quesito 4 di 110</div>
+        <!-- BIG COBALT BLUE CARD: RIPRENDI DA DOVE ERI RIMASTO (Illustrazione Università di Sassari) -->
+        <div class="modern-resume-card" id="home-resume-card">
+          <div class="resume-card-left">
+            <div class="resume-card-header-row">
+              <h3 class="resume-card-title">Riprendi da dove eri rimasto ✨</h3>
+              <span class="resume-subject-pill" id="home-resume-title">STATUTO UNISS</span>
             </div>
-            <button class="btn btn-sm btn-primary" id="btn-home-resume" style="font-weight:800; padding:8px 14px; flex-shrink:0;">
-              <span>Continua ▶</span>
+            
+            <div class="resume-progress-metrics">
+              <span class="resume-q-counter" id="home-resume-sub">Domanda 18 di 50</span>
+              <span class="resume-pct-value" id="home-resume-pct">68%</span>
+            </div>
+
+            <div class="resume-progress-track">
+              <div class="resume-progress-bar" id="home-resume-bar" style="width: 68%;"></div>
+            </div>
+
+            <button class="btn btn-coral-resume" id="btn-home-resume">
+              Continua il quiz ➔
             </button>
           </div>
+
+          <!-- Illustrazione Vettoriale Bianco-Tratto Facciata Palazzo Università di Sassari -->
+          <div class="resume-card-illustration" aria-hidden="true">
+            <svg class="uniss-palazzo-svg" viewBox="0 0 350 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Onde e colline decorative pastello alla base -->
+              <path d="M-10 180 C30 140, 80 170, 110 190 C150 210, 200 170, 250 190 C290 205, 330 165, 360 190 L360 210 L-10 210 Z" fill="rgba(244, 114, 182, 0.45)"/>
+              <path d="M190 190 C220 150, 270 155, 305 170 C325 180, 345 160, 360 180 L360 210 L190 210 Z" fill="rgba(52, 211, 153, 0.6)"/>
+              <path d="M10 195 C40 165, 90 175, 120 185 C160 195, 210 180, 240 200 L10 200 Z" fill="rgba(251, 146, 60, 0.5)"/>
+              
+              <!-- Frontone Triangolare Classico Superiore -->
+              <polygon points="175,38 105,72 245,72" stroke="#ffffff" stroke-width="2.6" fill="none" stroke-linejoin="round"/>
+              <text x="175" y="65" fill="#ffffff" font-size="7.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1.2">UNIVERSITÀ</text>
+              
+              <!-- Corpo Centrale -->
+              <rect x="105" y="72" width="140" height="120" stroke="#ffffff" stroke-width="2.6" fill="none"/>
+              <text x="175" y="85" fill="#ffffff" font-size="6.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" text-anchor="middle" letter-spacing="0.9">DEGLI STUDI DI SASSARI</text>
+              <line x1="115" y1="90" x2="235" y2="90" stroke="#ffffff" stroke-width="1.2"/>
+              
+              <!-- Colonne neoclassiche -->
+              <line x1="125" y1="90" x2="125" y2="192" stroke="#ffffff" stroke-width="2"/>
+              <line x1="142" y1="90" x2="142" y2="192" stroke="#ffffff" stroke-width="2"/>
+              <line x1="208" y1="90" x2="208" y2="192" stroke="#ffffff" stroke-width="2"/>
+              <line x1="225" y1="90" x2="225" y2="192" stroke="#ffffff" stroke-width="2"/>
+              
+              <!-- Portale Centrale ad Arco -->
+              <path d="M158 192 L158 135 A17 17 0 0 1 192 135 L192 192 Z" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+              <line x1="175" y1="118" x2="175" y2="192" stroke="#ffffff" stroke-width="1.2"/>
+              <line x1="158" y1="135" x2="192" y2="135" stroke="#ffffff" stroke-width="1.2"/>
+              
+              <!-- Finestre superiori ad arco -->
+              <path d="M128 100 L128 114 A6 6 0 0 1 140 114 L140 100 Z" stroke="#ffffff" stroke-width="1.6" fill="none" transform="rotate(180 134 107)"/>
+              <path d="M169 100 L169 114 A6 6 0 0 1 181 114 L181 100 Z" stroke="#ffffff" stroke-width="1.6" fill="none" transform="rotate(180 175 107)"/>
+              <path d="M210 100 L210 114 A6 6 0 0 1 222 114 L222 100 Z" stroke="#ffffff" stroke-width="1.6" fill="none" transform="rotate(180 216 107)"/>
+              
+              <!-- Ali Laterali Sinistra e Destra -->
+              <rect x="45" y="102" width="60" height="90" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+              <rect x="245" y="102" width="60" height="90" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+              <!-- Tetti Ali -->
+              <polygon points="40,102 105,102 105,92 40,92" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+              <polygon points="245,102 310,102 310,92 245,92" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+              
+              <!-- Finestre Ali -->
+              <rect x="58" y="116" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="80" y="116" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="258" y="116" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="280" y="116" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="58" y="148" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="80" y="148" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="258" y="148" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+              <rect x="280" y="148" width="12" height="18" rx="2" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+            </svg>
+          </div>
         </div>
 
-        <!-- Cloud Sync Quick Status Bar -->
-        <div id="home-cloud-bar" class="home-cloud-bar" style="cursor:pointer; display:flex; align-items:center; justify-content:space-between; background:var(--md-surface-container); border:1px solid var(--md-outline-variant); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:12px; font-size:0.8rem; box-shadow:var(--shadow-sm);" title="Gestisci Account e Sincronizzazione Cloud">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span id="home-cloud-icon" style="font-size:1.2rem;">☁️</span>
-            <div>
-              <div id="home-cloud-title" style="font-weight:800; font-size:0.82rem; color:var(--md-on-surface);">Sincronizzazione Cloud</div>
-              <div id="home-cloud-sub" style="font-size:0.72rem; color:var(--md-on-surface-variant);">Tocca per salvare i tuoi progressi online</div>
+        <!-- 3 CARD METRICHE CHIAVE (Quiz completati, Al primo colpo, Tempo di studio) -->
+        <div class="modern-metrics-row">
+          <div class="modern-metric-card metric-blue">
+            <div class="metric-icon-wrap icon-blue">🎓</div>
+            <div class="metric-content">
+              <strong class="metric-value" id="home-kpi-completed">0</strong>
+              <span class="metric-title">Quiz completati</span>
             </div>
           </div>
-          <button type="button" class="btn btn-sm btn-primary" id="btn-home-cloud-action" style="font-size:0.75rem; padding:5px 12px; font-weight:800; pointer-events:none;">
-            Accedi
-          </button>
-        </div>
-
-        <!-- Modalità Studio Guidato (Spiegazione Immediata) Featured Banner -->
-        <div class="home-featured-mode-card" id="btn-quick-instant-mode">
-          <div style="display:flex; align-items:center; gap:12px;">
-            <div class="featured-mode-icon">⚡</div>
-            <div style="flex:1;">
-              <div style="display:flex; align-items:center; gap:6px;">
-                <strong style="font-size:0.92rem; color:var(--md-on-surface);">Modalità Studio con Spiegazione Immediata</strong>
-                <span class="badge" style="background:var(--md-success); color:#ffffff; font-size:0.65rem; font-weight:800;">ATTIVA</span>
-              </div>
-              <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:2px 0 0 0;">
-                Tocca un'opzione per scoprire <strong>subito se è giusta o errata</strong> con la spiegazione che si apre all'istante!
-              </p>
+          
+          <div class="modern-metric-card metric-green">
+            <div class="metric-icon-wrap icon-green">🎯</div>
+            <div class="metric-content">
+              <strong class="metric-value" id="home-kpi-first-try">0%</strong>
+              <span class="metric-title">Al primo colpo (1° tent.)</span>
             </div>
-            <span style="font-size:1.2rem; color:var(--md-primary); font-weight:900;">▶</span>
+          </div>
+          
+          <div class="modern-metric-card metric-purple">
+            <div class="metric-icon-wrap icon-purple">⏱️</div>
+            <div class="metric-content">
+              <strong class="metric-value" id="home-kpi-study-time">0h 00m</strong>
+              <span class="metric-title">Tempo di studio</span>
+            </div>
           </div>
         </div>
 
-        <!-- Quick Launch Cards -->
-        <div class="home-quick-grid">
-          <button class="home-quick-card" id="btn-quick-all-quiz">
-            <span class="quick-card-icon">⚡</span>
-            <div class="quick-card-texts">
-              <strong>Tutti i 949 Quiz</strong>
-              <span>Allenamento misto</span>
-            </div>
-          </button>
-          
-          <button class="home-quick-card" id="btn-quick-exam">
-            <span class="quick-card-icon">⏱️</span>
-            <div class="quick-card-texts">
-              <strong>Simula Prova (30)</strong>
-              <span>30 quesiti a tempo</span>
-            </div>
-          </button>
-          
-          <button class="home-quick-card" id="btn-quick-wrong">
-            <span class="quick-card-icon">❌</span>
-            <div class="quick-card-texts">
-              <strong>Ripassa Errori (<span id="home-wrong-count">0</span>)</strong>
-              <span>Riprova i quesiti sbagliati</span>
-            </div>
-          </button>
-
-          <button class="home-quick-card" id="btn-quick-bookmarked">
-            <span class="quick-card-icon">⭐</span>
-            <div class="quick-card-texts">
-              <strong>Preferiti (<span id="home-star-count">0</span>)</strong>
-              <span>Quesiti salvati con stella</span>
-            </div>
-          </button>
+        <!-- SEZIONE: SCEGLI COME ALLENARTI (4 CARD PASTELLO) -->
+        <div class="home-section-header">
+          <h2 class="home-section-title">Scegli come allenarti <span class="sparkle-doodle">✨</span></h2>
         </div>
 
-        <!-- Section Title: Choose Subject & Topic -->
-        <div style="margin:16px 0 10px 0;">
-          <h3 style="font-size:1.05rem; font-weight:900; margin:0 0 2px 0;">📚 Menù Materie & Argomenti</h3>
-          <p style="font-size:0.75rem; color:var(--md-on-surface-variant); margin:0;">Tocca <strong>"Inizia Quiz"</strong> su una materia oppure espandi gli <strong>"Argomenti"</strong> per scegliere un singolo tema:</p>
+        <div class="training-modes-grid">
+          <div class="mode-pastel-card mode-blue" id="btn-quick-all-quiz" role="button" tabindex="0">
+            <div class="mode-card-icon-wrap bg-blue-tint">📋</div>
+            <div class="mode-card-text">
+              <strong>Tutti i quiz</strong>
+              <span>949 quesiti</span>
+            </div>
+            <span class="mode-card-arrow">›</span>
+          </div>
+
+          <div class="mode-pastel-card mode-coral" id="btn-quick-exam" role="button" tabindex="0">
+            <div class="mode-card-icon-wrap bg-coral-tint">🚀</div>
+            <div class="mode-card-text">
+              <strong>Simulazione esame</strong>
+              <span>30 quesiti • 45 min</span>
+            </div>
+            <span class="mode-card-arrow">›</span>
+          </div>
+
+          <div class="mode-pastel-card mode-mint" id="btn-quick-wrong" role="button" tabindex="0">
+            <div class="mode-card-icon-wrap bg-mint-tint">🔄</div>
+            <div class="mode-card-text">
+              <strong>Ripassa errori</strong>
+              <span id="label-quick-wrong">Rivedi le risposte sbagliate (<span id="home-wrong-count">0</span>)</span>
+            </div>
+            <span class="mode-card-arrow">›</span>
+          </div>
+
+          <div class="mode-pastel-card mode-purple" id="btn-quick-bookmarked" role="button" tabindex="0">
+            <div class="mode-card-icon-wrap bg-purple-tint">⭐</div>
+            <div class="mode-card-text">
+              <strong>Preferiti</strong>
+              <span id="label-quick-fav">I tuoi quesiti salvati (<span id="home-star-count">0</span>)</span>
+            </div>
+            <span class="mode-card-arrow">›</span>
+          </div>
         </div>
 
-        <!-- Real-time Filter Topics Input -->
-        <div class="search-box" style="margin-bottom:10px;">
+        <!-- SEZIONE: MATERIE DEL CONCORSO -->
+        <div class="home-section-header" style="margin-top:28px;">
+          <h2 class="home-section-title">Materie del concorso <span class="sparkle-doodle">✨</span></h2>
+        </div>
+
+        <!-- Real-time Filter Topics Input & Search -->
+        <div class="search-box" style="margin-bottom:12px;">
           <span>🔍</span>
-          <input type="text" id="home-search-topics" placeholder="Filtra materie o argomenti (es. Rettore, GDPR, Bilancio...)">
+          <input type="text" id="home-search-topics" placeholder="Filtra tra le 10 materie o argomenti specifici...">
         </div>
 
-        <!-- Macro-Argomenti Filter Chips -->
-        <div class="home-macro-chips">
-          <button class="filter-chip-btn active home-macro-btn" data-macro="ALL">
-            <span>Tutti (10 Moduli)</span>
-          </button>
-          <button class="filter-chip-btn home-macro-btn" data-macro="ATENEO">
-            <span>🏛️ UniSS & Regolamento</span>
-          </button>
-          <button class="filter-chip-btn home-macro-btn" data-macro="ATTITUDINALI">
-            <span>🧠 Logica & Situazionali</span>
-          </button>
-          <button class="filter-chip-btn home-macro-btn" data-macro="DIRITTO">
-            <span>⚖️ Diritto & Normativa</span>
-          </button>
-          <button class="filter-chip-btn home-macro-btn" data-macro="DIGITALE">
-            <span>💻 Informatica & Inglese</span>
-          </button>
-        </div>
-
-        <!-- Macro Launch Action Banner (Visibile quando si seleziona un macro-ambito) -->
-        <div id="home-macro-launch-container" style="display:none; margin:10px 0 12px 0;">
-          <button class="btn btn-primary" id="btn-launch-macro-quiz" style="width:100%; font-weight:800; padding:12px; font-size:0.92rem; border-radius:var(--radius-lg); box-shadow:var(--shadow-md);">
-            <span id="label-launch-macro-quiz">🚀 Avvia Quiz su questo Ambito ▶</span>
-          </button>
-        </div>
-
-        <!-- Dynamic Container for the 10 Subject Cards -->
-        <div id="home-subjects-container" class="home-subjects-list"></div>
+        <!-- Dynamic Container for the 10 Subject Cards (Modern Row List matching Mockup 1) -->
+        <div id="home-subjects-container" class="home-subjects-modern-list"></div>
 
       </section>
 
       <!-- ====================================================================
-           SEZIONE 1: MODALITÀ ALLENAMENTO (Mobile-First Card View)
+           SEZIONE 1: MODALITÀ ALLENAMENTO (MODERN 2026 MOCKUP 2 DESIGN)
            ==================================================================== -->
       <section class="section-view" id="training-view">
         
-        <!-- Active Subject Banner with Return to Home Menu -->
-        <div class="active-subject-header" id="training-active-subject-bar">
-          <button class="btn-text-nav" id="btn-back-to-home">
-            <span>‹ 🏠 Menù Materie</span>
-          </button>
-          <span id="training-current-subject-label">Tutte le Materie (949)</span>
-          <button class="btn btn-sm btn-secondary" id="btn-end-module-early" style="font-size:0.7rem; padding:3px 8px; border-radius:var(--radius-full);">
-            🏁 Riepilogo
-          </button>
+        <!-- SUB-HEADER ALLENAMENTO (Mockup 2: Breadcrumb, Esci, Tracker & Indicatori Live) -->
+        <div class="modern-quiz-subhead" id="quiz-view-subhead">
+          <div class="subhead-nav-bar">
+            <button class="subhead-exit-btn" id="btn-back-to-home" title="Torna alla Home / Menù Materie">
+              <span>‹ Esci</span>
+            </button>
+            <div class="subhead-breadcrumb" id="subhead-breadcrumb-text">
+              Allenamento &bull; <strong id="training-current-subject-label">Statuto UniSS</strong>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <button class="subhead-action-pill" id="btn-end-module-early" title="Mostra riepilogo finale">
+                🏁 Fine Modulo
+              </button>
+            </div>
+          </div>
+          
+          <div class="subhead-tracker-strip">
+            <div class="subhead-q-progress">
+              <span class="subhead-q-label" id="module-progress-counter">DOMANDA 1 / 50</span>
+              <div class="subhead-q-track">
+                <div class="subhead-q-fill" id="module-progress-fill" style="width: 2%;"></div>
+              </div>
+              <span class="subhead-q-pct" id="module-progress-pct-label">2%</span>
+            </div>
+            
+            <div class="subhead-live-badges">
+              <span class="tracker-live-pill pill-success" id="pill-live-correct">✔️ <strong id="count-live-correct">0</strong> corrette</span>
+              <span class="tracker-live-pill pill-error" id="pill-live-wrong">❌ <strong id="count-live-wrong">0</strong> errate</span>
+              <span class="tracker-live-pill pill-timer" id="pill-live-timer">⏱️ <strong id="count-live-timer">00:00</strong></span>
+            </div>
+          </div>
         </div>
 
-        <!-- Barra di Progresso Modulo in Tempo Reale (Avanza domanda per domanda!) -->
-        <div class="module-progress-wrapper" id="module-progress-wrapper">
-          <div class="module-progress-header">
-            <span id="module-progress-counter" style="font-weight:800; color:var(--md-primary); font-size:0.78rem;">
-              Domanda 1 di 949 (1%)
-            </span>
-            <span id="module-progress-live-score" style="font-weight:700; font-size:0.75rem; color:var(--md-on-surface-variant);">
-              <span style="color:var(--md-success);">0 esatte</span> &bull; <span style="color:var(--md-error);">0 errate</span>
-            </span>
-          </div>
-          <div class="module-progress-track">
-            <div class="module-progress-fill" id="module-progress-fill" style="width: 1%;"></div>
-          </div>
-        </div>
-
-        <!-- Horizontal Filter Chips (Thumb scrollable) -->
-        <div class="training-toolbar">
-          <button class="filter-chip-btn" id="btn-open-filter-sheet" style="border-color:var(--md-primary); background:var(--md-primary-container); color:var(--md-on-primary-container);">
-            <span>⚙️ Filtri</span>
-          </button>
-          <button class="filter-chip-btn active" id="btn-toggle-instant-explain" style="border-color:var(--md-success); background:var(--md-success-container); color:var(--md-on-success-container);" title="Attiva/disattiva spiegazione immediata al tocco">
-            <span>⚡ Spiega al Clic: ON</span>
+        <!-- Toolbar Filtri & Opzioni Rapide (Collapsable / Chips) -->
+        <div class="training-toolbar modern-training-toolbar">
+          <button class="filter-chip-btn active" id="btn-toggle-instant-explain" title="Attiva/disattiva spiegazione immediata al tocco">
+            <span id="btn-instant-explain-label">⚡ Spiegazione: ON</span>
           </button>
           <button class="filter-chip-btn training-status-pill active" data-status="ALL">
-            <span>Tutti</span>
-            <span class="m3-chip-counter" id="count-all">949</span>
+            <span>Tutti (<span id="count-all">949</span>)</span>
           </button>
           <button class="filter-chip-btn training-status-pill" data-status="WRONG">
-            <span>❌ Errate</span>
-            <span class="m3-chip-counter" id="count-wrong">0</span>
+            <span>❌ Errori (<span id="count-wrong">0</span>)</span>
           </button>
           <button class="filter-chip-btn training-status-pill" data-status="BOOKMARKED">
-            <span>⭐ Preferiti</span>
-            <span class="m3-chip-counter" id="count-bookmarked">0</span>
+            <span>⭐ Preferiti (<span id="count-bookmarked">0</span>)</span>
           </button>
-          <button class="filter-chip-btn training-status-pill" data-status="UNANSWERED">
-            <span>⚪ Nuove</span>
-            <span class="m3-chip-counter" id="count-unanswered">949</span>
-          </button>
-          <button class="filter-chip-btn active" id="btn-toggle-shuffle-questions" title="Attiva/disattiva ordine casuale domande">
-            <span id="btn-shuffle-questions-label">🔀 Domande: Casuali</span>
-          </button>
-          <button class="filter-chip-btn active" id="btn-toggle-shuffle-options" title="Attiva/disattiva opzioni A, B, C, D casuali">
+          <button class="filter-chip-btn active" id="btn-toggle-shuffle-options" title="Mescola casualmente opzioni A, B, C, D">
             <span id="btn-shuffle-options-label">🎲 Risposte: Casuali</span>
+          </button>
+          <button class="filter-chip-btn" id="btn-open-filter-sheet" title="Filtri avanzati e ricerca">
+            <span>⚙️ Altri Filtri</span>
           </button>
         </div>
 
@@ -333,46 +394,78 @@
           <div id="full-questions-list"></div>
         </div>
 
-        <!-- Singola Scheda Domanda (Subito visibile a schermo senza scroll!) -->
+        <!-- Singola Scheda Domanda Moderna (Fedele a Mockup 2) -->
         <div class="single-card-container" id="single-card-view">
-          <article class="question-card" id="current-question-card">
+          <article class="modern-question-card" id="current-question-card">
             
-            <!-- Meta Info: ID, Materia, Argomento, Bookmark -->
+            <!-- Header con Pillola Materia e Stella Preferiti -->
             <div class="question-header">
-              <div class="question-meta">
-                <span class="badge badge-id" id="card-q-id">#1</span>
-                <span class="badge badge-statuto" id="card-q-materia">Statuto UniSS</span>
-                <span class="badge" id="card-q-argomento" style="background:var(--md-surface-container-highest); color:var(--md-on-surface-variant); font-size:0.7rem;">Generale</span>
-                <span class="badge" id="card-counter-indicator" style="background:var(--md-primary-container); color:var(--md-on-primary-container); font-size:0.7rem; font-family:var(--font-mono);">1 di 949</span>
+              <div class="question-meta-group">
+                <span class="subject-pill-purple" id="card-q-materia">STATUTO UNISS</span>
+                <span class="topic-subpill" id="card-q-argomento">Generale</span>
+                <span class="badge badge-id" id="card-q-id" style="display:none;">#1</span>
+                <span class="badge" id="card-counter-indicator" style="display:none;">1 di 949</span>
               </div>
-              <button class="bookmark-btn" id="btn-bookmark-current" title="Aggiungi ai preferiti">
+              <button class="bookmark-star-btn" id="btn-bookmark-current" title="Salva nei preferiti">
                 ⭐
               </button>
             </div>
 
             <!-- Testo del Quesito -->
-            <h2 class="question-text" id="card-q-text">
+            <h2 class="modern-question-title" id="card-q-text">
               Caricamento quesito...
             </h2>
 
-            <!-- Opzioni di Risposta (M3 Radio Cards ad altezza comoda per il pollice) -->
-            <div class="options-list" id="card-options-container">
-              <!-- Popolato da JS -->
+            <!-- Opzioni di Risposta Moderne (Mockup 2: A, B, C, D in pillola morbida) -->
+            <div class="modern-options-container" id="card-options-container">
+              <!-- Popolato dinamicamente da JS -->
             </div>
 
-            <!-- Box Spiegazione Immediata su Errore -->
-            <div class="explanation-card" id="card-explanation-box" style="display:none;">
-              <div class="explanation-header">
-                <div>
-                  <span id="explanation-icon">💡</span>
-                  <span id="explanation-badge-status" class="explanation-badge succ">Spiegazione</span>
+            <!-- Promemoria prima della risposta -->
+            <div class="select-hint-box" id="card-select-hint-box">
+              <span>ℹ️</span> <span>Seleziona una risposta per continuare.</span>
+            </div>
+
+            <!-- Box Spiegazione Inline Integrata (Fedele a Mockup 2: Sotto le opzioni, non invasiva) -->
+            <div class="modern-inline-feedback-card" id="card-explanation-box" style="display:none;">
+              <div class="feedback-card-top">
+                <div class="feedback-status-badge" id="feedback-badge-icon">❌</div>
+                <div class="feedback-headings">
+                  <h3 class="feedback-title" id="feedback-sheet-title">Risposta errata!</h3>
+                  <div class="feedback-user-ans" id="feedback-sel-line">Hai selezionato l'opzione: ...</div>
+                  <div class="feedback-corr-ans" id="feedback-corr-line">Risposta corretta: ...</div>
                 </div>
               </div>
-              <div class="explanation-text" id="card-explanation-text"></div>
-              <div class="explanation-norma" id="card-explanation-norma-text" style="display:none;"></div>
+              
+              <div class="feedback-body-text" id="card-explanation-text"></div>
+              
+              <div class="feedback-normative-strip" id="card-normative-pill">
+                <span>📖 Riferimento • </span>
+                <strong id="card-normative-text">Statuto UniSS</strong>
+              </div>
             </div>
 
           </article>
+        </div>
+
+        <!-- Sticky Bottom Navigation Bar (Mockup 2: Prec, Paginatore numerico dinamico, Prossima) -->
+        <div class="modern-quiz-bottom-nav" id="training-action-bar">
+          <button class="btn-quiz-step btn-step-prev" id="btn-card-prev">
+            <span>← Precedente</span>
+          </button>
+          
+          <!-- Paginatore Numerico Dinamico: ... 16 17 [18] 19 20 ... -->
+          <div class="quiz-pagination-track" id="training-pagination-pills">
+            <!-- Popolato da JS -->
+          </div>
+          
+          <button class="btn-quiz-step btn-step-next" id="btn-card-next">
+            <span>Prossima domanda →</span>
+          </button>
+
+          <!-- Tasti secondari preservati per compatibilità completa -->
+          <button id="btn-toggle-explain" style="display:none;"></button>
+          <button id="btn-reveal-solution" style="display:none;"></button>
         </div>
 
         <!-- ====================================================================
@@ -1023,13 +1116,92 @@
     </div>
   </div>
 
+  <!-- ====================================================================
+       MODAL PROFILO CANDIDATO & IMPOSTAZIONI (Con Gestione Nome e Aptica)
+       ==================================================================== -->
+  <div class="modal-overlay" id="candidate-profile-modal" style="display:none;">
+    <div class="modal-card">
+      <div class="m3-drag-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="margin:0; font-size:1.15rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+          <span>⚙️</span> <span>Profilo & Impostazioni</span>
+        </h3>
+        <button class="icon-btn" id="btn-close-profile-modal">✕</button>
+      </div>
+
+      <!-- Nome Candidato -->
+      <div style="margin-bottom:16px;">
+        <label for="input-candidate-name" style="font-size:0.82rem; font-weight:800; color:var(--md-primary); margin-bottom:4px; display:block;">
+          👤 Il tuo nome da candidato:
+        </label>
+        <input type="text" id="input-candidate-name" class="search-input" placeholder="Es. Marco, Alessandro, Giulia..." style="width:100%; box-sizing:border-box; font-weight:700; font-size:0.95rem; padding:10px 14px;">
+        <span style="font-size:0.75rem; color:var(--md-on-surface-variant); margin-top:4px; display:block;">
+          Lascialo vuoto se preferisci un semplice saluto <em>"Ciao!"</em>.
+        </span>
+      </div>
+
+      <!-- Elenco Interruttori Impostazioni -->
+      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px; border-top:1px solid var(--md-outline-variant); padding-top:14px;">
+        <!-- Feedback Aptico -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.88rem; display:block;">📳 Feedback Aptico (Vibrazione)</strong>
+            <span style="font-size:0.75rem; color:var(--md-on-surface-variant);">Micro-vibrazione al tocco e risposte corrette/errate</span>
+          </div>
+          <input type="checkbox" id="toggle-haptic-feedback" checked style="width:20px; height:20px; cursor:pointer;">
+        </div>
+
+        <!-- Effetti Sonori -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.88rem; display:block;">🔊 Effetti Sonori</strong>
+            <span style="font-size:0.75rem; color:var(--md-on-surface-variant);">Audio immediato per risposta esatta ed errata</span>
+          </div>
+          <input type="checkbox" id="toggle-sound-effects" checked style="width:20px; height:20px; cursor:pointer;">
+        </div>
+
+        <!-- Spiegazione Automatica al tocco -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.88rem; display:block;">⚡ Spiegazione Immediata</strong>
+            <span style="font-size:0.75rem; color:var(--md-on-surface-variant);">Mostra la spiegazione dettagliata appena tocchi un'opzione</span>
+          </div>
+          <input type="checkbox" id="toggle-auto-explain" checked style="width:20px; height:20px; cursor:pointer;">
+        </div>
+
+        <!-- Mescola Opzioni A, B, C, D -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.88rem; display:block;">🎲 Risposte Casuali (A, B, C, D)</strong>
+            <span style="font-size:0.75rem; color:var(--md-on-surface-variant);">Evita di memorizzare solo la posizione fissa dei tasti</span>
+          </div>
+          <input type="checkbox" id="toggle-shuffle-options" checked style="width:20px; height:20px; cursor:pointer;">
+        </div>
+
+        <!-- Mescola Ordine Domande -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <strong style="font-size:0.88rem; display:block;">🔀 Ordine Domande Casuale</strong>
+            <span style="font-size:0.75rem; color:var(--md-on-surface-variant);">Proponi i quesiti in ordine randomico all'interno dei moduli</span>
+          </div>
+          <input type="checkbox" id="toggle-shuffle-questions" checked style="width:20px; height:20px; cursor:pointer;">
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px;">
+        <button class="btn btn-secondary" id="btn-cancel-profile-modal" style="flex:1;">Chiudi</button>
+        <button class="btn btn-primary" id="btn-save-profile-modal" style="flex:2; font-weight:800;">Salva Modifiche</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Container -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Scripts -->
-  <script src="banca_dati.js?v=7.0.5"></script>
-  <script src="firebase-config.js?v=7.0.5"></script>
-  <script src="firebase-service.js?v=7.0.5"></script>
-  <script src="app.js?v=7.0.5"></script>
+  <script src="banca_dati.js?v=8.0.0"></script>
+  <script src="firebase-config.js?v=8.0.0"></script>
+  <script src="firebase-service.js?v=8.0.0"></script>
+  <script src="app.js?v=8.0.0"></script>
 </body>
 </html>

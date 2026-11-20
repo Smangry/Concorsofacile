@@ -83,10 +83,51 @@
   };
 
   // =========================================================================
+  // HAPTIC FEEDBACK (Micro-vibrazione aptica per Android APK e Browser Mobile)
+  // =========================================================================
+  const Haptic = {
+    enabled: true,
+
+    vibrate(ms) {
+      if (!this.enabled) return;
+      try {
+        if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.vibrate === 'function') {
+          window.AndroidNative.vibrate(ms);
+        } else if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+          navigator.vibrate(ms);
+        }
+      } catch (e) {}
+    },
+
+    vibratePattern(pattern) {
+      if (!this.enabled) return;
+      try {
+        if (typeof window !== 'undefined' && window.AndroidNative && typeof window.AndroidNative.vibratePattern === 'function') {
+          window.AndroidNative.vibratePattern(pattern);
+        } else if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+          navigator.vibrate(pattern);
+        }
+      } catch (e) {}
+    },
+
+    tap() {
+      this.vibrate(15);
+    },
+
+    success() {
+      this.vibratePattern([20, 40, 20]);
+    },
+
+    error() {
+      this.vibrate(55);
+    }
+  };
+
+  // =========================================================================
   // STATO GLOBALE DELL'APPLICAZIONE
   // =========================================================================
   const AppState = {
-    appVersion: '7.0.5',
+    appVersion: '8.0.0',
     allQuestions: [],
     categories: [],
     topicsByCategory: {},
@@ -134,8 +175,21 @@
     settings: {
       autoExplain: true, // Spiegazione immediata automatica al clic
       shuffleQuestions: true, // Default: ordine domande casuale
-      shuffleOptions: true    // Default: ordine risposte A, B, C, D casuale
+      shuffleOptions: true,   // Default: ordine risposte A, B, C, D casuale
+      hapticEnabled: true     // Feedback aptico (vibrazione)
     },
+
+    // Profilo & Personalizzazione Candidato
+    candidateName: '',
+
+    // Gamification & Statistiche Nerd
+    firstTryRecords: {}, // { [questionId]: { isCorrect: boolean, timestamp: number } }
+    streakData: {
+      dates: {}, // { 'YYYY-MM-DD': { seconds: 0, completed: false } }
+      currentStreak: 0,
+      lastActiveDate: ''
+    },
+    dailyStudySeconds: 0,
 
     // Stato Allenamento
     training: {
@@ -183,7 +237,11 @@
       CUSTOM_BANCA_DATI: 'uniss_custom_banca_dati_2026',
       LAST_SESSION: 'uniss_last_session_2026',
       SHUFFLE_QUESTIONS: 'uniss_shuffle_questions_pref',
-      SHUFFLE_OPTIONS: 'uniss_shuffle_options_pref'
+      SHUFFLE_OPTIONS: 'uniss_shuffle_options_pref',
+      CANDIDATE_NAME: 'uniss_candidate_name_2026',
+      STREAK_DATA: 'uniss_streak_data_2026',
+      FIRST_TRY: 'uniss_first_try_2026',
+      HAPTIC: 'uniss_haptic_pref'
     },
 
     getNative(key) {
@@ -245,9 +303,51 @@
 
         const so = this.getItem(this.KEYS.SHUFFLE_OPTIONS);
         if (so !== null) AppState.settings.shuffleOptions = (so === 'true');
+
+        const cName = this.getItem(this.KEYS.CANDIDATE_NAME);
+        if (cName) AppState.candidateName = cName;
+
+        const streakRaw = this.getItem(this.KEYS.STREAK_DATA);
+        if (streakRaw) {
+          try { AppState.streakData = JSON.parse(streakRaw); } catch (e) {}
+        }
+
+        const ftRaw = this.getItem(this.KEYS.FIRST_TRY);
+        if (ftRaw) {
+          try { AppState.firstTryRecords = JSON.parse(ftRaw); } catch (e) {}
+        }
+
+        const hap = this.getItem(this.KEYS.HAPTIC);
+        if (hap !== null) {
+          Haptic.enabled = (hap === 'true');
+          AppState.settings.hapticEnabled = Haptic.enabled;
+        }
       } catch (e) {
         console.warn('Errore lettura dati salvati:', e);
       }
+    },
+
+    saveCandidateName(name) {
+      AppState.candidateName = name || '';
+      this.setItem(this.KEYS.CANDIDATE_NAME, AppState.candidateName);
+    },
+
+    saveStreakData() {
+      try {
+        this.setItem(this.KEYS.STREAK_DATA, JSON.stringify(AppState.streakData));
+      } catch (e) {}
+    },
+
+    saveFirstTryRecords() {
+      try {
+        this.setItem(this.KEYS.FIRST_TRY, JSON.stringify(AppState.firstTryRecords));
+      } catch (e) {}
+    },
+
+    saveHaptic(enabled) {
+      Haptic.enabled = !!enabled;
+      AppState.settings.hapticEnabled = !!enabled;
+      this.setItem(this.KEYS.HAPTIC, enabled ? 'true' : 'false');
     },
 
     saveBookmarks() {
@@ -335,6 +435,103 @@
     }
   };
   window.Storage = Storage;
+
+  // =========================================================================
+  // GAMIFICATION STREAK ENGINE (Regola 30 min / giorno di Quiz)
+  // =========================================================================
+  function getTodayDateString() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function calculateConsecutiveStreak() {
+    if (!AppState.streakData) {
+      AppState.streakData = { dates: {}, currentStreak: 0, lastActiveDate: '' };
+    }
+    if (!AppState.streakData.dates) {
+      AppState.streakData.dates = {};
+    }
+
+    const today = getTodayDateString();
+    let checkDate = new Date();
+
+    const todayRecord = AppState.streakData.dates[today];
+    const isTodayDone = todayRecord && todayRecord.completed;
+
+    let streak = 0;
+    if (isTodayDone) {
+      streak = 1;
+      checkDate.setDate(checkDate.getDate() - 1);
+    } else {
+      // Se oggi non è ancora completato, controlliamo da ieri per preservare la serie
+      checkDate.setDate(checkDate.getDate() - 1);
+    }
+
+    while (true) {
+      const y = checkDate.getFullYear();
+      const m = String(checkDate.getMonth() + 1).padStart(2, '0');
+      const d = String(checkDate.getDate()).padStart(2, '0');
+      const dateKey = `${y}-${m}-${d}`;
+
+      const rec = AppState.streakData.dates[dateKey];
+      if (rec && rec.completed) {
+        streak++;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+
+    AppState.streakData.currentStreak = streak;
+    return streak;
+  }
+
+  function updateDailyStudyStreak(secondsDelta = 1) {
+    const today = getTodayDateString();
+    if (!AppState.streakData) {
+      AppState.streakData = { dates: {}, currentStreak: 0, lastActiveDate: '' };
+    }
+    if (!AppState.streakData.dates) {
+      AppState.streakData.dates = {};
+    }
+    if (!AppState.streakData.dates[today]) {
+      AppState.streakData.dates[today] = { seconds: 0, completed: false };
+    }
+
+    AppState.streakData.dates[today].seconds += secondsDelta;
+    if (AppState.streakData.dates[today].seconds >= 1800) { // 30 minuti = 1800 secondi
+      AppState.streakData.dates[today].completed = true;
+    }
+
+    calculateConsecutiveStreak();
+  }
+
+  let studySessionTimer = null;
+  let activeSessionSeconds = 0;
+
+  function startStudySessionTicker() {
+    if (studySessionTimer) return;
+    studySessionTimer = setInterval(() => {
+      const activeSection = document.querySelector('.section-view.active');
+      const isStudying = activeSection && (activeSection.id === 'training-view' || activeSection.id === 'exam-view');
+      if (isStudying) {
+        activeSessionSeconds++;
+        updateDailyStudyStreak(1);
+
+        const timerEl = document.getElementById('count-live-timer');
+        if (timerEl && activeSection.id === 'training-view') {
+          timerEl.textContent = formatTime(activeSessionSeconds);
+        }
+
+        if (activeSessionSeconds % 30 === 0) {
+          Storage.saveStreakData();
+        }
+      }
+    }, 1000);
+  }
 
   // =========================================================================
   // HELPER E UTILITY
@@ -806,11 +1003,11 @@
     // Se siamo all'ultima domanda, il tasto successivo diventa "Fine Modulo"
     if (btnNext) {
       if (idx >= list.length - 1) {
-        btnNext.innerHTML = '<span>🏁 Fine Modulo ▶</span>';
+        btnNext.innerHTML = '<span>🏁 Fine Modulo</span>';
         btnNext.disabled = false;
         btnNext.classList.add('btn-gold');
       } else {
-        btnNext.innerHTML = '<span>Succ ▶</span>';
+        btnNext.innerHTML = '<span>Prossima domanda →</span>';
         btnNext.disabled = false;
         btnNext.classList.remove('btn-gold');
       }
@@ -951,7 +1148,14 @@
     const container = document.getElementById('home-subjects-container');
     if (!container) return;
 
-    // Statistiche complessive
+    // 1. Saluto Personalizzato Candidato
+    const greetingEl = document.getElementById('hero-candidate-greeting');
+    if (greetingEl) {
+      const name = AppState.candidateName ? AppState.candidateName.trim() : '';
+      greetingEl.textContent = name ? `Ciao ${name}! 👋` : 'Ciao! 👋';
+    }
+
+    // 2. Statistiche complessive di avanzamento
     const totalQ = AppState.allQuestions.length;
     let answeredTotal = 0;
     let correctTotal = 0;
@@ -970,62 +1174,174 @@
     const visualOverallPct = answeredTotal > 0 ? Math.max(1, rawOverallPct) : 0;
     const accuracy = answeredTotal > 0 ? Math.round((correctTotal / answeredTotal) * 100) : 0;
 
-    // Aggiorna KPI in cima alla Home
-    const fillEl = document.getElementById('home-progress-fill');
-    const txtProg = document.getElementById('home-progress-text');
-    const txtAcc = document.getElementById('home-accuracy-text');
+    // Calcolo Percentuale Corrette "Al primo colpo"
+    const totalFirstTry = Object.keys(AppState.firstTryRecords || {}).length;
+    const correctFirstTry = Object.values(AppState.firstTryRecords || {}).filter(r => r.isCorrect).length;
+    const firstTryPct = totalFirstTry > 0 ? Math.round((correctFirstTry / totalFirstTry) * 100) : 0;
+
+    // Calcolo Tempo Totale di Studio
+    let totalSecondsStudied = 0;
+    if (AppState.streakData && AppState.streakData.dates) {
+      Object.values(AppState.streakData.dates).forEach(d => {
+        totalSecondsStudied += (d.seconds || 0);
+      });
+    }
+    const studyHours = Math.floor(totalSecondsStudied / 3600);
+    const studyMinutes = Math.floor((totalSecondsStudied % 3600) / 60);
+
+    // Aggiornamento 3 Card Metriche Chiave Moderne
+    const kpiCompleted = document.getElementById('home-kpi-completed');
+    const kpiFirstTry = document.getElementById('home-kpi-first-try');
+    const kpiStudyTime = document.getElementById('home-kpi-study-time');
+    if (kpiCompleted) kpiCompleted.textContent = answeredTotal;
+    if (kpiFirstTry) kpiFirstTry.textContent = `${firstTryPct}%`;
+    if (kpiStudyTime) kpiStudyTime.textContent = `${studyHours}h ${String(studyMinutes).padStart(2, '0')}m`;
+
+    // Aggiornamento contatori per le card pastello di Allenamento
     const wrongCountEl = document.getElementById('home-wrong-count');
     const starCountEl = document.getElementById('home-star-count');
-
-    if (fillEl) fillEl.style.width = `${visualOverallPct.toFixed(1)}%`;
-    if (txtProg) txtProg.textContent = `${answeredTotal} / ${totalQ} quesiti (${displayOverallPct}%)`;
-    if (txtAcc) txtAcc.textContent = `${accuracy}%`;
     if (wrongCountEl) wrongCountEl.textContent = wrongTotal;
     if (starCountEl) starCountEl.textContent = bookmarkedTotal;
 
-    // Card riprendi ultima sessione di studio
+    // 3. Widget Gamification Streak (Regola 30 min di studio)
+    const today = getTodayDateString();
+    const todayRecord = (AppState.streakData && AppState.streakData.dates && AppState.streakData.dates[today]) || { seconds: 0, completed: false };
+    const todayMinutes = Math.min(30, Math.floor(todayRecord.seconds / 60));
+    
+    const ratioEl = document.getElementById('streak-daily-ratio');
+    if (ratioEl) ratioEl.textContent = `${todayMinutes}/30`;
+
+    const circleFill = document.getElementById('streak-svg-fill');
+    if (circleFill) {
+      const totalCircumference = 201.06;
+      const progressFraction = Math.min(1, todayRecord.seconds / 1800);
+      const offset = totalCircumference - (progressFraction * totalCircumference);
+      circleFill.style.strokeDashoffset = offset;
+    }
+
+    const streakCount = calculateConsecutiveStreak();
+    const flameBadge = document.getElementById('streak-flame-badge');
+    if (flameBadge) {
+      flameBadge.textContent = `🔥 ${streakCount} ${streakCount === 1 ? 'giorno' : 'giorni'}`;
+    }
+
+    const subDesc = document.getElementById('streak-daily-subdesc');
+    if (subDesc) {
+      if (todayRecord.completed) {
+        subDesc.innerHTML = '🎉 <strong>Obiettivo di oggi raggiunto (30 min)!</strong> Serie convalidata.';
+      } else {
+        const rem = 30 - todayMinutes;
+        subDesc.textContent = `Ancora ${rem} ${rem === 1 ? 'minuto' : 'minuti'} di quiz oggi per convalidare la serie.`;
+      }
+    }
+
+    // Pillole dei 7 giorni della settimana corrente (L M M G V S D)
+    const weekPillsContainer = document.getElementById('streak-week-pills');
+    if (weekPillsContainer) {
+      weekPillsContainer.innerHTML = '';
+      const dayNames = ['L', 'M', 'M', 'G', 'V', 'S', 'D'];
+      const curr = new Date();
+      const dayOfWeek = (curr.getDay() + 6) % 7; // Lunedì = 0, Domenica = 6
+      const monday = new Date(curr);
+      monday.setDate(curr.getDate() - dayOfWeek);
+
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(monday);
+        d.setDate(monday.getDate() + i);
+        const yStr = d.getFullYear();
+        const mStr = String(d.getMonth() + 1).padStart(2, '0');
+        const dStr = String(d.getDate()).padStart(2, '0');
+        const dateKey = `${yStr}-${mStr}-${dStr}`;
+
+        const isDayToday = (dateKey === today);
+        const isCompleted = AppState.streakData && AppState.streakData.dates && AppState.streakData.dates[dateKey] && AppState.streakData.dates[dateKey].completed;
+
+        const pill = document.createElement('div');
+        pill.className = `streak-week-day-pill${isCompleted ? ' completed' : ''}${isDayToday ? ' today' : ''}`;
+        pill.innerHTML = `
+          <span class="day-letter">${dayNames[i]}</span>
+          <span class="day-dot">${isCompleted ? '✓' : (isDayToday ? '•' : '○')}</span>
+        `;
+        weekPillsContainer.appendChild(pill);
+      }
+    }
+
+    // 4. Big Cobalt Blue Card: "Riprendi da dove eri rimasto" (Illustrazione Facciata Palazzo UniSS)
     const savedSession = Storage.getTrainingSession();
     const resumeCard = document.getElementById('home-resume-card');
     const resumeTitle = document.getElementById('home-resume-title');
     const resumeSub = document.getElementById('home-resume-sub');
+    const resumePct = document.getElementById('home-resume-pct');
+    const resumeBar = document.getElementById('home-resume-bar');
     const btnResume = document.getElementById('btn-home-resume');
 
-    if (savedSession && resumeCard && savedSession.currentIndex > 0) {
+    if (resumeCard) {
       resumeCard.style.display = 'block';
-      let matName = savedSession.filterMateria;
-      if (matName.startsWith('MACRO_')) {
-        const mKey = matName.replace('MACRO_', '');
-        matName = (MACRO_SUBJECTS[mKey]?.title || 'Ambito');
-      } else if (matName === 'ALL') {
-        matName = 'Tutte le Materie (949)';
+
+      let targetMateria = 'Statuto dell\'Università degli Studi di Sassari';
+      let targetIndex = 0;
+      let targetArg = 'ALL';
+
+      if (savedSession && savedSession.filterMateria) {
+        targetMateria = savedSession.filterMateria;
+        targetIndex = savedSession.currentIndex || 0;
+        targetArg = savedSession.filterArgomento || 'ALL';
       }
-      if (resumeTitle) resumeTitle.textContent = matName;
+
+      const qForResume = (targetMateria === 'ALL')
+        ? AppState.allQuestions
+        : AppState.allQuestions.filter(q => q.materia === targetMateria);
+      const totalForResume = qForResume.length || 1;
+      const currentQNum = Math.min(targetIndex + 1, totalForResume);
+      const pctForResume = Math.round((currentQNum / totalForResume) * 100);
+
+      if (resumeTitle) {
+        let cleanTitle = targetMateria.replace("dell'Università degli Studi di Sassari", 'UniSS');
+        if (cleanTitle === 'ALL') cleanTitle = 'TUTTI I QUIZ';
+        resumeTitle.textContent = cleanTitle.toUpperCase();
+      }
       if (resumeSub) {
-        const argText = savedSession.filterArgomento !== 'ALL' ? ` › ${savedSession.filterArgomento}` : '';
-        resumeSub.textContent = `Quesito ${savedSession.currentIndex + 1}${argText}`;
+        resumeSub.textContent = `Domanda ${currentQNum} di ${totalForResume}`;
+      }
+      if (resumePct) {
+        resumePct.textContent = `${pctForResume}%`;
+      }
+      if (resumeBar) {
+        resumeBar.style.width = `${pctForResume}%`;
       }
       if (btnResume) {
         btnResume.onclick = () => {
-          AppState.training.filterMateria = savedSession.filterMateria;
-          AppState.training.filterArgomento = savedSession.filterArgomento;
-          AppState.training.filterStatus = savedSession.filterStatus || 'ALL';
+          AppState.training.filterMateria = targetMateria;
+          AppState.training.filterArgomento = targetArg;
+          AppState.training.filterStatus = 'ALL';
           applyTrainingFilters();
-          AppState.training.currentIndex = Math.min(savedSession.currentIndex, AppState.training.filteredList.length - 1);
-          updateActiveSubjectHeader(savedSession.filterMateria, savedSession.filterArgomento);
+          AppState.training.currentIndex = Math.min(targetIndex, AppState.training.filteredList.length - 1);
+          updateActiveSubjectHeader(targetMateria, targetArg);
           hideModuleCompletionCard();
           switchTab('training-view');
           renderTrainingCard();
-          showToast(`Ripresa sessione: Quesito ${AppState.training.currentIndex + 1}`, '⭐');
+          showToast(`Ripresa sessione: Domanda ${AppState.training.currentIndex + 1}`, '🚀');
         };
       }
-    } else if (resumeCard) {
-      resumeCard.style.display = 'none';
     }
 
-    // Genera le 10 schede materie
+    // 5. Materie del Concorso: Generazione righe eleganti (Fedele a Mockup 1)
+    const SUBJECT_STYLES = [
+      { badge: 'badge-icon-blue', icon: '🏛️' },
+      { badge: 'badge-icon-yellow', icon: '📜' },
+      { badge: 'badge-icon-coral', icon: '🎓' },
+      { badge: 'badge-icon-purple', icon: '💡' },
+      { badge: 'badge-icon-green', icon: '🧠' },
+      { badge: 'badge-icon-coral', icon: '⚖️' },
+      { badge: 'badge-icon-purple', icon: '🛡️' },
+      { badge: 'badge-icon-blue', icon: '👥' },
+      { badge: 'badge-icon-yellow', icon: '🇬🇧' },
+      { badge: 'badge-icon-green', icon: '💻' }
+    ];
+
     container.innerHTML = '';
 
-    AppState.categories.forEach(materia => {
+    AppState.categories.forEach((materia, idx) => {
       const qInMat = AppState.allQuestions.filter(q => q.materia === materia);
       const totalCount = qInMat.length;
 
@@ -1039,121 +1355,33 @@
         }
       });
 
-      const rawMatPct = totalCount > 0 ? (answeredInMat / totalCount) * 100 : 0;
-      const pctAnswered = Math.round(rawMatPct);
-      const displayMatPct = (pctAnswered === 0 && answeredInMat > 0) ? rawMatPct.toFixed(1) : pctAnswered;
-      const visualMatPct = answeredInMat > 0 ? Math.max(1, rawMatPct) : 0;
-      const matAccuracy = answeredInMat > 0 ? Math.round((correctInMat / answeredInMat) * 100) : 0;
+      const rawPct = totalCount > 0 ? (answeredInMat / totalCount) * 100 : 0;
+      const pctAnswered = Math.round(rawPct);
+      const styleConfig = SUBJECT_STYLES[idx % SUBJECT_STYLES.length];
+      const meta = SUBJECTS_META[materia] || { icon: styleConfig.icon };
 
-      // Trova primo quesito non svolto in questa materia
-      const firstUnansweredInMat = qInMat.findIndex(q => !AppState.training.userAnswers[q.id]);
-
-      let btnLabel = `▶ Inizia Modulo (${totalCount} Quesiti)`;
-      let btnExtraClass = 'btn-primary';
-      if (answeredInMat > 0 && answeredInMat < totalCount) {
-        const nextQNum = (firstUnansweredInMat !== -1 ? firstUnansweredInMat : 0) + 1;
-        btnLabel = `▶ Continua da Quesito ${nextQNum} (${totalCount - answeredInMat} rimasti)`;
-        btnExtraClass = 'btn-gold';
-      } else if (answeredInMat === totalCount && totalCount > 0) {
-        btnLabel = `✅ Modulo Completato (${matAccuracy}% esatte)`;
-        btnExtraClass = 'btn-secondary';
-      }
-
-      const meta = SUBJECTS_META[materia] || { icon: '📘', desc: 'Quesiti di preparazione per il concorso UniSS 2026.' };
-      const topicsList = AppState.topicsByCategory[materia] || [];
-
-      const topicsData = topicsList.map(topic => {
-        const topicQs = qInMat.filter(q => q.argomento === topic);
-        const ansCount = topicQs.filter(q => AppState.training.userAnswers[q.id]).length;
-        return { name: topic, count: topicQs.length, answered: ansCount };
-      });
-
-      const card = document.createElement('div');
-      card.className = 'subject-card';
-      card.dataset.materia = materia;
-      card.dataset.macro = meta.macro || 'ALL';
-
-      card.innerHTML = `
-        <div class="subject-card-main" style="cursor:pointer;" title="Tocca per iniziare questo modulo">
-          <div class="subject-card-icon">${meta.icon}</div>
-          <div class="subject-card-info">
-            <div class="subject-card-title-row">
-              <span class="subject-card-module-num" style="font-size:0.65rem; font-weight:800; padding:2px 7px; border-radius:4px; background:var(--md-primary-container); color:var(--md-on-primary-container); text-transform:uppercase; letter-spacing:0.5px;">MODULO ${meta.moduleNum || ''}</span>
-              <h4 class="subject-card-title">${materia}</h4>
-              <span class="subject-card-badge">${totalCount} quesiti</span>
-            </div>
-            <p class="subject-card-desc">${meta.desc}</p>
-            <div class="subject-card-progress">
-              <div class="progress-track" style="height:5px;">
-                <div class="progress-fill" style="width:${visualMatPct.toFixed(1)}%; background:${pctAnswered >= 70 ? 'var(--md-success)' : 'var(--md-primary)'};"></div>
-              </div>
-              <div class="subject-card-stats">
-                <span>${answeredInMat} / ${totalCount} svolti (${displayMatPct}%)</span>
-                ${answeredInMat > 0 ? `<span>Precisione: <strong>${matAccuracy}%</strong></span>` : ''}
-              </div>
-            </div>
+      const row = document.createElement('div');
+      row.className = 'modern-subject-row';
+      row.dataset.materia = materia;
+      row.innerHTML = `
+        <div class="subject-icon-badge ${styleConfig.badge}">${meta.icon || styleConfig.icon}</div>
+        <div class="subject-info-col">
+          <div class="subject-title-line">
+            <span class="subject-row-name">${materia}</span>
+            <span class="subject-row-pct">${pctAnswered}%</span>
+          </div>
+          <div class="subject-progress-track">
+            <div class="subject-progress-fill" style="width: ${pctAnswered}%;"></div>
           </div>
         </div>
-
-        <div class="subject-card-actions">
-          <button type="button" class="btn btn-sm ${btnExtraClass} btn-start-subject-quiz" data-materia="${materia}" style="flex:2; font-weight:800; padding:9px 12px;">
-            <span>${btnLabel}</span>
-          </button>
-          <button type="button" class="btn btn-sm btn-secondary btn-toggle-topics" data-materia="${materia}" style="flex:1; padding:9px 10px;">
-            <span>Argomenti (${topicsData.length}) ▾</span>
-          </button>
-        </div>
-
-        <div class="subject-topics-tray" style="display:none;">
-          <div style="font-size:0.75rem; font-weight:800; color:var(--md-primary); margin-bottom:8px;">
-            Scegli un singolo argomento da studiare:
-          </div>
-          <div class="topics-chips-list">
-            <button type="button" class="topic-chip-select active" data-materia="${materia}" data-argomento="ALL">
-              <span>Tutti gli argomenti (${totalCount})</span>
-            </button>
-            ${topicsData.map(t => `
-              <button type="button" class="topic-chip-select" data-materia="${materia}" data-argomento="${t.name}">
-                <span>${t.name}</span>
-                <span class="topic-count">${t.answered > 0 ? `${t.answered}/${t.count}` : t.count}</span>
-              </button>
-            `).join('')}
-          </div>
-        </div>
+        <span class="subject-row-chevron">›</span>
       `;
 
-      // Cliccando sull'intera scheda o sul pulsante "Inizia Modulo" si avvia il modulo!
-      card.querySelector('.subject-card-main').addEventListener('click', () => {
+      row.addEventListener('click', () => {
         startTrainingOnTopic(materia, 'ALL');
       });
 
-      card.querySelector('.btn-start-subject-quiz').addEventListener('click', (e) => {
-        e.stopPropagation();
-        startTrainingOnTopic(materia, 'ALL');
-      });
-
-      // Toggle drawer argomenti
-      const btnToggle = card.querySelector('.btn-toggle-topics');
-      const tray = card.querySelector('.subject-topics-tray');
-      btnToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isHidden = tray.style.display === 'none';
-        tray.style.display = isHidden ? 'block' : 'none';
-        btnToggle.querySelector('span').textContent = isHidden 
-          ? `Chiudi Argomenti ▴` 
-          : `Argomenti (${topicsData.length}) ▾`;
-      });
-
-      // Click sui singoli argomenti
-      card.querySelectorAll('.topic-chip-select').forEach(chip => {
-        chip.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const arg = chip.dataset.argomento;
-          startTrainingOnTopic(materia, arg);
-        });
-      });
-
-      container.appendChild(card);
+      container.appendChild(row);
     });
   }
 
@@ -1486,7 +1714,7 @@
     sheet.style.display = 'flex';
   }
 
-  // Renderizza la scheda singola di allenamento
+  // Renderizza la scheda singola di allenamento (Fedele al Mockup 2)
   function renderTrainingCard(resetScroll = true) {
     if (resetScroll) {
       const mainWrap = document.querySelector('.main-wrapper');
@@ -1504,8 +1732,10 @@
     if (list.length === 0) {
       document.getElementById('card-q-text').textContent = 'Nessun quesito corrisponde ai filtri selezionati. Prova a modificare i filtri o la ricerca.';
       document.getElementById('card-options-container').innerHTML = '';
-      document.getElementById('card-explanation-box').style.display = 'none';
-      document.getElementById('card-counter-indicator').textContent = '0 di 0';
+      const expBox = document.getElementById('card-explanation-box');
+      if (expBox) expBox.style.display = 'none';
+      const hintBox = document.getElementById('card-select-hint-box');
+      if (hintBox) hintBox.style.display = 'none';
       return;
     }
 
@@ -1521,7 +1751,7 @@
     if (elId) elId.textContent = `Quesito #${q.id}`;
     if (elMateria) {
       elMateria.textContent = q.materia;
-      elMateria.className = `badge ${getBadgeClass(q.materia)}`;
+      elMateria.className = `subject-pill-purple`;
     }
     const isReviewingWrong = (AppState.training.filterStatus === 'WRONG');
     let effectiveAnswer = AppState.training.userAnswers[q.id];
@@ -1532,7 +1762,7 @@
 
     if (elArg) {
       if (isReviewingWrong && !isAnswered) {
-        elArg.innerHTML = `${q.argomento || 'Generale'} <span style="background:rgba(239,68,68,0.15); color:var(--md-error); padding:2px 8px; border-radius:12px; font-weight:800; font-size:0.75rem; margin-left:6px;">🎯 Riprova l'errore senza suggerimenti</span>`;
+        elArg.innerHTML = `${q.argomento || 'Generale'} <span style="background:rgba(239,68,68,0.15); color:var(--md-error); padding:2px 8px; border-radius:12px; font-weight:800; font-size:0.75rem; margin-left:6px;">🎯 Riprova errore</span>`;
       } else {
         elArg.textContent = q.argomento || 'Generale';
       }
@@ -1544,10 +1774,42 @@
       elBm.title = isBm ? 'Rimuovi dai preferiti' : 'Aggiungi ai preferiti';
     }
 
-    // Domanda
+    // Aggiornamento Subheader Tracker Strip (Mockup 2)
+    const liveNum = document.getElementById('count-live-num');
+    const liveTotal = document.getElementById('count-live-total');
+    const liveFill = document.getElementById('count-live-fill');
+    const livePct = document.getElementById('count-live-pct');
+    const liveCorr = document.getElementById('count-live-correct');
+    const liveWrong = document.getElementById('count-live-wrong');
+
+    const currNum = idx + 1;
+    const totNum = list.length;
+    const pctProg = Math.round((currNum / totNum) * 100);
+
+    if (liveNum) liveNum.textContent = currNum;
+    if (liveTotal) liveTotal.textContent = totNum;
+    if (liveFill) liveFill.style.width = `${pctProg}%`;
+    if (livePct) livePct.textContent = `${pctProg}%`;
+
+    let sessionCorrect = 0;
+    let sessionWrong = 0;
+    list.forEach(item => {
+      const ans = isReviewingWrong 
+        ? (AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[item.id])
+        : AppState.training.userAnswers[item.id];
+      if (ans) {
+        if (ans.isCorrect) sessionCorrect++;
+        else sessionWrong++;
+      }
+    });
+
+    if (liveCorr) liveCorr.textContent = sessionCorrect;
+    if (liveWrong) liveWrong.textContent = sessionWrong;
+
+    // Testo Domanda
     document.getElementById('card-q-text').textContent = q.domanda;
 
-    // Opzioni
+    // Opzioni di Risposta Moderne (Mockup 2: A, B, C, D in pillola morbida)
     const optContainer = document.getElementById('card-options-container');
     optContainer.innerHTML = '';
 
@@ -1556,92 +1818,158 @@
     displayOptions.forEach((opt, optIdx) => {
       const letter = opt.displayLetter;
       const optText = opt.text;
-      const keyHint = optIdx + 1;
 
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'option-item';
+      btn.className = 'modern-option-button';
       btn.dataset.letter = letter;
 
-      let iconHtml = '';
+      let tagHtml = '';
 
       if (isAnswered) {
-        btn.classList.add('disabled');
         btn.disabled = true;
         if (opt.isCorrect) {
-          btn.classList.add('correct');
-          iconHtml = '<span class="option-status-icon" style="color:var(--md-success); font-weight:800; margin-left:auto;">✔️ Risposta Esatta</span>';
+          btn.classList.add('is-correct');
+          tagHtml = '<span class="modern-opt-tag">✔️ Risposta corretta</span>';
         } else if (letter === effectiveAnswer.selectedDisplayLetter || opt.origLetter === effectiveAnswer.selectedOption) {
-          btn.classList.add('incorrect');
-          iconHtml = '<span class="option-status-icon" style="color:var(--md-error); font-weight:800; margin-left:auto;">❌ La tua risposta</span>';
+          btn.classList.add('is-incorrect');
+          tagHtml = '<span class="modern-opt-tag">❌ La tua risposta</span>';
+        } else {
+          btn.classList.add('is-dimmed');
         }
       }
 
       btn.innerHTML = `
-        <div class="option-letter">${letter}</div>
-        <div class="option-text">${optText}</div>
-        <span class="desktop-kbd-hint" title="Premi tasto ${keyHint} o ${letter}">[${keyHint}]</span>
-        ${iconHtml}
+        <div class="modern-opt-letter">${letter}</div>
+        <div class="modern-opt-text">${escapeHtml(optText)}</div>
+        ${tagHtml}
       `;
 
       if (!isAnswered) {
-        btn.addEventListener('click', () => handleTrainingAnswer(q, opt));
+        btn.addEventListener('click', () => {
+          Haptic.tap();
+          handleTrainingAnswer(q, opt);
+        });
       }
 
       optContainer.appendChild(btn);
     });
 
-    // Box spiegazione
+    // Box Promemoria prima della risposta
+    const hintBox = document.getElementById('card-select-hint-box');
+    if (hintBox) {
+      hintBox.style.display = isAnswered ? 'none' : 'flex';
+    }
+
+    // Box Spiegazione Inline Integrata (Fedele a Mockup 2: Sotto le opzioni, non invasiva)
     const expBox = document.getElementById('card-explanation-box');
+    const badgeIcon = document.getElementById('feedback-badge-icon');
+    const titleEl = document.getElementById('feedback-sheet-title');
+    const selLine = document.getElementById('feedback-sel-line');
+    const corrLine = document.getElementById('feedback-corr-line');
     const expText = document.getElementById('card-explanation-text');
-    const expBadge = document.getElementById('explanation-badge-status');
-    const expIcon = document.getElementById('explanation-icon');
+    const normText = document.getElementById('card-normative-text');
 
-    if (isAnswered) {
+    if (isAnswered && expBox) {
       expBox.style.display = 'block';
-      expText.innerHTML = q.spiegazione;
-      if (effectiveAnswer.isCorrect) {
-        expBox.className = 'explanation-card is-success-alert';
-        expBadge.className = 'explanation-badge succ';
-        expBadge.textContent = isReviewingWrong ? 'Errore Corretto!' : 'Esatto!';
-        expIcon.textContent = '✅';
-      } else {
-        expBox.className = 'explanation-card is-error-alert';
-        expBadge.className = 'explanation-badge err';
-        expBadge.textContent = 'Risposta Errata';
-        expIcon.textContent = '❌';
+      const isCorr = effectiveAnswer.isCorrect;
 
-        // Aggiungi pulsante per riprovare subito il quesito
-        let retryBtn = expBox.querySelector('#btn-retry-single-card');
-        if (!retryBtn) {
-          retryBtn = document.createElement('button');
-          retryBtn.id = 'btn-retry-single-card';
-          retryBtn.className = 'btn btn-sm btn-secondary';
-          retryBtn.style.marginTop = '10px';
-          retryBtn.style.display = 'inline-flex';
-          retryBtn.style.alignItems = 'center';
-          retryBtn.style.gap = '6px';
-          retryBtn.innerHTML = '<span>🔄</span> Riprova questo quesito ora';
-          retryBtn.onclick = () => {
-            delete AppState.training.userAnswers[q.id];
-            if (AppState.training.retrySessionAnswers) delete AppState.training.retrySessionAnswers[q.id];
-            Storage.saveTrainingAnswers();
-            updateTrainingStatsMini();
-            updateStatusPillCounts();
-            renderTrainingCard();
-          };
-          expBox.appendChild(retryBtn);
+      expBox.className = `modern-inline-feedback-card ${isCorr ? 'is-success-box' : 'is-error-box'}`;
+      if (badgeIcon) badgeIcon.textContent = isCorr ? '✔️' : '❌';
+      if (titleEl) {
+        titleEl.textContent = isCorr ? 'Risposta esatta!' : 'Risposta errata!';
+        titleEl.style.color = isCorr ? '#15803d' : '#b91c1c';
+      }
+
+      const corrOpt = displayOptions.find(o => o.isCorrect);
+      const userOpt = displayOptions.find(o => o.displayLetter === effectiveAnswer.selectedDisplayLetter || o.origLetter === effectiveAnswer.selectedOption);
+
+      if (selLine) {
+        if (isCorr) {
+          selLine.style.display = 'none';
+        } else {
+          selLine.style.display = 'block';
+          selLine.textContent = `Hai selezionato l'opzione ${userOpt ? userOpt.displayLetter : effectiveAnswer.selectedOption}: ${userOpt ? userOpt.text : ''}`;
         }
       }
-    } else {
+
+      if (corrLine) {
+        corrLine.textContent = `Risposta corretta: ${corrOpt ? corrOpt.displayLetter : q.risposta_corretta} — ${corrOpt ? corrOpt.text : ''}`;
+      }
+
+      if (expText) {
+        expText.innerHTML = q.spiegazione || 'Nessuna spiegazione disponibile per questo quesito.';
+      }
+
+      if (normText) {
+        normText.textContent = q.normativa_riferimento || q.materia;
+      }
+    } else if (expBox) {
       expBox.style.display = 'none';
     }
 
-    // Contatore
-    document.getElementById('card-counter-indicator').textContent = `Domanda ${idx + 1} di ${list.length}`;
+    // Paginatore Numerico Dinamico (Mockup 2: ... 16 17 [18] 19 20 ...)
+    const pagTrack = document.getElementById('training-pagination-pills');
+    if (pagTrack) {
+      pagTrack.innerHTML = '';
+      const totalPills = list.length;
+      const currentNum = idx + 1;
+
+      const windowSize = 2; // mostra 2 prima e 2 dopo
+      let start = Math.max(1, currentNum - windowSize);
+      let end = Math.min(totalPills, currentNum + windowSize);
+
+      if (currentNum <= 3) end = Math.min(totalPills, 5);
+      if (currentNum >= totalPills - 2) start = Math.max(1, totalPills - 4);
+
+      if (start > 1) {
+        const ell = document.createElement('span');
+        ell.className = 'pag-ellipsis';
+        ell.textContent = '...';
+        pagTrack.appendChild(ell);
+      }
+
+      for (let p = start; p <= end; p++) {
+        const pillBtn = document.createElement('button');
+        pillBtn.type = 'button';
+        pillBtn.className = `pag-pill${p === currentNum ? ' active' : ''}`;
+
+        const qItem = list[p - 1];
+        if (qItem && AppState.training.userAnswers[qItem.id]) {
+          pillBtn.classList.add('is-answered');
+        }
+
+        pillBtn.textContent = p;
+        pillBtn.addEventListener('click', () => {
+          AppState.training.currentIndex = p - 1;
+          renderTrainingCard();
+        });
+        pagTrack.appendChild(pillBtn);
+      }
+
+      if (end < totalPills) {
+        const ell = document.createElement('span');
+        ell.className = 'pag-ellipsis';
+        ell.textContent = '...';
+        pagTrack.appendChild(ell);
+      }
+    }
 
     // Abilita/Disabilita tasti navigazione
-    document.getElementById('btn-card-prev').disabled = (idx === 0);
+    const prevBtn = document.getElementById('btn-card-prev');
+    if (prevBtn) prevBtn.disabled = (idx === 0);
+
+    const nextBtn = document.getElementById('btn-card-next');
+    if (nextBtn) {
+      if (idx >= list.length - 1) {
+        nextBtn.innerHTML = '<span>🏁 Fine Modulo</span>';
+        nextBtn.classList.add('btn-gold');
+      } else {
+        nextBtn.innerHTML = '<span>Prossima domanda →</span>';
+        nextBtn.classList.remove('btn-gold');
+      }
+    }
+
     // Aggiorna la barra di progresso e lo stato dei bottoni navigazione
     updateModuleProgressBar();
     // Salva sessione attiva per consentire la ripresa automatica
@@ -1654,11 +1982,6 @@
       const selectedLetter = (typeof selectedOpt === 'object') ? selectedOpt.origLetter : selectedOpt;
       const selectedDisplayLetter = (typeof selectedOpt === 'object') ? selectedOpt.displayLetter : selectedOpt;
       const isReviewingWrong = (AppState.training.filterStatus === 'WRONG');
-
-      // Trova la lettera corretta a video
-      const displayOpts = getDisplayOptions(question);
-      const corrOpt = displayOpts.find(o => o.isCorrect);
-      const correctDisplayLetter = corrOpt ? corrOpt.displayLetter : question.risposta_corretta;
 
       if (!AppState.training.retrySessionAnswers) {
         AppState.training.retrySessionAnswers = {};
@@ -1679,83 +2002,34 @@
         timestamp: Date.now()
       };
 
+      // Registrazione "Al Primo Colpo"
+      if (!AppState.firstTryRecords[question.id]) {
+        AppState.firstTryRecords[question.id] = {
+          isCorrect: isCorrect,
+          timestamp: Date.now()
+        };
+        Storage.saveFirstTryRecords();
+      }
+
       Storage.saveTrainingAnswers();
       Storage.saveTrainingSession();
 
-      // Aggiorna IMMEDIATAMENTE i pulsanti delle opzioni a video senza ritardi
-      const optContainer = document.getElementById('card-options-container');
-      if (optContainer) {
-        const allButtons = optContainer.querySelectorAll('.option-item');
-        allButtons.forEach(b => {
-          b.classList.add('disabled');
-          b.disabled = true;
-          const letter = b.dataset.letter;
-
-          const oldIcon = b.querySelector('.option-status-icon');
-          if (oldIcon) oldIcon.remove();
-
-          if (letter === correctDisplayLetter) {
-            b.classList.add('correct');
-            const icon = document.createElement('span');
-            icon.className = 'option-status-icon';
-            icon.style.color = 'var(--md-success)';
-            icon.style.fontWeight = '800';
-            icon.style.marginLeft = 'auto';
-            icon.textContent = '✔️ Risposta Esatta';
-            b.appendChild(icon);
-          } else if (letter === selectedDisplayLetter) {
-            b.classList.add('incorrect');
-            const icon = document.createElement('span');
-            icon.className = 'option-status-icon';
-            icon.style.color = 'var(--md-error)';
-            icon.style.fontWeight = '800';
-            icon.style.marginLeft = 'auto';
-            icon.textContent = '❌ La tua risposta';
-            b.appendChild(icon);
-          }
-        });
+      // Audio & Haptic Feedback
+      if (isCorrect) {
+        Haptic.success();
+        try { SoundFx.playCorrect(); } catch (e) {}
+      } else {
+        Haptic.error();
+        try { SoundFx.playWrong(); } catch (e) {}
       }
 
-      // Mostra subito il box spiegazione sotto la domanda
-      const expBox = document.getElementById('card-explanation-box');
-      const expText = document.getElementById('card-explanation-text');
-      const expBadge = document.getElementById('explanation-badge-status');
-      const expIcon = document.getElementById('explanation-icon');
-
-      if (expBox && expText) {
-        expBox.style.display = 'block';
-        expText.innerHTML = question.spiegazione || 'Nessuna spiegazione disponibile per questo quesito.';
-        if (isCorrect) {
-          expBox.className = 'explanation-card is-success-alert';
-          if (expBadge) { expBadge.className = 'explanation-badge succ'; expBadge.textContent = 'Esatto!'; }
-          if (expIcon) expIcon.textContent = '✅';
-        } else {
-          expBox.className = 'explanation-card is-error-alert';
-          if (expBadge) { expBadge.className = 'explanation-badge err'; expBadge.textContent = 'Risposta Errata'; }
-          if (expIcon) expIcon.textContent = '❌';
-        }
-      }
+      // Re-render immediato della card con feedback inline e animazioni
+      renderTrainingCard(false);
 
       // Aggiorna progress bar e conteggi
       updateModuleProgressBar();
       updateTrainingStatsMini();
       updateStatusPillCounts();
-
-      // Audio feedback protetto
-      try {
-        if (isCorrect) {
-          SoundFx.playCorrect();
-        } else {
-          SoundFx.playWrong();
-        }
-      } catch (audioErr) {
-        console.warn('Audio non riproducibile:', audioErr);
-      }
-
-      // Se attiva la modalità feedback immediato, mostra subito il foglio con la spiegazione
-      if (AppState.settings.autoExplain) {
-        showInstantFeedback(question, selectedOpt, isCorrect, false);
-      }
     } catch (err) {
       console.error('Errore in handleTrainingAnswer:', err);
     }
@@ -2825,7 +3099,7 @@
     }
 
     // Dismiss bottom sheets & modals when tapping on backdrop overlay or pressing Escape
-    const dismissableModals = ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'account-modal', 'confirm-finish-modal', 'instant-feedback-sheet'];
+    const dismissableModals = ['filter-sheet', 'exam-grid-sheet', 'updates-modal', 'account-modal', 'confirm-finish-modal', 'instant-feedback-sheet', 'candidate-profile-modal'];
     dismissableModals.forEach(sheetId => {
       const el = document.getElementById(sheetId);
       if (el) {
@@ -2836,6 +3110,100 @@
         });
       }
     });
+
+    // Profilo & Impostazioni Candidato (Modal & Toggles)
+    function openProfileSettingsModal() {
+      const modal = document.getElementById('candidate-profile-modal');
+      if (!modal) return;
+      const nameInput = document.getElementById('input-candidate-name');
+      if (nameInput) nameInput.value = AppState.candidateName || '';
+
+      const hapticCheck = document.getElementById('toggle-haptic-feedback');
+      if (hapticCheck) hapticCheck.checked = !!AppState.settings.hapticEnabled;
+
+      const soundCheck = document.getElementById('toggle-sound-effects');
+      if (soundCheck) soundCheck.checked = !!SoundFx.enabled;
+
+      const autoCheck = document.getElementById('toggle-auto-explain');
+      if (autoCheck) autoCheck.checked = !!AppState.settings.autoExplain;
+
+      const optCheck = document.getElementById('toggle-shuffle-options');
+      if (optCheck) optCheck.checked = !!AppState.settings.shuffleOptions;
+
+      const qCheck = document.getElementById('toggle-shuffle-questions');
+      if (qCheck) qCheck.checked = !!AppState.settings.shuffleQuestions;
+
+      modal.style.display = 'flex';
+    }
+
+    function closeProfileSettingsModal() {
+      const modal = document.getElementById('candidate-profile-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    const btnOpenSettings = document.getElementById('btn-open-settings-modal');
+    if (btnOpenSettings) {
+      btnOpenSettings.addEventListener('click', openProfileSettingsModal);
+    }
+
+    const btnEditName = document.getElementById('btn-edit-candidate-name');
+    if (btnEditName) {
+      btnEditName.addEventListener('click', openProfileSettingsModal);
+    }
+
+    const btnCloseProfile = document.getElementById('btn-close-profile-modal');
+    if (btnCloseProfile) {
+      btnCloseProfile.addEventListener('click', closeProfileSettingsModal);
+    }
+
+    const btnCancelProfile = document.getElementById('btn-cancel-profile-modal');
+    if (btnCancelProfile) {
+      btnCancelProfile.addEventListener('click', closeProfileSettingsModal);
+    }
+
+    const btnSaveProfile = document.getElementById('btn-save-profile-modal');
+    if (btnSaveProfile) {
+      btnSaveProfile.addEventListener('click', () => {
+        const nameInput = document.getElementById('input-candidate-name');
+        const newName = nameInput ? nameInput.value.trim() : '';
+        Storage.saveCandidateName(newName);
+
+        const hapticCheck = document.getElementById('toggle-haptic-feedback');
+        if (hapticCheck) Storage.saveHaptic(hapticCheck.checked);
+
+        const soundCheck = document.getElementById('toggle-sound-effects');
+        if (soundCheck) Storage.saveSound(soundCheck.checked);
+
+        const autoCheck = document.getElementById('toggle-auto-explain');
+        if (autoCheck) AppState.settings.autoExplain = autoCheck.checked;
+
+        const optCheck = document.getElementById('toggle-shuffle-options');
+        if (optCheck) {
+          AppState.settings.shuffleOptions = optCheck.checked;
+          Storage.setItem(Storage.KEYS.SHUFFLE_OPTIONS, String(optCheck.checked));
+          AppState.allQuestions.forEach(q => {
+            delete q._displayOptions;
+            delete q._displayOptionsMode;
+          });
+        }
+
+        const qCheck = document.getElementById('toggle-shuffle-questions');
+        if (qCheck) {
+          AppState.settings.shuffleQuestions = qCheck.checked;
+          Storage.setItem(Storage.KEYS.SHUFFLE_QUESTIONS, String(qCheck.checked));
+        }
+
+        closeProfileSettingsModal();
+        renderHomeDashboard();
+        if (AppState.training.viewMode === 'card') {
+          renderTrainingCard();
+        }
+        showToast('Impostazioni e profilo salvati con successo!', '⚙️');
+      });
+    }
+
+    // Avvia il ticker per tracciare il tempo reale di studio e la serie
+    startStudySessionTicker();
 
     // Tasto Escape per chiudere comodamente su PC qualsiasi modale aperta
     document.addEventListener('keydown', (e) => {
