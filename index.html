@@ -394,17 +394,23 @@
 
         <!-- Toolbar Filtri & Opzioni Rapide (Collapsable / Chips) -->
         <div class="training-toolbar modern-training-toolbar">
-          <button class="filter-chip-btn active" id="btn-toggle-instant-explain" title="Attiva/disattiva spiegazione immediata al tocco">
-            <span id="btn-instant-explain-label">⚡ Spiegazione: ON</span>
+          <button class="filter-chip-btn training-status-pill active" data-status="UNANSWERED" id="pill-status-unanswered" title="Mostra i quesiti ancora da svolgere">
+            <span>⏳ Disponibili (<span id="count-unanswered">0</span>)</span>
           </button>
-          <button class="filter-chip-btn training-status-pill active" data-status="ALL">
-            <span>Tutti (<span id="count-all">949</span>)</span>
+          <button class="filter-chip-btn training-status-pill" data-status="ANSWERED" id="pill-status-answered" title="Mostra i quesiti a cui hai già risposto">
+            <span>✅ Fatte (<span id="count-answered">0</span>)</span>
           </button>
-          <button class="filter-chip-btn training-status-pill" data-status="WRONG">
+          <button class="filter-chip-btn training-status-pill" data-status="WRONG" id="pill-status-wrong" title="Mostra gli errori da ritentare">
             <span>❌ Errori (<span id="count-wrong">0</span>)</span>
           </button>
-          <button class="filter-chip-btn training-status-pill" data-status="BOOKMARKED">
+          <button class="filter-chip-btn training-status-pill" data-status="ALL" id="pill-status-all" title="Mostra tutti i quesiti del modulo">
+            <span>📚 Tutte (<span id="count-all">949</span>)</span>
+          </button>
+          <button class="filter-chip-btn training-status-pill" data-status="BOOKMARKED" id="pill-status-bookmarked" title="Mostra i preferiti salvati">
             <span>⭐ Preferiti (<span id="count-bookmarked">0</span>)</span>
+          </button>
+          <button class="filter-chip-btn active" id="btn-toggle-instant-explain" title="Attiva/disattiva spiegazione immediata al tocco">
+            <span id="btn-instant-explain-label">⚡ Spiegazione: ON</span>
           </button>
           <button class="filter-chip-btn active" id="btn-toggle-shuffle-options" title="Mescola casualmente opzioni A, B, C, D">
             <span id="btn-shuffle-options-label">🎲 Risposte: Casuali</span>

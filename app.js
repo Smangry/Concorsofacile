@@ -198,7 +198,7 @@
       filterMateria: 'ALL',
       filterArgomento: 'ALL',
       filterSearch: '',
-      filterStatus: 'ALL', // 'ALL', 'WRONG', 'BOOKMARKED', 'UNANSWERED'
+      filterStatus: 'UNANSWERED', // 'UNANSWERED' (Disponibili), 'ANSWERED' (Fatte), 'WRONG' (Errori), 'ALL' (Tutte), 'BOOKMARKED'
       viewMode: 'card', // 'card' o 'list'
       userAnswers: {}, // { questionId: { selectedOption, isCorrect } }
       retrySessionAnswers: {}, // Risposte date durante la sessione attiva di "Ripassa Errori"
@@ -959,8 +959,22 @@
   function startTrainingOnTopic(materia, argomento = 'ALL') {
     AppState.training.filterMateria = materia;
     AppState.training.filterArgomento = argomento;
-    AppState.training.filterStatus = 'ALL';
     AppState.training.filterSearch = '';
+
+    // Verifica se ci sono quesiti non ancora risposti in questo modulo
+    const baseList = AppState.allQuestions.filter(q => {
+      if (materia !== 'ALL' && q.materia !== materia) return false;
+      if (argomento !== 'ALL' && q.argomento !== argomento) return false;
+      return true;
+    });
+    const unansweredCount = baseList.filter(q => !AppState.training.userAnswers[q.id]).length;
+
+    // Se ci sono quesiti disponibili, apri di default "Disponibili", altrimenti "Tutte"
+    if (unansweredCount > 0) {
+      AppState.training.filterStatus = 'UNANSWERED';
+    } else {
+      AppState.training.filterStatus = 'ALL';
+    }
 
     const selMateria = document.getElementById('filter-materia');
     if (selMateria) selMateria.value = materia;
@@ -970,23 +984,21 @@
     const selArg = document.getElementById('filter-argomento');
     if (selArg) selArg.value = argomento;
 
-    // Reset pillole di stato
+    // Reset e aggiornamento visivo pillole di stato
     document.querySelectorAll('.training-status-pill').forEach(p => p.classList.remove('active'));
-    const allPill = document.querySelector('.training-status-pill[data-status="ALL"]');
-    if (allPill) allPill.classList.add('active');
+    const activePill = document.querySelector(`.training-status-pill[data-status="${AppState.training.filterStatus}"]`);
+    if (activePill) activePill.classList.add('active');
 
     hideModuleCompletionCard();
-    // applyTrainingFilters(false) troverà automaticamente il primo quesito non risposto!
     applyTrainingFilters(false);
     updateActiveSubjectHeader(materia, argomento);
     Storage.saveTrainingSession();
     switchTab('training-view');
 
     const totalCount = AppState.training.filteredList.length;
-    const curQ = AppState.training.currentIndex + 1;
     const cleanSubj = (materia === 'ALL') ? 'Tutte le Materie' : materia.replace("dell'Università degli Studi di Sassari", 'UniSS');
-    if (AppState.training.currentIndex > 0) {
-      showToast(`Quesito ${curQ} di ${totalCount} • ${cleanSubj}`, '🎯');
+    if (AppState.training.filterStatus === 'UNANSWERED') {
+      showToast(`${totalCount} quesiti disponibili • ${cleanSubj}`, '⏳');
     } else {
       showToast(`${totalCount} quesiti • ${cleanSubj}`, '📚');
     }
@@ -1000,18 +1012,19 @@
     }
     const subjectsSet = new Set(macroInfo.subjects);
     const macroQuestions = AppState.allQuestions.filter(q => subjectsSet.has(q.materia));
+    const unansweredCount = macroQuestions.filter(q => !AppState.training.userAnswers[q.id]).length;
 
     AppState.training.filterMateria = 'MACRO_' + macroKey;
     AppState.training.filterArgomento = 'ALL';
-    AppState.training.filterStatus = 'ALL';
+    AppState.training.filterStatus = (unansweredCount > 0) ? 'UNANSWERED' : 'ALL';
     AppState.training.filterSearch = '';
-    AppState.training.filteredList = AppState.settings.shuffleQuestions 
-      ? shuffleArray(macroQuestions) 
-      : [...macroQuestions];
+    
+    // Reset e aggiornamento visivo pillole di stato
+    document.querySelectorAll('.training-status-pill').forEach(p => p.classList.remove('active'));
+    const activePill = document.querySelector(`.training-status-pill[data-status="${AppState.training.filterStatus}"]`);
+    if (activePill) activePill.classList.add('active');
 
-    // Posiziona automaticamente al primo quesito non ancora svolto
-    const firstUnanswered = macroQuestions.findIndex(q => !AppState.training.userAnswers[q.id]);
-    AppState.training.currentIndex = (firstUnanswered !== -1) ? firstUnanswered : 0;
+    applyTrainingFilters(false);
 
     const label = document.getElementById('training-current-subject-label');
     if (label) {
@@ -1025,11 +1038,11 @@
     switchTab('training-view');
     renderTrainingCard();
 
-    const curQ = AppState.training.currentIndex + 1;
-    if (AppState.training.currentIndex > 0) {
-      showToast(`Quesito ${curQ} di ${macroQuestions.length} • ${macroInfo.title}`, '🎯');
+    const cleanTitle = `${macroInfo.icon} ${macroInfo.title}`;
+    if (AppState.training.filterStatus === 'UNANSWERED') {
+      showToast(`${AppState.training.filteredList.length} disponibili • ${cleanTitle}`, '⏳');
     } else {
-      showToast(`${macroQuestions.length} quesiti • ${macroInfo.title}`, '🚀');
+      showToast(`${macroQuestions.length} quesiti • ${cleanTitle}`, '📚');
     }
   }
 
@@ -1428,16 +1441,7 @@
 
       if (btnResume) {
         btnResume.onclick = () => {
-          AppState.training.filterMateria = targetMateria;
-          AppState.training.filterArgomento = targetArg;
-          AppState.training.filterStatus = 'ALL';
-          applyTrainingFilters();
-          AppState.training.currentIndex = Math.min(actualResumeIdx, AppState.training.filteredList.length - 1);
-          updateActiveSubjectHeader(targetMateria, targetArg);
-          hideModuleCompletionCard();
-          switchTab('training-view');
-          renderTrainingCard();
-          showToast(`Ripresa sessione: Domanda ${AppState.training.currentIndex + 1} (${targetMateria.replace("dell'Università degli Studi di Sassari", 'UniSS')})`, '🚀');
+          startTrainingOnTopic(targetMateria, targetArg);
         };
       }
     }
@@ -1708,14 +1712,16 @@
         if (!inDomanda && !inSpiegazione && !inOpzioni) return false;
       }
 
-      // Filtro Stato (ALL, WRONG, BOOKMARKED, UNANSWERED)
+      // Filtro Stato (UNANSWERED, ANSWERED, WRONG, BOOKMARKED, ALL)
       const userAns = AppState.training.userAnswers[q.id];
-      if (status === 'WRONG') {
+      if (status === 'UNANSWERED') {
+        if (userAns) return false;
+      } else if (status === 'ANSWERED') {
+        if (!userAns) return false;
+      } else if (status === 'WRONG') {
         if (!userAns || userAns.isCorrect) return false;
       } else if (status === 'BOOKMARKED') {
         if (!AppState.training.bookmarks.has(q.id)) return false;
-      } else if (status === 'UNANSWERED') {
-        if (userAns) return false;
       }
 
       return true;
@@ -1730,14 +1736,7 @@
         AppState.training.currentIndex = 0;
       }
     } else {
-      // Posiziona automaticamente al primo quesito non ancora svolto tra quelli filtrati
-      if (status === 'WRONG') {
-        const firstUnansweredRetry = filtered.findIndex(q => !AppState.training.retrySessionAnswers || !AppState.training.retrySessionAnswers[q.id]);
-        AppState.training.currentIndex = (firstUnansweredRetry !== -1) ? firstUnansweredRetry : 0;
-      } else {
-        const firstUnansweredIndex = filtered.findIndex(q => !AppState.training.userAnswers[q.id]);
-        AppState.training.currentIndex = (firstUnansweredIndex !== -1) ? firstUnansweredIndex : 0;
-      }
+      AppState.training.currentIndex = 0;
     }
 
     // Aggiorna contatori laterali
@@ -1779,9 +1778,11 @@
     let countWrong = 0;
     let countBookmarked = 0;
     let countUnanswered = 0;
+    let countAnswered = 0;
 
     baseList.forEach(q => {
       const ans = AppState.training.userAnswers[q.id];
+      if (ans) countAnswered++;
       if (ans && !ans.isCorrect) countWrong++;
       if (AppState.training.bookmarks.has(q.id)) countBookmarked++;
       if (!ans) countUnanswered++;
@@ -1791,11 +1792,13 @@
     const elWrong = document.getElementById('count-wrong');
     const elBm = document.getElementById('count-bookmarked');
     const elUn = document.getElementById('count-unanswered');
+    const elAns = document.getElementById('count-answered');
 
     if (elAll) elAll.textContent = countAll;
     if (elWrong) elWrong.textContent = countWrong;
     if (elBm) elBm.textContent = countBookmarked;
     if (elUn) elUn.textContent = countUnanswered;
+    if (elAns) elAns.textContent = countAnswered;
   }
 
   function updateFilterSummaryLabel() {
@@ -1924,48 +1927,6 @@
     const list = AppState.training.filteredList;
     if (!list || list.length === 0) return;
 
-    const isReviewingWrong = (AppState.training && AppState.training.filterStatus === 'WRONG');
-
-    // Funzione helper: verifica se un quesito ha già una risposta registrata
-    const isAnswered = (q) => {
-      if (!q) return false;
-      if (isReviewingWrong) {
-        return !!(AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]);
-      }
-      return !!AppState.training.userAnswers[q.id];
-    };
-
-    // Controlla se esistono ancora domande NON risposte in questo modulo
-    const hasUnanswered = list.some(q => !isAnswered(q));
-
-    if (hasUnanswered) {
-      // Salta automaticamente le domande già risposte per trovare la prossima non risposta
-      let nextUnansweredIdx = -1;
-      for (let i = AppState.training.currentIndex + 1; i < list.length; i++) {
-        if (!isAnswered(list[i])) {
-          nextUnansweredIdx = i;
-          break;
-        }
-      }
-
-      // Se in avanti non ce ne sono più, controlla se ne è rimasta qualcuna indietro non risposta
-      if (nextUnansweredIdx === -1) {
-        for (let i = 0; i < AppState.training.currentIndex; i++) {
-          if (!isAnswered(list[i])) {
-            nextUnansweredIdx = i;
-            break;
-          }
-        }
-      }
-
-      if (nextUnansweredIdx !== -1) {
-        AppState.training.currentIndex = nextUnansweredIdx;
-        renderTrainingCard(true);
-        return;
-      }
-    }
-
-    // Se tutte le domande sono già state risposte, avanza sequenzialmente o mostra riepilogo
     if (AppState.training.currentIndex < list.length - 1) {
       AppState.training.currentIndex++;
       renderTrainingCard(true);
@@ -2220,40 +2181,22 @@
       }
     }
 
-    // Abilita/Disabilita tasti navigazione con gestione sicura click
+    // Abilita/Disabilita tasti navigazione con gestione stato
     const prevBtn = document.getElementById('btn-card-prev');
     if (prevBtn) {
       prevBtn.disabled = (idx === 0);
-      prevBtn.onclick = (e) => {
-        if (e) e.preventDefault();
-        goToPrevQuestion();
-      };
     }
-
-    const isQAnswered = (q) => {
-      if (!q) return false;
-      if (isReviewingWrong) {
-        return !!(AppState.training.retrySessionAnswers && AppState.training.retrySessionAnswers[q.id]);
-      }
-      return !!AppState.training.userAnswers[q.id];
-    };
-    const hasMoreUnanswered = list.slice(idx + 1).some(q => !isQAnswered(q));
-    const anyUnanswered = list.some(q => !isQAnswered(q));
 
     const nextBtn = document.getElementById('btn-card-next');
     if (nextBtn) {
       nextBtn.disabled = false;
-      if (!anyUnanswered || (!hasMoreUnanswered && idx >= list.length - 1)) {
+      if (idx >= list.length - 1) {
         nextBtn.innerHTML = '<span>🏁 Fine Modulo</span>';
         nextBtn.classList.add('btn-gold');
       } else {
         nextBtn.innerHTML = '<span>Prossima domanda →</span>';
         nextBtn.classList.remove('btn-gold');
       }
-      nextBtn.onclick = (e) => {
-        if (e) e.preventDefault();
-        goToNextQuestion();
-      };
     }
 
     // Aggiorna la barra di progresso e lo stato dei bottoni navigazione
@@ -3782,12 +3725,22 @@
     // Inizializza stato pulsanti randomizzazione all'avvio
     updateRandomizationButtonsUI();
 
-    // Navigazione scheda singola
+    // Navigazione scheda singola (gestione rigorosamente singola per click)
     const cardPrevBtn = document.getElementById('btn-card-prev');
-    if (cardPrevBtn) cardPrevBtn.addEventListener('click', goToPrevQuestion);
+    if (cardPrevBtn) {
+      cardPrevBtn.onclick = (e) => {
+        if (e) e.preventDefault();
+        goToPrevQuestion();
+      };
+    }
 
     const cardNextBtn = document.getElementById('btn-card-next');
-    if (cardNextBtn) cardNextBtn.addEventListener('click', goToNextQuestion);
+    if (cardNextBtn) {
+      cardNextBtn.onclick = (e) => {
+        if (e) e.preventDefault();
+        goToNextQuestion();
+      };
+    }
 
     // Filtro per Macro-Argomenti nella Home
     document.querySelectorAll('.home-macro-btn').forEach(btn => {

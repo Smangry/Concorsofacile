@@ -1,10 +1,10 @@
 {
-  "versionCode": 804,
-  "versionName": "8.0.4",
-  "databaseVersion": "8.0.4",
+  "versionCode": 805,
+  "versionName": "8.0.5",
+  "databaseVersion": "8.0.5",
   "totalQuestions": 949,
   "updatedAt": "2026-11-20",
   "dataUrl": "https://raw.githubusercontent.com/Smangry/Concorsofacile/main/banca_dati_concorso_uniss_2026.json",
   "downloadUrl": "https://github.com/Smangry/Concorsofacile/releases/latest/download/Concorso_2026.apk",
-  "changelog": "Versione 8.0.4: Quando riapri un modulo già iniziato avanzi solo sui quesiti non ancora risposti saltando automaticamente quelli già svolti; popup toast notifiche reso completamente leggibile, centrato e fluttuante sopra la barra dei tasti."
+  "changelog": "Versione 8.0.5: Nuova suddivisione chiara tra 'Quesiti Disponibili' e 'Quesiti Fatti'; avanzamento rigorosamente sequenziale (1, 2, 3...) senza salti di domanda; toolbar con filtri Disponibili, Fatte, Errori e Tutte sempre visibile e accessibile; toast notifiche riposizionato con leggibilità ottimale."
 }
